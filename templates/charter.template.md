@@ -60,7 +60,8 @@
 
 ## Budget Summary (order of magnitude)
 
-<!-- Detailed cost planning is a v2 knowledge area — see docs/knowledge-areas.md -->
+<!-- Detailed cost estimating and the budget baseline live in cost-management-plan.md — see
+/pf-3b-plan-cost. This section is only an order-of-magnitude figure for the Charter. -->
 
 ## Key Stakeholders
 

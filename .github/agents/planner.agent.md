@@ -31,9 +31,10 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
 - Every WBS leaf must have a testable acceptance criterion. If you can't write one, decompose further.
 - Do not set exact calendar dates unless the user provides them or explicitly asks you to estimate;
   otherwise express schedule as relative sequencing (dependencies + relative duration).
-- Flag anything that looks like a knowledge area you don't own (cost, resourcing, quality,
-  procurement) rather than silently answering — see [docs/knowledge-areas.md](../../docs/knowledge-areas.md)
-  for what's in scope for v1.
+- Flag anything that looks like a knowledge area another agent owns (cost → Cost Manager via
+  `/pf-3b-plan-cost`, resourcing → Resource Manager via `/pf-6b-plan-resources`) or that's still
+  out of v1 scope (quality, procurement) rather than silently answering — see
+  [docs/knowledge-areas.md](../../docs/knowledge-areas.md) for the full coverage matrix.
 
 ## Handoff
 

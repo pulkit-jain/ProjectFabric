@@ -59,5 +59,6 @@ architected so a later phase can add those without redesigning the artifact mode
 
 - No autonomous agent dispatch — every phase transition and task assignment is delivered to the
   user for review (see Ground Rule 6 in `copilot-instructions.md`).
-- No cost/resource/quality/procurement modeling — see [knowledge-areas.md](knowledge-areas.md)
-  for what's deferred and why.
+- No quality or procurement modeling, and no dedicated Communications agent — see
+  [knowledge-areas.md](knowledge-areas.md) for what's deferred and why. Cost Management and
+  Resource Management (depth) were originally deferred here too, but are now implemented in v1.

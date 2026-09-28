@@ -39,3 +39,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Request template (Resource impact dimension + baseline reference).
 - `ROADMAP.md`: governance doc tracking knowledge-area coverage status and the framework-feature
   backlog evaluated from reference-repo research, with Done/Planned/Deferred/Rejected markers.
+
+### Fixed
+
+- Stale references to Cost/Resource Management as unimplemented v2 knowledge areas, found while
+  validating the framework end-to-end with a full simulated project run (see
+  `_sandbox/demo-project/` locally, gitignored): `templates/charter.template.md`'s Budget Summary
+  comment, `docs/architecture.md`'s "Non-goals for v1" list, and
+  `.github/agents/planner.agent.md`'s knowledge-area flagging guidance all still said cost/
+  resourcing were out of scope after both were implemented.
