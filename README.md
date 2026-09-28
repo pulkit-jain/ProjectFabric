@@ -31,6 +31,7 @@ templates/                  # blank artifact templates, copied into .pmo/ at ini
 docs/
   architecture.md           # file-based state model, extension points
   knowledge-areas.md        # PMBOK-style coverage matrix (v1 vs planned)
+  test-plan.md              # test scenarios run so far, coverage matrix, future test backlog
 .pmo/                        # created per-project by /pf-0-init (see below)
   constitution.md
   charter.md

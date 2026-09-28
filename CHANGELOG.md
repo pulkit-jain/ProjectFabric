@@ -69,3 +69,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `_sandbox/video-onboarding/` locally, gitignored) covering a Quality gate failure/re-review
   cycle and Procurement vendor tracking: `README.md`'s "Knowledge Area Coverage" section still
   said Cost, Resource, Quality, and Procurement were "planned for v2" after all four had shipped.
+
+### Added
+
+- `docs/test-plan.md`: test methodology, a log of the two end-to-end sandbox test runs so far,
+  command/scenario coverage matrices, and a prioritized backlog of future test scenarios
+  (rejected CRs, cost breaches, blocking resource conflicts, recurring quality defects, real
+  parallel Workers, handoff resumption, incomplete closure, constitution amendment).
