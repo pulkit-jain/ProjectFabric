@@ -10,6 +10,7 @@
 |---|---|
 | Scope | |
 | Schedule | |
+| Cost | |
 | Risk | |
 | Quality | |
 
@@ -27,4 +28,4 @@
 
 ## Baseline Updates Required
 
-<!-- Which section(s) of wbs.md / schedule.md / scope-statement.md changed, and how -->
+<!-- Which section(s) of wbs.md / schedule.md / scope-statement.md / cost-management-plan.md changed, and how -->

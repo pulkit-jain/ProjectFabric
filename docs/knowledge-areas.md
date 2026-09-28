@@ -11,6 +11,7 @@ reserved for v2 rather than bolted on shallowly.
 | Integration Management | Initiating, Executing, Monitoring & Controlling, Closing | `charter.md`, `tracker.md`, status reports, change requests | Project Manager (+ Planner for Charter) |
 | Scope Management | Planning | `scope-statement.md`, `wbs.md` | Planner |
 | Schedule Management | Planning | `schedule.md` | Planner |
+| Cost Management | Planning, Monitoring & Controlling | `cost-management-plan.md`, `cost-performance.md` | Cost Manager |
 | Risk Management | Planning, Monitoring & Controlling | `risk-register.md` | Risk Manager |
 | Stakeholder Management | Initiating, Planning, Monitoring & Controlling | `stakeholder-register.md` | Stakeholder Manager |
 | Communications Management (partial) | Planning, Executing | `communications-plan.md` | Stakeholder Manager |
@@ -20,7 +21,6 @@ reserved for v2 rather than bolted on shallowly.
 
 | Knowledge Area | Why deferred | What v2 would add |
 |---|---|---|
-| Cost Management | Needs a credible estimating basis (bottom-up from WBS + resource rates) before it's more than guesswork | Budget baseline, cost estimate per work package, Earned Value Management (PV/EV/AC, CPI/SPI) tied into `tracker.md` |
 | Resource Management (depth) | v1's RACI covers accountability but not capacity/availability | Resource calendars, capacity planning, resource leveling, conflict detection across concurrent work packages |
 | Quality Management | Acceptance criteria in the WBS Dictionary cover basic quality today | Formal Quality Management Plan, quality metrics, control charts, dedicated QA review gate before "Done" |
 | Procurement Management | Not every project has external procurement | Make-or-buy analysis, vendor/contract register, procurement risk cross-referenced with `risk-register.md` |

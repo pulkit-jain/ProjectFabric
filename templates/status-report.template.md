@@ -10,6 +10,10 @@
 
 <!-- Top risks by score, any triggered this cycle -->
 
+## Cost Highlights
+
+<!-- Budget vs. actual (or EVM: CPI/SPI/EAC) status; any threshold breach this cycle -->
+
 ## Stakeholder Notes
 
 <!-- Any engagement drift observed -->

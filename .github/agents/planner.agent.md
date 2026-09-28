@@ -35,4 +35,4 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
 ## Handoff
 
 When Planning is complete (Charter, Scope Statement, WBS, Schedule all approved by the user),
-tell the user to run `/pf-4-plan-risk` next.
+tell the user to run `/pf-3b-plan-cost` next.

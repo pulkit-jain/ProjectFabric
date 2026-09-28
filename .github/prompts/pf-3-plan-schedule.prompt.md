@@ -17,4 +17,4 @@ Act as the `pf-planner` agent. Read `.pmo/wbs.md` and produce `.pmo/schedule.md`
 4. Identify the critical path in plain language: the chain of dependent work packages with no
    slack, i.e. the one that determines the earliest possible finish.
 5. Present the schedule to the user for review before treating it as baseline.
-6. Tell the user the next command is `/pf-4-plan-risk`.
+6. Tell the user the next command is `/pf-3b-plan-cost`.
