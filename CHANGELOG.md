@@ -37,3 +37,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   tracking, updated each control cycle). Wired into `/pf-7-initiate-manager`,
   `/pf-11-control-cycle`, the Status Report template (Resource Highlights), and the Change
   Request template (Resource impact dimension + baseline reference).
+- `ROADMAP.md`: governance doc tracking knowledge-area coverage status and the framework-feature
+  backlog evaluated from reference-repo research, with Done/Planned/Deferred/Rejected markers.
