@@ -22,6 +22,10 @@
 
 <!-- QA gate pass/fail this cycle; any recurring defect pattern or metric trend flagged -->
 
+## Procurement Highlights
+
+<!-- Vendor/contract status this cycle; any delivery delay or contract variance flagged -->
+
 ## Stakeholder Notes
 
 <!-- Any engagement drift observed -->

@@ -47,6 +47,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   passes the QA gate), `/pf-11-control-cycle` (defect trend review), the Status Report template
   (Quality Highlights), the Change Request template (baseline reference), and the Worker agent
   (QA gate awareness alongside WBS acceptance criteria).
+- Procurement Management knowledge area: `pf-procurement-manager` agent, `/pf-4c-plan-procurement`
+  command (slotted between `/pf-4b-plan-quality` and `/pf-5-plan-stakeholders`),
+  `procurement-management-plan.template.md` (make-or-buy analysis, vendor selection criteria,
+  contract types, procurement risk cross-reference, control thresholds) and
+  `vendor-contract-register.template.md` (living vendor/contract tracking, updated each control
+  cycle). Wired into `/pf-11-control-cycle` (vendor/contract review), the Status Report template
+  (Procurement Highlights), and the Change Request template (Procurement impact dimension +
+  baseline reference). This completes the core PMBOK-style knowledge-area kit — see
+  `ROADMAP.md` for what's left in the framework-feature backlog.
 
 ### Fixed
 

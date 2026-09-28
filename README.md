@@ -10,7 +10,13 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
 
 ## Core Idea
 
-- **Roles, not one chat.** A Planner runs discovery and produces the plan. A Risk Manager owns the Risk Register. A Stakeholder Manager owns stakeholder analysis and engagement. A Project Manager coordinates execution, tracks variance, and controls change. Workers execute individual work packages.
+- **Roles, not one chat.** A Planner runs discovery and produces the plan. A Cost Manager owns
+  estimating, budgeting, and cost performance. A Resource Manager owns capacity planning,
+  calendars, and allocation across work packages. A Risk Manager owns the Risk Register. A
+  Quality Manager owns quality standards, metrics, and the QA gate before a work package can be
+  marked Done. A Procurement Manager owns make-or-buy analysis and vendor/contract management. A
+  Stakeholder Manager owns stakeholder analysis and engagement. A Project Manager coordinates
+  execution, tracks variance, and controls change. Workers execute individual work packages.
 - **State lives in files.** Every artifact is a plain Markdown file under `.pmo/`. Agents are stateless between sessions — they re-read the files. This makes handoffs, audits, and future tooling (dashboards, a real backend) possible without redesigning anything.
 - **You are the checkpoint.** Every phase transition, every task assignment, every change request is delivered to you to review before it becomes baseline. Nothing silently rewrites the plan.
 
@@ -36,6 +42,8 @@ docs/
   risk-register.md
   quality-management-plan.md
   quality-control-log.md
+  procurement-management-plan.md
+  vendor-contract-register.md
   stakeholder-register.md
   raci.md
   resource-management-plan.md
@@ -72,6 +80,7 @@ docs/
 | Planning | `/pf-3b-plan-cost` | `cost-management-plan.md` |
 | Planning | `/pf-4-plan-risk` | `risk-register.md` |
 | Planning | `/pf-4b-plan-quality` | `quality-management-plan.md` |
+| Planning | `/pf-4c-plan-procurement` | `procurement-management-plan.md` |
 | Planning | `/pf-5-plan-stakeholders` | `stakeholder-register.md`, `communications-plan.md` |
 | Planning | `/pf-6-plan-organization` | `raci.md` |
 | Planning | `/pf-6b-plan-resources` | `resource-management-plan.md` |

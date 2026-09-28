@@ -18,13 +18,13 @@ Every artifact is:
 ## Process flow
 
 ```
-Initiating                    Planning                                                                                            Executing / Monitoring & Controlling         Closing
-   │                              │                                                                                                            │                                    │
-   ▼                              ▼                                                                                                            ▼                                    ▼
-Constitution ─► Charter  ──────►  Scope+WBS ─► Schedule ─► Cost ─► Risk ─► Quality ─► Stakeholder ─► RACI ─► Resources ─►  Manager loop:              Lessons
-(Planner)        (Planner)          (Planner)              (Cost Mgr) (Risk Mgr) (Quality Mgr) (Stakeholder Mgr)  (Resource Mgr)  assign → execute → report      Learned +
-                                                                                                                                     → track → control-cycle       Final
-                                                                                                                                     → (change request as needed)  Report
+Initiating                    Planning                                                                                                                    Executing / Monitoring & Controlling         Closing
+   │                              │                                                                                                                                    │                                    │
+   ▼                              ▼                                                                                                                                    ▼                                    ▼
+Constitution ─► Charter  ──────►  Scope+WBS ─► Schedule ─► Cost ─► Risk ─► Quality ─► Procurement ─► Stakeholder ─► RACI ─► Resources ─►  Manager loop:              Lessons
+(Planner)        (Planner)          (Planner)              (Cost Mgr) (Risk Mgr) (Quality Mgr) (Procurement Mgr) (Stakeholder Mgr)  (Resource Mgr)  assign → execute → report      Learned +
+                                                                                                                                                       → track → control-cycle       Final
+                                                                                                                                                       → (change request as needed)  Report
 ```
 
 The Manager loop is intentionally cyclical, not a single pass — `assign task → Worker executes →

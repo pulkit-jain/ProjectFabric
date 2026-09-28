@@ -21,4 +21,4 @@ Act as the `pf-quality-manager` agent (see `.github/agents/quality-manager.agent
 5. Define QA Gate Criteria that supplement (not replace) each WBS leaf's acceptance criteria —
    this is the checklist a work package must pass before it can be marked "Done".
 6. Present the Quality Management Plan to the user for review before treating it as baseline.
-7. Tell the user the next command is `/pf-5-plan-stakeholders`.
+7. Tell the user the next command is `/pf-4c-plan-procurement`.

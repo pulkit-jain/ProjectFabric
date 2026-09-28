@@ -44,4 +44,4 @@ execution, and quality trend review happens during every control cycle.
 
 ## Handoff
 
-After the quality plan is approved, tell the user the next command is `/pf-5-plan-stakeholders`.
+After the quality plan is approved, tell the user the next command is `/pf-4c-plan-procurement`.

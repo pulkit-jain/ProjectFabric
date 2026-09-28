@@ -18,12 +18,12 @@ reserved for v2 rather than bolted on shallowly.
 | Communications Management (partial) | Planning, Executing | `communications-plan.md` | Stakeholder Manager |
 | Project Organization | Planning | `raci.md` | Project Manager |
 | Resource Management (depth) | Planning, Monitoring & Controlling | `resource-management-plan.md`, `resource-allocation.md` | Resource Manager |
+| Procurement Management | Planning, Monitoring & Controlling | `procurement-management-plan.md`, `vendor-contract-register.md` | Procurement Manager |
 
 ## v2 — Planned, not yet implemented
 
 | Knowledge Area | Why deferred | What v2 would add |
 |---|---|---|
-| Procurement Management | Not every project has external procurement | Make-or-buy analysis, vendor/contract register, procurement risk cross-referenced with `risk-register.md` |
 | Communications Management (full) | Folded into Stakeholder Manager for v1 | Dedicated agent if communications complexity outgrows what Stakeholder Manager can own alongside engagement |
 
 ## Design principle
