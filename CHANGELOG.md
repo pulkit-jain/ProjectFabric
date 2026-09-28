@@ -76,3 +76,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   command/scenario coverage matrices, and a prioritized backlog of future test scenarios
   (rejected CRs, cost breaches, blocking resource conflicts, recurring quality defects, real
   parallel Workers, handoff resumption, incomplete closure, constitution amendment).
+- Third end-to-end test run (T3, "Regional Data Center Migration", `_sandbox/datacenter-migration/`
+  locally, gitignored) covering all 8 previously-untested scenarios in one run: a **rejected**
+  Change Request (CR-002), an actual cost-threshold breach, a resource conflict that genuinely
+  blocked (not just absorbed by slack), a recurring quality defect that fired
+  `quality-control-log.md`'s Trend Notes and was proactively prevented on the third occurrence,
+  two Workers genuinely dispatched in parallel before either reported back, a real
+  `/pf-13-handoff` mid-task resumption by a fresh instance, a `constitution.md` amendment via
+  Change Control (CR-004) later cited to accept a new risk without a CR, and project closure with
+  one work package **Descoped** rather than Done (CR-005). No framework bugs found this round —
+  `docs/test-plan.md`'s coverage matrices updated accordingly.
+- Fourth end-to-end test run (T4, "Enterprise CRM Rollout", `_sandbox/crm-rollout/` locally,
+  gitignored) clearing the remaining test backlog: an 18-work-package, 4-Worker project to
+  stress-test scale (`tracker.md`/`raci.md` stayed fully readable), a genuine stakeholder
+  engagement drift (Supportive → Resistant → Supportive) caught via a Worker's report and
+  resolved via a Change Request rather than waiting for the next scheduled control cycle, and a
+  mid-project risk (R-004) added by re-running the risk identification/scoring dialogue and
+  inserted in correct sorted position rather than appended or hand-edited. No framework bugs
+  found — `docs/test-plan.md` now shows the full T1–T4 scenario backlog covered.

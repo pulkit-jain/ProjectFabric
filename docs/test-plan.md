@@ -25,79 +25,66 @@ changes can be checked against real gaps instead of re-deriving them from scratc
 |---|---|---|---|---|---|
 | T1 | Internal Wiki Migration | 2026-09-28 | `_sandbox/demo-project/` | Lightweight | Cost + Resource Management (first pass, before Quality/Procurement existed) |
 | T2 | New Customer Onboarding Video Series | 2026-09-28 | `_sandbox/video-onboarding/` | Full EVM | Quality gate failure/re-review, Procurement vendor tracking |
+| T3 | Regional Data Center Migration | 2026-09-28 | `_sandbox/datacenter-migration/` | Lightweight | Rejected CR, cost breach, blocking resource conflict, recurring quality defect, real parallel Workers, genuine handoff resumption, constitution amendment, incomplete closure (the 8 scenarios formerly listed as backlog items T3–T10) |
+| T4 | Enterprise CRM Rollout | 2026-09-28 | `_sandbox/crm-rollout/` | Lightweight | Scale (18 work packages, 4 Workers), stakeholder engagement drift/recovery, mid-project risk added via command re-run (the 3 scenarios formerly listed as backlog items T11–T13) |
 
 ## Coverage Matrix — Commands
 
-| Command | T1 | T2 | Notes |
-|---|---|---|---|
-| `/pf-0-init` | ✅ | ✅ | |
-| `/pf-0b-constitution` | ✅ | ✅ | |
-| `/pf-1-initiate-planner` | ✅ | ✅ | |
-| `/pf-2-plan-scope-wbs` | ✅ | ✅ | |
-| `/pf-3-plan-schedule` | ✅ | ✅ | |
-| `/pf-3b-plan-cost` | ✅ | ✅ | T1 = Lightweight, T2 = Full EVM — both modes covered |
-| `/pf-4-plan-risk` | ✅ | ✅ | |
-| `/pf-4b-plan-quality` | — | ✅ | Didn't exist yet at T1 |
-| `/pf-4c-plan-procurement` | — | ✅ | Didn't exist yet at T1 |
-| `/pf-5-plan-stakeholders` | ✅ | ✅ | |
-| `/pf-6-plan-organization` | ✅ | ✅ | |
-| `/pf-6b-plan-resources` | ✅ | ✅ | |
-| `/pf-7-initiate-manager` | ✅ | ✅ | |
-| `/pf-8-assign-task` | ✅ | ✅ | |
-| `/pf-9-initiate-worker` | ✅ | ✅ | |
-| `/pf-10-check-report` | ✅ | ✅ | T2 exercised the QA-gate-fail path inside this command |
-| `/pf-11-control-cycle` | ✅ | ✅ | |
-| `/pf-12-change-request` | ✅ | ✅ | Both CRs were **Approved** — Rejected/Deferred never tested |
-| `/pf-13-handoff` | ⚠️ | — | T1 only wrote the handoff note; a fresh instance actually resuming from it was never simulated |
-| `/pf-14-close-project` | ✅ | ✅ | Both closed cleanly with every work package Done |
+| Command | T1 | T2 | T3 | T4 | Notes |
+|---|---|---|---|---|---|
+| `/pf-0-init` | ✅ | ✅ | ✅ | ✅ | |
+| `/pf-0b-constitution` | ✅ | ✅ | ✅ | ✅ | T3 also exercised amending it mid-project via CR-004 |
+| `/pf-1-initiate-planner` | ✅ | ✅ | ✅ | ✅ | |
+| `/pf-2-plan-scope-wbs` | ✅ | ✅ | ✅ | ✅ | T3 also exercised descoping a deliverable via CR-005; T4 scaled to 18 leaves |
+| `/pf-3-plan-schedule` | ✅ | ✅ | ✅ | ✅ | |
+| `/pf-3b-plan-cost` | ✅ | ✅ | ✅ | ✅ | T1/T3/T4 = Lightweight, T2 = Full EVM — both modes covered |
+| `/pf-4-plan-risk` | ✅ | ✅ | ✅ | ✅ | T4 exercised a genuine mid-project re-run to add a single risk (R-004), not just initial planning |
+| `/pf-4b-plan-quality` | — | ✅ | ✅ | ✅ | Didn't exist yet at T1 |
+| `/pf-4c-plan-procurement` | — | ✅ | ✅ | ✅ | T3/T4's plans conclude "Make" for everything — didn't exist yet at T1 |
+| `/pf-5-plan-stakeholders` | ✅ | ✅ | ✅ | ✅ | T4 exercised a genuine engagement drift and recovery |
+| `/pf-6-plan-organization` | ✅ | ✅ | ✅ | ✅ | T4 scaled RACI to 18 rows × 4 Workers |
+| `/pf-6b-plan-resources` | ✅ | ✅ | ✅ | ✅ | T3 deliberately left a conflict unresolved at planning time to test the negative path |
+| `/pf-7-initiate-manager` | ✅ | ✅ | ✅ | ✅ | |
+| `/pf-8-assign-task` | ✅ | ✅ | ✅ | ✅ | T3 dispatched two Workers in the same round before either reported back |
+| `/pf-9-initiate-worker` | ✅ | ✅ | ✅ | ✅ | T3 includes a genuine mid-task handoff and resumption |
+| `/pf-10-check-report` | ✅ | ✅ | ✅ | ✅ | T2/T3 exercised the QA-gate-fail path inside this command |
+| `/pf-11-control-cycle` | ✅ | ✅ | ✅ | ✅ | |
+| `/pf-12-change-request` | ✅ | ✅ | ✅ | ✅ | T3 adds a **Rejected** CR (CR-002) alongside several Approved ones |
+| `/pf-13-handoff` | ⚠️ | — | ✅ | — | T3 simulates a fresh instance genuinely resuming from the handoff log, not just writing it |
+| `/pf-14-close-project` | ✅ | ✅ | ✅ | ✅ | T3 closes with one work package **Descoped**, not Done, per its step 1 |
 
 ## Coverage Matrix — Scenarios
 
 | Scenario | Covered? | Where |
 |---|---|---|
 | Risk triggers mid-execution → Change Request | ✅ | T1 (R-001, technical) |
-| QA gate passes cleanly | ✅ | T2 (Videos 1 & 3) |
+| QA gate passes cleanly | ✅ | T2 (Videos 1 & 3), T3 (WP-2.3) |
 | QA gate **fails**, vendor rework, re-review passes | ✅ | T2 (Video 2) |
 | Make-or-buy analysis concludes "Buy", fixed-price contract | ✅ | T2 |
+| Make-or-buy analysis concludes "Make" (kept in-house) | ✅ | T3 |
 | Vendor tracked as a non-Worker `Owner` in `tracker.md`/`raci.md` | ✅ | T2 |
 | Resource conflict flagged in planning, absorbed by schedule slack | ✅ | T1 (worker-content PTO) |
-| Change Request **Approved** | ✅ | T1, T2 |
-| Constitution escalation threshold referenced in a real decision | ✅ | T1, T2 |
-| Cost/Resource/Quality/Procurement baseline updated via CR | ✅ | T1 (cost), T2 (schedule only, cost explicitly unaffected) |
+| Resource over-allocation that actually blocks (not absorbed by slack) → CR | ✅ | T3 (worker-a on 2.1+2.3, resolved via CR-001) |
+| Change Request **Approved** | ✅ | T1, T2, T3 (CR-001, CR-003, CR-004, CR-005) |
+| Change Request **Rejected** | ✅ | T3 (CR-002, cost increase rejected due to budget freeze) |
+| Cost variance actually **breaching** the control threshold (Yellow/Red cost status) | ✅ | T3 (WP-3.1, 18.2% over) |
+| Quality trend note firing from a **recurring** defect pattern (2+ occurrences) | ✅ | T3 (timezone bug on 2.1 and 2.2, proactively prevented on 2.3) |
+| Two or more Workers genuinely in parallel (dispatched before either reports back) | ✅ | T3 (WP-1.1/WP-1.2, both In Progress simultaneously) |
+| `/pf-13-handoff` actually resumed by a fresh Manager/Worker instance | ✅ | T3 (WP-3.2, mid-cutover handoff and clean resumption) |
+| Constitution amended mid-project via Change Control | ✅ | T3 (CR-004, risk-acceptance threshold raised, then cited by a later risk acceptance) |
+| Project closed with an open/incomplete work package (descope or hold) | ✅ | T3 (WP-4.1 descoped via CR-005 at closing) |
+| Constitution escalation threshold referenced in a real decision | ✅ | T1, T2, T3 |
+| Cost/Resource/Quality/Procurement baseline updated via CR | ✅ | T1 (cost), T2 (schedule), T3 (schedule, resource, constitution, scope) |
 | Project closes with every work package Done | ✅ | T1, T2 |
-| Change Request **Rejected** or **Deferred** | ❌ | Not tested |
-| Resource over-allocation that actually blocks (not absorbed by slack) → re-leveling or CR | ❌ | Not tested |
-| Cost variance actually **breaching** the control threshold (Yellow/Red cost status) | ❌ | Both runs stayed Green/under budget |
-| Quality trend note firing from a **recurring** defect pattern (2+ occurrences) | ❌ | Both runs had only one isolated defect |
-| Two or more Workers genuinely in parallel (dispatched before either reports back) | ⚠️ | T1 assigned 2 in parallel but both were simple/independent; never stress-tested a real collision |
-| `/pf-13-handoff` actually resumed by a fresh Manager/Worker instance | ❌ | Only the note-writing half was tested |
-| Constitution amended mid-project via Change Control | ❌ | Not tested |
-| Project closed with an open/incomplete work package (descope or hold) | ❌ | Not tested |
-| Re-running `/pf-4-plan-risk` mid-project to add a single new risk | ❌ | Not tested |
-| Stakeholder engagement drift detected and reacted to mid-project | ❌ | Not tested |
-| Make-or-buy analysis concludes "Make" (kept in-house) | ❌ | T2's only outsourced item was "Buy" |
+| Re-running `/pf-4-plan-risk` mid-project to add a single new risk | ✅ | T4 (R-004, inserted in correct sorted position without disturbing existing risks) |
+| Stakeholder engagement drift detected and reacted to mid-project | ✅ | T4 (Sales Ops Lead, Supportive → Resistant → Supportive, caught via a Worker's report, not a scheduled cycle) |
+| Scale: 15+ work packages, 4+ Workers, `tracker.md`/`raci.md` stay readable | ✅ | T4 (18 work packages, 4 Workers) |
 
 ## Future Test Scenarios (backlog)
 
-Roughly in priority order — pick whichever is most relevant to what's being changed next:
-
-1. **T3 — Rejected/Deferred CR.** A Change Request the Sponsor rejects or defers; verify the
-   Project Manager doesn't apply baseline updates and the work package stays blocked correctly.
-2. **T4 — Cost breach.** A project where actual cost genuinely breaches the
-   `cost-management-plan.md` threshold (Yellow/Red), forcing a real cost-driven CR.
-3. **T5 — Resource over-allocation that blocks.** A resource conflict that can't be absorbed by
-   slack, forcing genuine re-leveling (add resource / resequence) or a CR.
-4. **T6 — Recurring quality defect.** The same defect type across 2+ work packages, so
-   `quality-control-log.md`'s Trend Notes actually fire and the Quality Manager flags a process
-   issue (not just a one-off).
-5. **T7 — Real parallel Workers.** Two Workers genuinely in flight at once across a control
-   cycle boundary, to stress-test `tracker.md` update ordering and `/pf-11-control-cycle`'s read.
-6. **T8 — Handoff resumption.** Actually simulate a fresh Manager/Worker instance reading
-   `tracker.md`'s Handoff Notes / a Worker's memory log and continuing correctly, not just
-   writing the note.
-7. **T9 — Incomplete closure.** Run `/pf-14-close-project` with a work package still open, and
-   verify it correctly asks the user to close it out, descope via CR, or hold closing.
-8. **T10 — Constitution amendment.** Amend `constitution.md` mid-project via Change Control and
-   verify downstream agents (e.g. Risk Manager's escalation threshold) pick up the new rule.
+All scenarios identified so far (T1–T13) are now covered. Add new entries here as new framework
+features are built (e.g. once the "Framework Features" backlog items ship — Definition of Ready,
+decision log, agile ceremony layer — each should get its own test scenario) or if a real-world
+usage surfaces a gap this simulated testing didn't anticipate.
 
 Each future run should also be added to the Test Runs Log and both Coverage Matrices above.
