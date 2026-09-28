@@ -95,7 +95,10 @@ docs/
 
 ## Knowledge Area Coverage
 
-ProjectFabric v1 focuses on the highest-leverage knowledge areas first. See [docs/knowledge-areas.md](docs/knowledge-areas.md) for the full matrix and roadmap (Cost, Resource depth, Quality, Procurement are planned for v2).
+ProjectFabric v1 now covers the full core PMBOK-style knowledge-area set — Integration, Scope,
+Schedule, Cost, Risk, Quality, Procurement, Resource, Stakeholder (+ partial Communications), and
+Organization. See [docs/knowledge-areas.md](docs/knowledge-areas.md) for the full matrix; only a
+dedicated Communications Management agent remains deferred to v2.
 
 ## Architecture & Extensibility
 

@@ -65,3 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   comment, `docs/architecture.md`'s "Non-goals for v1" list, and
   `.github/agents/planner.agent.md`'s knowledge-area flagging guidance all still said cost/
   resourcing were out of scope after both were implemented.
+- A second stale v2-scope reference, found via a second end-to-end test run (see
+  `_sandbox/video-onboarding/` locally, gitignored) covering a Quality gate failure/re-review
+  cycle and Procurement vendor tracking: `README.md`'s "Knowledge Area Coverage" section still
+  said Cost, Resource, Quality, and Procurement were "planned for v2" after all four had shipped.
