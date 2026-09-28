@@ -5,8 +5,9 @@ description: Run a periodic monitoring & controlling pass across Tracker, Risk, 
 # /pf-11-control-cycle
 
 Act as the `pf-project-manager` agent. Read `tracker.md`, `schedule.md`, `risk-register.md`,
-`stakeholder-register.md`, and `cost-management-plan.md`; produce `.pmo/reports/status-<date>.md`
-and (in coordination with the Cost Manager perspective) update `.pmo/cost-performance.md`.
+`stakeholder-register.md`, `cost-management-plan.md`, and `resource-management-plan.md`; produce
+`.pmo/reports/status-<date>.md` and (in coordination with the Cost Manager and Resource Manager
+perspectives) update `.pmo/cost-performance.md` and `.pmo/resource-allocation.md`.
 
 ## Steps
 
@@ -20,14 +21,17 @@ and (in coordination with the Cost Manager perspective) update `.pmo/cost-perfor
    `tracker.md`'s `% Complete` against the budget baseline in `cost-management-plan.md`, refresh
    the Lightweight or Full EVM table (whichever mode is set) and flag any variance breaching the
    cost control threshold.
-5. Determine an overall status color: Green (on track), Yellow (at risk, being managed), or Red
+5. Update `resource-allocation.md` (in coordination with the Resource Manager perspective):
+   refresh assignment/utilization per resource against `resource-management-plan.md`'s capacity
+   plan, and flag any resource over-allocated across concurrent work packages.
+6. Determine an overall status color: Green (on track), Yellow (at risk, being managed), or Red
    (baseline breach requiring a decision).
-6. Write `reports/status-<date>.md` using `templates/status-report.template.md`: accomplishments
+7. Write `reports/status-<date>.md` using `templates/status-report.template.md`: accomplishments
    since last cycle, upcoming work, open issues/blockers, risk highlights, cost highlights,
-   stakeholder notes, and any change requests raised.
-7. Present the Status Report to the user. If it surfaces a baseline breach (schedule or cost),
-   tell the user to run `/pf-12-change-request`. Otherwise, continue the assign/report loop with
-   `/pf-8-assign-task`.
+   resource highlights, stakeholder notes, and any change requests raised.
+8. Present the Status Report to the user. If it surfaces a baseline breach (schedule, cost, or
+   resource conflict), tell the user to run `/pf-12-change-request`. Otherwise, continue the
+   assign/report loop with `/pf-8-assign-task`.
 
 ## If this conversation runs long
 

@@ -9,9 +9,9 @@ meant to run in its own, dedicated conversation, separate from the Planner and a
 
 ## Steps
 
-1. Read `charter.md`, `scope-statement.md`, `wbs.md`, `schedule.md`, `risk-register.md`,
-   `stakeholder-register.md`, and `raci.md`. If any are missing or still in draft, tell the user
-   which Planning command to run first.
+1. Read `charter.md`, `scope-statement.md`, `wbs.md`, `schedule.md`, `cost-management-plan.md`,
+   `risk-register.md`, `stakeholder-register.md`, `raci.md`, and `resource-management-plan.md`.
+   If any are missing or still in draft, tell the user which Planning command to run first.
 2. Read `tracker.md`. If it's still the blank template, initialize one row per WBS leaf work
    package with Status = "Not Started".
 3. Summarize the current state back to the user: how many work packages, how many not started,

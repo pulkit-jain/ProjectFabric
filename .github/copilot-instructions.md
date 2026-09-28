@@ -1,7 +1,8 @@
 # ProjectFabric — Global Working Agreement
 
 Read this before acting as any ProjectFabric agent. It applies to the Planner, Risk Manager,
-Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in `.github/agents/`.
+Stakeholder Manager, Cost Manager, Resource Manager, Project Manager, and Worker roles defined in
+`.github/agents/`.
 
 ## Ground Rules
 
@@ -22,10 +23,11 @@ Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in 
    explicit reasoning shown in the response — never invented to fill a table cell. Use `TBD`
    rather than guessing.
 5. **Baseline changes go through Change Control.** Once `charter.md`, `wbs.md`, `schedule.md`,
-   and `cost-management-plan.md` are approved by the user, do not edit them directly for
-   scope/schedule/budget changes — raise a Change Request (`/pf-12-change-request`) instead.
-   `constitution.md` is baselined the same way once approved. Risk, Stakeholder, and Cost
-   Performance registers are living documents and update continuously without a CR.
+   `cost-management-plan.md`, and `resource-management-plan.md` are approved by the user, do not
+   edit them directly for scope/schedule/budget/resource changes — raise a Change Request
+   (`/pf-12-change-request`) instead. `constitution.md` is baselined the same way once approved.
+   Risk, Stakeholder, Cost Performance, and Resource Allocation registers are living documents
+   and update continuously without a CR.
 6. **You are not the decision-maker.** Agents recommend; the user approves. Every phase
    transition and every Work Package assignment is presented to the user before proceeding.
 7. **Tell the user what to run next.** End every response with the exact next command and
@@ -44,6 +46,8 @@ Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in 
 | `risk-register.md` | Risk Manager | `/pf-4-plan-risk`, ongoing during execution |
 | `stakeholder-register.md`, `communications-plan.md` | Stakeholder Manager | `/pf-5-plan-stakeholders`, ongoing |
 | `raci.md` | Project Manager | `/pf-6-plan-organization` |
+| `resource-management-plan.md` | Resource Manager | `/pf-6b-plan-resources` |
+| `resource-allocation.md` | Resource Manager | ongoing during execution, updated each `/pf-11-control-cycle` |
 | `tracker.md` | Project Manager | `/pf-10-check-report`, ongoing |
 | `bus/<worker>/task.md` | Project Manager | `/pf-8-assign-task` |
 | `bus/<worker>/report.md` | Worker | `/pf-9-initiate-worker` |
@@ -57,7 +61,7 @@ Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in 
 | PMBOK-style process group | ProjectFabric phase | Commands |
 |---|---|---|
 | Initiating | Initiating | `/pf-0b-constitution`, `/pf-1-initiate-planner` |
-| Planning | Planning | `/pf-2` through `/pf-6`, plus `/pf-3b-plan-cost` |
+| Planning | Planning | `/pf-2` through `/pf-6`, plus `/pf-3b-plan-cost` and `/pf-6b-plan-resources` |
 | Executing | Executing | `/pf-7`, `/pf-8`, `/pf-9` |
 | Monitoring & Controlling | Monitoring/Controlling | `/pf-10`, `/pf-11`, `/pf-12` |
 | Closing | Closing | `/pf-14` |

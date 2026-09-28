@@ -36,6 +36,8 @@ docs/
   risk-register.md
   stakeholder-register.md
   raci.md
+  resource-management-plan.md
+  resource-allocation.md
   communications-plan.md
   tracker.md
   bus/<worker>/task.md, report.md
@@ -69,6 +71,7 @@ docs/
 | Planning | `/pf-4-plan-risk` | `risk-register.md` |
 | Planning | `/pf-5-plan-stakeholders` | `stakeholder-register.md`, `communications-plan.md` |
 | Planning | `/pf-6-plan-organization` | `raci.md` |
+| Planning | `/pf-6b-plan-resources` | `resource-management-plan.md` |
 | Executing | `/pf-7-initiate-manager` | Manager session started |
 | Executing | `/pf-8-assign-task` | `bus/<worker>/task.md` |
 | Executing | `/pf-9-initiate-worker` | Worker executes, logs to `memory/work-packages/` |

@@ -30,3 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Proactive checkpoint/resume hints in the long-running prompts (`/pf-7-initiate-manager`,
   `/pf-9-initiate-worker`, `/pf-11-control-cycle`) pointing to `/pf-13-handoff` before a
   conversation hits its context limit, rather than only after.
+- Resource Management (depth) knowledge area: `pf-resource-manager` agent, `/pf-6b-plan-resources`
+  command (slotted between `/pf-6-plan-organization` and `/pf-7-initiate-manager`),
+  `resource-management-plan.template.md` (roles/resources needed, resource calendars, capacity
+  plan, control thresholds) and `resource-allocation.template.md` (living utilization/conflict
+  tracking, updated each control cycle). Wired into `/pf-7-initiate-manager`,
+  `/pf-11-control-cycle`, the Status Report template (Resource Highlights), and the Change
+  Request template (Resource impact dimension + baseline reference).

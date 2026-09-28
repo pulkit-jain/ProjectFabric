@@ -14,6 +14,10 @@
 
 <!-- Budget vs. actual (or EVM: CPI/SPI/EAC) status; any threshold breach this cycle -->
 
+## Resource Highlights
+
+<!-- Any resource over-allocated or in conflict across concurrent work packages this cycle -->
+
 ## Stakeholder Notes
 
 <!-- Any engagement drift observed -->

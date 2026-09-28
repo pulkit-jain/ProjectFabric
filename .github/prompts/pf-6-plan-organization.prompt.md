@@ -17,5 +17,4 @@ Act as the `pf-project-manager` agent (see `.github/agents/project-manager.agent
 4. Cross-check: every Worker identity used here must exist as a `bus/<worker>/` folder path when
    tasks are assigned later — flag any mismatch.
 5. Present the RACI matrix for review.
-6. Tell the user Planning is complete and the next command is `/pf-7-initiate-manager` to begin
-   coordinated execution.
+6. Tell the user the next command is `/pf-6b-plan-resources`.

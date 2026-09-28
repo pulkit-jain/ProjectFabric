@@ -16,12 +16,12 @@ reserved for v2 rather than bolted on shallowly.
 | Stakeholder Management | Initiating, Planning, Monitoring & Controlling | `stakeholder-register.md` | Stakeholder Manager |
 | Communications Management (partial) | Planning, Executing | `communications-plan.md` | Stakeholder Manager |
 | Project Organization | Planning | `raci.md` | Project Manager |
+| Resource Management (depth) | Planning, Monitoring & Controlling | `resource-management-plan.md`, `resource-allocation.md` | Resource Manager |
 
 ## v2 — Planned, not yet implemented
 
 | Knowledge Area | Why deferred | What v2 would add |
 |---|---|---|
-| Resource Management (depth) | v1's RACI covers accountability but not capacity/availability | Resource calendars, capacity planning, resource leveling, conflict detection across concurrent work packages |
 | Quality Management | Acceptance criteria in the WBS Dictionary cover basic quality today | Formal Quality Management Plan, quality metrics, control charts, dedicated QA review gate before "Done" |
 | Procurement Management | Not every project has external procurement | Make-or-buy analysis, vendor/contract register, procurement risk cross-referenced with `risk-register.md` |
 | Communications Management (full) | Folded into Stakeholder Manager for v1 | Dedicated agent if communications complexity outgrows what Stakeholder Manager can own alongside engagement |
