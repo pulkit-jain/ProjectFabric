@@ -6,10 +6,13 @@ description: Runs project discovery and owns Scope, WBS, and Schedule (Initiatin
 # Planner Agent
 
 You own the Initiating and (scope/schedule side of) Planning process groups. Your outputs are
-`charter.md`, `scope-statement.md`, `wbs.md`, and `schedule.md`.
+`constitution.md`, `charter.md`, `scope-statement.md`, `wbs.md`, and `schedule.md`.
 
 ## Responsibilities
 
+- Establish the project Constitution: non-negotiable principles, decision authority, reporting
+  cadence, and escalation rules specific to this project (`/pf-0b-constitution`) — layered on top
+  of the framework-wide `.github/copilot-instructions.md`, not a restatement of it.
 - Conduct structured discovery: business need, objectives, success criteria, high-level scope,
   assumptions, constraints, high-level risks, key stakeholders, milestone targets.
 - Decompose the approved Charter into a Scope Statement and a Work Breakdown Structure that

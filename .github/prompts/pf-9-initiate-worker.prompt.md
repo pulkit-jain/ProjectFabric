@@ -19,3 +19,10 @@ own, dedicated conversation, one per Worker identity.
    what was delivered, which acceptance criteria are met/unmet, any new risks or issues
    discovered, and what's needed from the Project Manager next.
 5. Tell the user to return to the Manager conversation and run `/pf-10-check-report`.
+
+## If this conversation runs long
+
+Don't wait to be cut off. If execution is taking multiple long exchanges and you notice this
+conversation approaching its context limit before the work package is done, proactively tell the
+user to run `/pf-13-handoff` now — log progress to `memory/work-packages/WP-<id>.md` first so
+nothing unlogged is lost.

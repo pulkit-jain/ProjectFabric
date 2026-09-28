@@ -28,3 +28,9 @@ and (in coordination with the Cost Manager perspective) update `.pmo/cost-perfor
 7. Present the Status Report to the user. If it surfaces a baseline breach (schedule or cost),
    tell the user to run `/pf-12-change-request`. Otherwise, continue the assign/report loop with
    `/pf-8-assign-task`.
+
+## If this conversation runs long
+
+Don't wait to be cut off. If reviewing Tracker, Risk, Cost, and Stakeholder state across several
+exchanges pushes this conversation toward its context limit before the Status Report is written,
+proactively tell the user to run `/pf-13-handoff` now.

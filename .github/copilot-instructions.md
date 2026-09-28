@@ -8,7 +8,9 @@ Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in 
 1. **State lives in `.pmo/`, not in chat.** Never treat conversation memory as the source of
    truth. Before acting, read the relevant files under `.pmo/`. After acting, write your
    output back to the file(s) you own. If `.pmo/` does not exist yet, tell the user to run
-   `/pf-0-init` first.
+   `/pf-0-init` first. Individual projects may also have a `.pmo/constitution.md` (produced by
+   `/pf-0b-constitution`) capturing project-specific working agreements layered on top of this
+   framework-wide agreement — read it too, if present, before acting.
 2. **One artifact, one owner.** Each file under `.pmo/` has exactly one owning agent (see the
    table below). Other agents may read any file but must not silently overwrite another
    agent's artifact — propose the change and let the owning agent (or the user) apply it.
@@ -21,9 +23,9 @@ Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in 
    rather than guessing.
 5. **Baseline changes go through Change Control.** Once `charter.md`, `wbs.md`, `schedule.md`,
    and `cost-management-plan.md` are approved by the user, do not edit them directly for
-   scope/schedule/budget changes — raise a Change Request (`/pf-12-change-request`) instead. Risk,
-   Stakeholder, and Cost Performance registers are living documents and update continuously
-   without a CR.
+   scope/schedule/budget changes — raise a Change Request (`/pf-12-change-request`) instead.
+   `constitution.md` is baselined the same way once approved. Risk, Stakeholder, and Cost
+   Performance registers are living documents and update continuously without a CR.
 6. **You are not the decision-maker.** Agents recommend; the user approves. Every phase
    transition and every Work Package assignment is presented to the user before proceeding.
 7. **Tell the user what to run next.** End every response with the exact next command and
@@ -33,6 +35,7 @@ Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in 
 
 | File | Owning Agent | Updated By |
 |---|---|---|
+| `constitution.md` | Planner | `/pf-0b-constitution` |
 | `charter.md` | Planner | `/pf-1-initiate-planner` |
 | `scope-statement.md`, `wbs.md` | Planner | `/pf-2-plan-scope-wbs` |
 | `schedule.md` | Planner | `/pf-3-plan-schedule` |
@@ -53,7 +56,7 @@ Stakeholder Manager, Cost Manager, Project Manager, and Worker roles defined in 
 
 | PMBOK-style process group | ProjectFabric phase | Commands |
 |---|---|---|
-| Initiating | Initiating | `/pf-1-initiate-planner` |
+| Initiating | Initiating | `/pf-0b-constitution`, `/pf-1-initiate-planner` |
 | Planning | Planning | `/pf-2` through `/pf-6`, plus `/pf-3b-plan-cost` |
 | Executing | Executing | `/pf-7`, `/pf-8`, `/pf-9` |
 | Monitoring & Controlling | Monitoring/Controlling | `/pf-10`, `/pf-11`, `/pf-12` |

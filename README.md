@@ -26,6 +26,7 @@ docs/
   architecture.md           # file-based state model, extension points
   knowledge-areas.md        # PMBOK-style coverage matrix (v1 vs planned)
 .pmo/                        # created per-project by /pf-0-init (see below)
+  constitution.md
   charter.md
   scope-statement.md
   wbs.md
@@ -49,15 +50,18 @@ docs/
 1. Copy this repository's `.github/` and `templates/` directories into your project (or clone this repo at your project root).
 2. Open GitHub Copilot Chat in VS Code (agent mode).
 3. Run `/pf-0-init` to scaffold `.pmo/` from the templates.
-4. Run `/pf-1-initiate-planner` and answer the discovery questions. This produces your Charter.
-5. Follow the Planning phase commands in order (see table below) to build Scope/WBS, Schedule, Risk Register, Stakeholder Register, and RACI.
-6. Run `/pf-7-initiate-manager` to start coordinated execution. The Manager tells you exactly which command to run next and in which conversation.
+4. Run `/pf-0b-constitution` to set project-specific working agreements (optional but recommended
+   — decision authority, reporting cadence, escalation rules).
+5. Run `/pf-1-initiate-planner` and answer the discovery questions. This produces your Charter.
+6. Follow the Planning phase commands in order (see table below) to build Scope/WBS, Schedule, Risk Register, Stakeholder Register, and RACI.
+7. Run `/pf-7-initiate-manager` to start coordinated execution. The Manager tells you exactly which command to run next and in which conversation.
 
 ## Commands
 
 | Phase | Command | Produces |
 |---|---|---|
 | Setup | `/pf-0-init` | `.pmo/` scaffolded from templates |
+| Initiating | `/pf-0b-constitution` | `constitution.md` |
 | Initiating | `/pf-1-initiate-planner` | `charter.md` |
 | Planning | `/pf-2-plan-scope-wbs` | `scope-statement.md`, `wbs.md` |
 | Planning | `/pf-3-plan-schedule` | `schedule.md` |

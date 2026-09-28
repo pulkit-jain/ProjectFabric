@@ -16,10 +16,13 @@ write state.
    suffix) and leaving placeholder fields intact for the owning agent to fill in later:
    ```
    .pmo/
+     constitution.md
      charter.md
      scope-statement.md
      wbs.md
      schedule.md
+     cost-management-plan.md
+     cost-performance.md
      risk-register.md
      stakeholder-register.md
      raci.md
@@ -33,4 +36,5 @@ write state.
      closing/           (empty — populated by /pf-14-close-project)
    ```
 3. Confirm the structure was created and tell the user the next command is
-   `/pf-1-initiate-planner`.
+   `/pf-0b-constitution` (or `/pf-1-initiate-planner` directly if the user wants to skip the
+   constitution step for a lightweight project).

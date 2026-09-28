@@ -16,3 +16,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Change Request, and Lessons Learned.
 - `docs/architecture.md` describing the file-based state model and future extension points.
 - `docs/knowledge-areas.md` describing v1 vs planned PMBOK-style knowledge area coverage.
+- Cost Management knowledge area: `pf-cost-manager` agent, `/pf-3b-plan-cost` command (slotted
+  between `/pf-3-plan-schedule` and `/pf-4-plan-risk` without renumbering existing commands),
+  `cost-management-plan.template.md` and `cost-performance.template.md` (supporting both
+  Lightweight budget-vs-actual and Full EVM tracking modes, chosen per project). Wired into
+  `/pf-11-control-cycle`, the Status Report template (Cost Highlights), and the Change Request
+  template (Cost impact dimension + baseline reference).
+- Project Constitution pattern (inspired by GitHub Spec Kit): `/pf-0b-constitution` command and
+  `constitution.template.md`, capturing project-specific principles, decision authority,
+  reporting cadence, escalation rules, and project-level Definition of Done — layered on top of
+  the framework-wide `copilot-instructions.md`. Owned by the Planner; baselined via Change
+  Control once approved.
+- Proactive checkpoint/resume hints in the long-running prompts (`/pf-7-initiate-manager`,
+  `/pf-9-initiate-worker`, `/pf-11-control-cycle`) pointing to `/pf-13-handoff` before a
+  conversation hits its context limit, rather than only after.
