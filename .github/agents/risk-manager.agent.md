@@ -35,4 +35,4 @@ invoked at planning time and again during every control cycle.
 
 ## Handoff
 
-After initial risk planning, tell the user to run `/pf-5-plan-stakeholders` next.
+After initial risk planning, tell the user to run `/pf-4b-plan-quality` next.

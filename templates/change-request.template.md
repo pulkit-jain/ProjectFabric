@@ -30,4 +30,4 @@
 ## Baseline Updates Required
 
 <!-- Which section(s) of wbs.md / schedule.md / scope-statement.md / cost-management-plan.md /
-resource-management-plan.md changed, and how -->
+resource-management-plan.md / quality-management-plan.md changed, and how -->

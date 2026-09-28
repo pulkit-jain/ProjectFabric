@@ -18,6 +18,10 @@
 
 <!-- Any resource over-allocated or in conflict across concurrent work packages this cycle -->
 
+## Quality Highlights
+
+<!-- QA gate pass/fail this cycle; any recurring defect pattern or metric trend flagged -->
+
 ## Stakeholder Notes
 
 <!-- Any engagement drift observed -->

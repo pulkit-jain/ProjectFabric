@@ -13,6 +13,7 @@ reserved for v2 rather than bolted on shallowly.
 | Schedule Management | Planning | `schedule.md` | Planner |
 | Cost Management | Planning, Monitoring & Controlling | `cost-management-plan.md`, `cost-performance.md` | Cost Manager |
 | Risk Management | Planning, Monitoring & Controlling | `risk-register.md` | Risk Manager |
+| Quality Management | Planning, Executing, Monitoring & Controlling | `quality-management-plan.md`, `quality-control-log.md` | Quality Manager |
 | Stakeholder Management | Initiating, Planning, Monitoring & Controlling | `stakeholder-register.md` | Stakeholder Manager |
 | Communications Management (partial) | Planning, Executing | `communications-plan.md` | Stakeholder Manager |
 | Project Organization | Planning | `raci.md` | Project Manager |
@@ -22,7 +23,6 @@ reserved for v2 rather than bolted on shallowly.
 
 | Knowledge Area | Why deferred | What v2 would add |
 |---|---|---|
-| Quality Management | Acceptance criteria in the WBS Dictionary cover basic quality today | Formal Quality Management Plan, quality metrics, control charts, dedicated QA review gate before "Done" |
 | Procurement Management | Not every project has external procurement | Make-or-buy analysis, vendor/contract register, procurement risk cross-referenced with `risk-register.md` |
 | Communications Management (full) | Folded into Stakeholder Manager for v1 | Dedicated agent if communications complexity outgrows what Stakeholder Manager can own alongside engagement |
 

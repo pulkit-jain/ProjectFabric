@@ -20,4 +20,4 @@ Act as the `pf-risk-manager` agent (see `.github/agents/risk-manager.agent.md`).
    Exploit/Share/Enhance/Accept for opportunities), an owner, and — where applicable — a trigger
    condition the Project Manager should watch for.
 5. Present the Risk Register to the user for review.
-6. Tell the user the next command is `/pf-5-plan-stakeholders`.
+6. Tell the user the next command is `/pf-4b-plan-quality`.

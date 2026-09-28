@@ -39,6 +39,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Request template (Resource impact dimension + baseline reference).
 - `ROADMAP.md`: governance doc tracking knowledge-area coverage status and the framework-feature
   backlog evaluated from reference-repo research, with Done/Planned/Deferred/Rejected markers.
+- Quality Management knowledge area: `pf-quality-manager` agent, `/pf-4b-plan-quality` command
+  (slotted between `/pf-4-plan-risk` and `/pf-5-plan-stakeholders`),
+  `quality-management-plan.template.md` (standards, metrics, QA vs. QC approach, QA gate
+  criteria) and `quality-control-log.template.md` (living per-work-package gate review log with
+  trend notes). Wired into `/pf-10-check-report` (a work package cannot be set to "Done" until it
+  passes the QA gate), `/pf-11-control-cycle` (defect trend review), the Status Report template
+  (Quality Highlights), the Change Request template (baseline reference), and the Worker agent
+  (QA gate awareness alongside WBS acceptance criteria).
 
 ### Fixed
 

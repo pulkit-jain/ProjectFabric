@@ -34,6 +34,8 @@ docs/
   cost-management-plan.md
   cost-performance.md
   risk-register.md
+  quality-management-plan.md
+  quality-control-log.md
   stakeholder-register.md
   raci.md
   resource-management-plan.md
@@ -69,6 +71,7 @@ docs/
 | Planning | `/pf-3-plan-schedule` | `schedule.md` |
 | Planning | `/pf-3b-plan-cost` | `cost-management-plan.md` |
 | Planning | `/pf-4-plan-risk` | `risk-register.md` |
+| Planning | `/pf-4b-plan-quality` | `quality-management-plan.md` |
 | Planning | `/pf-5-plan-stakeholders` | `stakeholder-register.md`, `communications-plan.md` |
 | Planning | `/pf-6-plan-organization` | `raci.md` |
 | Planning | `/pf-6b-plan-resources` | `resource-management-plan.md` |

@@ -21,8 +21,8 @@ Status legend: ✅ Done · 🔜 Planned (not started) · ⏸ Deferred (intention
 | Communications Management (partial) | ✅ Done | `communications-plan.md` | Stakeholder Manager |
 | Project Organization | ✅ Done | `raci.md` | Project Manager |
 | Resource Management (depth) | ✅ Done | `resource-management-plan.md`, `resource-allocation.md` | Resource Manager |
-| **Quality Management** | 🔜 **Next** | Quality Management Plan, quality metrics, QA review gate before "Done" | Quality Manager (new) |
-| Procurement Management | 🔜 Planned | Make-or-buy analysis, vendor/contract register | Procurement Manager (new) |
+| Quality Management | ✅ Done | `quality-management-plan.md`, `quality-control-log.md` (QA gate before "Done") | Quality Manager |
+| **Procurement Management** | 🔜 **Next** | Make-or-buy analysis, vendor/contract register | Procurement Manager (new) |
 | Communications Management (full) | ⏸ Deferred | Dedicated agent if complexity outgrows Stakeholder Manager | — |
 
 ## Framework Features
@@ -52,19 +52,17 @@ Evaluated against 10 reference multi-agent PM/SDLC repos and GitHub Spec Kit (se
 
 ## Next Up
 
-1. **Quality Management** — dedicated Quality Manager agent, Quality Management Plan, QA review
-   gate before a work package is marked "Done" in `tracker.md`.
-2. **Procurement Management** — dedicated Procurement Manager agent, make-or-buy analysis,
+1. **Procurement Management** — dedicated Procurement Manager agent, make-or-buy analysis,
    vendor/contract register cross-referenced with `risk-register.md`.
-3. Re-evaluate the "Framework Features" backlog above once the PJM knowledge-area kit is complete.
+2. Re-evaluate the "Framework Features" backlog above once the PJM knowledge-area kit is complete.
 
 ## Governance
 
 - One artifact, one owner — see the Artifact Ownership table in
   [.github/copilot-instructions.md](.github/copilot-instructions.md).
 - Baseline documents (`charter.md`, `wbs.md`, `schedule.md`, `cost-management-plan.md`,
-  `resource-management-plan.md`, `constitution.md`) change only through
-  `/pf-12-change-request`, never by direct edit, once approved.
+  `resource-management-plan.md`, `quality-management-plan.md`, `constitution.md`) change only
+  through `/pf-12-change-request`, never by direct edit, once approved.
 - New `/pf-N` commands are inserted with letter suffixes (e.g. `/pf-3b-plan-cost`,
   `/pf-6b-plan-resources`) between existing numbered commands rather than renumbering, so no
   existing command name ever changes.

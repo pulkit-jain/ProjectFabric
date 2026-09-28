@@ -6,8 +6,9 @@ description: Run a periodic monitoring & controlling pass across Tracker, Risk, 
 
 Act as the `pf-project-manager` agent. Read `tracker.md`, `schedule.md`, `risk-register.md`,
 `stakeholder-register.md`, `cost-management-plan.md`, and `resource-management-plan.md`; produce
-`.pmo/reports/status-<date>.md` and (in coordination with the Cost Manager and Resource Manager
-perspectives) update `.pmo/cost-performance.md` and `.pmo/resource-allocation.md`.
+`.pmo/reports/status-<date>.md` and (in coordination with the Cost Manager, Resource Manager, and
+Quality Manager perspectives) update `.pmo/cost-performance.md`, `.pmo/resource-allocation.md`,
+and `.pmo/quality-control-log.md`'s Trend Notes.
 
 ## Steps
 
@@ -24,12 +25,15 @@ perspectives) update `.pmo/cost-performance.md` and `.pmo/resource-allocation.md
 5. Update `resource-allocation.md` (in coordination with the Resource Manager perspective):
    refresh assignment/utilization per resource against `resource-management-plan.md`'s capacity
    plan, and flag any resource over-allocated across concurrent work packages.
-6. Determine an overall status color: Green (on track), Yellow (at risk, being managed), or Red
+6. Review `quality-control-log.md` (in coordination with the Quality Manager perspective) for
+   recurring defect patterns or a metric trending the wrong way across work packages, and add a
+   Trend Note if one exists.
+7. Determine an overall status color: Green (on track), Yellow (at risk, being managed), or Red
    (baseline breach requiring a decision).
-7. Write `reports/status-<date>.md` using `templates/status-report.template.md`: accomplishments
+8. Write `reports/status-<date>.md` using `templates/status-report.template.md`: accomplishments
    since last cycle, upcoming work, open issues/blockers, risk highlights, cost highlights,
-   resource highlights, stakeholder notes, and any change requests raised.
-8. Present the Status Report to the user. If it surfaces a baseline breach (schedule, cost, or
+   resource highlights, quality highlights, stakeholder notes, and any change requests raised.
+9. Present the Status Report to the user. If it surfaces a baseline breach (schedule, cost, or
    resource conflict), tell the user to run `/pf-12-change-request`. Otherwise, continue the
    assign/report loop with `/pf-8-assign-task`.
 
