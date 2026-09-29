@@ -17,8 +17,10 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
   marked Done. A Procurement Manager owns make-or-buy analysis and vendor/contract management. A
   Stakeholder Manager owns stakeholder analysis and engagement. A Project Manager coordinates
   execution, tracks variance, and controls change. A Scrum Master runs an optional Agile ceremony
-  layer (sprint planning, standup, backlog refinement, retro) alongside the PMBOK track, gated by
-  the project's Workflow Preset. Workers execute individual work packages.
+  layer (sprint planning, standup, sprint review, retro, backlog refinement) alongside the PMBOK
+  track, gated by the project's Workflow Preset — there is no dedicated Product Owner agent, the
+  user plays that role for backlog priority and acceptance decisions. Workers execute individual
+  work packages.
 - **State lives in files.** Every artifact is a plain Markdown file under `.pmo/`. Agents are stateless between sessions — they re-read the files. This makes handoffs, audits, and future tooling (dashboards, a real backend) possible without redesigning anything.
 - **You are the checkpoint.** Every phase transition, every task assignment, every change request is delivered to you to review before it becomes baseline. Nothing silently rewrites the plan.
 
@@ -97,6 +99,7 @@ docs/
 | Executing | `/pf-9-initiate-worker` | Worker executes, logs to `memory/work-packages/` |
 | Monitoring | `/pf-10-check-report` | `tracker.md` updated |
 | Monitoring | `/pf-10b-backlog-refinement` | `sprint-backlog.md` upcoming candidates (Agile ceremony layer) |
+| Monitoring | `/pf-10c-sprint-review` | `sprint-backlog.md` review outcomes (Agile ceremony layer) |
 | Monitoring | `/pf-11-control-cycle` | `reports/status-<date>.md` |
 | Monitoring | `/pf-11b-sprint-retro` | `retro-log.md` (Agile ceremony layer) |
 | Controlling | `/pf-12-change-request` | `changes/CR-<id>.md` |

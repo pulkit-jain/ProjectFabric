@@ -27,4 +27,5 @@ Manager perspective) `.pmo/quality-control-log.md`.
    `schedule.md` directly.
 6. If the work package is Done and unblocks further work, tell the user the next command is
    `/pf-8-assign-task` to dispatch the next eligible work package. If a full status sweep is due,
-   suggest `/pf-11-control-cycle` instead.
+   suggest `/pf-11-control-cycle` instead. If this project is running the Agile ceremony layer and
+   the sprint's work packages are all Done, suggest `/pf-10c-sprint-review` before the retro.

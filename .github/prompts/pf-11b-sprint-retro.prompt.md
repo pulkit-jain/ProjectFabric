@@ -4,16 +4,18 @@ description: Capture what went well, what didn't, and action items at a sprint b
 
 # /pf-11b-sprint-retro
 
-Act as the `pf-scrum-master` agent. Read `standup-log.md` and `tracker.md` for the sprint just
-ended; append to `.pmo/retro-log.md`.
+Act as the `pf-scrum-master` agent. Read `standup-log.md`, `tracker.md`, and `sprint-backlog.md`'s
+Sprint Review Outcomes for the sprint just ended; append to `.pmo/retro-log.md`.
 
 ## Steps
 
-1. Ask the user (or infer from `standup-log.md`/`tracker.md`) what went well, what didn't, and
-   any action items for the sprint just ended.
-2. Append a dated Sprint Retro section to `retro-log.md` using
+1. If `/pf-10c-sprint-review` hasn't run yet for this sprint, tell the user to run it first —
+   retro reflects on the process, review accepts the product; do the review first.
+2. Ask the user (or infer from `standup-log.md`/`tracker.md`/Sprint Review outcomes) what went
+   well, what didn't, and any action items for the sprint just ended.
+3. Append a dated Sprint Retro section to `retro-log.md` using
    `templates/retro-log.template.md`, with action items in a table (Action / Owner / Status).
-3. If an action item requires a scope, schedule, or budget change, tell the user
+4. If an action item requires a scope, schedule, or budget change, tell the user
    `/pf-12-change-request` is needed rather than editing baseline documents directly.
-4. Tell the user the retro is logged and, if the project is continuing, the next ceremony is
+5. Tell the user the retro is logged and, if the project is continuing, the next ceremony is
    `/pf-7b-sprint-planning` for the next sprint.

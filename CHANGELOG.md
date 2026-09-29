@@ -38,6 +38,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added a **Sprint Review** ceremony (`/pf-10c-sprint-review`) to the Agile ceremony layer,
+  closing the gap flagged when reviewing AGL-02: ProjectFabric has no dedicated Product Owner
+  agent, and Sprint Review is where that role's acceptance authority needs to be exercised
+  explicitly. Runs after `/pf-10-check-report` marks the sprint's work packages Done and before
+  `/pf-11b-sprint-retro` — the user (acting as Product Owner) accepts or rejects each completed
+  work package against its WBS Dictionary acceptance criteria; a passed QA gate is necessary but
+  not sufficient for acceptance. `sprint-backlog.template.md`'s current-sprint table gets a new
+  "Sprint Review Outcome" column (Not Reviewed / Accepted / Rejected). `scrum-master.agent.md`
+  now states the Product-Owner gap explicitly and reorders its Responsibilities to match real
+  ceremony order (Planning → Standup → Review → Retro → Backlog Refinement, the last being
+  ongoing rather than sprint-boundary-bound). Wired into `pf-10-check-report.prompt.md` and
+  `pf-11b-sprint-retro.prompt.md`'s cross-references, `copilot-instructions.md`,
+  `docs/knowledge-areas.md`, `README.md`, and `ROADMAP.md`'s AGL-02 note.
 - Built AGL-02, the Agile/Scrum ceremony layer, as **core** (option 1 from the plugin-vs-core
   discussion — chosen so ceremony engagement is gated by the Workflow Preset like any other
   phase, not a separate install step). New `pf-scrum-master` agent owns three new artifacts

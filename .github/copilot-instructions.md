@@ -53,7 +53,7 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 | `raci.md` | Project Manager | `/pf-6-plan-organization` |
 | `resource-management-plan.md` | Resource Manager | `/pf-6b-plan-resources` |
 | `resource-allocation.md` | Resource Manager | ongoing during execution, updated each `/pf-11-control-cycle` |
-| `sprint-backlog.md` | Scrum Master | `/pf-7b-sprint-planning`, `/pf-10b-backlog-refinement` (Agile ceremony layer, gated by Workflow Preset) |
+| `sprint-backlog.md` | Scrum Master | `/pf-7b-sprint-planning`, `/pf-10b-backlog-refinement`, `/pf-10c-sprint-review` (Agile ceremony layer, gated by Workflow Preset) |
 | `standup-log.md` | Scrum Master | `/pf-8b-standup` (Agile ceremony layer) |
 | `retro-log.md` | Scrum Master | `/pf-11b-sprint-retro` (Agile ceremony layer) |
 | `tracker.md` | Project Manager | `/pf-10-check-report`, ongoing |
@@ -74,7 +74,8 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 | Executing | Executing | `/pf-7`, `/pf-8`, `/pf-9`, plus `/pf-7b-sprint-planning` and `/pf-8b-standup`
   (Agile ceremony layer, gated by Workflow Preset) |
 | Monitoring & Controlling | Monitoring/Controlling | `/pf-10`, `/pf-11`, `/pf-12`, plus
-  `/pf-10b-backlog-refinement` and `/pf-11b-sprint-retro` (Agile ceremony layer) |
+  `/pf-10b-backlog-refinement`, `/pf-10c-sprint-review`, and `/pf-11b-sprint-retro` (Agile
+  ceremony layer) |
 | Closing | Closing | `/pf-14` |
 
 See [docs/knowledge-areas.md](../docs/knowledge-areas.md) for which knowledge areas each phase covers.

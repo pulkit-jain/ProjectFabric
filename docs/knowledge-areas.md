@@ -55,8 +55,10 @@ agent asks the user whether to run it or skip it for this project, rather than a
   Cost, Quality, Procurement, and Resource-depth planning as pull-based — plan them only once the
   project actually needs formal tracking, a quality gate, a vendor contract, or capacity
   conflicts, rather than by default. Pairs with the Agile ceremony layer (Scrum Master agent —
-  `/pf-7b-sprint-planning`, `/pf-8b-standup`, `/pf-10b-backlog-refinement`,
-  `/pf-11b-sprint-retro`), engaged by default.
+  `/pf-7b-sprint-planning`, `/pf-8b-standup`, `/pf-10c-sprint-review`,
+  `/pf-10b-backlog-refinement`, `/pf-11b-sprint-retro`), engaged by default. There is no
+  dedicated Product Owner agent — the user plays that role for backlog priority and Sprint
+  Review acceptance decisions, per Design Principle 3.
 - **lean**: only the phases needed to start assigning and tracking work are required; everything
   else is offered but skipped unless the user asks for it. Intended for small or short-lived
   projects where full PMBOK ceremony would cost more than it returns.

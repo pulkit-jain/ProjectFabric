@@ -6,9 +6,12 @@
 
 **Sprint Goal:**
 
-| WBS ID | Work Package | Acceptance Criteria (from WBS Dictionary) | Status |
-|---|---|---|---|
-| | | | Not Started |
+| WBS ID | Work Package | Acceptance Criteria (from WBS Dictionary) | Status | Sprint Review Outcome |
+|---|---|---|---|---|
+| | | | Not Started | Not Reviewed |
+
+<!-- Sprint Review Outcome values: Not Reviewed / Accepted / Rejected (rework needed) — set by
+/pf-10c-sprint-review, with the user acting as Product Owner (see scrum-master.agent.md). -->
 
 ## Upcoming Sprint Candidates (Backlog Refinement)
 
