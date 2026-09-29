@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Revised Design Principle 1 in `docs/architecture.md` from "Zero-code" to **"No infrastructure"**:
+  still no backend service, database, installed CLI/package, or long-running orchestration
+  engine, but deterministic helper scripts are now explicitly encouraged for tasks with one
+  provably-correct answer — math (EVM calculations), sorting (risk register order),
+  schema/ID validation (WBS 100%-rule, RACI one-A rule, cross-file ID consistency), and file
+  scaffolding (`/pf-0-init`) — bundled under a Skill or a plain `scripts/` folder, invoked by an
+  agent, never running unattended. Propagated the rename to `README.md`'s Architecture &
+  Extensibility section and every `ROADMAP.md` entry that cited the old "Zero-code" name.
+  `ROADMAP.md`'s "JSON-Schema validated artifacts" entry split in two: the artifact-format
+  replacement (Markdown → JSON) stays Deferred, and a new "Deterministic helper scripts" entry
+  is now Planned, since it's explicitly allowed by the revised principle.
+
 ### Added
 
 - `ROADMAP.md` Framework Features backlog: added a tracked entry for a Skills layer
@@ -18,6 +32,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   ai-sdlc's schema-checked resources) and State in GitHub Issues instead of files (à la
   ai-scrum-master-template's Kanban-as-Issue) — each with the trade-off against ProjectFabric's
   zero-code, portable-plain-text design principles.
+- `docs/architecture.md`: added a canonical "Design Principles" section (Zero-code, State lives
+  in portable plain-text files, The user is the checkpoint, One artifact one owner) consolidating
+  statements that were previously scattered across README.md, copilot-instructions.md, and
+  test-plan.md. `ROADMAP.md`'s Rejected/Deferred Framework Features entries and README.md's
+  "Architecture & Extensibility" section now cite this section directly instead of re-deriving
+  the rationale in ad-hoc phrasing each time.
 - Roadmap entries for future one-way Confluence artifact publishing, Jira work-package
   projection, and a local external integration manifest, with bidirectional synchronization
   explicitly deferred until the projection model is validated.

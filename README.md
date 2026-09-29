@@ -103,7 +103,7 @@ dedicated Communications Management agent remains deferred to v2.
 
 ## Architecture & Extensibility
 
-ProjectFabric v1 is a prompt/agent framework only — no backend, no UI. It is deliberately architected so a future web UI or MCP server could read the same `.pmo/` files directly. See [docs/architecture.md](docs/architecture.md).
+ProjectFabric v1 is a prompt/agent framework only — no backend, no UI. It is deliberately architected so a future web UI or MCP server could read the same `.pmo/` files directly. See [docs/architecture.md](docs/architecture.md) for the full architecture, including the four canonical [Design Principles](docs/architecture.md#design-principles) (No infrastructure, State lives in portable plain-text files, The user is the checkpoint, One artifact one owner) that every new feature is evaluated against.
 
 ## License
 

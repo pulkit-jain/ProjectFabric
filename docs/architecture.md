@@ -1,5 +1,34 @@
 # Architecture
 
+## Design Principles
+
+These four principles are the canonical statement of what ProjectFabric v1 deliberately is and
+isn't. They're referenced (not re-derived) whenever a new feature is evaluated in
+[../ROADMAP.md](../ROADMAP.md)'s Framework Features table — a feature that requires abandoning
+one of them needs an explicit, deliberate trade-off decision, not a default.
+
+1. **No infrastructure.** No backend service, no database, no installed CLI/package, no
+   long-running or autonomous orchestration engine — every capability is a Markdown agent/prompt
+   file that Copilot reads directly, and distribution is a manual folder copy. This does **not**
+   mean no code at all: deterministic helper scripts are encouraged wherever a task has one
+   provably-correct answer — math (e.g. EVM's PV/EV/AC → CPI/SPI/EAC), sorting (e.g. keeping
+   `risk-register.md` ordered by score), schema/ID validation (e.g. WBS 100%-rule, RACI's
+   one-Accountable rule, cross-file ID consistency), or file scaffolding (e.g. `/pf-0-init`
+   copying templates). These are bundled as assets under a Skill (see the Skills layer in
+   `ROADMAP.md`) or a plain `scripts/` folder, invoked by an agent on demand — they never run
+   unattended and never make a decision for the user, they just compute or check one deterministic
+   thing an LLM would otherwise do slower, more expensively, and less reliably.
+2. **State lives in portable plain-text files.** All project state is plain Markdown under
+   `.pmo/` — diffable and readable in any editor or Git host without tooling, and usable fully
+   offline. Also Ground Rule 1 in [../.github/copilot-instructions.md](../.github/copilot-instructions.md)
+   and [../README.md](../README.md)'s "State lives in files".
+3. **The user is the checkpoint.** No autonomous agent dispatch — every phase transition, task
+   assignment, and baseline change is delivered to the user for review before it takes effect.
+   Also Ground Rule 6 in `copilot-instructions.md` and this doc's "Non-goals for v1" below.
+4. **One artifact, one owner.** Each `.pmo/` file has exactly one owning agent; other agents may
+   read it but must propose changes rather than silently overwrite it. Also Ground Rule 2 and
+   the Artifact Ownership table in `copilot-instructions.md`.
+
 ## Why file-based state
 
 ProjectFabric agents are stateless between sessions by design — a Planner conversation and a
