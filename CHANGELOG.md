@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `ROADMAP.md` Framework Features backlog: added a tracked entry for a Skills layer
+  (`.github/skills/<name>/SKILL.md`) — on-demand bundled reference material for agents
+  (EVM formulas, RACI facilitation technique, quality-audit checklists), a VS Code Copilot
+  customization primitive not yet used anywhere in ProjectFabric.
+- `ROADMAP.md`: enriched the Plugin/extension pattern and Embedding-based routing rows with
+  concrete examples, and added two new Rejected entries — JSON-Schema validated artifacts (à la
+  ai-sdlc's schema-checked resources) and State in GitHub Issues instead of files (à la
+  ai-scrum-master-template's Kanban-as-Issue) — each with the trade-off against ProjectFabric's
+  zero-code, portable-plain-text design principles.
+- Roadmap entries for future one-way Confluence artifact publishing, Jira work-package
+  projection, and a local external integration manifest, with bidirectional synchronization
+  explicitly deferred until the projection model is validated.
 - Initial scaffold: `copilot-instructions.md`, agent definitions (Planner, Risk Manager,
   Stakeholder Manager, Project Manager, Worker), `/pf-0` through `/pf-14` prompt commands,
   artifact templates for Charter, Scope Statement, WBS, Schedule, Risk Register,
