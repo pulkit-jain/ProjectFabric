@@ -28,7 +28,9 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
    (`/pf-12-change-request`) instead. `constitution.md`, `quality-management-plan.md`, and
    `procurement-management-plan.md` are baselined the same way once approved. Risk, Stakeholder,
    Cost Performance, Resource Allocation, Quality Control, and Vendor/Contract registers are
-   living documents and update continuously without a CR.
+   living documents and update continuously without a CR. A judgment call that does **not**
+   change any baseline (e.g. picking between two equally-compliant approaches) is a Decision
+   (`/pf-12b-log-decision`), not a Change Request — see the Decision Log row below.
 6. **You are not the decision-maker.** Agents recommend; the user approves. Every phase
    transition and every Work Package assignment is presented to the user before proceeding.
 7. **Tell the user what to run next.** End every response with the exact next command and
@@ -62,6 +64,7 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 | `memory/work-packages/WP-<id>.md` | Worker | during execution |
 | `reports/status-<date>.md` | Project Manager | `/pf-11-control-cycle` |
 | `changes/CR-<id>.md` | Project Manager | `/pf-12-change-request` |
+| `decisions/DEC-<id>.md` | Project Manager | `/pf-12b-log-decision` (any agent may propose one) |
 | `closing/lessons-learned.md`, `closing/final-report.md` | Planner + Project Manager | `/pf-14-close-project` |
 
 ## Process Group Mapping
@@ -74,8 +77,8 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 | Executing | Executing | `/pf-7`, `/pf-8`, `/pf-9`, plus `/pf-7b-sprint-planning` and `/pf-8b-standup`
   (Agile ceremony layer, gated by Workflow Preset) |
 | Monitoring & Controlling | Monitoring/Controlling | `/pf-10`, `/pf-11`, `/pf-12`, plus
-  `/pf-10b-backlog-refinement`, `/pf-10c-sprint-review`, and `/pf-11b-sprint-retro` (Agile
-  ceremony layer) |
+  `/pf-10b-backlog-refinement`, `/pf-10c-sprint-review`, `/pf-11b-sprint-retro` (Agile
+  ceremony layer), and `/pf-12b-log-decision` (Decision Log) |
 | Closing | Closing | `/pf-14` |
 
 See [docs/knowledge-areas.md](../docs/knowledge-areas.md) for which knowledge areas each phase covers.

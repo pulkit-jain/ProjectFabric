@@ -62,6 +62,7 @@ docs/
   memory/work-packages/WP-<id>.md
   reports/status-<date>.md
   changes/CR-<id>.md
+  decisions/DEC-<id>.md
   closing/lessons-learned.md, final-report.md
 ```
 
@@ -103,6 +104,7 @@ docs/
 | Monitoring | `/pf-11-control-cycle` | `reports/status-<date>.md` |
 | Monitoring | `/pf-11b-sprint-retro` | `retro-log.md` (Agile ceremony layer) |
 | Controlling | `/pf-12-change-request` | `changes/CR-<id>.md` |
+| Controlling | `/pf-12b-log-decision` | `decisions/DEC-<id>.md` |
 | Any | `/pf-13-handoff` | Handoff prompt for a fresh Manager/Worker instance |
 | Closing | `/pf-14-close-project` | `closing/lessons-learned.md`, `closing/final-report.md` |
 

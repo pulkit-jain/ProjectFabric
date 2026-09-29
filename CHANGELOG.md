@@ -38,6 +38,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `GOV-02`, the Decision Log: new `/pf-12b-log-decision` command (pairs with
+  `/pf-12-change-request`, same as the Agile ceremony layer's pairing pattern) writes
+  `decisions/DEC-<id>.md` from `templates/decision-record.template.md` — context, options
+  considered, the decision and why, consequences, and a Decision Owner. Status lifecycle Draft →
+  Signed-off → Superseded (by a later `DEC-<id>`, never deleted). Any agent may propose a
+  decision; the Project Manager owns the log, same ownership pattern as Change Requests. Ground
+  Rule 5 in `copilot-instructions.md` now explicitly distinguishes a Decision (no baseline impact)
+  from a Change Request (baseline impact). Wired into `copilot-instructions.md` (Artifact
+  Ownership, Process Group Mapping), `pf-0-init.prompt.md` (scaffolds `decisions/`), `README.md`
+  (directory tree, commands table), and `ROADMAP.md` (GOV-02 → Done, plus added as a 9th
+  mechanism in the Governance section's Audit Trail table).
 - Added an "Audit Trail" subsection to `ROADMAP.md`'s Governance section, resolving the forward
   reference left by `INF-12`'s note. Documents the 8 existing mechanisms that together provide
   "what changed and why" today (git history, `changes/CR-<id>.md`, `constitution.md`'s Amendments

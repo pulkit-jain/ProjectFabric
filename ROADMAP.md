@@ -78,7 +78,7 @@ at a glance.
 | ID | Feature | Status | Notes |
 |---|---|---|---|
 | GOV-01 | Project Constitution (`/pf-0b-constitution`) | ✅ Done | Project-specific principles, decision authority, reporting cadence, escalation rules — layered on top of framework-wide `copilot-instructions.md`. Inspired by GitHub Spec Kit. |
-| GOV-02 | Decision log (`.pmo/decisions/`, lifecycle draft→signed-off→superseded) | 🔜 Planned | From ai-sdlc RFC pattern. For judgment calls that aren't scope/schedule/budget changes (so don't need a full Change Request). |
+| GOV-02 | Decision log (`.pmo/decisions/`, lifecycle draft→signed-off→superseded) | ✅ Done | From ai-sdlc RFC pattern. For judgment calls that aren't scope/schedule/budget changes (so don't need a full Change Request). New `/pf-12b-log-decision` command (pairs with `/pf-12-change-request`) writes `decisions/DEC-<id>.md` from `templates/decision-record.template.md`; any agent may propose one, Project Manager owns the log. Status lifecycle Draft → Signed-off → Superseded (by a later `DEC-<id>`, never deleted). |
 | GOV-03 | Team-level customization layer (`.pmo/team.md`, between framework-wide `copilot-instructions.md` and project-specific `constitution.md`) | 🔜 Planned | From aidlc-workflows' org/team/project memory layering (ProjectFabric currently only has the org and project layers). Useful for an organization running many ProjectFabric projects that wants shared team standards (e.g. "our team always uses Full EVM") without editing every project's `constitution.md` individually. Low priority until someone is actually running multiple concurrent ProjectFabric projects. |
 
 ### Session & Context Management
@@ -159,6 +159,7 @@ exist yet):
 | `reports/status-<date>.md` | Dated status snapshots at each control cycle |
 | `quality-control-log.md`, `vendor-contract-register.md` | QA gate pass/fail history, contract variance history |
 | `standup-log.md` / `retro-log.md` (Agile ceremony layer) | Append-only, dated ceremony entries |
+| `decisions/DEC-<id>.md` (`GOV-02`) | Judgment calls that aren't scope/schedule/budget changes, with lifecycle Draft → Signed-off → Superseded |
 
 - One artifact, one owner — see the Artifact Ownership table in
   [.github/copilot-instructions.md](.github/copilot-instructions.md).

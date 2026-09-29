@@ -44,6 +44,7 @@ write state.
        work-packages/   (empty — populated by Workers)
      reports/           (empty — populated by /pf-11-control-cycle)
      changes/           (empty — populated by /pf-12-change-request)
+     decisions/         (empty — populated by /pf-12b-log-decision)
      closing/           (empty — populated by /pf-14-close-project)
    ```
 4. Fill in the freshly-copied `constitution.md`'s Workflow Preset field with the user's choice
