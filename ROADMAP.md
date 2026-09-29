@@ -152,8 +152,9 @@ Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organ
   competing sources of truth; integrations must retain stable external IDs and require user
   approval before creating or changing external records.
 - Every entry in the Infrastructure Features and Other Framework Features tables above is
-  evaluated against the four Design Principles in
+  evaluated against the five Design Principles in
   [docs/architecture.md](docs/architecture.md#design-principles) (No infrastructure, State lives
-  in portable plain-text files, The user is the checkpoint, One artifact one owner) — cite these
-  directly rather than re-deriving the rationale each time.
+  in portable plain-text files, The user is the checkpoint, One artifact one owner,
+  Extensibility & customization by addition never modification) — cite these directly rather
+  than re-deriving the rationale each time.
 - This file and `CHANGELOG.md` are both updated in the same turn as any change to this repo.

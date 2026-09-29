@@ -2,7 +2,7 @@
 
 ## Design Principles
 
-These four principles are the canonical statement of what ProjectFabric v1 deliberately is and
+These five principles are the canonical statement of what ProjectFabric v1 deliberately is and
 isn't. They're referenced (not re-derived) whenever a new feature is evaluated in
 [../ROADMAP.md](../ROADMAP.md)'s Framework Features table — a feature that requires abandoning
 one of them needs an explicit, deliberate trade-off decision, not a default.
@@ -28,6 +28,15 @@ one of them needs an explicit, deliberate trade-off decision, not a default.
 4. **One artifact, one owner.** Each `.pmo/` file has exactly one owning agent; other agents may
    read it but must propose changes rather than silently overwrite it. Also Ground Rule 2 and
    the Artifact Ownership table in `copilot-instructions.md`.
+5. **Extensibility & customization by addition, never by modification.** New capability —
+   plugins, skills, project-specific customization — must layer on top of the core framework
+   without editing it: plugins live under `plugins/<name>/` and install by copying files into
+   core directories (see `plugins/README.md`), never patching a core agent/prompt/template in
+   place; agents get situational reference material (formulas, checklists, technique catalogs)
+   split into a `.github/skills/<name>/SKILL.md` file loaded on demand rather than bloating the
+   agent body for every invocation; project-specific working agreements go in
+   `.pmo/constitution.md`, layered on top of (not replacing) this framework-wide agreement. A
+   feature that requires editing core files to customize behavior violates this principle.
 
 ## Why file-based state
 

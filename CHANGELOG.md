@@ -38,6 +38,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added a 5th Design Principle to `docs/architecture.md`: **"Extensibility & customization by
+  addition, never by modification."** Codifies the pattern already in use (plugins install by
+  copying files into core dirs, Skills split situational reference material out of agent bodies,
+  `.pmo/constitution.md` layers project-specific rules on top of the framework-wide agreement)
+  as an explicit, citable principle so future features are evaluated against it the same way as
+  the other four.
 - Evaluated all 9 agents for Skills candidates and built 7 more (8 total): `pf-critical-path-reference`
   (Planner — CPM forward/backward pass, float, worked example), `pf-risk-identification-reference`
   (Risk Manager — elicitation techniques + concrete Probability/Impact scale anchors),
