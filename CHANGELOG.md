@@ -38,6 +38,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Extensibility & Customization area built out (reorganizing existing agents before adding new
+  features, per user request): all 9 agent files (`.github/agents/*.agent.md`) now declare a
+  real VS Code `tools:` allow-list (`[read, edit, search]`, Worker adds `execute`) and open with
+  a plain-language **Tier:** statement (Judgment for the 8 planning/managing agents, Execution
+  for Worker). `plugins/README.md` documents the additive plugin convention
+  (`.pf-plugin/plugin.json` manifest, install-by-copy/uninstall-by-delete, core untouched). First
+  real Skill built: `.github/skills/pf-evm-reference/SKILL.md` (EVM formulas, computation order,
+  interpretation table, worked example), extracted out of `cost-manager.agent.md` so the formulas
+  only load on demand. `ROADMAP.md`'s "Agent frontmatter tier + `disallowedTools`" idea corrected
+  to reflect VS Code's real schema (`tools:` allow-list, not a `disallowedTools` deny-list) —
+  another stale assumption caught by actually implementing the feature, same pattern as prior
+  test-run bugs.
 - `ROADMAP.md` Framework Features: 13 sub-items broken out into their own explicit `└` rows for
   full traceability under Full backend/UI (WebSockets, Docker/Kubernetes, domain-specific
   vertical templates), Database-backed state (SQLite/Postgres/Valkey, ORM schemas, WASM plugin
