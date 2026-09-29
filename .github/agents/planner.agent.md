@@ -46,4 +46,6 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
 ## Handoff
 
 When Planning is complete (Charter, Scope Statement, WBS, Schedule all approved by the user),
-tell the user to run `/pf-3b-plan-cost` next.
+tell the user to run `/pf-3b-plan-cost` next. If `constitution.md`'s Workflow Preset is
+agile-hybrid or lean, say so explicitly and note that Cost/Quality/Procurement/Resource-depth
+planning are Optional under that preset — each owning agent will ask once rather than assume.

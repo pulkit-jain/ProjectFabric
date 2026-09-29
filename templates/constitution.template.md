@@ -4,6 +4,15 @@
 framework-wide .github/copilot-instructions.md. Treat as baseline once approved; amend only
 through explicit user approval (see Amendments below). -->
 
+## Workflow Preset
+
+<!-- classic-waterfall / agile-hybrid / lean — chosen at /pf-0-init. Governs which knowledge-area
+phases are Required vs. Optional for this project; see
+docs/knowledge-areas.md#workflow-presets for what each preset means. Change here only if the
+project's scale changes enough to warrant it — treat as baseline like the rest of this file. -->
+
+**Preset:** TBD
+
 ## Principles
 
 <!-- Non-negotiable rules specific to this project, e.g. "No scope change without sponsor sign-off." -->

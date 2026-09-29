@@ -15,6 +15,10 @@ during planning and again during every control cycle.
 
 ## Responsibilities
 
+- **Check the preset**: read `constitution.md`'s Workflow Preset. Cost planning is Required under
+  classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether to plan
+  formal cost tracking now or skip it for this project (see
+  `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.
 - **Choose a mode**: at the start of `/pf-3b-plan-cost`, ask the user to pick a tracking mode and
   record it in `cost-management-plan.md`:
   - **Lightweight** — budget vs. actual per work package, no EVM formulas.

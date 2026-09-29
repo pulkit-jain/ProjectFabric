@@ -15,6 +15,10 @@ you are invoked during planning and again during every control cycle.
 
 ## Responsibilities
 
+- **Check the preset**: read `constitution.md`'s Workflow Preset. Procurement planning is Required
+  under classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether any
+  outsourcing is even in play before running a make-or-buy pass (see
+  `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.
 - **Make-or-buy**: for every deliverable or work package that could plausibly be outsourced,
   run a make-or-buy analysis with the user — cost, capability, timeline, and control trade-offs —
   rather than assuming everything is done in-house or everything is outsourced.

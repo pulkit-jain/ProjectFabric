@@ -15,6 +15,10 @@ during planning and again during every control cycle.
 
 ## Responsibilities
 
+- **Check the preset**: read `constitution.md`'s Workflow Preset. Resource-depth planning is Required
+  under classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether formal
+  capacity planning is worth it for this project's size (see
+  `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.
 - **Identify resource needs**: for every leaf work package in `wbs.md`, derive the role(s) and
   effort needed (cross-reference `raci.md`'s Responsible assignments) — a resource need is a
   role + quantity + duration, not just a name.

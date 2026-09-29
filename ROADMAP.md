@@ -86,7 +86,7 @@ at a glance.
 
 | Feature | Status | Notes |
 |---|---|---|
-| Scope/workflow presets (classic-waterfall / agile-hybrid / lean) at `/pf-0-init` | 🔜 Planned | From aidlc-workflows "scope" concept — vary which phases/gates run per project size. |
+| Scope/workflow presets (classic-waterfall / agile-hybrid / lean) at `/pf-0-init` | ✅ Done | From aidlc-workflows "scope" concept — vary which phases/gates run per project size. Preset chosen at `/pf-0-init`, recorded in `constitution.md`'s new Workflow Preset field, defined authoritatively in `docs/knowledge-areas.md#workflow-presets` (Required/Optional per knowledge area per preset). Cost/Quality/Procurement/Resource-depth managers now check the preset first and ask once before planning if Optional; Planner's handoff calls out the preset explicitly. |
 | Agile/Scrum ceremony layer (sprint planning, standup, retro, backlog refinement) | 🔜 Planned | Alternate track alongside the PMBOK waterfall track, from copilot-scrum-team. Larger effort — needs its own design pass. |
 
 ### Work Package Lifecycle & Quality Gates

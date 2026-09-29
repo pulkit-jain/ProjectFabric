@@ -38,6 +38,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Scope/workflow presets (classic-waterfall / agile-hybrid / lean), chosen at `/pf-0-init` and
+  recorded in `constitution.md`'s new Workflow Preset field. `docs/knowledge-areas.md` gets a new
+  "Workflow Presets" section defining, per preset, which knowledge areas are Required vs. Optional
+  (agile-hybrid keeps the Scope/Schedule/Risk/Stakeholder/RACI backbone but pulls in Cost/
+  Quality/Procurement/Resource-depth only when needed; lean requires only the minimum to start
+  assigning and tracking work). Cost, Quality, Procurement, and Resource Manager agents each got a
+  new "Check the preset" responsibility bullet — they read the preset first and ask once before
+  planning if their phase is Optional, rather than assuming yes. Planner's Handoff now calls out
+  the preset explicitly when recommending the next command.
 - Added a 5th Design Principle to `docs/architecture.md`: **"Extensibility & customization by
   addition, never by modification."** Codifies the pattern already in use (plugins install by
   copying files into core dirs, Skills split situational reference material out of agent bodies,
