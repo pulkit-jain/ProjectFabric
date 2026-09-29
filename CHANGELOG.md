@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `ROADMAP.md`'s "Other Framework Features" section split into 7 area sub-headings —
+  Governance & Decisions, Session & Context Management, Agile / Alternate Methodology Track,
+  Work Package Lifecycle & Quality Gates, Reporting & Communication, Extensibility &
+  Customization, Automation & Tooling — each with its own mini-table, so coverage/gaps per
+  functional area are scannable at a glance instead of one long undifferentiated list.
+- `ROADMAP.md` reorganized into three logical groups: **Knowledge Area Coverage (PMBOK-style)**
+  (unchanged), **Infrastructure Features** (external integrations, distribution, data
+  storage/runtime, backend/UI — Confluence/Jira projections, MCP server, multi-assistant support,
+  Full backend/UI + sub-items, Database-backed state + sub-items, Workflow execution
+  engine/CLI installer + sub-items, JSON-schema artifacts, GitHub Issues state), and **Other
+  Framework Features** (pure prompt/agent/template mechanics needing no infrastructure —
+  Constitution, handoff, DoR, decision log, scope presets, agile ceremony layer, plugin pattern,
+  Skills layer, deterministic helper scripts, batch assignment, automation rules, team-level
+  customization, embedding-based routing). Previously all lived in one undifferentiated
+  "Framework Features" table.
 - Revised Design Principle 1 in `docs/architecture.md` from "Zero-code" to **"No infrastructure"**:
   still no backend service, database, installed CLI/package, or long-running orchestration
   engine, but deterministic helper scripts are now explicitly encouraged for tasks with one

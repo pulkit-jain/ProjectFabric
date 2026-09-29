@@ -25,63 +25,108 @@ Status legend: ✅ Done · 🔜 Planned (not started) · ⏸ Deferred (intention
 | Procurement Management | ✅ Done | `procurement-management-plan.md`, `vendor-contract-register.md` | Procurement Manager |
 | Communications Management (full) | ⏸ Deferred | Dedicated agent if complexity outgrows Stakeholder Manager | — |
 
-## Framework Features
+## Infrastructure Features
 
-Evaluated against 10 reference multi-agent PM/SDLC repos and GitHub Spec Kit (see
-`/memories/repo/reference-repos-comparison.md` for full research notes).
+External systems, distribution, data storage/runtime, and backend/UI — the "heavier" category
+evaluated against 10 reference multi-agent PM/SDLC repos and GitHub Spec Kit (see
+`/memories/repo/reference-repos-comparison.md` for full research notes). Every Rejected entry
+here contradicts Design Principle 1 (No infrastructure) or 2 (portable plain-text files) unless
+noted otherwise — see [docs/architecture.md](docs/architecture.md#design-principles).
 
 | Feature | Status | Notes |
 |---|---|---|
-| Project Constitution (`/pf-0b-constitution`) | ✅ Done | Project-specific principles, decision authority, reporting cadence, escalation rules — layered on top of framework-wide `copilot-instructions.md`. Inspired by GitHub Spec Kit. |
-| Checkpoint/resume hints | ✅ Done | `/pf-7`, `/pf-9`, `/pf-11` proactively point to `/pf-13-handoff` before hitting a context limit, not just after. |
-| Handoff protocol | ✅ Done (basic) | `/pf-13-handoff` exists. Lighter than APM's two-artifact (Handover_File + Handover_Prompt) pattern — revisit only if single-prompt handoff proves insufficient in practice. |
-| Definition of Ready checklist (before Work Package assignment) | 🔜 Planned | From copilot-scrum-team / ai-sdlc DoR rubric. |
-| Decision log (`.pmo/decisions/`, lifecycle draft→signed-off→superseded) | 🔜 Planned | From ai-sdlc RFC pattern. For judgment calls that aren't scope/schedule/budget changes (so don't need a full Change Request). |
-| Structured status-update headers (`## AgentName - ActionType`) | 🔜 Planned | Trivial consistency win from ai-scrum-master-template. |
-| Scope/workflow presets (classic-waterfall / agile-hybrid / lean) at `/pf-0-init` | 🔜 Planned | From aidlc-workflows "scope" concept — vary which phases/gates run per project size. |
-| Agile/Scrum ceremony layer (sprint planning, standup, retro, backlog refinement) | 🔜 Planned | Alternate track alongside the PMBOK waterfall track, from copilot-scrum-team. Larger effort — needs its own design pass. |
-| Plugin/extension pattern (`plugins/<name>/` additive, untouched core) | 🔜 Planned | From aidlc-workflows. E.g. an Agile/Scrum track shipped as `plugins/scrum-team/agents/scrum-master.agent.md` + `plugins/scrum-team/prompts/pf-scrum-standup.prompt.md` + a `.pf-plugin/plugin.json` manifest, installed additively into `.github/` without touching core files; uninstalling deletes the folder and core is byte-identical to before. A `templates/catalog.json` (from Spec Kit's catalog pattern) listing available templates/plugin contributions would ride along with this rather than being built separately. Low priority until a real third-party extension need appears. |
-| Agent frontmatter tier + `disallowedTools` (judgment/execution/advisory) | 🔜 Planned | From aidlc-workflows AGENTS.md convention. Low priority, clarity-only change. |
-| Skills layer (`.github/skills/<name>/SKILL.md`) | 🔜 Planned | A real VS Code Copilot customization primitive ProjectFabric doesn't use yet — on-demand bundled reference material (EVM formula derivations, RACI facilitation technique, quality-audit checklists) loaded only when an agent actually needs it, instead of living inline in every `.agent.md` file. Inspired by APM's `skills/` plugin directory. |
-| Memory/session archiving (`.pmo/archives/`, stage summaries) | 🔜 Planned | From APM. Only valuable once projects routinely run long enough to need it. |
 | External integration manifest (`.pmo/integrations/`) | 🔜 Planned | Record Confluence page IDs/URLs and Jira issue keys locally so external projections are auditable and idempotent while `.pmo/` remains the source of truth. |
 | Confluence artifact publishing | 🔜 Planned | Publish approved `.pmo/` artifacts into a predictable Confluence project page tree with preserved tables, ownership, status, and links back to local artifacts. First version is explicitly one-way. |
 | Jira work-package projection | 🔜 Planned | Create and update Jira issues for WBS leaf work packages, retaining the WP ID, acceptance criteria, dependencies, assignee, and local/Jira links. Requires explicit user approval before creating issues. |
 | Bidirectional Confluence/Jira synchronization | ⏸ Deferred | Resolve external edits, conflict handling, permissions, deletion, and status mapping only after one-way publication and stable external ID tracking have been validated. |
-| MCP server exposing `.pmo/` as tools | ⏸ Deferred | Already an explicit v2 extension point in `docs/architecture.md`. Requires a running server — contradicts Design Principle 1 (No infrastructure, see `docs/architecture.md#design-principles`); revisit once v1 knowledge areas are complete. |
+| MCP server exposing `.pmo/` as tools | ⏸ Deferred | Already an explicit v2 extension point in `docs/architecture.md`. Requires a running server — contradicts Design Principle 1; revisit once v1 knowledge areas are complete. |
 | Multi-assistant support (Claude/Cursor folders) | ⏸ Deferred | No second assistant to support yet; revisit if requested. |
-| Full backend/UI (dashboard, Kanban board, real-time board) | ❌ Rejected | Evaluated via agent-scrum, paca, ai-sdlc dashboard. Contradicts Design Principle 1 (No infrastructure, see `docs/architecture.md#design-principles`) — a future read-only renderer over `.pmo/` remains a valid v2+ idea, but not a priority. |
-| └ WebSockets / real-time collaboration channels | ❌ Rejected | Sub-item of Full backend/UI, from agent-scrum & paca. Real-time push updates need a persistent connection/server process; contradicts Design Principle 1. |
-| └ Docker/Kubernetes deployment | ❌ Rejected | Sub-item of Full backend/UI, from agent-scrum, paca & ai-sdlc. Containerized deployment implies a running service to deploy in the first place; contradicts Design Principle 1. |
+| Replacing Markdown artifacts with JSON+schema files (e.g. `wbs.json` + `wbs.schema.json`) | ⏸ Deferred | From ai-sdlc. Already anticipated as a v2+ "structured data migration" in `docs/architecture.md`'s Extension Points, but not needed now — deterministic validation scripts (see Other Framework Features) can check the existing Markdown tables directly without changing the artifact format or losing "just read the Markdown" readability. |
+| Full backend/UI (dashboard, Kanban board, real-time board) | ❌ Rejected | Evaluated via agent-scrum, paca, ai-sdlc dashboard. A future read-only renderer over `.pmo/` remains a valid v2+ idea, but not a priority. |
+| └ WebSockets / real-time collaboration channels | ❌ Rejected | Sub-item of Full backend/UI, from agent-scrum & paca. Real-time push updates need a persistent connection/server process. |
+| └ Docker/Kubernetes deployment | ❌ Rejected | Sub-item of Full backend/UI, from agent-scrum, paca & ai-sdlc. Containerized deployment implies a running service to deploy in the first place. |
 | └ Domain-specific vertical workflow templates (Publisher/Sales/HR/Security boards) | ❌ Rejected | From agent-scrum's template system. ProjectFabric stays PMBOK-generic by design (see `docs/knowledge-areas.md`); vertical/domain templates would be a different, narrower product. |
-| Database-backed state (Postgres/SQLite) | ❌ Rejected | Contradicts Design Principle 2 (State lives in portable plain-text files, see `docs/architecture.md#design-principles`) — Markdown + git is the state model by design. |
+| Database-backed state (Postgres/SQLite) | ❌ Rejected | Contradicts Design Principle 2 — Markdown + git is the state model by design. |
 | └ Relational/cache datastores (SQLite/Postgres/Valkey) | ❌ Rejected | Sub-item of Database-backed state, from agent-scrum & paca, named explicitly per technology considered. Same rationale — Design Principle 2. |
 | └ ORM-defined relational schema (e.g. SQLAlchemy models) | ❌ Rejected | Sub-item of Database-backed state, from agent-scrum & paca. Same rationale — Design Principle 2; there is no relational schema to define when state is Markdown tables. |
 | └ WASM plugin sandboxing | ❌ Rejected | Sub-item of Database-backed state / Plugin pattern, from paca. Only needed when plugins execute untrusted third-party code in an app runtime; the Planned plugin pattern is additive Markdown files with no code execution, so sandboxing doesn't apply. |
-| Workflow execution engine / CLI installer (à la Spec Kit's `specify` CLI) | ❌ Rejected | Contradicts Design Principle 1 (No infrastructure) — an installed package/engine, not a small on-demand helper script. Copilot-only, manual-copy distribution is intentional; no multi-agent abstraction layer needed at current scope. |
+| Workflow execution engine / CLI installer (à la Spec Kit's `specify` CLI) | ❌ Rejected | An installed package/engine, not a small on-demand helper script. Copilot-only, manual-copy distribution is intentional; no multi-agent abstraction layer needed at current scope. |
 | └ git-worktree pooling / isolated parallel execution branches | ❌ Rejected | Sub-item of Workflow execution engine, from APM & ai-sdlc. Isolated git worktrees per parallel Worker require an orchestrator process managing them; T7's test run already proved true parallel Worker dispatch works via plain file state without this. |
-| └ Autonomous polling/dispatch loop (no user approval per step) | ❌ Rejected | Sub-item of Workflow execution engine, from agent-scrum's LangGraph swarm loop. Directly contradicts Design Principle 3 (the user is the checkpoint). |
+| └ Autonomous polling/dispatch loop (no user approval per step) | ❌ Rejected | Sub-item of Workflow execution engine, from agent-scrum's LangGraph swarm loop. Directly contradicts Design Principle 3 (the user is the checkpoint) instead. |
 | └ Cryptographic supply-chain attestations (DSSE) | ❌ Rejected | Sub-item of Workflow execution engine, from ai-sdlc. Needs PKI infrastructure and a signing/verification service; ProjectFabric's artifacts aren't code shipped to production, so provenance signing doesn't apply. |
 | └ Real-time signal/metric ingestion pipeline | ❌ Rejected | Sub-item of Workflow execution engine, from ai-sdlc. Needs a running ingestion service; a periodic `/pf-11-control-cycle` read of `.pmo/` files is the deliberate lower-tech substitute. |
-| └ Multi-language script parity (bash/powershell/python triplicates) | ❌ Rejected | Sub-item of Workflow execution engine, from Spec Kit. Only needed when shipping a cross-platform CLI; Deterministic helper scripts (Planned, see below) can target one runtime since they're invoked locally by the agent, not distributed. |
+| └ Multi-language script parity (bash/powershell/python triplicates) | ❌ Rejected | Sub-item of Workflow execution engine, from Spec Kit. Only needed when shipping a cross-platform CLI; Deterministic helper scripts (Planned, see Other Framework Features) can target one runtime since they're invoked locally by the agent, not distributed. |
 | └ Wheel/package asset bundling for offline distribution | ❌ Rejected | Sub-item of Workflow execution engine, from Spec Kit. Only relevant if ProjectFabric became an installable package; manual folder copy is the intentional distribution model. |
 | └ Dynamic template rendering engine (Jinja2 + conditional logic) | ❌ Rejected | Sub-item of Workflow execution engine, from Spec Kit. `templates/*.template.md` use plain Markdown with light variable substitution at most; a full conditional templating engine is unneeded complexity for artifacts a human fills in directly. |
-| Replacing Markdown artifacts with JSON+schema files (e.g. `wbs.json` + `wbs.schema.json`) | ⏸ Deferred | From ai-sdlc. Already anticipated as a v2+ "structured data migration" in `docs/architecture.md`'s Extension Points, but not needed now — deterministic validation scripts (see below) can check the existing Markdown tables directly without changing the artifact format or losing "just read the Markdown" readability. |
-| Deterministic helper scripts (EVM math, WBS 100%-rule / RACI one-A / cross-file ID validation, `/pf-0-init` template scaffolding, backlog/artifact drift detection) | 🔜 Planned | Now explicitly encouraged by Design Principle 1 (No infrastructure, revised to allow deterministic code) — an LLM computing PV/EV/AC/CPI/SPI or re-deriving a sort order by hand is slower, costlier, and less reliable than a small script. Includes ai-sdlc-style drift detection (e.g. every `bus/<worker>/task.md` has a matching `tracker.md` row, every risk ID referenced in `tracker.md` exists in `risk-register.md`). Bundle under a Skill or a plain `scripts/` folder, invoked by the agent, never running unattended. |
-| Batch/parallel task assignment (`/pf-8-assign-task` dispatches multiple eligible Workers in one action) | 🔜 Planned | From APM's batch dispatch pattern. T3/T4 test runs already proved `tracker.md` correctly handles two Workers genuinely "In Progress" at once when dispatched manually, one at a time — this would formalize dispatching all currently-eligible, independent work packages in a single `/pf-8` invocation instead of re-running the command per Worker. |
-| Trigger-action automation rules (`.pmo/automation.yml`, e.g. "if cost variance > threshold then flag for CR") | 🔜 Planned | From paca's event-driven workflow engine. A user-editable, inspectable rule list that supplements (not replaces) agent judgment — distinct from Deterministic helper scripts above (rules are human-authored conditions; scripts are computations an agent invokes). Low priority — agent working-style sections already encode most of this today. |
+| State in GitHub Issues instead of files (Kanban-as-Issue, label-triggered automation) | ❌ Rejected | From ai-scrum-master-template. E.g. `tracker.md` becomes a single GitHub Issue whose body is rewritten on every status change, with a GitHub Action watching label changes to auto-trigger the next step. Gains free visibility in GitHub's Projects UI, but contradicts Design Principle 2 and locks the framework to one specific GitHub repo. |
+
+## Other Framework Features
+
+Prompt/agent/template-level mechanics that don't require any infrastructure — evaluated against
+the same 11 reference repos, grouped by functional area so coverage/gaps per area are scannable
+at a glance.
+
+### Governance & Decisions
+
+| Feature | Status | Notes |
+|---|---|---|
+| Project Constitution (`/pf-0b-constitution`) | ✅ Done | Project-specific principles, decision authority, reporting cadence, escalation rules — layered on top of framework-wide `copilot-instructions.md`. Inspired by GitHub Spec Kit. |
+| Decision log (`.pmo/decisions/`, lifecycle draft→signed-off→superseded) | 🔜 Planned | From ai-sdlc RFC pattern. For judgment calls that aren't scope/schedule/budget changes (so don't need a full Change Request). |
 | Team-level customization layer (`.pmo/team.md`, between framework-wide `copilot-instructions.md` and project-specific `constitution.md`) | 🔜 Planned | From aidlc-workflows' org/team/project memory layering (ProjectFabric currently only has the org and project layers). Useful for an organization running many ProjectFabric projects that wants shared team standards (e.g. "our team always uses Full EVM") without editing every project's `constitution.md` individually. Low priority until someone is actually running multiple concurrent ProjectFabric projects. |
+
+### Session & Context Management
+
+| Feature | Status | Notes |
+|---|---|---|
+| Checkpoint/resume hints | ✅ Done | `/pf-7`, `/pf-9`, `/pf-11` proactively point to `/pf-13-handoff` before hitting a context limit, not just after. |
+| Handoff protocol | ✅ Done (basic) | `/pf-13-handoff` exists. Lighter than APM's two-artifact (Handover_File + Handover_Prompt) pattern — revisit only if single-prompt handoff proves insufficient in practice. |
+| Memory/session archiving (`.pmo/archives/`, stage summaries) | 🔜 Planned | From APM. Only valuable once projects routinely run long enough to need it. |
+
+### Agile / Alternate Methodology Track
+
+| Feature | Status | Notes |
+|---|---|---|
+| Scope/workflow presets (classic-waterfall / agile-hybrid / lean) at `/pf-0-init` | 🔜 Planned | From aidlc-workflows "scope" concept — vary which phases/gates run per project size. |
+| Agile/Scrum ceremony layer (sprint planning, standup, retro, backlog refinement) | 🔜 Planned | Alternate track alongside the PMBOK waterfall track, from copilot-scrum-team. Larger effort — needs its own design pass. |
+
+### Work Package Lifecycle & Quality Gates
+
+| Feature | Status | Notes |
+|---|---|---|
+| Definition of Ready checklist (before Work Package assignment) | 🔜 Planned | From copilot-scrum-team / ai-sdlc DoR rubric. |
+| Batch/parallel task assignment (`/pf-8-assign-task` dispatches multiple eligible Workers in one action) | 🔜 Planned | From APM's batch dispatch pattern. T3/T4 test runs already proved `tracker.md` correctly handles two Workers genuinely "In Progress" at once when dispatched manually, one at a time — this would formalize dispatching all currently-eligible, independent work packages in a single `/pf-8` invocation instead of re-running the command per Worker. |
+
+### Reporting & Communication
+
+| Feature | Status | Notes |
+|---|---|---|
+| Structured status-update headers (`## AgentName - ActionType`) | 🔜 Planned | Trivial consistency win from ai-scrum-master-template. |
+
+### Extensibility & Customization
+
+| Feature | Status | Notes |
+|---|---|---|
+| Plugin/extension pattern (`plugins/<name>/` additive, untouched core) | 🔜 Planned | From aidlc-workflows. E.g. an Agile/Scrum track shipped as `plugins/scrum-team/agents/scrum-master.agent.md` + `plugins/scrum-team/prompts/pf-scrum-standup.prompt.md` + a `.pf-plugin/plugin.json` manifest, installed additively into `.github/` without touching core files; uninstalling deletes the folder and core is byte-identical to before. A `templates/catalog.json` (from Spec Kit's catalog pattern) listing available templates/plugin contributions would ride along with this rather than being built separately. Low priority until a real third-party extension need appears. |
+| Agent frontmatter tier + `disallowedTools` (judgment/execution/advisory) | 🔜 Planned | From aidlc-workflows AGENTS.md convention. Low priority, clarity-only change. |
+| Skills layer (`.github/skills/<name>/SKILL.md`) | 🔜 Planned | A real VS Code Copilot customization primitive ProjectFabric doesn't use yet — on-demand bundled reference material (EVM formula derivations, RACI facilitation technique, quality-audit checklists) loaded only when an agent actually needs it, instead of living inline in every `.agent.md` file. Inspired by APM's `skills/` plugin directory. |
+
+### Automation & Tooling
+
+| Feature | Status | Notes |
+|---|---|---|
+| Deterministic helper scripts (EVM math, WBS 100%-rule / RACI one-A / cross-file ID validation, `/pf-0-init` template scaffolding, backlog/artifact drift detection) | 🔜 Planned | Now explicitly encouraged by Design Principle 1 (No infrastructure, revised to allow deterministic code) — an LLM computing PV/EV/AC/CPI/SPI or re-deriving a sort order by hand is slower, costlier, and less reliable than a small script. Includes ai-sdlc-style drift detection (e.g. every `bus/<worker>/task.md` has a matching `tracker.md` row, every risk ID referenced in `tracker.md` exists in `risk-register.md`). Bundle under a Skill or a plain `scripts/` folder, invoked by the agent, never running unattended. |
+| Trigger-action automation rules (`.pmo/automation.yml`, e.g. "if cost variance > threshold then flag for CR") | 🔜 Planned | From paca's event-driven workflow engine. A user-editable, inspectable rule list that supplements (not replaces) agent judgment — distinct from Deterministic helper scripts above (rules are human-authored conditions; scripts are computations an agent invokes). Low priority — agent working-style sections already encode most of this today. |
 | Embedding-based routing / iterative LLM evaluator loops | ❌ Rejected | From AgenticAI_ND_P2. E.g. the user types "I'm worried about vendor risk" instead of `/pf-4-plan-risk`, and a routing layer embeds the request plus each agent's capability description and picks the closest match automatically. Design Principle 3 (the user is the checkpoint) already provides the quality gate; the added LLM cost per turn and the new misrouting failure mode (e.g. a cost question routed to the Risk Manager) aren't justified. |
-| State in GitHub Issues instead of files (Kanban-as-Issue, label-triggered automation) | ❌ Rejected | From ai-scrum-master-template. E.g. `tracker.md` becomes a single GitHub Issue whose body is rewritten on every status change, with a GitHub Action watching label changes to auto-trigger the next step. Gains free visibility in GitHub's Projects UI, but contradicts Design Principle 2 (state lives in portable, offline-readable plain-text files) and locks the framework to one specific GitHub repo. |
 
 ## Next Up
 
 The core PMBOK-style knowledge-area kit is now complete (Integration, Scope, Schedule, Cost,
 Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organization). Next:
 
-1. Re-evaluate the "Framework Features" backlog above (Definition of Ready, decision log,
-   structured status headers, scope presets, agile ceremony layer, plugin pattern, agent tiers,
-  session archiving, and external tool projections) now that the knowledge-area kit is done.
+1. Re-evaluate the "Infrastructure Features" and "Other Framework Features" backlogs above
+   (Definition of Ready, decision log, structured status headers, scope presets, agile ceremony
+   layer, plugin pattern, agent tiers, session archiving, and external tool projections) now that
+   the knowledge-area kit is done.
 2. Define the external integration manifest and approval flow, then design the first one-way
   Confluence publication and Jira work-package projection slices.
 3. Full Communications Management (dedicated agent) remains deferred until Stakeholder Manager's
@@ -106,8 +151,9 @@ Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organ
 - External systems such as Confluence and Jira are projections of approved `.pmo/` state, not
   competing sources of truth; integrations must retain stable external IDs and require user
   approval before creating or changing external records.
-- Every entry in the Framework Features table above is evaluated against the four Design
-  Principles in [docs/architecture.md](docs/architecture.md#design-principles) (No infrastructure,
-  State lives in portable plain-text files, The user is the checkpoint, One artifact one owner) —
-  cite these directly rather than re-deriving the rationale each time.
+- Every entry in the Infrastructure Features and Other Framework Features tables above is
+  evaluated against the four Design Principles in
+  [docs/architecture.md](docs/architecture.md#design-principles) (No infrastructure, State lives
+  in portable plain-text files, The user is the checkpoint, One artifact one owner) — cite these
+  directly rather than re-deriving the rationale each time.
 - This file and `CHANGELOG.md` are both updated in the same turn as any change to this repo.
