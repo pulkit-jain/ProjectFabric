@@ -38,6 +38,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Parked `INF-12`, an observability layer for agent activity, in `ROADMAP.md`'s Infrastructure
+  Features table as 🔜 Planned — not built yet. Two options recorded, not yet chosen between:
+  (a) file-based self-reported `.pmo/logs/agent-activity.jsonl` + a deterministic aggregation
+  script (fits Design Principle 1), or (b) an OpenTelemetry-style exporter for real latency/
+  token/cost metrics (needs a running collector, contradicts Design Principle 1). Audit trail
+  (what changed and why) is separately already covered by existing artifacts (CRs, tracker
+  variance notes, work-package memory logs, git history) — this item is specifically about
+  agent-activity telemetry, not audit trail.
 - Added a **Sprint Review** ceremony (`/pf-10c-sprint-review`) to the Agile ceremony layer,
   closing the gap flagged when reviewing AGL-02: ProjectFabric has no dedicated Product Owner
   agent, and Sprint Review is where that role's acceptance authority needs to be exercised
