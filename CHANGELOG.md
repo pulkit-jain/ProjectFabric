@@ -23,6 +23,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `ROADMAP.md` Framework Features: 13 sub-items broken out into their own explicit `└` rows for
+  full traceability under Full backend/UI (WebSockets, Docker/Kubernetes, domain-specific
+  vertical templates), Database-backed state (SQLite/Postgres/Valkey, ORM schemas, WASM plugin
+  sandboxing), and Workflow execution engine (git-worktree pooling, autonomous polling loops,
+  DSSE attestations, signal ingestion pipelines, multi-language script parity, wheel bundling,
+  Jinja2 templating) — previously subsumed silently under their parent category.
+- `ROADMAP.md` Framework Features: three new items found via a systematic one-by-one re-review of
+  all 11 reference repos (`Batch/parallel task assignment` from APM, `Trigger-action automation
+  rules` from paca, `Team-level customization layer` from aidlc-workflows' org/team/project
+  layering), plus enriched the existing `Deterministic helper scripts` row with ai-sdlc's
+  backlog/artifact drift-detection example and the `Plugin/extension pattern` row with Spec Kit's
+  template-catalog idea.
 - `ROADMAP.md` Framework Features backlog: added a tracked entry for a Skills layer
   (`.github/skills/<name>/SKILL.md`) — on-demand bundled reference material for agents
   (EVM formulas, RACI facilitation technique, quality-audit checklists), a VS Code Copilot
