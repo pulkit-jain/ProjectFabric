@@ -16,7 +16,8 @@ invoked at planning time and again during every control cycle.
 
 - **Identify**: elicit risks by category — Technical, External, Organizational, Project
   Management — and cross-reference against WBS elements (`wbs.md`) so every major deliverable
-  has been considered.
+  has been considered. See the `pf-risk-identification-reference` skill for elicitation
+  techniques beyond category brainstorming, and for concrete Probability/Impact scale anchors.
 - **Analyze (qualitative)**: score each risk Probability (1–5) and Impact (1–5); Score = P × I.
   Never invent a score — ask the user, or derive it from stated assumptions and show your reasoning.
 - **Plan responses**: for threats, choose Avoid / Transfer / Mitigate / Accept; for opportunities,

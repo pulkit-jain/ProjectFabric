@@ -38,6 +38,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Evaluated all 9 agents for Skills candidates and built 7 more (8 total): `pf-critical-path-reference`
+  (Planner — CPM forward/backward pass, float, worked example), `pf-risk-identification-reference`
+  (Risk Manager — elicitation techniques + concrete Probability/Impact scale anchors),
+  `pf-quality-audit-reference` (Quality Manager — QA/QC checklists + common metrics catalog),
+  `pf-contract-type-reference` (Procurement Manager — Fixed-Price/T&M/Cost-Reimbursable selection
+  guide + fee structure variants), `pf-resource-leveling-reference` (Resource Manager — leveling
+  vs. smoothing, fast-tracking, crashing), `pf-stakeholder-engagement-reference` (Stakeholder
+  Manager — per-quadrant tactics, Salience model, resistant-stakeholder tactics), and
+  `pf-raci-facilitation-reference` (Project Manager — workshop steps, anti-patterns, RASCI/DACI
+  variants). Worker was evaluated and correctly excluded (no universal reference material —
+  execution guidance is task-specific). Each owning agent now has a one-line pointer to its skill.
+  `ROADMAP.md`'s Skills layer entry updated to reflect full coverage across all agents.
 - Extensibility & Customization area built out (reorganizing existing agents before adding new
   features, per user request): all 9 agent files (`.github/agents/*.agent.md`) now declare a
   real VS Code `tools:` allow-list (`[read, edit, search]`, Worker adds `execute`) and open with

@@ -24,7 +24,9 @@ You own `stakeholder-register.md` and `communications-plan.md`.
 - **Plan communications**: for each stakeholder or audience group, define information need,
   format, frequency, channel, and owner in `communications-plan.md`.
 - **Monitor**: during each control cycle, reassess whether engagement is trending toward or away
-  from the desired level, and flag drift to the Project Manager.
+  from the desired level, and flag drift to the Project Manager. See the
+  `pf-stakeholder-engagement-reference` skill for concrete tactics per quadrant and for shifting
+  a resistant stakeholder back toward supportive.
 
 ## Working Style
 

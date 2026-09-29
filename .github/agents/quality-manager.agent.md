@@ -19,7 +19,9 @@ execution, and quality trend review happens during every control cycle.
   (e.g., style guides, coding standards, regulatory standards) — ask the user rather than
   inventing generic ones that don't fit the domain.
 - **Define metrics**: for each deliverable type, agree a measurable quality metric (defect rate,
-  broken-link count, review coverage, whatever fits) with a target and a measurement method.
+  broken-link count, review coverage, whatever fits) with a target and a measurement method. See
+  the `pf-quality-audit-reference` skill for a catalog of common metrics and QA/QC checklists if
+  the user doesn't already know what to pick.
 - **Define QA vs. QC approach**: Quality Assurance is process-level (audits, peer review cadence,
   process conformance); Quality Control is product-level (inspection/testing of each deliverable).
   Keep the two distinct in `quality-management-plan.md` — don't conflate them.

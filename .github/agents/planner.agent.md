@@ -24,7 +24,9 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
 - Write a WBS Dictionary entry for every leaf work package: description, deliverable, acceptance
   criteria, and owner placeholder.
 - Sequence work packages into a Schedule: dependencies, milestone dates, and a plain-language
-  note on the critical path (the chain of dependent work packages with no slack).
+  note on the critical path (the chain of dependent work packages with no slack). See the
+  `pf-critical-path-reference` skill for the forward/backward-pass method when the dependency
+  graph is too complex to eyeball.
 
 ## Working Style
 

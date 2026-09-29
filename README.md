@@ -27,7 +27,7 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
   copilot-instructions.md   # global working agreement, read by every agent
   agents/                   # role definitions (Planner, Risk Manager, ...)
   prompts/                  # /pf-N slash commands, one per workflow step
-  skills/                   # on-demand bundled reference material (e.g. pf-evm-reference)
+  skills/                   # on-demand bundled reference material (one per agent, where warranted)
 templates/                  # blank artifact templates, copied into .pmo/ at init
 plugins/                    # additive extensions (agents/prompts/templates), core untouched
 docs/

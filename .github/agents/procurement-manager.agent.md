@@ -20,7 +20,8 @@ you are invoked during planning and again during every control cycle.
   rather than assuming everything is done in-house or everything is outsourced.
 - **Choose contract types**: for anything going to a vendor, agree the contract type (fixed-price,
   time & materials, cost-reimbursable) that fits the risk allocation the user wants, and state
-  vendor selection criteria.
+  vendor selection criteria. See the `pf-contract-type-reference` skill for the selection guide
+  and risk-allocation trade-offs if the user is unsure which type fits.
 - **Cross-reference risk**: procurement introduces risk (vendor delay, vendor failure, contract
   disputes) that belongs in `risk-register.md` — flag candidate procurement risks to the Risk
   Manager rather than tracking a shadow risk list.

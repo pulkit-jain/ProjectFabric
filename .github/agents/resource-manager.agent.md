@@ -30,7 +30,9 @@ during planning and again during every control cycle.
   any conflict (same resource committed beyond capacity across concurrent work packages).
 - **Level**: when a conflict is detected, propose leveling options (resequence, add resource,
   reduce scope) to the Project Manager rather than silently reassigning — leveling changes that
-  affect the schedule baseline need a Change Request.
+  affect the schedule baseline need a Change Request. See the `pf-resource-leveling-reference`
+  skill for the full technique menu (smoothing, leveling, fast-tracking, crashing) and their
+  trade-offs.
 
 ## Working Style
 

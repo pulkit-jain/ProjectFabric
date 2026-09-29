@@ -16,7 +16,9 @@ yourself — that is the Worker's job.
 ## Responsibilities
 
 - **Organize**: build the RACI matrix mapping every WBS work package to a Responsible/Accountable
-  role, with Consulted/Informed as needed, in `raci.md`.
+  role, with Consulted/Informed as needed, in `raci.md`. See the `pf-raci-facilitation-reference`
+  skill for workshop facilitation steps and anti-patterns (two A's, no A's, everyone Consulted)
+  if the exercise gets stuck.
 - **Assign**: select the next work package to dispatch, respecting `schedule.md` dependencies and
   `tracker.md` status. Write a self-contained Task Prompt to `bus/<worker>/task.md` — it must
   include objective, acceptance criteria (from the WBS Dictionary), constraints, and dependencies,
