@@ -143,6 +143,23 @@ Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organ
 
 ## Governance
 
+### Audit Trail
+
+No dedicated audit-log artifact exists — "what changed and why" is reconstructable today across
+several existing mechanisms (distinct from `INF-12`'s agent-activity *telemetry*, which doesn't
+exist yet):
+
+| Mechanism | What it records |
+|---|---|
+| Git history (implicit — every `.pmo/` file is plain Markdown) | Every edit, diffable and timestamped by commit; the most complete trail, free by virtue of Design Principle 2 |
+| `changes/CR-<id>.md` | Every scope/schedule/budget/resource baseline change, with impact analysis |
+| `constitution.md`'s Amendments table | Date / Change / Approved By for constitution edits |
+| `memory/work-packages/WP-<id>.md` | Worker's running log of decisions, deviations, blockers per work package |
+| `tracker.md`'s Variance Notes | Why actual diverged from planned, per work package |
+| `reports/status-<date>.md` | Dated status snapshots at each control cycle |
+| `quality-control-log.md`, `vendor-contract-register.md` | QA gate pass/fail history, contract variance history |
+| `standup-log.md` / `retro-log.md` (Agile ceremony layer) | Append-only, dated ceremony entries |
+
 - One artifact, one owner — see the Artifact Ownership table in
   [.github/copilot-instructions.md](.github/copilot-instructions.md).
 - Baseline documents (`charter.md`, `wbs.md`, `schedule.md`, `cost-management-plan.md`,

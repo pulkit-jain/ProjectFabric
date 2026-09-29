@@ -38,6 +38,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added an "Audit Trail" subsection to `ROADMAP.md`'s Governance section, resolving the forward
+  reference left by `INF-12`'s note. Documents the 8 existing mechanisms that together provide
+  "what changed and why" today (git history, `changes/CR-<id>.md`, `constitution.md`'s Amendments
+  table, `memory/work-packages/WP-<id>.md`, `tracker.md`'s Variance Notes,
+  `reports/status-<date>.md`, `quality-control-log.md`/`vendor-contract-register.md`,
+  `standup-log.md`/`retro-log.md`) — explicitly distinguished from `INF-12`'s still-Planned
+  agent-activity *telemetry*, which is a separate, not-yet-built concern.
 - Parked `INF-12`, an observability layer for agent activity, in `ROADMAP.md`'s Infrastructure
   Features table as 🔜 Planned — not built yet. Two options recorded, not yet chosen between:
   (a) file-based self-reported `.pmo/logs/agent-activity.jsonl` + a deterministic aggregation
