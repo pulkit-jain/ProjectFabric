@@ -16,7 +16,9 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
   Quality Manager owns quality standards, metrics, and the QA gate before a work package can be
   marked Done. A Procurement Manager owns make-or-buy analysis and vendor/contract management. A
   Stakeholder Manager owns stakeholder analysis and engagement. A Project Manager coordinates
-  execution, tracks variance, and controls change. Workers execute individual work packages.
+  execution, tracks variance, and controls change. A Scrum Master runs an optional Agile ceremony
+  layer (sprint planning, standup, backlog refinement, retro) alongside the PMBOK track, gated by
+  the project's Workflow Preset. Workers execute individual work packages.
 - **State lives in files.** Every artifact is a plain Markdown file under `.pmo/`. Agents are stateless between sessions — they re-read the files. This makes handoffs, audits, and future tooling (dashboards, a real backend) possible without redesigning anything.
 - **You are the checkpoint.** Every phase transition, every task assignment, every change request is delivered to you to review before it becomes baseline. Nothing silently rewrites the plan.
 
@@ -53,6 +55,7 @@ docs/
   resource-allocation.md
   communications-plan.md
   tracker.md
+  sprint-backlog.md, standup-log.md, retro-log.md  (Agile ceremony layer, gated by Workflow Preset)
   bus/<worker>/task.md, report.md
   memory/work-packages/WP-<id>.md
   reports/status-<date>.md
@@ -88,10 +91,14 @@ docs/
 | Planning | `/pf-6-plan-organization` | `raci.md` |
 | Planning | `/pf-6b-plan-resources` | `resource-management-plan.md` |
 | Executing | `/pf-7-initiate-manager` | Manager session started |
+| Executing | `/pf-7b-sprint-planning` | `sprint-backlog.md` (Agile ceremony layer) |
 | Executing | `/pf-8-assign-task` | `bus/<worker>/task.md` |
+| Executing | `/pf-8b-standup` | `standup-log.md` (Agile ceremony layer) |
 | Executing | `/pf-9-initiate-worker` | Worker executes, logs to `memory/work-packages/` |
 | Monitoring | `/pf-10-check-report` | `tracker.md` updated |
+| Monitoring | `/pf-10b-backlog-refinement` | `sprint-backlog.md` upcoming candidates (Agile ceremony layer) |
 | Monitoring | `/pf-11-control-cycle` | `reports/status-<date>.md` |
+| Monitoring | `/pf-11b-sprint-retro` | `retro-log.md` (Agile ceremony layer) |
 | Controlling | `/pf-12-change-request` | `changes/CR-<id>.md` |
 | Any | `/pf-13-handoff` | Handoff prompt for a fresh Manager/Worker instance |
 | Closing | `/pf-14-close-project` | `closing/lessons-learned.md`, `closing/final-report.md` |
@@ -105,7 +112,7 @@ dedicated Communications Management agent remains deferred to v2.
 
 ## Architecture & Extensibility
 
-ProjectFabric v1 is a prompt/agent framework only — no backend, no UI. It is deliberately architected so a future web UI or MCP server could read the same `.pmo/` files directly. See [docs/architecture.md](docs/architecture.md) for the full architecture, including the four canonical [Design Principles](docs/architecture.md#design-principles) (No infrastructure, State lives in portable plain-text files, The user is the checkpoint, One artifact one owner) that every new feature is evaluated against.
+ProjectFabric v1 is a prompt/agent framework only — no backend, no UI. It is deliberately architected so a future web UI or MCP server could read the same `.pmo/` files directly. See [docs/architecture.md](docs/architecture.md) for the full architecture, including the five canonical [Design Principles](docs/architecture.md#design-principles) (No infrastructure, State lives in portable plain-text files, The user is the checkpoint, One artifact one owner, Extensibility & customization by addition never modification) that every new feature is evaluated against.
 
 ## License
 

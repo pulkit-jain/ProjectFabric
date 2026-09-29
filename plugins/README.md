@@ -17,16 +17,20 @@ plugins/<plugin-name>/
 
 ## Manifest (`plugin.json`)
 
+<!-- Illustrative only — pick a name/filenames that don't collide with core's own
+`.github/agents/*.agent.md` filenames (e.g. core now ships a real `scrum-master.agent.md` for the
+Agile ceremony layer, so a plugin should not reuse that filename). -->
+
 ```json
 {
-  "name": "scrum-team",
+  "name": "example-role",
   "version": "0.1.0",
-  "description": "Agile/Scrum ceremony track alongside the PMBOK waterfall track",
+  "description": "One-line description of the knowledge area or workflow this plugin covers",
   "author": "your-name",
   "contributes": {
-    "agents": ["scrum-master.agent.md"],
-    "prompts": ["pf-scrum-standup.prompt.md", "pf-scrum-retro.prompt.md"],
-    "templates": ["sprint-backlog.template.md"]
+    "agents": ["example-role.agent.md"],
+    "prompts": ["pf-example-role-action.prompt.md"],
+    "templates": ["example-artifact.template.md"]
   }
 }
 ```
@@ -44,8 +48,8 @@ helper scripts item that could add one later). For now:
 
 - A plugin must never modify a core file — only add new ones.
 - A plugin's contributed `/pf-N` prompts should use a **non-numeric, prefixed command name**
-  (e.g. `/pf-scrum-standup`, not a `/pf-N` letter-suffix slot) so they never collide with core's
-  numbering scheme (see `ROADMAP.md`'s Governance section on letter-suffix commands).
+  (e.g. `/pf-example-role-action`, not a `/pf-N` letter-suffix slot) so they never collide with
+  core's numbering scheme (see `ROADMAP.md`'s Governance section on letter-suffix commands).
 - A plugin's contributed agents must declare their own `tools:` allow-list in frontmatter (see
   `.github/agents/*.agent.md` for the pattern) — don't default to unrestricted tool access.
 - Document what knowledge area or workflow the plugin covers in its `plugin.json` `description`,

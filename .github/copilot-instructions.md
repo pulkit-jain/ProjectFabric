@@ -2,7 +2,7 @@
 
 Read this before acting as any ProjectFabric agent. It applies to the Planner, Risk Manager,
 Stakeholder Manager, Cost Manager, Resource Manager, Quality Manager, Procurement Manager,
-Project Manager, and Worker roles defined in `.github/agents/`.
+Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 
 ## Ground Rules
 
@@ -53,6 +53,9 @@ Project Manager, and Worker roles defined in `.github/agents/`.
 | `raci.md` | Project Manager | `/pf-6-plan-organization` |
 | `resource-management-plan.md` | Resource Manager | `/pf-6b-plan-resources` |
 | `resource-allocation.md` | Resource Manager | ongoing during execution, updated each `/pf-11-control-cycle` |
+| `sprint-backlog.md` | Scrum Master | `/pf-7b-sprint-planning`, `/pf-10b-backlog-refinement` (Agile ceremony layer, gated by Workflow Preset) |
+| `standup-log.md` | Scrum Master | `/pf-8b-standup` (Agile ceremony layer) |
+| `retro-log.md` | Scrum Master | `/pf-11b-sprint-retro` (Agile ceremony layer) |
 | `tracker.md` | Project Manager | `/pf-10-check-report`, ongoing |
 | `bus/<worker>/task.md` | Project Manager | `/pf-8-assign-task` |
 | `bus/<worker>/report.md` | Worker | `/pf-9-initiate-worker` |
@@ -68,8 +71,10 @@ Project Manager, and Worker roles defined in `.github/agents/`.
 | Initiating | Initiating | `/pf-0b-constitution`, `/pf-1-initiate-planner` |
 | Planning | Planning | `/pf-2` through `/pf-6`, plus `/pf-3b-plan-cost`, `/pf-4b-plan-quality`,
   `/pf-4c-plan-procurement`, and `/pf-6b-plan-resources` |
-| Executing | Executing | `/pf-7`, `/pf-8`, `/pf-9` |
-| Monitoring & Controlling | Monitoring/Controlling | `/pf-10`, `/pf-11`, `/pf-12` |
+| Executing | Executing | `/pf-7`, `/pf-8`, `/pf-9`, plus `/pf-7b-sprint-planning` and `/pf-8b-standup`
+  (Agile ceremony layer, gated by Workflow Preset) |
+| Monitoring & Controlling | Monitoring/Controlling | `/pf-10`, `/pf-11`, `/pf-12`, plus
+  `/pf-10b-backlog-refinement` and `/pf-11b-sprint-retro` (Agile ceremony layer) |
 | Closing | Closing | `/pf-14` |
 
 See [docs/knowledge-areas.md](../docs/knowledge-areas.md) for which knowledge areas each phase covers.

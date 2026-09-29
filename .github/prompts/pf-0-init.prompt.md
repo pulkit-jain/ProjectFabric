@@ -36,6 +36,9 @@ write state.
      raci.md
      communications-plan.md
      tracker.md
+     sprint-backlog.md      (Agile ceremony layer — populated only if Scrum ceremonies are run)
+     standup-log.md         (Agile ceremony layer)
+     retro-log.md           (Agile ceremony layer)
      bus/               (empty — populated per-Worker by /pf-8-assign-task)
      memory/
        work-packages/   (empty — populated by Workers)

@@ -38,6 +38,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Built AGL-02, the Agile/Scrum ceremony layer, as **core** (option 1 from the plugin-vs-core
+  discussion — chosen so ceremony engagement is gated by the Workflow Preset like any other
+  phase, not a separate install step). New `pf-scrum-master` agent owns three new artifacts
+  (`sprint-backlog.md`, `standup-log.md`, `retro-log.md`) and four new letter-suffixed commands,
+  each paired to an existing Manager-loop phase: `/pf-7b-sprint-planning` (pairs with
+  `/pf-7-initiate-manager`), `/pf-8b-standup` (pairs with `/pf-8-assign-task`),
+  `/pf-10b-backlog-refinement` (pairs with `/pf-10-check-report`), `/pf-11b-sprint-retro` (pairs
+  with `/pf-11-control-cycle`). Engaged by default under the agile-hybrid Workflow Preset,
+  optional (ask once) under lean, off under classic-waterfall — new row added to
+  `docs/knowledge-areas.md#workflow-presets`. Wired into `copilot-instructions.md` (roles list,
+  Artifact Ownership table, Process Group Mapping), `README.md` (Core Idea, directory tree,
+  commands table, and a stale "four Design Principles" reference corrected to five),
+  `pf-0-init.prompt.md` (scaffolds the three new files), and `ROADMAP.md` (AGL-02 → Done). Also
+  updated `plugins/README.md`'s illustrative manifest example (previously named `scrum-team` /
+  `scrum-master.agent.md`) to a generic `example-role` name, since core now owns the real
+  `scrum-master.agent.md` filename and reusing it in the plugin example risked a naming collision.
 - Added a stable Feature ID (`KA-`, `INF-`, `GOV-`, `SESS-`, `AGL-`, `WPQ-`, `REP-`, `EXT-`,
   `AUT-`, one prefix per `ROADMAP.md` table/section) to every feature row, including a decimal
   suffix for existing `└` sub-items (e.g. `INF-08.1`). IDs are permanent once assigned — never

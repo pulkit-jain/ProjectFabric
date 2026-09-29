@@ -47,14 +47,16 @@ agent asks the user whether to run it or skip it for this project, rather than a
 | Stakeholder + Communications | Required | Required | Optional |
 | RACI (Organization) | Required | Required | Required |
 | Resource Management (depth) | Required | Optional (pull in when needed) | Optional |
+| Agile Ceremony Layer (Scrum Master track) | Off (not offered) | Engaged by default | Optional |
 
 - **classic-waterfall** (default): full PMBOK coverage, every phase runs in the order in
   `docs/architecture.md`'s Process flow diagram.
 - **agile-hybrid**: keeps the scope/schedule/risk/stakeholder/RACI backbone but treats
   Cost, Quality, Procurement, and Resource-depth planning as pull-based — plan them only once the
   project actually needs formal tracking, a quality gate, a vendor contract, or capacity
-  conflicts, rather than by default. Pairs with the still-planned Agile ceremony layer in
-  `ROADMAP.md`.
+  conflicts, rather than by default. Pairs with the Agile ceremony layer (Scrum Master agent —
+  `/pf-7b-sprint-planning`, `/pf-8b-standup`, `/pf-10b-backlog-refinement`,
+  `/pf-11b-sprint-retro`), engaged by default.
 - **lean**: only the phases needed to start assigning and tracking work are required; everything
   else is offered but skipped unless the user asks for it. Intended for small or short-lived
   projects where full PMBOK ceremony would cost more than it returns.

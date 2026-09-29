@@ -93,7 +93,7 @@ at a glance.
 | ID | Feature | Status | Notes |
 |---|---|---|---|
 | AGL-01 | Scope/workflow presets (classic-waterfall / agile-hybrid / lean) at `/pf-0-init` | ✅ Done | From aidlc-workflows "scope" concept — vary which phases/gates run per project size. Preset chosen at `/pf-0-init`, recorded in `constitution.md`'s new Workflow Preset field, defined authoritatively in `docs/knowledge-areas.md#workflow-presets` (Required/Optional per knowledge area per preset). Cost/Quality/Procurement/Resource-depth managers now check the preset first and ask once before planning if Optional; Planner's handoff calls out the preset explicitly. |
-| AGL-02 | Agile/Scrum ceremony layer (sprint planning, standup, retro, backlog refinement) | 🔜 Planned | Alternate track alongside the PMBOK waterfall track, from copilot-scrum-team. Larger effort — needs its own design pass. |
+| AGL-02 | Agile/Scrum ceremony layer (sprint planning, standup, retro, backlog refinement) | ✅ Done | Alternate track alongside the PMBOK waterfall track, from copilot-scrum-team. Built as **core** (not a plugin — considered both, chose core so the ceremony layer is gated by the Workflow Preset like any other phase rather than requiring a separate install step): new `pf-scrum-master` agent owning `sprint-backlog.md`/`standup-log.md`/`retro-log.md`, with 4 new letter-suffixed commands paired to each Manager-loop phase — `/pf-7b-sprint-planning`, `/pf-8b-standup`, `/pf-10b-backlog-refinement`, `/pf-11b-sprint-retro`. Engaged by default under agile-hybrid, optional (ask once) under lean, off under classic-waterfall — see `docs/knowledge-areas.md#workflow-presets`. |
 
 ### Work Package Lifecycle & Quality Gates
 
@@ -129,10 +129,10 @@ at a glance.
 The core PMBOK-style knowledge-area kit is now complete (Integration, Scope, Schedule, Cost,
 Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organization). Next:
 
-1. Re-evaluate the "Infrastructure Features" and "Other Framework Features" backlogs above
-   (Definition of Ready, decision log, structured status headers, scope presets, agile ceremony
-   layer, plugin pattern, agent tiers, session archiving, and external tool projections) now that
-   the knowledge-area kit is done.
+1. Re-evaluate the remaining "Other Framework Features" backlog items above (Definition of Ready,
+   decision log, structured status headers, session archiving, team-level customization layer,
+   trigger-action automation rules) now that the knowledge-area kit, workflow presets, and the
+   Agile ceremony layer are all done.
 2. Define the external integration manifest and approval flow, then design the first one-way
   Confluence publication and Jira work-package projection slices.
 3. Full Communications Management (dedicated agent) remains deferred until Stakeholder Manager's
