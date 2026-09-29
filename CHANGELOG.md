@@ -38,6 +38,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added a stable Feature ID (`KA-`, `INF-`, `GOV-`, `SESS-`, `AGL-`, `WPQ-`, `REP-`, `EXT-`,
+  `AUT-`, one prefix per `ROADMAP.md` table/section) to every feature row, including a decimal
+  suffix for existing `└` sub-items (e.g. `INF-08.1`). IDs are permanent once assigned — never
+  renumbered or reused, even for a Rejected/removed row — so they can be cited from
+  `CHANGELOG.md`, commit messages, and future Change Requests instead of matching on feature
+  names. `ROADMAP.md`'s Governance section gets a new rule documenting the ID-stability
+  convention, and cross-references between related rows (e.g. INF-10.5 → AUT-01, INF-09.3 →
+  EXT-01) now cite IDs instead of prose feature names where it was ambiguous.
 - Scope/workflow presets (classic-waterfall / agile-hybrid / lean), chosen at `/pf-0-init` and
   recorded in `constitution.md`'s new Workflow Preset field. `docs/knowledge-areas.md` gets a new
   "Workflow Presets" section defining, per preset, which knowledge areas are Required vs. Optional
