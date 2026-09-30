@@ -63,7 +63,8 @@ whose name/description column is blank are unfilled template placeholders and ar
 ## pf_rules.py -- automation rules (Project Manager)
 
 Evaluates the user's rules in `.pmo/automation-rules.md` against the current `.pmo/` state. Run it
-with `pf_validate.py` at the start of each `/pf-11-control-cycle`.
+in `/pf-11-control-cycle` *after* the cycle has refreshed `cost-performance.md` and the other
+logs (step 8) — run earlier, the cost rules read last cycle's figures.
 
 ```
 python .github/skills/pf-helper-scripts/scripts/pf_rules.py --pmo .pmo

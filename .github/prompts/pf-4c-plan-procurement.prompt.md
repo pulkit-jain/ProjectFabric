@@ -6,7 +6,9 @@ description: Run make-or-buy analysis, choose contract types, and set procuremen
 
 Act as the `pf-procurement-manager` agent (see `.github/agents/procurement-manager.agent.md`).
 Read `.pmo/wbs.md`, `.pmo/cost-management-plan.md`, and `.pmo/risk-register.md` (if it exists);
-produce `.pmo/procurement-management-plan.md`.
+produce `.pmo/procurement-management-plan.md` from
+`templates/procurement-management-plan.template.md`, and create `.pmo/vendor-contract-register.md`
+from `templates/vendor-contract-register.template.md` if it doesn't exist yet.
 
 ## Steps
 

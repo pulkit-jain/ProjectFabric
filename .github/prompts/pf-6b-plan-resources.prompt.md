@@ -5,7 +5,9 @@ description: Plan resource capacity, calendars, and allocation across work packa
 # /pf-6b-plan-resources
 
 Act as the `pf-resource-manager` agent (see `.github/agents/resource-manager.agent.md`). Read
-`.pmo/wbs.md`, `.pmo/raci.md`, and `.pmo/schedule.md`; produce `.pmo/resource-management-plan.md`.
+`.pmo/wbs.md`, `.pmo/raci.md`, and `.pmo/schedule.md`; produce `.pmo/resource-management-plan.md`
+from `templates/resource-management-plan.template.md`, and create `.pmo/resource-allocation.md`
+from `templates/resource-allocation.template.md` if it doesn't exist yet.
 
 ## Steps
 

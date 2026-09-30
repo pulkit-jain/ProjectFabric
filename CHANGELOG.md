@@ -38,13 +38,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Full-framework test: a repeatable static audit (documented in `docs/test-plan.md`, not committed
+  as a script) and a fifth lifecycle run, T5 (`_sandbox/packaging-redesign/`, gitignored), that
+  exercises everything added since T4 in one project — the agile-hybrid preset with three Optional
+  phases skipped, `team.md` with a constitution override, all five Agile ceremonies, a Definition
+  of Ready failure and a waiver, batch dispatch, three decisions with a supersession, a partial
+  stage archive, all four helper scripts, and automation rules. `docs/test-plan.md` gained a T5
+  column, seven new command rows, twelve new scenario rows, and an updated backlog of what is still
+  untested (lean and classic-waterfall runs, same-Worker batch queuing, an installed plugin).
+  Outcome: 10 defects found and fixed (see Fixed), 0 in the helper scripts themselves this round.
 - Implemented `AUT-02`, trigger-action automation rules, scaled down to fit Design Principle 1:
   nothing is event-driven or unattended. New `templates/automation-rules.template.md` becomes
   `.pmo/automation-rules.md`, a table of `Condition` (`<metric> <operator> <number>`), `Flag Message`,
   `Suggest`ed command, and `Enabled`. The new `pf_rules.py` in the `pf-helper-scripts` skill
   computes eight metrics from `.pmo/` (`blocked_wp_count`, `done_pct`, `open_risk_count`,
   `open_risk_max_score`, `cost_overrun_pct_max`, `cpi_min`, `spi_min`, `draft_decision_count`) and
-  reports which enabled rules are TRIGGERED. It runs at step 0 of `/pf-11-control-cycle`; a
+  reports which enabled rules are TRIGGERED. It runs at step 8 of `/pf-11-control-cycle`, after the
+  cost, resource, quality, and procurement data are refreshed (it first shipped at step 0 and was
+  moved after the full-framework test found the CPI rule reading stale figures); a
   triggered rule only appears in the Status Report with its suggested command — the user decides,
   and nothing is run or edited automatically. The seven shipped example rules are all disabled with
   example numbers, so default behavior is unchanged (Ground Rule 4). Wired into `pf_scaffold.py` and
@@ -306,6 +317,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Found by the full-framework test (static audit A1 plus lifecycle run T5, see `docs/test-plan.md`):
+  - Eight templates (`change-request`, `lessons-learned`, `quality-management-plan`,
+    `quality-control-log`, `procurement-management-plan`, `vendor-contract-register`,
+    `resource-management-plan`, `resource-allocation`) were never referenced by any prompt, so an
+    agent had no instruction to use them. `/pf-4b`, `/pf-4c`, `/pf-6b`, `/pf-12`, and `/pf-14` now
+    name their template(s). Earlier lifecycle runs missed this because the tester already knew the
+    templates existed.
+  - `/pf-7-initiate-manager` required the cost, risk, stakeholder, and resource plans regardless of
+    Workflow Preset, so a lean or agile-hybrid project would have been sent back to plan phases it
+    had legitimately skipped. It is now preset-aware. `/pf-11-control-cycle` likewise now reads
+    whichever optional plans exist.
+  - Nothing pointed to `/pf-7b-sprint-planning` at the start of the loop (only later ceremonies
+    did); `/pf-7` now suggests it when the Agile layer is in use. `/pf-8b-standup` had no next step.
+  - `docs/knowledge-areas.md` now says what happens when an Optional phase is skipped (note it in
+    one line, give the next command, record nothing).
+  - `pf_rules.py` was run at step 0 of `/pf-11-control-cycle`, before `cost-performance.md` was
+    refreshed, so the CPI rule read last cycle's figures (0.95 instead of 0.75 in T5). It now runs
+    at step 8, after the refresh; the Project Manager agent, skill, ROADMAP and AUT-02's entry
+    below were updated to match.
+  - `/pf-13b-archive-stage` could archive the most recent status report, which describes still-open
+    work and is what the next cycle compares against; it is now excluded.
+  - `/pf-6-plan-organization` now runs `pf_validate.py`, because a missing Accountable (planted in
+    T5) is easy to miss by eye and was only caught at the first control cycle.
+  - ROADMAP's EXT-03 said the skills review covered "all 9 agents"; it now says the later Scrum
+    Master has not been evaluated.
 - `pf-evm-reference`'s worked example computed EAC from a rounded CPI (0.83), giving $12,048; the
   exact figure is $12,000 (ETC $7,200, VAC -$2,000). Rounding CPI before dividing is an avoidable
   error, so the example now carries full precision and says why. Found while checking the new

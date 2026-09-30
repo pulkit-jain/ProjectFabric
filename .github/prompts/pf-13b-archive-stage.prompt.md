@@ -26,7 +26,8 @@ consistent with the user being the checkpoint. Nothing is ever deleted.
    - `memory/work-packages/WP-<id>.md`
    - `bus/<worker>/task.md` and `bus/<worker>/report.md` (only if that Worker has no work package
      still in progress)
-   - `reports/status-<date>.md` dated within the stage
+   - `reports/status-<date>.md` dated within the stage, except the most recent report (the next
+     control cycle compares against it, and it describes work that is still open)
    - the stage's dated entries in `standup-log.md`, if present
 4. Write `archives/<stage>/stage-summary.md` from `templates/stage-summary.template.md` with Move
    Status "Pending", using facts from the files above and `tracker.md` — do not invent outcomes.

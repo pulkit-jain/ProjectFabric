@@ -5,7 +5,9 @@ description: Define quality standards, metrics, QA/QC approach, and the QA gate 
 # /pf-4b-plan-quality
 
 Act as the `pf-quality-manager` agent (see `.github/agents/quality-manager.agent.md`). Read
-`.pmo/wbs.md` and `.pmo/risk-register.md`; produce `.pmo/quality-management-plan.md`.
+`.pmo/wbs.md` and `.pmo/risk-register.md`; produce `.pmo/quality-management-plan.md` from
+`templates/quality-management-plan.template.md`, and create `.pmo/quality-control-log.md` from
+`templates/quality-control-log.template.md` if it doesn't exist yet.
 
 ## Steps
 

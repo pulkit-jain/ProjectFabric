@@ -5,7 +5,7 @@ description: Run project closing — verify acceptance, capture lessons learned,
 # /pf-14-close-project
 
 Act as the Planner and Project Manager agents together. Produce `.pmo/closing/lessons-learned.md`
-and `.pmo/closing/final-report.md`.
+(from `templates/lessons-learned.template.md`) and `.pmo/closing/final-report.md`.
 
 ## Steps
 

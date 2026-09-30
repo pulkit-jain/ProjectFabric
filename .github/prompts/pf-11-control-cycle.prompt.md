@@ -5,19 +5,19 @@ description: Run a periodic monitoring & controlling pass across Tracker, Risk, 
 # /pf-11-control-cycle
 
 Act as the `pf-project-manager` agent. Read `tracker.md`, `schedule.md`, `risk-register.md`,
-`stakeholder-register.md`, `cost-management-plan.md`, `resource-management-plan.md`, and (if it
-exists) `procurement-management-plan.md`; produce `.pmo/reports/status-<date>.md` and (in
+`stakeholder-register.md`, and whichever of `cost-management-plan.md`,
+`resource-management-plan.md`, `quality-management-plan.md`, and `procurement-management-plan.md`
+exist (an Optional plan the project skipped under its Workflow Preset is simply absent — skip the
+matching steps below and say so); produce `.pmo/reports/status-<date>.md` and (in
 coordination with the Cost Manager, Resource Manager, Quality Manager, and Procurement Manager
 perspectives) update `.pmo/cost-performance.md`, `.pmo/resource-allocation.md`,
 `.pmo/quality-control-log.md`'s Trend Notes, and `.pmo/vendor-contract-register.md`.
 
 ## Steps
 
-0. Run `pf_validate.py --pmo .pmo` and `pf_rules.py --pmo .pmo` (see the `pf-helper-scripts`
-   skill). Note every validator FAIL/WARN and every TRIGGERED automation rule for the Status
-   Report; present each rule's suggested command to the user rather than running it. Fix a
-   validator finding only in artifacts you own; route the rest to the owning agent or the user.
-   If a script can't be run, skip it and say so.
+0. Run `pf_validate.py --pmo .pmo` (see the `pf-helper-scripts` skill) and note every FAIL and
+   WARN for the Status Report. Fix a finding only in artifacts you own; route the rest to the
+   owning agent or the user. If the script can't be run, skip it and say so.
 1. Compare `tracker.md` against `schedule.md`: flag any work package whose actual dates or
    dependencies have drifted from the baseline, and any milestone now at risk.
 2. Review `risk-register.md`: any risk whose trigger condition may have fired, any risk that
@@ -38,13 +38,17 @@ perspectives) update `.pmo/cost-performance.md`, `.pmo/resource-allocation.md`,
 7. If `procurement-management-plan.md` exists, update `vendor-contract-register.md` (in
    coordination with the Procurement Manager perspective): contract status, delivery performance,
    and any dispute or variance against the procurement control thresholds.
-8. Determine an overall status color: Green (on track), Yellow (at risk, being managed), or Red
+8. Run `pf_rules.py --pmo .pmo` now, after steps 4-7 have refreshed the cost, resource, quality,
+   and procurement data — earlier, the cost rules would read last cycle's figures. Note every
+   TRIGGERED rule for the Status Report and present each one's suggested command to the user;
+   never run it. If the script can't be run, skip it and say so.
+9. Determine an overall status color: Green (on track), Yellow (at risk, being managed), or Red
    (baseline breach requiring a decision).
-9. Write `reports/status-<date>.md` using `templates/status-report.template.md`: accomplishments
-   since last cycle, upcoming work, open issues/blockers, risk highlights, cost highlights,
-   resource highlights, quality highlights, procurement highlights, stakeholder notes, and any
-   change requests raised.
-10. Present the Status Report to the user. If it surfaces a baseline breach (schedule, cost,
+10. Write `reports/status-<date>.md` using `templates/status-report.template.md`: accomplishments
+    since last cycle, upcoming work, open issues/blockers (including validator findings and
+    triggered rules), risk highlights, cost highlights, resource highlights, quality highlights,
+    procurement highlights, stakeholder notes, and any change requests raised.
+11. Present the Status Report to the user. If it surfaces a baseline breach (schedule, cost,
     resource conflict, or vendor issue), tell the user to run `/pf-12-change-request`. Otherwise,
     continue the assign/report loop with `/pf-8-assign-task`.
 

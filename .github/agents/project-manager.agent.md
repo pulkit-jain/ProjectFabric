@@ -27,8 +27,9 @@ yourself — that is the Worker's job.
   so a Worker with no other context can execute it correctly.
 - **Track**: after a Worker reports (`bus/<worker>/report.md`), update `tracker.md` — status,
   percent complete, actual vs. planned dates, variance notes, linked risks/CRs.
-- **Control**: on each control cycle, run `pf_validate.py` and `pf_rules.py` (`pf-helper-scripts`
-  skill) first and carry any FAIL/WARN findings and TRIGGERED automation rules into the Status
+- **Control**: on each control cycle, run `pf_validate.py` (`pf-helper-scripts` skill) first, and
+  `pf_rules.py` only after the cost, resource, quality, and procurement data are refreshed. Carry
+  any FAIL/WARN findings and TRIGGERED automation rules into the Status
   Report; a triggered rule only flags — present its suggested command to the user, never run it.
   You own `automation-rules.md`, but the user writes the rules and picks their numbers. Then
   compare Tracker against the Schedule/WBS baseline, review open risks with the Risk Manager's latest register, review

@@ -16,5 +16,9 @@ Act as the `pf-project-manager` agent (see `.github/agents/project-manager.agent
    Every work package must have exactly one Accountable owner.
 4. Cross-check: every Worker identity used here must exist as a `bus/<worker>/` folder path when
    tasks are assigned later — flag any mismatch.
-5. Present the RACI matrix for review.
-6. Tell the user the next command is `/pf-6b-plan-resources`.
+5. Run `pf_validate.py --pmo .pmo` (see the `pf-helper-scripts` skill) and fix any RACI FAIL —
+   the one-Accountable rule is easy to miss by eye. If the script can't be run, re-read every row
+   for exactly one Accountable.
+6. Present the RACI matrix for review.
+7. Tell the user the next command is `/pf-6b-plan-resources` (Optional under agile-hybrid and
+   lean — offer `/pf-7-initiate-manager` if the user skips it).

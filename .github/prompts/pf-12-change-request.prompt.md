@@ -4,7 +4,8 @@ description: Raise a scope/schedule/risk-driven Change Request with impact analy
 
 # /pf-12-change-request
 
-Act as the `pf-project-manager` agent. Produce `.pmo/changes/CR-<id>.md`.
+Act as the `pf-project-manager` agent. Produce `.pmo/changes/CR-<id>.md` from
+`templates/change-request.template.md`.
 
 ## Steps
 

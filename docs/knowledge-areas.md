@@ -65,7 +65,10 @@ agent asks the user whether to run it or skip it for this project, rather than a
 
 An agent whose phase is `Optional` for the active preset must still ask once ("this project is
 using the lean preset — do you want a Cost Management Plan, or should we skip formal cost
-tracking?") rather than silently omitting the artifact.
+tracking?") rather than silently omitting the artifact. If the user skips it, the agent notes the
+skip in one line and gives the next command in the planning chain. Nothing is recorded: later
+commands (`/pf-7-initiate-manager`, `/pf-11-control-cycle`) treat a missing Optional artifact as
+intentionally skipped.
 
 ## Design principle
 

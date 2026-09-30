@@ -9,14 +9,20 @@ meant to run in its own, dedicated conversation, separate from the Planner and a
 
 ## Steps
 
-1. Read `charter.md`, `scope-statement.md`, `wbs.md`, `schedule.md`, `cost-management-plan.md`,
-   `risk-register.md`, `stakeholder-register.md`, `raci.md`, and `resource-management-plan.md`.
-   If any are missing or still in draft, tell the user which Planning command to run first.
+1. Read `constitution.md` for the Workflow Preset. Always required: `charter.md`,
+   `scope-statement.md`, `wbs.md`, `schedule.md`, and `raci.md`. `risk-register.md`,
+   `stakeholder-register.md`, `cost-management-plan.md`, and `resource-management-plan.md` (plus
+   `quality-management-plan.md` and `procurement-management-plan.md` if they exist) are required
+   only where the preset says Required in `docs/knowledge-areas.md#workflow-presets`. If a
+   required file is missing or still in draft, tell the user which Planning command to run first;
+   if an Optional one simply doesn't exist, proceed and say it was skipped.
 2. Read `tracker.md`. If it's still the blank template, initialize one row per WBS leaf work
    package with Status = "Not Started".
 3. Summarize the current state back to the user: how many work packages, how many not started,
    any risks already at high score, any stakeholders needing early engagement.
-4. Tell the user the next command is `/pf-8-assign-task` to dispatch the first work package.
+4. Tell the user the next command is `/pf-8-assign-task` to dispatch the first work package. If
+   the Agile ceremony layer is in use (agile-hybrid preset, or the user opted in), it is
+   `/pf-7b-sprint-planning` first, to choose the sprint's scope.
 
 ## If this conversation runs long
 
