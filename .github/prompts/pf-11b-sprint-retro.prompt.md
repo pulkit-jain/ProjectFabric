@@ -18,4 +18,5 @@ Sprint Review Outcomes for the sprint just ended; append to `.pmo/retro-log.md`.
 4. If an action item requires a scope, schedule, or budget change, tell the user
    `/pf-12-change-request` is needed rather than editing baseline documents directly.
 5. Tell the user the retro is logged and, if the project is continuing, the next ceremony is
-   `/pf-7b-sprint-planning` for the next sprint.
+   `/pf-7b-sprint-planning` for the next sprint. If this sprint's history is bloating `.pmo/`,
+   suggest `/pf-13b-archive-stage` first.

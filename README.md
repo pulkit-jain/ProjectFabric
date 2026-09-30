@@ -68,6 +68,7 @@ assets/
   reports/status-<date>.md
   changes/CR-<id>.md
   decisions/DEC-<id>.md
+  archives/<stage>/stage-summary.md
   closing/lessons-learned.md, final-report.md
 ```
 
@@ -111,6 +112,7 @@ assets/
 | Controlling | `/pf-12-change-request` | `changes/CR-<id>.md` |
 | Controlling | `/pf-12b-log-decision` | `decisions/DEC-<id>.md` |
 | Any | `/pf-13-handoff` | Handoff prompt for a fresh Manager/Worker instance |
+| Any | `/pf-13b-archive-stage` | `archives/<stage>/stage-summary.md`, finished-stage files moved out of the live folders |
 | Closing | `/pf-14-close-project` | `closing/lessons-learned.md`, `closing/final-report.md` |
 
 ## Knowledge Area Coverage

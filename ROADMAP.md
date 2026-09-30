@@ -87,7 +87,7 @@ at a glance.
 |---|---|---|---|
 | SESS-01 | Checkpoint/resume hints | ✅ Done | `/pf-7`, `/pf-9`, `/pf-11` proactively point to `/pf-13-handoff` before hitting a context limit, not just after. |
 | SESS-02 | Handoff protocol | ✅ Done (basic) | `/pf-13-handoff` exists. Lighter than APM's two-artifact (Handover_File + Handover_Prompt) pattern — revisit only if single-prompt handoff proves insufficient in practice. |
-| SESS-03 | Memory/session archiving (`.pmo/archives/`, stage summaries) | 🔜 Planned | From APM. Only valuable once projects routinely run long enough to need it. |
+| SESS-03 | Memory/session archiving (`.pmo/archives/`, stage summaries) | ✅ Done | From APM. New `/pf-13b-archive-stage` (pairs with `/pf-13-handoff`) writes `archives/<stage>/stage-summary.md` from `templates/stage-summary.template.md` and prepares the move of a finished stage's work-package history (WP memory logs, bus task/report files, dated status reports, standup entries) out of the live folders. Only Done (and, with the Agile layer, Accepted) work is archivable; baselines, registers, `changes/`, and `decisions/` are never archived. Agents read the stage summary, not the archived files (Ground Rule 1). Project Manager's tools can't move files, so the user runs a `git mv` block the agent prepares — a script to do this is part of AUT-01. Nothing is deleted. |
 
 ### Agile / Alternate Methodology Track
 
@@ -131,9 +131,9 @@ The core PMBOK-style knowledge-area kit is now complete (Integration, Scope, Sch
 Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organization). Next:
 
 1. Re-evaluate the remaining "Other Framework Features" backlog items above (Definition of Ready,
-   structured status headers, session archiving, trigger-action automation rules) now that the
-   knowledge-area kit, workflow presets, Agile ceremony layer, decision log, and team-level
-   customization layer are all done.
+   structured status headers, trigger-action automation rules) now that the
+   knowledge-area kit, workflow presets, Agile ceremony layer, decision log, team-level
+   customization layer, and session archiving are all done.
 2. Define the external integration manifest and approval flow, then design the first one-way
   Confluence publication and Jira work-package projection slices.
 3. Full Communications Management (dedicated agent) remains deferred until Stakeholder Manager's
@@ -160,6 +160,7 @@ exist yet):
 | `quality-control-log.md`, `vendor-contract-register.md` | QA gate pass/fail history, contract variance history |
 | `standup-log.md` / `retro-log.md` (Agile ceremony layer) | Append-only, dated ceremony entries |
 | `decisions/DEC-<id>.md` (`GOV-02`) | Judgment calls that aren't scope/schedule/budget changes, with lifecycle Draft → Signed-off → Superseded |
+| `archives/<stage>/stage-summary.md` (`SESS-03`) | Per-stage outcome, decisions/CRs raised, and an index of every file moved out of the live folders — originals preserved, nothing deleted |
 
 - One artifact, one owner — see the Artifact Ownership table in
   [.github/copilot-instructions.md](.github/copilot-instructions.md).

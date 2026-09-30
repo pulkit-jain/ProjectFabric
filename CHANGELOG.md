@@ -38,6 +38,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `SESS-03`, session/stage archiving: new `/pf-13b-archive-stage` command (pairs with
+  `/pf-13-handoff`) and `templates/stage-summary.template.md`. At the end of a stage (sprint,
+  milestone, or phase) the Project Manager writes `archives/<stage>/stage-summary.md` — outcome,
+  work packages delivered, DEC/CR links, risks, carry-forward, and an index of moved files — and
+  prepares the move of that stage's work-package history out of the live folders. Only Done (and,
+  with the Agile layer, Accepted) work qualifies; baselines, registers, `changes/`, and
+  `decisions/` are never archived. Because the Project Manager's tools (`read`, `edit`, `search`)
+  cannot move files, the agent hands the user a `git mv` block and verifies afterward, rather than
+  being granted `execute` — keeps least privilege and matches Design Principle 3; a script for this
+  belongs to AUT-01. Ground Rule 1 now tells agents to read stage summaries, not archived files,
+  which is where the context saving comes from. `/pf-14-close-project` reads the summaries,
+  `/pf-11b-sprint-retro` suggests archiving, `/pf-0-init` scaffolds `archives/`, and ROADMAP's
+  Audit Trail table gained a row.
 - Implemented `GOV-03`, the team-level customization layer: new `templates/team.template.md`
   (Team Defaults — Workflow Preset, cost tracking mode, control cycle cadence, variance and risk
   thresholds — plus Team Standards) copied into each project's `.pmo/team.md` at `/pf-0-init`

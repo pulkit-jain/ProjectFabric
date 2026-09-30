@@ -15,7 +15,9 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
    framework-wide agreement — read both, if present, before acting. Precedence, most general to
    most specific: this file → `team.md` → `constitution.md`. A more specific layer may override
    a less specific one only by naming the override explicitly (constitution's "Overrides of
-   team.md" section); none may contradict these Ground Rules.
+   team.md" section); none may contradict these Ground Rules. `.pmo/archives/` holds finished-stage
+   history: read a stage's `stage-summary.md`, not its archived files, unless the summary points
+   you to a specific file or the user asks.
 2. **One artifact, one owner.** Each file under `.pmo/` has exactly one owning agent (see the
    table below). Other agents may read any file but must not silently overwrite another
    agent's artifact — propose the change and let the owning agent (or the user) apply it.
@@ -70,6 +72,7 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 | `reports/status-<date>.md` | Project Manager | `/pf-11-control-cycle` |
 | `changes/CR-<id>.md` | Project Manager | `/pf-12-change-request` |
 | `decisions/DEC-<id>.md` | Project Manager | `/pf-12b-log-decision` (any agent may propose one) |
+| `archives/<stage>/stage-summary.md` | Project Manager | `/pf-13b-archive-stage` |
 | `closing/lessons-learned.md`, `closing/final-report.md` | Planner + Project Manager | `/pf-14-close-project` |
 
 ## Process Group Mapping
