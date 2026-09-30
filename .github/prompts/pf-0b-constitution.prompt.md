@@ -9,9 +9,15 @@ Act as the `pf-planner` agent (see `.github/agents/planner.agent.md`). Produce
 
 This sits above individual artifacts and below the framework-wide `.github/copilot-instructions.md`:
 copilot-instructions.md governs how ProjectFabric agents behave on every project;
-`constitution.md` governs how *this* project's people and agents make decisions.
+`constitution.md` governs how *this* project's people and agents make decisions. If `.pmo/team.md`
+exists, it sits between the two — read it first, and don't restate anything it already covers.
 
 ## Steps
+
+0. Read `.pmo/team.md` if it exists. Team Defaults (decision thresholds, cadence) and Team
+   Standards already apply to this project; propose them as starting points rather than asking
+   from scratch. If the user wants this project to deviate from a team item, record it under the
+   constitution's "Overrides of team.md" section with a reason — never silently contradict it.
 
 1. Ask the user for this project's non-negotiable principles — rules that override default
    agent behavior specifically for this project (e.g. "no scope change without sponsor sign-off",

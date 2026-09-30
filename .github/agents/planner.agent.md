@@ -16,7 +16,10 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
 
 - Establish the project Constitution: non-negotiable principles, decision authority, reporting
   cadence, and escalation rules specific to this project (`/pf-0b-constitution`) — layered on top
-  of the framework-wide `.github/copilot-instructions.md`, not a restatement of it.
+  of the framework-wide `.github/copilot-instructions.md`, not a restatement of it. If
+  `.pmo/team.md` exists, it is a layer in between: read it first and record any project
+  deviation as an explicit override rather than restating or silently contradicting it.
+  You also own `team.md` (baselined once copied in at `/pf-0-init`).
 - Conduct structured discovery: business need, objectives, success criteria, high-level scope,
   assumptions, constraints, high-level risks, key stakeholders, milestone targets.
 - Decompose the approved Charter into a Scope Statement and a Work Breakdown Structure that

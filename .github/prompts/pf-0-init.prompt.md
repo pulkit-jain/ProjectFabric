@@ -12,7 +12,12 @@ write state.
 1. Check whether `.pmo/` already exists. If it does, list its contents and ask the user whether
    to leave it alone (default), or which specific files to re-scaffold — never overwrite existing
    project artifacts silently.
-2. Ask the user which Workflow Preset fits this project, briefly describing each:
+2. Ask the user whether their team keeps a shared team standards file (`team.md`). If yes, copy it
+   into `.pmo/team.md` as-is; if no, scaffold a blank one from `templates/team.template.md` (safe
+   to leave with `TBD` values — nothing depends on it being filled in). Read its Team Defaults
+   for the next step.
+3. Ask the user which Workflow Preset fits this project, briefly describing each — and if
+   `team.md` sets a default Workflow Preset, propose that first and say it's the team default:
    - **classic-waterfall** (default) — full PMBOK coverage, every knowledge area planned up front.
    - **agile-hybrid** — Scope/Schedule/Risk/Stakeholder/RACI backbone required; Cost, Quality,
      Procurement, and Resource-depth planning are pulled in later only when actually needed.
@@ -24,6 +29,7 @@ write state.
    suffix) and leaving placeholder fields intact for the owning agent to fill in later:
    ```
    .pmo/
+     team.md            (copied from the team's shared file, or blank from template)
      constitution.md
      charter.md
      scope-statement.md
@@ -48,7 +54,7 @@ write state.
      closing/           (empty — populated by /pf-14-close-project)
    ```
 4. Fill in the freshly-copied `constitution.md`'s Workflow Preset field with the user's choice
-   from step 2 (default `classic-waterfall` if the user has no preference yet — this is a
+   from the preset question above (default `classic-waterfall` if the user has no preference yet — this is a
    scaffolding default, not a baseline approval, and can still be revisited in
    `/pf-0b-constitution`).
 5. Confirm the structure was created and tell the user the next command is

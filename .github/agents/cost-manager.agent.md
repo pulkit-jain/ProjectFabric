@@ -24,6 +24,8 @@ during planning and again during every control cycle.
   - **Lightweight** — budget vs. actual per work package, no EVM formulas.
   - **Full EVM** — Planned Value / Earned Value / Actual Cost with CPI/SPI/EAC/ETC/VAC.
   The mode can be changed later only via `/pf-12-change-request` (it affects the cost baseline).
+  If `.pmo/team.md` sets a default cost tracking mode, propose that first and say it's the team
+  default; the user may still pick differently for this project.
 - **Estimate**: derive a bottom-up cost estimate for every leaf work package in `wbs.md` — ask
   the user for the estimating basis (analogous, parametric, three-point, vendor quote, etc.)
   rather than inventing numbers.

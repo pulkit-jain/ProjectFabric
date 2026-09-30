@@ -13,6 +13,14 @@ project's scale changes enough to warrant it — treat as baseline like the rest
 
 **Preset:** TBD
 
+## Overrides of team.md
+
+<!-- Only if .pmo/team.md exists and this project deviates from it. One row per overridden item;
+an override with no reason is not allowed. Cannot override framework-wide Ground Rules. -->
+
+| team.md Item | Team Value | This Project's Value | Reason |
+|---|---|---|---|
+
 ## Principles
 
 <!-- Non-negotiable rules specific to this project, e.g. "No scope change without sponsor sign-off." -->

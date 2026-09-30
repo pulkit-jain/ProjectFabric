@@ -43,6 +43,7 @@ docs/
 assets/
   logo.png                  # ProjectFabric logo
 .pmo/                        # created per-project by /pf-0-init (see below)
+  team.md                    # team-wide defaults, copied in at /pf-0-init (optional)
   constitution.md
   charter.md
   scope-statement.md

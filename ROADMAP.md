@@ -79,7 +79,7 @@ at a glance.
 |---|---|---|---|
 | GOV-01 | Project Constitution (`/pf-0b-constitution`) | ✅ Done | Project-specific principles, decision authority, reporting cadence, escalation rules — layered on top of framework-wide `copilot-instructions.md`. Inspired by GitHub Spec Kit. |
 | GOV-02 | Decision log (`.pmo/decisions/`, lifecycle draft→signed-off→superseded) | ✅ Done | From ai-sdlc RFC pattern. For judgment calls that aren't scope/schedule/budget changes (so don't need a full Change Request). New `/pf-12b-log-decision` command (pairs with `/pf-12-change-request`) writes `decisions/DEC-<id>.md` from `templates/decision-record.template.md`; any agent may propose one, Project Manager owns the log. Status lifecycle Draft → Signed-off → Superseded (by a later `DEC-<id>`, never deleted). |
-| GOV-03 | Team-level customization layer (`.pmo/team.md`, between framework-wide `copilot-instructions.md` and project-specific `constitution.md`) | 🔜 Planned | From aidlc-workflows' org/team/project memory layering (ProjectFabric currently only has the org and project layers). Useful for an organization running many ProjectFabric projects that wants shared team standards (e.g. "our team always uses Full EVM") without editing every project's `constitution.md` individually. Low priority until someone is actually running multiple concurrent ProjectFabric projects. |
+| GOV-03 | Team-level customization layer (`.pmo/team.md`, between framework-wide `copilot-instructions.md` and project-specific `constitution.md`) | ✅ Done | From aidlc-workflows' org/team/project memory layering. `templates/team.template.md` holds Team Defaults (Workflow Preset, cost tracking mode, control cycle cadence, variance/risk thresholds) and Team Standards. The team's shared master copy lives wherever the team keeps it and is copied into each project's `.pmo/` at `/pf-0-init` (no installer — manual, like `.github/`); `/pf-0-init`, `/pf-0b-constitution`, and the Cost Manager propose team defaults first. Precedence is framework Ground Rules → `team.md` → `constitution.md`; a constitution may override a team item only via its new "Overrides of team.md" table with a stated reason, and nothing may contradict the Ground Rules. Planner owns it; baselined like `constitution.md` once copied in. |
 
 ### Session & Context Management
 
@@ -131,9 +131,9 @@ The core PMBOK-style knowledge-area kit is now complete (Integration, Scope, Sch
 Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organization). Next:
 
 1. Re-evaluate the remaining "Other Framework Features" backlog items above (Definition of Ready,
-   decision log, structured status headers, session archiving, team-level customization layer,
-   trigger-action automation rules) now that the knowledge-area kit, workflow presets, and the
-   Agile ceremony layer are all done.
+   structured status headers, session archiving, trigger-action automation rules) now that the
+   knowledge-area kit, workflow presets, Agile ceremony layer, decision log, and team-level
+   customization layer are all done.
 2. Define the external integration manifest and approval flow, then design the first one-way
   Confluence publication and Jira work-package projection slices.
 3. Full Communications Management (dedicated agent) remains deferred until Stakeholder Manager's
@@ -165,7 +165,7 @@ exist yet):
   [.github/copilot-instructions.md](.github/copilot-instructions.md).
 - Baseline documents (`charter.md`, `wbs.md`, `schedule.md`, `cost-management-plan.md`,
   `resource-management-plan.md`, `quality-management-plan.md`, `procurement-management-plan.md`,
-  `constitution.md`) change only through `/pf-12-change-request`, never by direct edit, once
+  `constitution.md`, `team.md`) change only through `/pf-12-change-request`, never by direct edit, once
   approved.
 - New `/pf-N` commands are inserted with letter suffixes (e.g. `/pf-3b-plan-cost`,
   `/pf-6b-plan-resources`) between existing numbered commands rather than renumbering, so no

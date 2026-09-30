@@ -35,7 +35,9 @@ one of them needs an explicit, deliberate trade-off decision, not a default.
    place; agents get situational reference material (formulas, checklists, technique catalogs)
    split into a `.github/skills/<name>/SKILL.md` file loaded on demand rather than bloating the
    agent body for every invocation; project-specific working agreements go in
-   `.pmo/constitution.md`, layered on top of (not replacing) this framework-wide agreement. A
+   `.pmo/constitution.md`, and team-wide defaults shared across projects go in `.pmo/team.md`
+   (precedence: framework Ground Rules → `team.md` → `constitution.md`, each layered on top of
+   — not replacing — the one before). A
    feature that requires editing core files to customize behavior violates this principle.
 
 ## Why file-based state

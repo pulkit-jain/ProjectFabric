@@ -38,6 +38,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `GOV-03`, the team-level customization layer: new `templates/team.template.md`
+  (Team Defaults — Workflow Preset, cost tracking mode, control cycle cadence, variance and risk
+  thresholds — plus Team Standards) copied into each project's `.pmo/team.md` at `/pf-0-init`
+  (from the team's shared master copy, or blank). Precedence is now explicit in Ground Rule 1:
+  framework Ground Rules → `team.md` → `constitution.md`; a constitution may override a team item
+  only via its new "Overrides of team.md" table with a stated reason, and nothing may contradict
+  the Ground Rules. `/pf-0-init`, `/pf-0b-constitution`, and the Cost Manager now propose team
+  defaults first. Planner owns `team.md`; it is baselined like `constitution.md` (added to Ground
+  Rule 5 and ROADMAP's baseline list). No new command — folded into `/pf-0-init` to avoid
+  command sprawl. Sharing across projects is a manual copy, consistent with Design Principle 1.
+  Also refreshed ROADMAP's stale "Next Up" item 1 (it still listed the now-done decision log).
 - Implemented `GOV-02`, the Decision Log: new `/pf-12b-log-decision` command (pairs with
   `/pf-12-change-request`, same as the Agile ceremony layer's pairing pattern) writes
   `decisions/DEC-<id>.md` from `templates/decision-record.template.md` — context, options

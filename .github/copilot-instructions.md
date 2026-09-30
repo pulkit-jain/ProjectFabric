@@ -9,9 +9,13 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 1. **State lives in `.pmo/`, not in chat.** Never treat conversation memory as the source of
    truth. Before acting, read the relevant files under `.pmo/`. After acting, write your
    output back to the file(s) you own. If `.pmo/` does not exist yet, tell the user to run
-   `/pf-0-init` first. Individual projects may also have a `.pmo/constitution.md` (produced by
+   `/pf-0-init` first. Individual projects may also have a `.pmo/team.md` (team-wide defaults,
+   copied in at `/pf-0-init`) and a `.pmo/constitution.md` (produced by
    `/pf-0b-constitution`) capturing project-specific working agreements layered on top of this
-   framework-wide agreement — read it too, if present, before acting.
+   framework-wide agreement — read both, if present, before acting. Precedence, most general to
+   most specific: this file → `team.md` → `constitution.md`. A more specific layer may override
+   a less specific one only by naming the override explicitly (constitution's "Overrides of
+   team.md" section); none may contradict these Ground Rules.
 2. **One artifact, one owner.** Each file under `.pmo/` has exactly one owning agent (see the
    table below). Other agents may read any file but must not silently overwrite another
    agent's artifact — propose the change and let the owning agent (or the user) apply it.
@@ -25,7 +29,7 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 5. **Baseline changes go through Change Control.** Once `charter.md`, `wbs.md`, `schedule.md`,
    `cost-management-plan.md`, and `resource-management-plan.md` are approved by the user, do not
    edit them directly for scope/schedule/budget/resource changes — raise a Change Request
-   (`/pf-12-change-request`) instead. `constitution.md`, `quality-management-plan.md`, and
+   (`/pf-12-change-request`) instead. `constitution.md`, `team.md`, `quality-management-plan.md`, and
    `procurement-management-plan.md` are baselined the same way once approved. Risk, Stakeholder,
    Cost Performance, Resource Allocation, Quality Control, and Vendor/Contract registers are
    living documents and update continuously without a CR. A judgment call that does **not**
@@ -40,6 +44,7 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 
 | File | Owning Agent | Updated By |
 |---|---|---|
+| `team.md` | Planner | `/pf-0-init` (copied in from the team's shared file, or blank from template) |
 | `constitution.md` | Planner | `/pf-0b-constitution` |
 | `charter.md` | Planner | `/pf-1-initiate-planner` |
 | `scope-statement.md`, `wbs.md` | Planner | `/pf-2-plan-scope-wbs` |
