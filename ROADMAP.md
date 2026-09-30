@@ -101,7 +101,7 @@ at a glance.
 | ID | Feature | Status | Notes |
 |---|---|---|---|
 | WPQ-01 | Definition of Ready checklist (before Work Package assignment) | ✅ Done | From copilot-scrum-team / ai-sdlc DoR rubric. `/pf-8-assign-task` now runs a 7-item readiness gate before writing any task: testable acceptance criteria, Responsible party plus exactly one Accountable in `raci.md`, inputs/constraints stated, QA gate coverage, assignee not over-allocated, vendor contract active, and any project additions in `constitution.md`'s new Definition of Ready section. A failed item goes back to its owner (Planner / Project Manager / Resource Manager / Procurement Manager); the user may waive it, and the result (Passed or Passed with waiver) is recorded in `task.md`'s new Definition of Ready section. `/pf-10b-backlog-refinement`'s Ready flag uses the same checklist minus the predecessors test. The checks are agent-judged; the mechanical ones (RACI one-Accountable, ID consistency) could move into AUT-01. |
-| WPQ-02 | Batch/parallel task assignment (`/pf-8-assign-task` dispatches multiple eligible Workers in one action) | 🔜 Planned | From APM's batch dispatch pattern. T3/T4 test runs already proved `tracker.md` correctly handles two Workers genuinely "In Progress" at once when dispatched manually, one at a time — this would formalize dispatching all currently-eligible, independent work packages in a single `/pf-8` invocation instead of re-running the command per Worker. |
+| WPQ-02 | Batch/parallel task assignment (`/pf-8-assign-task` dispatches multiple eligible Workers in one action) | ✅ Done | From APM's batch dispatch pattern. `/pf-8-assign-task` now builds the eligible set (limited to the current sprint if the Agile layer is in use) and, when more than one work package is eligible, offers a batch chosen under independence rules: one work package per Worker (the earlier by schedule wins, the other stays queued), combined assignee capacity checked against `resource-allocation.md`, and the user asked before anything that looks like it touches the same deliverable runs in parallel. The Definition of Ready (WPQ-01) runs per work package — a failing one drops out without blocking the rest. The whole batch is presented once for approval before any file is written; approving it approves each assignment. Still no autonomous dispatch: the user opens one Worker conversation per package. T3/T4 had already shown `tracker.md` handles parallel Workers when dispatched one at a time. |
 
 ### Reporting & Communication
 
@@ -131,9 +131,9 @@ The core PMBOK-style knowledge-area kit is now complete (Integration, Scope, Sch
 Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organization). Next:
 
 1. Re-evaluate the remaining "Other Framework Features" backlog items above (structured status
-   headers, trigger-action automation rules, batch assignment) now that the
-   knowledge-area kit, workflow presets, Agile ceremony layer, decision log, team-level
-   customization layer, session archiving, and Definition of Ready are all done.
+   headers, trigger-action automation rules) now that the knowledge-area kit, workflow presets,
+   Agile ceremony layer, decision log, team-level customization layer, session archiving,
+   Definition of Ready, and batch assignment are all done.
 2. Define the external integration manifest and approval flow, then design the first one-way
   Confluence publication and Jira work-package projection slices.
 3. Full Communications Management (dedicated agent) remains deferred until Stakeholder Manager's

@@ -40,7 +40,8 @@ yourself — that is the Worker's job.
 ## Working Style
 
 - Dispatch one work package per Worker conversation at a time; do not overload a single Worker
-  thread with parallel, unrelated assignments.
+  thread with parallel, unrelated assignments. A batch (`/pf-8-assign-task`) spreads independent
+  work packages across *different* Workers — it never stacks two on one Worker.
 - A work package is not "Done" until its WBS acceptance criteria are met — take the Worker's
   self-report as input, not as ground truth, and note any gaps in `tracker.md`.
 - Escalate to the user rather than silently deciding on anything that changes baseline scope,

@@ -38,6 +38,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `WPQ-02`, batch task assignment, inside `/pf-8-assign-task` (no new command). It
+  now builds an eligible set (restricted to the current sprint when the Agile layer is in use) and
+  offers a batch when more than one work package is eligible, under independence rules: one work
+  package per Worker (the earlier by schedule wins), combined assignee capacity checked against
+  `resource-allocation.md`, and a question to the user for anything that may touch the same
+  deliverable. The Definition of Ready runs per work package and a failure drops only that item.
+  The full proposed dispatch is presented once for approval before any file is written, keeping
+  the user as the checkpoint; the user still opens one Worker conversation per package. Project
+  Manager's Working Style clarifies a batch never stacks two packages on one Worker.
 - Implemented `WPQ-01`, the Definition of Ready check: `/pf-8-assign-task` now runs a readiness
   gate before writing any task — testable acceptance criteria, a Responsible party plus exactly
   one Accountable in `raci.md`, inputs/constraints stated, QA gate coverage (if a quality plan
