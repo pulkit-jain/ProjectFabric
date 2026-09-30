@@ -12,8 +12,8 @@ Use this once a stage (a sprint, a milestone, or a phase) is finished and its hi
 inflating what agents must read. Never archive a baseline document, a register, `changes/`, or
 `decisions/` — those stay live. This is only for finished, work-package-level history.
 
-Your tools cannot move files, so you prepare the move and the user runs it — consistent with the
-user being the checkpoint. Nothing is ever deleted.
+Moving files is done from the terminal, and only after the user approves the exact list —
+consistent with the user being the checkpoint. Nothing is ever deleted.
 
 ## Steps
 
@@ -31,12 +31,12 @@ user being the checkpoint. Nothing is ever deleted.
 4. Write `archives/<stage>/stage-summary.md` from `templates/stage-summary.template.md` with Move
    Status "Pending", using facts from the files above and `tracker.md` — do not invent outcomes.
    List every candidate under Archived Files with its target path under `archives/<stage>/`.
-5. Present the candidate list to the user and, once they approve, give them one command block to
-   run: `git mv <original> <archived>` per file (plain move if `.pmo/` isn't in git), creating the
-   target folders first. Standup-log entries can't be moved by command; ask the user whether to
-   leave them or have you copy them to `archives/<stage>/standup-log.md` and cut them from the live
-   file.
-6. After the user says the move is done, use search to verify each original is gone and each
-   archived path exists. Only then set the summary's Move Status to "Done".
+5. Present the candidate list to the user. Once they approve it, create the target folders and
+   run `git mv <original> <archived>` per file (a plain move if `.pmo/` isn't in git). If you
+   can't run terminal commands, give the user the same command block and wait for them to confirm
+   it's done. Standup-log entries can't be moved by command; ask the user whether to leave them or
+   have you copy them to `archives/<stage>/standup-log.md` and cut them from the live file.
+6. Once the moves are done, use search to verify each original is gone and each archived path
+   exists. Only then set the summary's Move Status to "Done".
 7. Tell the user the next command — `/pf-8-assign-task` to continue the loop, or
    `/pf-7b-sprint-planning` if the Agile ceremony layer is in use.

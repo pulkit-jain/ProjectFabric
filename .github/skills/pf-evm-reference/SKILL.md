@@ -56,9 +56,23 @@ BAC = $10,000, % Complete = 40%, AC = $4,800, PV (per schedule) = $4,000.
 - SV = $4,000 − $4,000 = **$0** (on schedule)
 - CPI = $4,000 / $4,800 = **0.83** (over budget — spending $1 for every $0.83 of value earned)
 - SPI = $4,000 / $4,000 = **1.00** (on schedule)
-- EAC = $10,000 / 0.83 = **$12,048**
-- ETC = $12,048 − $4,800 = **$7,248**
-- VAC = $10,000 − $12,048 = **−$2,048** (projected to finish $2,048 over budget)
+- EAC = $10,000 / (4,000 / 4,800) = **$12,000**
+- ETC = $12,000 − $4,800 = **$7,200**
+- VAC = $10,000 − $12,000 = **−$2,000** (projected to finish $2,000 over budget)
+
+CPI is shown as 0.83 but carried at full precision (0.8333…) into EAC. Dividing by the rounded
+0.83 would give $12,048 — an avoidable rounding error. Round only for display.
+
+## Compute It With the Script
+
+Don't do this arithmetic by hand. `pf_evm.py` in the `pf-helper-scripts` skill takes BAC, PV,
+% Complete, and AC per work package and prints both tables in `cost-performance.md`'s format:
+
+```
+python .github/skills/pf-helper-scripts/scripts/pf_evm.py --wp "A|10000|4000|40|4800"
+```
+
+If the script can't be run, use the formulas above.
 
 ## Common Mistakes to Avoid
 

@@ -38,6 +38,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `AUT-01`, deterministic helper scripts, as a ninth skill,
+  `.github/skills/pf-helper-scripts/` (Python 3.9+, standard library only; ships with the `.github/`
+  copy, so no extra install step). Three scripts an agent runs on demand and never unattended:
+  `pf_evm.py` prints the Full EVM table and Project Rollup in `cost-performance.md`'s shape;
+  `pf_validate.py` is a read-only check of WBS Hierarchy vs. Dictionary, exactly one Accountable per
+  RACI row, risk Score = Probability x Impact and sort order, tracker IDs and linked `R-`/`CR-` IDs,
+  `bus/` task files vs. tracker, and sprint-backlog IDs; `pf_scaffold.py` creates `.pmo/` from
+  `templates/`, never overwrites, and applies `--preset`/`--team`. Wired into the Cost Manager (EVM),
+  the Project Manager (validate at step 0 of `/pf-11-control-cycle`), and `/pf-0-init` (scaffold),
+  each with a manual fallback when Python or a terminal isn't available. The scripts report and
+  compute only; Status colors and every judgment stay with the agent and user.
+  Verified: `pf_evm.py` reproduces the `video-onboarding` sandbox's EVM table and rollup exactly;
+  `pf_validate.py` passes `crm-rollout` and `video-onboarding` cleanly and flags a planted-defect
+  fixture on every rule; `pf_scaffold.py` was run dry, real, re-run (no overwrites), with a bad
+  preset, and its output validated as all-skipped. No automated test suite was added.
+- Cost Manager and Project Manager now declare `execute` in `tools:` to run those scripts (Worker
+  already had it). The VS Code terminal-confirmation prompt keeps the user as the checkpoint.
+  Because the Project Manager can now run commands, `/pf-13b-archive-stage` runs its approved
+  `git mv` moves itself instead of handing the user a command block (still handing over if it can't).
 - Implemented `REP-01`, structured status headers, as new Ground Rule 8 in
   `copilot-instructions.md`: any response that drafts, changes, or reviews an artifact opens with
   `## <Agent> - <Action>` (Action limited to Drafted / Updated / Reviewed / Flagged / Blocked /
@@ -269,6 +288,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `pf-evm-reference`'s worked example computed EAC from a rounded CPI (0.83), giving $12,048; the
+  exact figure is $12,000 (ETC $7,200, VAC -$2,000). Rounding CPI before dividing is an avoidable
+  error, so the example now carries full precision and says why. Found while checking the new
+  `pf_evm.py` against it.
+- `templates/tracker.template.md` listed five status values but `/pf-14-close-project` and the
+  `datacenter-migration` sandbox both use `Descoped`; the template comment now includes it.
+- `pf-0-init.prompt.md` numbered two steps "3"; renumbered.
+- `_sandbox/datacenter-migration` (gitignored test data) has R-004 (score 15) listed after R-003
+  (score 6), against the register's descending-score rule. Missed by the T3 run and found by
+  `pf_validate.py`; left as-is.
 - Stale references to Cost/Resource Management as unimplemented v2 knowledge areas, found while
   validating the framework end-to-end with a full simulated project run (see
   `_sandbox/demo-project/` locally, gitignored): `templates/charter.template.md`'s Budget Summary

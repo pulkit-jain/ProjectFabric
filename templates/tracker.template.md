@@ -6,7 +6,8 @@
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1.1 | | | Not Started | 0% | | | | | | | |
 
-<!-- Status values: Not Started / In Progress / Blocked / Review / Done -->
+<!-- Status values: Not Started / In Progress / Blocked / Review / Done / Descoped (only via an
+approved Change Request) -->
 
 ## Handoff Notes
 

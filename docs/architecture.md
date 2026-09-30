@@ -15,7 +15,8 @@ one of them needs an explicit, deliberate trade-off decision, not a default.
    `risk-register.md` ordered by score), schema/ID validation (e.g. WBS 100%-rule, RACI's
    one-Accountable rule, cross-file ID consistency), or file scaffolding (e.g. `/pf-0-init`
    copying templates). These are bundled as assets under a Skill (see the Skills layer in
-   `ROADMAP.md`) or a plain `scripts/` folder, invoked by an agent on demand — they never run
+   `ROADMAP.md`; the shipped set is `.github/skills/pf-helper-scripts/`, Python 3 standard library
+   only) or a plain `scripts/` folder, invoked by an agent on demand — they never run
    unattended and never make a decision for the user, they just compute or check one deterministic
    thing an LLM would otherwise do slower, more expensively, and less reliably.
 2. **State lives in portable plain-text files.** All project state is plain Markdown under

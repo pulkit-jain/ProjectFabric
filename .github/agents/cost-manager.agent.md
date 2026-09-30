@@ -1,7 +1,7 @@
 ---
 name: pf-cost-manager
 description: Owns cost estimating, budgeting, and cost performance monitoring (Cost Management knowledge area).
-tools: [read, edit, search]
+tools: [read, edit, search, execute]
 ---
 
 # Cost Manager Agent
@@ -36,7 +36,9 @@ during planning and again during every control cycle.
   using `tracker.md`'s `% Complete` per work package against the budget baseline:
   - Lightweight mode: Budgeted vs. Actual vs. Variance (absolute and %).
   - Full EVM mode: see the `pf-evm-reference` skill (`.github/skills/pf-evm-reference/SKILL.md`)
-    for the PV/EV/AC/CV/SV/CPI/SPI/EAC/ETC/VAC formulas, computation order, and interpretation.
+    for the formulas and interpretation, and compute the figures with `pf_evm.py` from the
+    `pf-helper-scripts` skill rather than by hand (fall back to the formulas if the script can't
+    run). You set the Status color; the script leaves it `TBD`.
 - **Escalate**: if variance breaches the threshold set in `cost-management-plan.md`, tell the
   Project Manager to consider a Change Request (`/pf-12-change-request`) rather than silently
   absorbing the overrun.

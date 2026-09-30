@@ -25,8 +25,12 @@ write state.
      everything else is offered but skipped unless asked for.
    See [docs/knowledge-areas.md](../../docs/knowledge-areas.md#workflow-presets) for the full
    Required/Optional breakdown per preset — do not re-derive it here.
-3. Create the following structure, copying each file from `templates/` (strip the `.template`
-   suffix) and leaving placeholder fields intact for the owning agent to fill in later:
+4. Create the structure below. Prefer the scaffold script (see the `pf-helper-scripts` skill):
+   `python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py --preset <choice from step 3>`,
+   adding `--team <path>` if the user supplied a shared team file and `--dry-run` first if `.pmo/`
+   already exists. It never overwrites existing files. If it can't be run, copy each file from
+   `templates/` by hand (strip the `.template` suffix), leaving placeholder fields intact for the
+   owning agent to fill in later:
    ```
    .pmo/
      team.md            (copied from the team's shared file, or blank from template)
@@ -54,10 +58,10 @@ write state.
      archives/          (empty — populated by /pf-13b-archive-stage)
      closing/           (empty — populated by /pf-14-close-project)
    ```
-4. Fill in the freshly-copied `constitution.md`'s Workflow Preset field with the user's choice
-   from the preset question above (default `classic-waterfall` if the user has no preference yet — this is a
-   scaffolding default, not a baseline approval, and can still be revisited in
-   `/pf-0b-constitution`).
-5. Confirm the structure was created and tell the user the next command is
+5. Make sure the freshly-copied `constitution.md`'s Workflow Preset field holds the user's choice
+   from step 3 (the script does this when given `--preset`; otherwise fill it in by hand). Use
+   `classic-waterfall` if the user has no preference yet — this is a scaffolding default, not a
+   baseline approval, and can still be revisited in `/pf-0b-constitution`.
+6. Confirm the structure was created and tell the user the next command is
    `/pf-0b-constitution` (or `/pf-1-initiate-planner` directly if the user wants to skip the
    constitution step for a lightweight project).

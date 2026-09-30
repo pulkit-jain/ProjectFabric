@@ -13,6 +13,9 @@ perspectives) update `.pmo/cost-performance.md`, `.pmo/resource-allocation.md`,
 
 ## Steps
 
+0. Run `pf_validate.py --pmo .pmo` (see the `pf-helper-scripts` skill) and note every FAIL and
+   WARN for the Status Report. Fix a finding only in artifacts you own; route the rest to the
+   owning agent or the user. If the script can't be run, skip this step and say so.
 1. Compare `tracker.md` against `schedule.md`: flag any work package whose actual dates or
    dependencies have drifted from the baseline, and any milestone now at risk.
 2. Review `risk-register.md`: any risk whose trigger condition may have fired, any risk that
@@ -22,7 +25,8 @@ perspectives) update `.pmo/cost-performance.md`, `.pmo/resource-allocation.md`,
 4. Update `cost-performance.md` (in coordination with the Cost Manager perspective): using
    `tracker.md`'s `% Complete` against the budget baseline in `cost-management-plan.md`, refresh
    the Lightweight or Full EVM table (whichever mode is set) and flag any variance breaching the
-   cost control threshold.
+   cost control threshold. In Full EVM mode, compute the figures with `pf_evm.py` rather than by
+   hand.
 5. Update `resource-allocation.md` (in coordination with the Resource Manager perspective):
    refresh assignment/utilization per resource against `resource-management-plan.md`'s capacity
    plan, and flag any resource over-allocated across concurrent work packages.

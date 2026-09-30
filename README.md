@@ -75,6 +75,7 @@ assets/
 ## Quick Start
 
 1. Copy this repository's `.github/` and `templates/` directories into your project (or clone this repo at your project root).
+   Optional: Python 3.9+ lets agents run the bundled helper scripts (`.github/skills/pf-helper-scripts/`) for EVM math, `.pmo/` consistency checks, and scaffolding. Nothing to install; without Python the agents do those tasks by hand.
 2. Open GitHub Copilot Chat in VS Code (agent mode).
 3. Run `/pf-0-init` to scaffold `.pmo/` from the templates.
 4. Run `/pf-0b-constitution` to set project-specific working agreements (optional but recommended
