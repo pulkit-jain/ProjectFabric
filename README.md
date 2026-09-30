@@ -1,5 +1,3 @@
-# ProjectFabric
-
 <div align="center">
     <img src="assets/logo.png" alt="ProjectFabric logo" width="200" height="200">
     <h1>Project Fabric</h1>
