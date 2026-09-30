@@ -1,8 +1,11 @@
 # ProjectFabric
 
-<p><img src="assets/logo.png" alt="ProjectFabric logo" width="160"></p>
+<div align="center">
+    <img src="assets/logo.png" alt="ProjectFabric logo" width="200" height="200">
+    <h1>Project Fabric</h1>
+    <h3><em>Manage real projects — not just code — with a coordinated team of AI agents inside GitHub Copilot..</em></h3>
+</div>
 
-Manage real projects — not just code — with a coordinated team of AI agents inside GitHub Copilot.
 
 ProjectFabric brings classic project-management discipline (PMBOK-style knowledge areas: scope, schedule, risk, stakeholders, organization, and more) into an agentic workflow. Instead of one chat trying to remember everything, specialized agents own specific knowledge areas, and all project state lives in structured files under `.pmo/` — not in chat context.
 
