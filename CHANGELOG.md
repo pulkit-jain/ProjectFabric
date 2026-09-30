@@ -38,6 +38,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `REP-01`, structured status headers, as new Ground Rule 8 in
+  `copilot-instructions.md`: any response that drafts, changes, or reviews an artifact opens with
+  `## <Agent> - <Action>` (Action limited to Drafted / Updated / Reviewed / Flagged / Blocked /
+  Handed off) and an `Artifacts:` line. Put in the Ground Rules rather than in each prompt so all
+  agents and future commands inherit it; pure-Q&A responses are exempt.
 - Implemented `WPQ-02`, batch task assignment, inside `/pf-8-assign-task` (no new command). It
   now builds an eligible set (restricted to the current sprint when the Agile layer is in use) and
   offers a batch when more than one work package is eligible, under independence rules: one work

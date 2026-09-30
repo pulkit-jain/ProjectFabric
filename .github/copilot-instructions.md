@@ -41,6 +41,12 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
    transition and every Work Package assignment is presented to the user before proceeding.
 7. **Tell the user what to run next.** End every response with the exact next command and
    which conversation (Planner / Manager / Worker) to run it in.
+8. **Open with a structured header.** Begin every response that drafts, changes, or reviews an
+   artifact with `## <Agent> - <Action>`, where `<Agent>` is your role's display name (Planner,
+   Cost Manager, Scrum Master, Worker, ...) and `<Action>` is exactly one of: Drafted, Updated,
+   Reviewed, Flagged, Blocked, Handed off. Follow it with one line, `Artifacts:`, listing the
+   `.pmo/` files you wrote or reviewed (or `none`). A response that only answers a question
+   needs no header. Don't invent other action words — a fixed set keeps transcripts scannable.
 
 ## Artifact Ownership
 

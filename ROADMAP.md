@@ -107,7 +107,7 @@ at a glance.
 
 | ID | Feature | Status | Notes |
 |---|---|---|---|
-| REP-01 | Structured status-update headers (`## AgentName - ActionType`) | 🔜 Planned | Trivial consistency win from ai-scrum-master-template. |
+| REP-01 | Structured status-update headers (`## AgentName - ActionType`) | ✅ Done | Trivial consistency win from ai-scrum-master-template. New Ground Rule 8 in `copilot-instructions.md`: every response that drafts, changes, or reviews an artifact opens with `## <Agent> - <Action>` (Action is one of Drafted / Updated / Reviewed / Flagged / Blocked / Handed off) plus an `Artifacts:` line. Defined once as a Ground Rule so all 10 agents and every future command inherit it without editing each prompt. Compliance is model-followed, like every other Ground Rule. |
 
 ### Extensibility & Customization
 
@@ -130,10 +130,10 @@ at a glance.
 The core PMBOK-style knowledge-area kit is now complete (Integration, Scope, Schedule, Cost,
 Risk, Quality, Procurement, Resource, Stakeholder, partial Communications, Organization). Next:
 
-1. Re-evaluate the remaining "Other Framework Features" backlog items above (structured status
-   headers, trigger-action automation rules) now that the knowledge-area kit, workflow presets,
-   Agile ceremony layer, decision log, team-level customization layer, session archiving,
-   Definition of Ready, and batch assignment are all done.
+1. Re-evaluate the remaining "Other Framework Features" backlog items above (trigger-action
+   automation rules, deterministic helper scripts) now that the knowledge-area kit, workflow
+   presets, Agile ceremony layer, decision log, team-level customization layer, session archiving,
+   Definition of Ready, batch assignment, and status headers are all done.
 2. Define the external integration manifest and approval flow, then design the first one-way
   Confluence publication and Jira work-package projection slices.
 3. Full Communications Management (dedicated agent) remains deferred until Stakeholder Manager's
