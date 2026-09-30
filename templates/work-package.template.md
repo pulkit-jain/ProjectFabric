@@ -22,6 +22,13 @@
 
 -
 
+## Definition of Ready
+
+<!-- Result of the /pf-8-assign-task readiness check: Passed, or Passed with waiver (name each
+waived item and who approved the waiver). -->
+
+**Result:**
+
 ## Reporting Instructions
 
 1. Log progress and decisions to `.pmo/memory/work-packages/WP-<id>.md` as you go.

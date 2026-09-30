@@ -46,6 +46,13 @@ an override with no reason is not allowed. Cannot override framework-wide Ground
 silently? Cross-reference cost-management-plan.md and risk-register.md thresholds rather than
 duplicating numbers once those exist. -->
 
+## Definition of Ready (project-level additions)
+
+<!-- Extra checks a work package must pass before /pf-8-assign-task dispatches it, on top of the
+standard list in that prompt. Leave empty if the standard list is enough. -->
+
+-
+
 ## Definition of Done (project-level)
 
 <!-- What "closed" means for this project as a whole, beyond individual work package acceptance

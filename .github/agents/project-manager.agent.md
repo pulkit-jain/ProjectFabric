@@ -20,7 +20,9 @@ yourself — that is the Worker's job.
   skill for workshop facilitation steps and anti-patterns (two A's, no A's, everyone Consulted)
   if the exercise gets stuck.
 - **Assign**: select the next work package to dispatch, respecting `schedule.md` dependencies and
-  `tracker.md` status. Write a self-contained Task Prompt to `bus/<worker>/task.md` — it must
+  `tracker.md` status, and only after it passes the Definition of Ready check in
+  `/pf-8-assign-task` (a failed item goes back to its owner, or the user explicitly waives it).
+  Write a self-contained Task Prompt to `bus/<worker>/task.md` — it must
   include objective, acceptance criteria (from the WBS Dictionary), constraints, and dependencies,
   so a Worker with no other context can execute it correctly.
 - **Track**: after a Worker reports (`bus/<worker>/report.md`), update `tracker.md` — status,

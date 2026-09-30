@@ -38,6 +38,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `WPQ-01`, the Definition of Ready check: `/pf-8-assign-task` now runs a readiness
+  gate before writing any task — testable acceptance criteria, a Responsible party plus exactly
+  one Accountable in `raci.md`, inputs/constraints stated, QA gate coverage (if a quality plan
+  exists), assignee not over-allocated (if a resource plan exists), vendor contract active (if
+  vendor-owned), and any project additions. A failed item is routed back to its owning agent; the
+  user may waive it, and the outcome (Passed / Passed with waiver) is recorded in the new
+  Definition of Ready section of `work-package.template.md`. `constitution.template.md` gained a
+  "Definition of Ready (project-level additions)" section, which `/pf-0b-constitution` now asks
+  about. `/pf-10b-backlog-refinement`'s Ready flag uses the same checklist minus the
+  predecessors-Done test. Project Manager's Assign responsibility updated. Refreshed ROADMAP's
+  "Next Up" item 1 again.
 - Implemented `SESS-03`, session/stage archiving: new `/pf-13b-archive-stage` command (pairs with
   `/pf-13-handoff`) and `templates/stage-summary.template.md`. At the end of a stage (sprint,
   milestone, or phase) the Project Manager writes `archives/<stage>/stage-summary.md` — outcome,

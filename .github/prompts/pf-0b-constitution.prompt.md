@@ -32,7 +32,9 @@ exists, it sits between the two — read it first, and don't restate anything it
    already set in `cost-management-plan.md` and `risk-register.md` once they exist, rather than
    duplicating numbers.
 5. Capture a project-level Definition of Done — what "closed" means for this project overall,
-   beyond individual work package acceptance criteria.
+   beyond individual work package acceptance criteria. Also ask whether this project needs any
+   Definition of Ready checks beyond the standard list in `/pf-8-assign-task`; leave the section
+   empty if not.
 6. Present the Constitution to the user for review before treating it as baseline. Once approved,
    changes go through the same Change Control as other baseline documents (Ground Rule 5).
 7. Tell the user the next command is `/pf-1-initiate-planner`.
