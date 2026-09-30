@@ -1,5 +1,7 @@
 # ProjectFabric
 
+<p><img src="assets/logo.png" alt="ProjectFabric logo" width="160"></p>
+
 Manage real projects — not just code — with a coordinated team of AI agents inside GitHub Copilot.
 
 ProjectFabric brings classic project-management discipline (PMBOK-style knowledge areas: scope, schedule, risk, stakeholders, organization, and more) into an agentic workflow. Instead of one chat trying to remember everything, specialized agents own specific knowledge areas, and all project state lives in structured files under `.pmo/` — not in chat context.
@@ -38,6 +40,8 @@ docs/
   architecture.md           # file-based state model, extension points
   knowledge-areas.md        # PMBOK-style coverage matrix (v1 vs planned)
   test-plan.md              # test scenarios run so far, coverage matrix, future test backlog
+assets/
+  logo.png                  # ProjectFabric logo
 .pmo/                        # created per-project by /pf-0-init (see below)
   constitution.md
   charter.md
