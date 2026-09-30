@@ -38,6 +38,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Extended the Version 2 plan in `ROADMAP.md` with the ideas approved by the user (nothing
+  built): Outlook unsent drafts and invites (`INF-14`), Microsoft Teams meeting capture
+  (`INF-15`), `markitdown` document import (`INF-16`), git/GitLab version control of
+  `.pmo/` (`INF-17`), sensitivity labels (`GOV-04`), an issue and action log (`GOV-05`), a Kanban
+  preset (`AGL-03`), structured dates (`WPQ-03`), newsletter/blog/announcement drafts (`REP-06`), a
+  Technical Writer agent (`REP-07`), and a narration script in speaker notes (`REP-03.1`) with
+  voice-over audio deferred (`REP-03.2`). `KA-12` (full Communications, a Communications Manager
+  agent) moved from Deferred to Planned because its trigger condition is met. The phases now run
+  0 to 7, with Phase 0 holding the foundations (dates, labels, issue log, MCP spike) and new
+  Communications (5) and Flow/documentation (6) phases. A portfolio roll-up (`REP-08`) with a
+  Portfolio Manager agent (`REP-09`) is recorded as Deferred until a second real project exists.
+- Recorded a Version 2 plan in `ROADMAP.md` (nothing built): a "Version 2 Plan" section
+  with a reviewed list of the remaining backlog, Design Principle impact, six phases in two
+  independent tracks (Atlassian: MCP spike, integration manifest, Confluence publishing, Jira
+  projection; Office: Excel and presentation export), risks, and a test approach. Six decisions
+  were made with the user: everything ships in core; standard-library XLSX writer; `python-pptx`
+  now (filling a user-supplied template) with the dependency-free MARP deck deferred; Jira maps
+  Epic per deliverable and Task per work package; a core Confluence designer skill with a theme
+  slot that uses the user's installed styling skill, if any (never copied or forked); the
+  stakeholder register is publishable only on explicit confirmation each time, after a warning
+  preview. New rows: `INF-13` (MCP consumption convention), `INF-04.1` (read-only Jira drift
+  report), `REP-02` (Excel), `REP-03` (presentation), `REP-04` (Confluence designer), `REP-05`
+  (MARP, deferred); `INF-01` to `INF-03` are tagged with their phases. `python-pptx` will be
+  ProjectFabric's first optional package dependency, which needs an explicit carve-out in the
+  architecture doc when built. Also replaced the
+  stale "Next Up" items (the integration manifest item and the "validate four new v1 additions"
+  test run, which T5 superseded).
 - Full-framework test: a repeatable static audit (documented in `docs/test-plan.md`, not committed
   as a script) and a fifth lifecycle run, T5 (`_sandbox/packaging-redesign/`, gitignored), that
   exercises everything added since T4 in one project — the agile-hybrid preset with three Optional
