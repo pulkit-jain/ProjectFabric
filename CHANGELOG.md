@@ -38,6 +38,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented `AUT-02`, trigger-action automation rules, scaled down to fit Design Principle 1:
+  nothing is event-driven or unattended. New `templates/automation-rules.template.md` becomes
+  `.pmo/automation-rules.md`, a table of `Condition` (`<metric> <operator> <number>`), `Flag Message`,
+  `Suggest`ed command, and `Enabled`. The new `pf_rules.py` in the `pf-helper-scripts` skill
+  computes eight metrics from `.pmo/` (`blocked_wp_count`, `done_pct`, `open_risk_count`,
+  `open_risk_max_score`, `cost_overrun_pct_max`, `cpi_min`, `spi_min`, `draft_decision_count`) and
+  reports which enabled rules are TRIGGERED. It runs at step 0 of `/pf-11-control-cycle`; a
+  triggered rule only appears in the Status Report with its suggested command — the user decides,
+  and nothing is run or edited automatically. The seven shipped example rules are all disabled with
+  example numbers, so default behavior is unchanged (Ground Rule 4). Wired into `pf_scaffold.py` and
+  `/pf-0-init`, the Ownership table (Project Manager), the Project Manager's Control
+  responsibility, `/pf-0b-constitution` (offers to encode escalation conditions as rules), and
+  README. Uses a Markdown table rather than the roadmap's `.pmo/automation.yml`: YAML can't be parsed
+  with the standard library and Design Principle 2 keeps state in plain Markdown tables.
+  Verified: the metrics match the raw `datacenter-migration` data (18.2% worst overrun, 7 of 7
+  non-descoped work packages Done) and `video-onboarding` (CPI 1.10); a synthetic fixture covered
+  triggered, not triggered, disabled, unknown-metric, and malformed rules, Descoped rows, and a
+  Draft decision. No automated test suite was added.
 - Implemented `AUT-01`, deterministic helper scripts, as a ninth skill,
   `.github/skills/pf-helper-scripts/` (Python 3.9+, standard library only; ships with the `.github/`
   copy, so no extra install step). Three scripts an agent runs on demand and never unattended:

@@ -72,6 +72,7 @@ Project Manager, Scrum Master, and Worker roles defined in `.github/agents/`.
 | `standup-log.md` | Scrum Master | `/pf-8b-standup` (Agile ceremony layer) |
 | `retro-log.md` | Scrum Master | `/pf-11b-sprint-retro` (Agile ceremony layer) |
 | `tracker.md` | Project Manager | `/pf-10-check-report`, ongoing |
+| `automation-rules.md` | Project Manager | user-authored rules, evaluated each `/pf-11-control-cycle`; a triggered rule only flags |
 | `bus/<worker>/task.md` | Project Manager | `/pf-8-assign-task` |
 | `bus/<worker>/report.md` | Worker | `/pf-9-initiate-worker` |
 | `memory/work-packages/WP-<id>.md` | Worker | during execution |

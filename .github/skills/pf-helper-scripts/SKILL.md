@@ -1,6 +1,6 @@
 ---
 name: pf-helper-scripts
-description: 'Deterministic helper scripts for ProjectFabric: EVM math, .pmo/ consistency validation (WBS, RACI one-Accountable, risk scores, tracker, bus drift), and .pmo/ scaffolding. Use when computing Full EVM figures for cost-performance.md, running a control cycle, checking .pmo/ for drift or broken IDs, or running /pf-0-init.'
+description: 'Deterministic helper scripts for ProjectFabric: EVM math, .pmo/ consistency validation (WBS, RACI one-Accountable, risk scores, tracker, bus drift), automation-rule evaluation, and .pmo/ scaffolding. Use when computing Full EVM figures for cost-performance.md, running a control cycle, checking .pmo/ for drift or broken IDs, evaluating automation-rules.md, or running /pf-0-init.'
 ---
 
 # ProjectFabric Helper Scripts
@@ -13,7 +13,7 @@ decide. Run them only when the user's workflow calls for it, never in a loop or 
 project root. If Python isn't available or the terminal is refused, do the task by hand as the
 owning agent's instructions describe -- the scripts are an accelerator, not a dependency.
 
-All three live in `.github/skills/pf-helper-scripts/scripts/`.
+All four live in `.github/skills/pf-helper-scripts/scripts/`.
 
 ## pf_evm.py -- Earned Value figures (Cost Manager)
 
@@ -59,6 +59,30 @@ whose name/description column is blank are unfilled template placeholders and ar
 - It only reads. Report FAIL/WARN findings to the user and to the artifact's owning agent; don't
   silently edit another agent's file to make the check pass (Ground Rule 2).
 - A WARN for a register that isn't sorted is a real defect to fix, not noise.
+
+## pf_rules.py -- automation rules (Project Manager)
+
+Evaluates the user's rules in `.pmo/automation-rules.md` against the current `.pmo/` state. Run it
+with `pf_validate.py` at the start of each `/pf-11-control-cycle`.
+
+```
+python .github/skills/pf-helper-scripts/scripts/pf_rules.py --pmo .pmo
+python .github/skills/pf-helper-scripts/scripts/pf_rules.py --list-metrics
+```
+
+Each rule is a table row: `Condition` (`<metric> <operator> <number>`, e.g.
+`cost_overrun_pct_max > 15`), a `Flag Message`, a `Suggest`ed command, and `Enabled`. Metrics:
+`blocked_wp_count`, `done_pct`, `open_risk_count`, `open_risk_max_score`, `cost_overrun_pct_max`
+(Lightweight mode), `cpi_min` / `spi_min` (Full EVM mode), `draft_decision_count`.
+
+Output per enabled rule: `TRIGGERED`, `ok`, `n/a` (metric can't be computed from the current
+files), or `ERROR` (malformed rule; exit code 1). Disabled rules are skipped.
+
+- A triggered rule only **flags**. Put it in the Status Report and show the user the suggested
+  command; never run it, never edit a baseline because a rule fired (Ground Rules 5 and 6).
+- The user writes the rules and chooses the numbers. The template's rows are examples, all
+  disabled; don't enable one whose threshold nobody has set.
+- Rules complement, not replace, judgment: a rule that doesn't fire is not proof nothing is wrong.
 
 ## pf_scaffold.py -- create .pmo/ (`/pf-0-init`)
 

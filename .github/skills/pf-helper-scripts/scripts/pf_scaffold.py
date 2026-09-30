@@ -18,7 +18,7 @@ from pathlib import Path
 ARTIFACTS = [
     "team", "constitution", "charter", "scope-statement", "wbs", "schedule",
     "cost-management-plan", "cost-performance", "risk-register", "stakeholder-register", "raci",
-    "communications-plan", "tracker", "sprint-backlog", "standup-log", "retro-log",
+    "communications-plan", "tracker", "automation-rules", "sprint-backlog", "standup-log", "retro-log",
 ]
 FOLDERS = [
     "bus", "memory/work-packages", "reports", "changes", "decisions", "archives", "closing",

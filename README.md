@@ -62,6 +62,7 @@ assets/
   resource-allocation.md
   communications-plan.md
   tracker.md
+  automation-rules.md        (optional flag rules checked each control cycle)
   sprint-backlog.md, standup-log.md, retro-log.md  (Agile ceremony layer, gated by Workflow Preset)
   bus/<worker>/task.md, report.md
   memory/work-packages/WP-<id>.md

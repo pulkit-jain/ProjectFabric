@@ -46,6 +46,7 @@ write state.
      raci.md
      communications-plan.md
      tracker.md
+     automation-rules.md    (example rules, all disabled — checked at each /pf-11-control-cycle)
      sprint-backlog.md      (Agile ceremony layer — populated only if Scrum ceremonies are run)
      standup-log.md         (Agile ceremony layer)
      retro-log.md           (Agile ceremony layer)

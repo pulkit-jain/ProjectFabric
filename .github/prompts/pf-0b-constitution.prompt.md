@@ -30,7 +30,8 @@ exists, it sits between the two — read it first, and don't restate anything it
 4. Agree Escalation Rules — the conditions under which a deviation becomes a Change Request
    (`/pf-12-change-request`) rather than being absorbed silently. Cross-reference thresholds
    already set in `cost-management-plan.md` and `risk-register.md` once they exist, rather than
-   duplicating numbers.
+   duplicating numbers. If any of these conditions could be checked automatically, offer to
+   record them as rules in `automation-rules.md` (the user chooses the numbers).
 5. Capture a project-level Definition of Done — what "closed" means for this project overall,
    beyond individual work package acceptance criteria. Also ask whether this project needs any
    Definition of Ready checks beyond the standard list in `/pf-8-assign-task`; leave the section

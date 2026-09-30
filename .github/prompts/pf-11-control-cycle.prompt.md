@@ -13,9 +13,11 @@ perspectives) update `.pmo/cost-performance.md`, `.pmo/resource-allocation.md`,
 
 ## Steps
 
-0. Run `pf_validate.py --pmo .pmo` (see the `pf-helper-scripts` skill) and note every FAIL and
-   WARN for the Status Report. Fix a finding only in artifacts you own; route the rest to the
-   owning agent or the user. If the script can't be run, skip this step and say so.
+0. Run `pf_validate.py --pmo .pmo` and `pf_rules.py --pmo .pmo` (see the `pf-helper-scripts`
+   skill). Note every validator FAIL/WARN and every TRIGGERED automation rule for the Status
+   Report; present each rule's suggested command to the user rather than running it. Fix a
+   validator finding only in artifacts you own; route the rest to the owning agent or the user.
+   If a script can't be run, skip it and say so.
 1. Compare `tracker.md` against `schedule.md`: flag any work package whose actual dates or
    dependencies have drifted from the baseline, and any milestone now at risk.
 2. Review `risk-register.md`: any risk whose trigger condition may have fired, any risk that
