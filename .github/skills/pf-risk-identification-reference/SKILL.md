@@ -5,6 +5,8 @@ description: 'Risk identification techniques and Probability/Impact scale anchor
 
 # Risk Identification & Scoring Reference
 
+Sources: REF-M07, REF-M08, REF-M01 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - The user is struggling to name risks beyond the obvious ones during `/pf-4-plan-risk`.

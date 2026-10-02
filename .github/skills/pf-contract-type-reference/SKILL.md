@@ -5,6 +5,8 @@ description: 'Contract type selection guide (Fixed-Price, Time & Materials, Cost
 
 # Contract Type Selection Reference
 
+Sources: REF-M09, REF-M01 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - A make-or-buy analysis concludes "Buy" and the user needs to pick a contract type.

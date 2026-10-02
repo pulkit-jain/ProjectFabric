@@ -5,6 +5,8 @@ description: 'Generic quality assurance (process) and quality control (product) 
 
 # Quality Audit & Metrics Reference
 
+Sources: REF-M01 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - The user says "I don't know what quality metrics make sense for this" during

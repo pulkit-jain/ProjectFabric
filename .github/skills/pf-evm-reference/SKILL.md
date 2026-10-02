@@ -5,6 +5,8 @@ description: 'Earned Value Management (EVM) formulas, computation steps, and int
 
 # Earned Value Management Reference
 
+Sources: REF-M02, REF-M01 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - A project's `cost-management-plan.md` has **Mode: Full EVM** (not Lightweight).

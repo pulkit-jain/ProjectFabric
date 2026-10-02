@@ -41,6 +41,7 @@ docs/
   architecture.md           # file-based state model, extension points
   knowledge-areas.md        # PMBOK-style coverage matrix (v1 vs planned)
   test-plan.md              # test scenarios run so far, coverage matrix, future test backlog
+  Reference.md              # credits: projects studied, standards, tools
 assets/
   logo.png                  # ProjectFabric logo
 .pmo/                        # created per-project by /pf-0-init (see below)

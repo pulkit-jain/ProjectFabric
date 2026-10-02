@@ -5,6 +5,8 @@ description: 'Resource leveling and schedule compression techniques (leveling vs
 
 # Resource Leveling & Schedule Compression Reference
 
+Sources: REF-M01 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - `resource-management-plan.md`'s Capacity Plan shows a genuine over-allocation (demand > 100%

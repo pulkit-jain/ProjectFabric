@@ -45,7 +45,7 @@ one of them needs an explicit, deliberate trade-off decision, not a default.
 
 ProjectFabric agents are stateless between sessions by design — a Planner conversation and a
 Manager conversation share no memory except what's written to `.pmo/`. This is the same lesson
-mature agent-orchestration frameworks (e.g. Agentic Project Management) apply to software
+mature agent-orchestration frameworks (e.g. REF-P02) apply to software
 delivery, generalized to full project management: chat context degrades and gets compacted, but
 a Markdown file on disk doesn't.
 

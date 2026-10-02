@@ -5,6 +5,8 @@ description: 'Stakeholder engagement techniques per Power/Interest quadrant, the
 
 # Stakeholder Engagement Reference
 
+Sources: REF-M05, REF-M06 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - Filling in the Engagement Strategy column in `stakeholder-register.md` and the user wants more

@@ -41,6 +41,8 @@ templates, agents, or skills change:
 - The Ownership table's commands exist; the `/pf-0-init` file tree, `pf_scaffold.py`'s list, and
   the README tree agree; every scaffolded artifact has an owner.
 - Relative Markdown links resolve; ROADMAP IDs are unique and every cited ID exists.
+- No studied-project name appears outside `docs/Reference.md`, and every `REF-` ID cited anywhere
+  exists there.
 - A list of stale phrases (`"four Design Principles"`, `"planned for v2"`, `"cannot move files"`,
   agent and skill counts) does not appear outside history.
 - The command graph is read by eye: each prompt's "next command" makes sense for every

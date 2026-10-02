@@ -38,6 +38,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Gave every entry in `docs/Reference.md` a permanent ID (`REF-P01` to `REF-P11` projects
+  studied, `REF-M01` to `REF-M12` methods and standards, `REF-T01` to `REF-T10` platforms and tools,
+  `REF-X01` to `REF-X10` technologies named only because a studied project used them), and made
+  the rest of the repository cite sources by ID only. Every direct mention of a studied project in
+  `ROADMAP.md`, `CHANGELOG.md` and `docs/architecture.md` was replaced with its ID (for example
+  "from REF-P05"), and each of the eight reference skills now carries a `Sources:` line with the IDs
+  of the methods it draws on. Names of methods, platforms and technologies still appear where they
+  describe what a feature is ("Jira projection", "RACI matrix"), since removing them would make the
+  sentences meaningless; the page lists them all with IDs. `docs/test-plan.md`'s static audit gained
+  a check for this.
+- Added `docs/Reference.md`, a credits page for the whole repository: the eleven projects studied
+  (source URL where one was found, the licence and copyright line found in the studied copy, and
+  which roadmap items each informed), the standards, methods and publications the content draws on
+  (PMBOK, earned value, critical path, RACI, the salience model, the pre-mortem, Scrum, Keep a
+  Changelog, Semantic Versioning), the platforms and tools involved, and the technologies named only
+  because a studied project used them. Before writing it, a line-by-line comparison (60+ character
+  lines) against the studied projects found only standard Keep a Changelog boilerplate in common.
+  Also replaced `ROADMAP.md`'s pointer to a local-only notes file with a link to this page, and
+  listed the page in the README's directory tree. Where no URL or licence file could be found it
+  says so rather than guessing.
 - Extended the Version 2 plan in `ROADMAP.md` with the ideas approved by the user (nothing
   built): Outlook unsent drafts and invites (`INF-14`), Microsoft Teams meeting capture
   (`INF-15`), `markitdown` document import (`INF-16`), git/GitLab version control of
@@ -271,19 +291,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   DSSE attestations, signal ingestion pipelines, multi-language script parity, wheel bundling,
   Jinja2 templating) — previously subsumed silently under their parent category.
 - `ROADMAP.md` Framework Features: three new items found via a systematic one-by-one re-review of
-  all 11 reference repos (`Batch/parallel task assignment` from APM, `Trigger-action automation
-  rules` from paca, `Team-level customization layer` from aidlc-workflows' org/team/project
-  layering), plus enriched the existing `Deterministic helper scripts` row with ai-sdlc's
-  backlog/artifact drift-detection example and the `Plugin/extension pattern` row with Spec Kit's
-  template-catalog idea.
+  all 11 reference repos (`Batch/parallel task assignment` from REF-P02, `Trigger-action automation
+  rules` from REF-P08, `Team-level customization layer` from the org/team/project
+  layering in REF-P04), plus enriched the existing `Deterministic helper scripts` row with the
+  backlog/artifact drift-detection example from REF-P05 and the `Plugin/extension pattern` row with
+  the template-catalog idea from REF-P01.
 - `ROADMAP.md` Framework Features backlog: added a tracked entry for a Skills layer
   (`.github/skills/<name>/SKILL.md`) — on-demand bundled reference material for agents
   (EVM formulas, RACI facilitation technique, quality-audit checklists), a VS Code Copilot
   customization primitive not yet used anywhere in ProjectFabric.
 - `ROADMAP.md`: enriched the Plugin/extension pattern and Embedding-based routing rows with
-  concrete examples, and added two new Rejected entries — JSON-Schema validated artifacts (à la
-  ai-sdlc's schema-checked resources) and State in GitHub Issues instead of files (à la
-  ai-scrum-master-template's Kanban-as-Issue) — each with the trade-off against ProjectFabric's
+  concrete examples, and added two new Rejected entries — JSON-Schema validated artifacts (like the schema-checked resources in REF-P05) and State in GitHub Issues instead of files (like the Kanban-as-Issue in REF-P07) — each with the trade-off against ProjectFabric's
   zero-code, portable-plain-text design principles.
 - `docs/architecture.md`: added a canonical "Design Principles" section (Zero-code, State lives
   in portable plain-text files, The user is the checkpoint, One artifact one owner) consolidating
@@ -307,7 +325,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Lightweight budget-vs-actual and Full EVM tracking modes, chosen per project). Wired into
   `/pf-11-control-cycle`, the Status Report template (Cost Highlights), and the Change Request
   template (Cost impact dimension + baseline reference).
-- Project Constitution pattern (inspired by GitHub Spec Kit): `/pf-0b-constitution` command and
+- Project Constitution pattern (inspired by REF-P01): `/pf-0b-constitution` command and
   `constitution.template.md`, capturing project-specific principles, decision authority,
   reporting cadence, escalation rules, and project-level Definition of Done — layered on top of
   the framework-wide `copilot-instructions.md`. Owned by the Planner; baselined via Change

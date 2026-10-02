@@ -5,6 +5,8 @@ description: 'RACI workshop facilitation technique, common anti-patterns, and RA
 
 # RACI Facilitation Reference
 
+Sources: REF-M04 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - Building `raci.md` during `/pf-6-plan-organization` and the user isn't sure how to run the

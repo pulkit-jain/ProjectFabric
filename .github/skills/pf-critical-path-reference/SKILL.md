@@ -5,6 +5,8 @@ description: 'Critical Path Method (CPM) forward/backward pass and float calcula
 
 # Critical Path Method (CPM) Reference
 
+Sources: REF-M03 ([docs/Reference.md](../../../docs/Reference.md)).
+
 ## When to Use
 
 - Building `schedule.md`'s Critical Path Notes section during `/pf-3-plan-schedule`.
