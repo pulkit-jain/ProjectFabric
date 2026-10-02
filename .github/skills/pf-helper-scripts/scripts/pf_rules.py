@@ -181,7 +181,7 @@ def main():
     pmo = Path(args.pmo)
     rules_path = Path(args.rules) if args.rules else pmo / "automation-rules.md"
     if not pmo.is_dir():
-        sys.stderr.write("error: %s is not a directory; run /pf-0-init first\n" % pmo)
+        sys.stderr.write("error: %s is not a directory; run /pf-setup-init first\n" % pmo)
         return 2
     if not rules_path.is_file():
         print("No rules file at %s; nothing to evaluate." % rules_path.as_posix())

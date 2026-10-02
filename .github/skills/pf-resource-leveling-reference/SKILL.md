@@ -1,6 +1,6 @@
 ---
 name: pf-resource-leveling-reference
-description: 'Resource leveling and schedule compression techniques (leveling vs. smoothing, fast-tracking, crashing). Use when the Resource Manager or Project Manager finds a resource conflict or schedule pressure during /pf-6b-plan-resources, /pf-11-control-cycle, or a Change Request, and needs options beyond "just ask the user".'
+description: 'Resource leveling and schedule compression techniques (leveling vs. smoothing, fast-tracking, crashing). Use when the Resource Manager or Project Manager finds a resource conflict or schedule pressure during /pf-plan-resources, /pf-control-cycle, or a Change Request, and needs options beyond "just ask the user".'
 ---
 
 # Resource Leveling & Schedule Compression Reference

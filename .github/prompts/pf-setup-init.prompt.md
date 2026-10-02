@@ -2,7 +2,7 @@
 description: Scaffold the .pmo/ project management state directory from templates.
 ---
 
-# /pf-0-init
+# /pf-setup-init
 
 Scaffold the project's `.pmo/` directory so every ProjectFabric agent has somewhere to read and
 write state.
@@ -19,7 +19,7 @@ write state.
 3. Ask the user which Workflow Preset fits this project, briefly describing each — and if
    `team.md` sets a default Workflow Preset, propose that first and say it's the team default:
    - **classic-waterfall** (default) — full PMBOK coverage, every knowledge area planned up front.
-   - **agile-hybrid** — Scope/Schedule/Risk/Stakeholder/RACI backbone required; Cost, Quality,
+   - **agile-hybrid** — Scope/Schedule/Risk/Stakeholder/Organization/RACI backbone required; Cost, Quality,
      Procurement, and Resource-depth planning are pulled in later only when actually needed.
    - **lean** — only the minimum needed to start assigning and tracking work is required;
      everything else is offered but skipped unless asked for.
@@ -46,23 +46,23 @@ write state.
      raci.md
      communications-plan.md
      tracker.md
-     automation-rules.md    (example rules, all disabled — checked at each /pf-11-control-cycle)
+     automation-rules.md    (example rules, all disabled — checked at each /pf-control-cycle)
      sprint-backlog.md      (Agile ceremony layer — populated only if Scrum ceremonies are run)
      standup-log.md         (Agile ceremony layer)
      retro-log.md           (Agile ceremony layer)
-     bus/               (empty — populated per-Worker by /pf-8-assign-task)
+     bus/               (empty — populated per team member by /pf-assign-task)
      memory/
-       work-packages/   (empty — populated by Workers)
-     reports/           (empty — populated by /pf-11-control-cycle)
-     changes/           (empty — populated by /pf-12-change-request)
-     decisions/         (empty — populated by /pf-12b-log-decision)
-     archives/          (empty — populated by /pf-13b-archive-stage)
-     closing/           (empty — populated by /pf-14-close-project)
+       work-packages/   (empty — populated by Team Members)
+     reports/           (empty — populated by /pf-control-cycle)
+     changes/           (empty — populated by /pf-change-request)
+     decisions/         (empty — populated by /pf-log-decision)
+     archives/          (empty — populated by /pf-session-archive-stage)
+     closing/           (empty — populated by /pf-close-project)
    ```
 5. Make sure the freshly-copied `constitution.md`'s Workflow Preset field holds the user's choice
    from step 3 (the script does this when given `--preset`; otherwise fill it in by hand). Use
    `classic-waterfall` if the user has no preference yet — this is a scaffolding default, not a
-   baseline approval, and can still be revisited in `/pf-0b-constitution`.
+   baseline approval, and can still be revisited in `/pf-setup-constitution`.
 6. Confirm the structure was created and tell the user the next command is
-   `/pf-0b-constitution` (or `/pf-1-initiate-planner` directly if the user wants to skip the
+   `/pf-setup-constitution` (or `/pf-setup-charter` directly if the user wants to skip the
    constitution step for a lightweight project).

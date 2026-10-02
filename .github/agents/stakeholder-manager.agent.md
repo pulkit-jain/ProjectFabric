@@ -41,4 +41,5 @@ You own `stakeholder-register.md` and `communications-plan.md`.
 
 ## Handoff
 
-After stakeholder planning, tell the user to run `/pf-6-plan-organization` next.
+After stakeholder planning, tell the user to run `/pf-plan-skills` next (`/pf-plan-organization`
+if the project skips the skills assessment).

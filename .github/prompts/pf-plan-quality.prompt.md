@@ -2,7 +2,7 @@
 description: Define quality standards, metrics, QA/QC approach, and the QA gate before "Done" — produce the Quality Management Plan.
 ---
 
-# /pf-4b-plan-quality
+# /pf-plan-quality
 
 Act as the `pf-quality-manager` agent (see `.github/agents/quality-manager.agent.md`). Read
 `.pmo/wbs.md` and `.pmo/risk-register.md`; produce `.pmo/quality-management-plan.md` from
@@ -11,7 +11,7 @@ Act as the `pf-quality-manager` agent (see `.github/agents/quality-manager.agent
 
 ## Steps
 
-1. Require an approved `wbs.md` — if missing, point the user to `/pf-2-plan-scope-wbs`.
+1. Require an approved `wbs.md` — if missing, point the user to `/pf-plan-scope-wbs`.
 2. Ask the user for the quality standards/policy relevant to this project's deliverables. Don't
    invent generic ones — if there are none beyond the WBS Dictionary's acceptance criteria, say
    so explicitly.
@@ -23,4 +23,4 @@ Act as the `pf-quality-manager` agent (see `.github/agents/quality-manager.agent
 5. Define QA Gate Criteria that supplement (not replace) each WBS leaf's acceptance criteria —
    this is the checklist a work package must pass before it can be marked "Done".
 6. Present the Quality Management Plan to the user for review before treating it as baseline.
-7. Tell the user the next command is `/pf-4c-plan-procurement`.
+7. Tell the user the next command is `/pf-plan-procurement`.

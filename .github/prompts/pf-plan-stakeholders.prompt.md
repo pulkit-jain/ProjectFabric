@@ -2,7 +2,7 @@
 description: Identify and analyze stakeholders, and produce the Stakeholder Register and Communications Plan.
 ---
 
-# /pf-5-plan-stakeholders
+# /pf-plan-stakeholders
 
 Act as the `pf-stakeholder-manager` agent (see `.github/agents/stakeholder-manager.agent.md`).
 Read `.pmo/charter.md`; produce `.pmo/stakeholder-register.md` and `.pmo/communications-plan.md`.
@@ -22,4 +22,5 @@ Read `.pmo/charter.md`; produce `.pmo/stakeholder-register.md` and `.pmo/communi
 5. Remind the user that `stakeholder-register.md` may contain sensitive assessments and should be
    handled with appropriate access control.
 6. Present both artifacts for review.
-7. Tell the user the next command is `/pf-6-plan-organization`.
+7. Tell the user the next command is `/pf-plan-skills` (Optional under lean — offer
+   `/pf-plan-organization` if the user skips it).

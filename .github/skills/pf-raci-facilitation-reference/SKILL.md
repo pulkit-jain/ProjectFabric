@@ -1,6 +1,6 @@
 ---
 name: pf-raci-facilitation-reference
-description: 'RACI workshop facilitation technique, common anti-patterns, and RACI variants (RASCI, DACI). Use when the Project Manager is building raci.md during /pf-6-plan-organization and the user is unsure how to run the exercise or gets stuck on who should be Accountable.'
+description: 'RACI workshop facilitation technique, common anti-patterns, and RACI variants (RASCI, DACI). Use when the Project Manager is building raci.md during /pf-plan-organization and the user is unsure how to run the exercise or gets stuck on who should be Accountable.'
 ---
 
 # RACI Facilitation Reference
@@ -9,13 +9,13 @@ Sources: REF-M04 ([docs/Reference.md](../../../docs/Reference.md)).
 
 ## When to Use
 
-- Building `raci.md` during `/pf-6-plan-organization` and the user isn't sure how to run the
+- Building `raci.md` during `/pf-plan-organization` and the user isn't sure how to run the
   exercise, or the matrix keeps coming out wrong (multiple As, no As, everyone Consulted).
 
 ## Facilitation Steps
 
 1. List every WBS leaf work package as a row (already done, from `wbs.md`).
-2. List every Worker identity + the Project Manager + the Sponsor as columns.
+2. List every Team Roster member (Member IDs from `organization.md`) + the Project Manager + the Sponsor as columns.
 3. For each row, ask **"who is Accountable?"** first, before assigning any Responsible — 
    Accountable is the one person whose neck is on the line for this work package being done
    correctly. Exactly one per row, no exceptions.
@@ -48,5 +48,6 @@ their situation.
 
 - Don't let the RACI matrix become a task list in disguise — it maps WBS work packages (already
   decomposed) to roles, it doesn't re-decompose the work.
-- A Worker identity used in `raci.md` must exist as a `bus/<worker>/` folder later — flag any
-  mismatch when work packages are eventually assigned via `/pf-8-assign-task`.
+- A RACI column in `raci.md` must be a Member ID in the Team Roster, and an AI member must have a
+  matching `bus/<member>/` folder later — flag any
+  mismatch when work packages are eventually assigned via `/pf-assign-task`.

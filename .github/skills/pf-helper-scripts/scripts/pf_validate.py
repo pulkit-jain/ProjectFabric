@@ -4,9 +4,11 @@
 Checks the mechanical rules that agents otherwise re-derive by reading tables:
   WBS      hierarchy leaves match the WBS Dictionary; unique IDs; acceptance criteria present
   RACI     exactly one Accountable per work package; IDs match the WBS Dictionary
+  Org      roster IDs unique, valid Type and Status; RACI columns and bus/ folders match the roster
+  Skills   skill-matrix IDs resolve to the catalog, WBS, and roster; uncovered requirements warned
   Risks    unique IDs; scores are Probability x Impact; sorted by score, descending
   Tracker  IDs match the WBS Dictionary; valid status; Done means 100%; linked R-/CR- IDs exist
-  Bus      every bus/<worker>/task.md points at a tracker row that has actually been started
+  Bus      every bus/<member>/task.md points at a tracker row that has actually been started
   Sprint   every sprint-backlog.md WBS ID exists in the WBS Dictionary
 
 Nothing is modified. Rows whose name/description column is blank are unfilled template
@@ -22,6 +24,9 @@ from pathlib import Path
 COMMENT = re.compile(r"<!--.*?-->", re.S)
 SEPARATOR_CELL = re.compile(r":?-{3,}:?")
 VALID_STATUS = {"not started", "in progress", "blocked", "review", "done", "descoped"}
+MEMBER_TYPES = {"person", "ai", "vendor"}
+MEMBER_STATUS = {"proposed", "confirmed", "open"}
+LEVELS = {"1", "2", "3", "4"}
 
 
 class Table(object):
@@ -188,6 +193,114 @@ def check_raci(pmo, res, wbs_ids):
         res.append(("PASS", "RACI", "%d rows; exactly one Accountable each; IDs match the WBS" % len(ids)))
 
 
+def rows_with(table, prefix):
+    # Rows whose key column is filled; a blank key marks an unfilled template placeholder.
+    return [r for r in table.rows if table.cell(r, prefix)] if table else []
+
+
+def check_org(pmo, res):
+    path = pmo / "organization.md"
+    if not path.is_file():
+        res.append(("SKIP", "Org", "organization.md not found"))
+        return None
+    text = read(path)
+    table = find_table(text, "Member ID", "Type")
+    rows = rows_with(table, "Member ID")
+    if not rows:
+        res.append(("SKIP", "Org", "no roster members yet"))
+        return None
+    roster, ok = {}, True
+    ids = [table.cell(r, "Member ID") for r in rows]
+    for d in dupes(ids):
+        res.append(("FAIL", "Org", "Member ID %s appears more than once in the Team Roster" % d))
+        ok = False
+    for r in rows:
+        mid, mtype, status = table.cell(r, "Member ID"), table.cell(r, "Type"), table.cell(r, "Status")
+        if mtype.lower() not in MEMBER_TYPES:
+            res.append(("FAIL", "Org", "%s has Type %r; use Person, AI, or Vendor" % (mid, mtype)))
+            ok = False
+        if status.lower() not in MEMBER_STATUS:
+            res.append(("FAIL", "Org", "%s has Status %r; use Proposed, Confirmed, or Open" % (mid, status)))
+            ok = False
+        roster[mid.lower()] = (mtype.lower(), status.lower())
+
+    unsettled = [i for i in ids if roster[i.lower()][1] in ("proposed", "open")]
+    if unsettled:
+        res.append(("WARN", "Org", "%d roster entries are not yet Confirmed: %s" % (len(unsettled), ", ".join(unsettled))))
+
+    raci = pmo / "raci.md"
+    rtable = find_table(read(raci), "WBS ID", "Work Package") if raci.is_file() else None
+    if rtable and rtable.filled():
+        gov = find_table(text, "Body", "Decision Rights")
+        allowed = set(roster) | {"project manager", "sponsor"}
+        allowed |= {gov.cell(r, "Body").lower() for r in rows_with(gov, "Body")}
+        used = [c for c in rtable.headers[rtable.headers.index(rtable.header("Work Package")) + 1:]
+                if any(r.get(c, "").strip() for r in rtable.filled())]
+        for col in used:
+            if col.lower() not in allowed:
+                res.append(("FAIL", "Org", "RACI column %r is not a Member ID in the Team Roster" % col))
+                ok = False
+
+    bus = pmo / "bus"
+    for d in sorted(p for p in bus.iterdir() if p.is_dir()) if bus.is_dir() else []:
+        if roster.get(d.name.lower(), ("",))[0] != "ai":
+            res.append(("WARN", "Org", "bus/%s has no matching AI member in the Team Roster" % d.name))
+    if ok:
+        res.append(("PASS", "Org", "%d roster members; IDs unique; Types and Statuses valid; RACI columns "
+                    "are roster members" % len(rows)))
+    return roster
+
+
+def check_skills(pmo, res, wbs_ids, roster):
+    path = pmo / "skill-matrix.md"
+    if not path.is_file():
+        res.append(("SKIP", "Skills", "skill-matrix.md not found"))
+        return
+    text = read(path)
+    catalog = find_table(text, "Skill ID", "Category")
+    reqs = find_table(text, "WBS ID", "Min Level")
+    cov = find_table(text, "Member ID", "Level")
+    skills = {catalog.cell(r, "Skill ID") for r in rows_with(catalog, "Skill ID")}
+    req_rows, cov_rows = rows_with(reqs, "WBS ID"), rows_with(cov, "Member ID")
+    if not skills and not req_rows and not cov_rows:
+        res.append(("SKIP", "Skills", "no filled rows yet"))
+        return
+    ok, needed, best = True, {}, {}
+    for r in req_rows:
+        wid, sid, lvl = reqs.cell(r, "WBS ID"), reqs.cell(r, "Skill ID"), reqs.cell(r, "Min Level")
+        if sid not in skills:
+            res.append(("FAIL", "Skills", "requirement for %s names %s, which is not in the Skills Catalog" % (wid, sid)))
+            ok = False
+        if wbs_ids is not None and wid not in wbs_ids:
+            res.append(("FAIL", "Skills", "requirement row %s is not in the WBS Dictionary" % wid))
+            ok = False
+        if lvl not in LEVELS:
+            res.append(("FAIL", "Skills", "requirement %s/%s has Min Level %r; use 1-4" % (wid, sid, lvl)))
+            ok = False
+        else:
+            needed[sid] = max(needed.get(sid, 0), int(lvl))
+    for r in cov_rows:
+        mid, sid, lvl = cov.cell(r, "Member ID"), cov.cell(r, "Skill ID"), cov.cell(r, "Level")
+        if sid not in skills:
+            res.append(("FAIL", "Skills", "coverage for %s names %s, which is not in the Skills Catalog" % (mid, sid)))
+            ok = False
+        if roster is not None and mid.lower() not in roster:
+            res.append(("FAIL", "Skills", "coverage row %s is not a Member ID in the Team Roster" % mid))
+            ok = False
+        if lvl.upper() != "TBD" and lvl not in LEVELS:
+            res.append(("FAIL", "Skills", "coverage %s/%s has Level %r; use 1-4 or TBD" % (mid, sid, lvl)))
+            ok = False
+        elif lvl in LEVELS and (roster is None or roster.get(mid.lower(), ("", ""))[1] != "open"):
+            best[sid] = max(best.get(sid, 0), int(lvl))
+    gaps = ["%s needs level %d, best rostered coverage is %s" % (s, n, best.get(s) or "none")
+            for s, n in sorted(needed.items()) if best.get(s, 0) < n]
+    for g in gaps:
+        res.append(("WARN", "Skills", g))
+    if ok and not gaps:
+        res.append(("PASS", "Skills", "%d skills; requirements and coverage resolve; every requirement is covered"
+                    % len(skills)))
+
+
 def check_risks(pmo, res):
     path = pmo / "risk-register.md"
     if not path.is_file():
@@ -284,30 +397,30 @@ def check_bus(pmo, res, tracker):
     bus = pmo / "bus"
     tasks = sorted(bus.glob("*/task.md")) if bus.is_dir() else []
     if not tasks:
-        res.append(("SKIP", "Bus", "no bus/<worker>/task.md files"))
+        res.append(("SKIP", "Bus", "no bus/<member>/task.md files"))
         return
     if tracker is None:
         res.append(("SKIP", "Bus", "tracker not available to compare against"))
         return
     ok = True
     for t in tasks:
-        worker = t.parent.name
+        member = t.parent.name
         m = re.search(r"WP-(\d+(?:\.\d+)*)", read(t)[:400])
         if not m:
-            res.append(("WARN", "Bus", "%s/task.md has no WP-<id> in its heading" % worker))
+            res.append(("WARN", "Bus", "%s/task.md has no WP-<id> in its heading" % member))
             continue
         wid = m.group(1)
         if wid not in tracker:
-            res.append(("FAIL", "Bus", "%s/task.md is for WP-%s, which is not in the tracker" % (worker, wid)))
+            res.append(("FAIL", "Bus", "%s/task.md is for WP-%s, which is not in the tracker" % (member, wid)))
             ok = False
             continue
         owner, status = tracker[wid]
         if status.lower() == "not started":
             res.append(("FAIL", "Bus", "%s/task.md was written for WP-%s but the tracker still says Not Started"
-                        % (worker, wid)))
+                        % (member, wid)))
             ok = False
-        if owner and owner.lower() != worker.lower():
-            res.append(("WARN", "Bus", "%s/task.md is for WP-%s but the tracker Owner is %r" % (worker, wid, owner)))
+        if owner and owner.lower() != member.lower():
+            res.append(("WARN", "Bus", "%s/task.md is for WP-%s but the tracker Owner is %r" % (member, wid, owner)))
     if ok:
         res.append(("PASS", "Bus", "%d task files match started tracker rows" % len(tasks)))
 
@@ -342,12 +455,14 @@ def main():
     args = ap.parse_args()
     pmo = Path(args.pmo)
     if not pmo.is_dir():
-        sys.stderr.write("error: %s is not a directory; run /pf-0-init first\n" % pmo)
+        sys.stderr.write("error: %s is not a directory; run /pf-setup-init first\n" % pmo)
         return 2
 
     res = []
     wbs_ids = check_wbs(pmo, res)
     check_raci(pmo, res, wbs_ids)
+    roster = check_org(pmo, res)
+    check_skills(pmo, res, wbs_ids, roster)
     risk_ids = check_risks(pmo, res)
     tracker = check_tracker(pmo, res, wbs_ids, risk_ids)
     check_bus(pmo, res, tracker)

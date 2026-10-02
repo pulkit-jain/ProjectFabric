@@ -47,9 +47,10 @@ helper scripts item that could add one later). For now:
 ## Rules
 
 - A plugin must never modify a core file — only add new ones.
-- A plugin's contributed `/pf-N` prompts should use a **non-numeric, prefixed command name**
-  (e.g. `/pf-example-role-action`, not a `/pf-N` letter-suffix slot) so they never collide with
-  core's numbering scheme (see `ROADMAP.md`'s Governance section on letter-suffix commands).
+- A plugin's contributed prompts should use a **plugin-prefixed command name**
+  (e.g. `/pf-example-role-action`) whose second segment is not one of core's categories
+  (`setup`, `plan`, `agile`, `session`, `publish`, `export`) so they never collide with core
+  commands (see `ROADMAP.md`'s Governance section on command naming).
 - A plugin's contributed agents must declare their own `tools:` allow-list in frontmatter (see
   `.github/agents/*.agent.md` for the pattern) — don't default to unrestricted tool access.
 - Document what knowledge area or workflow the plugin covers in its `plugin.json` `description`,

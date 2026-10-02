@@ -1,6 +1,6 @@
 ---
 name: pf-evm-reference
-description: 'Earned Value Management (EVM) formulas, computation steps, and interpretation guidance for Full EVM cost tracking mode. Use when the Cost Manager is computing or explaining cost-performance.md during /pf-3b-plan-cost or /pf-11-control-cycle for a project using Full EVM mode.'
+description: 'Earned Value Management (EVM) formulas, computation steps, and interpretation guidance for Full EVM cost tracking mode. Use when the Cost Manager is computing or explaining cost-performance.md during /pf-plan-cost or /pf-control-cycle for a project using Full EVM mode.'
 ---
 
 # Earned Value Management Reference
@@ -10,7 +10,7 @@ Sources: REF-M02, REF-M01 ([docs/Reference.md](../../../docs/Reference.md)).
 ## When to Use
 
 - A project's `cost-management-plan.md` has **Mode: Full EVM** (not Lightweight).
-- Updating `cost-performance.md` during `/pf-11-control-cycle`.
+- Updating `cost-performance.md` during `/pf-control-cycle`.
 - Explaining a CPI/SPI/EAC/VAC number to the user.
 
 Skip this entirely for Lightweight mode — that mode is just Budgeted vs. Actual vs. Variance,
@@ -22,7 +22,7 @@ no formulas needed.
 |---|---|---|
 | BAC (Budget at Completion) | Total approved budget for a work package | `cost-management-plan.md`'s Budget Baseline table |
 | % Complete | Reported physical progress | `tracker.md` |
-| AC (Actual Cost) | Actual money/effort spent so far | Reported by the Worker/Project Manager |
+| AC (Actual Cost) | Actual money/effort spent so far | Reported by the Team Member/Project Manager |
 
 ## Formulas (compute in this order)
 
@@ -80,6 +80,6 @@ If the script can't be run, use the formulas above.
 
 - Don't confuse PV with the *budget baseline total* — PV is time-phased (what should be spent
   *by this point*), not the whole BAC.
-- Don't compute EV from % Complete estimates the Worker didn't actually report — pull it from
+- Don't compute EV from % Complete estimates the Team Member didn't actually report — pull it from
   `tracker.md`, never guess it.
 - CPI and SPI are ratios, not percentages — report them as e.g. `0.83`, not `83%`.

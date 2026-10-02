@@ -35,7 +35,7 @@
 
 | Trigger | Threshold | Action |
 |---|---|---|
-| Cost Variance (CV) or Budget Variance | | Raise `/pf-12-change-request` |
+| Cost Variance (CV) or Budget Variance | | Raise `/pf-change-request` |
 
 ## Funding Requirements
 

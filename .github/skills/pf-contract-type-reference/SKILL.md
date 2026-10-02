@@ -1,6 +1,6 @@
 ---
 name: pf-contract-type-reference
-description: 'Contract type selection guide (Fixed-Price, Time & Materials, Cost-Reimbursable) with risk allocation trade-offs. Use when the Procurement Manager is choosing a contract type during /pf-4c-plan-procurement and the user is unsure which type fits their situation.'
+description: 'Contract type selection guide (Fixed-Price, Time & Materials, Cost-Reimbursable) with risk allocation trade-offs. Use when the Procurement Manager is choosing a contract type during /pf-plan-procurement and the user is unsure which type fits their situation.'
 ---
 
 # Contract Type Selection Reference

@@ -6,7 +6,7 @@
 
 | Role / Resource | WBS Work Packages | Effort Estimate | Acquisition Approach | Lead Time |
 |---|---|---|---|---|
-| worker-a | 1.1 | | Existing Team / New Hire / Contractor | |
+| member-a | 1.1 | | Existing Team / New Hire / Contractor | |
 
 ## Resource Calendars
 
@@ -14,7 +14,7 @@
 
 | Resource | Availability (days/week or %) | Planned Time Off | Notes |
 |---|---|---|---|
-| worker-a | | | |
+| member-a | | | |
 
 ## Capacity Plan
 
@@ -23,7 +23,7 @@ resource over-allocated beyond 100% before baseline approval. -->
 
 | Resource | Period | Demand (hrs or %) | Supply (hrs or %) | Over-Allocated? |
 |---|---|---|---|---|
-| worker-a | | | | No |
+| member-a | | | | No |
 
 ## Resource Control Thresholds
 
@@ -31,4 +31,4 @@ resource over-allocated beyond 100% before baseline approval. -->
 
 | Trigger | Threshold | Action |
 |---|---|---|
-| Utilization beyond capacity | | Raise `/pf-12-change-request` or re-level |
+| Utilization beyond capacity | | Raise `/pf-change-request` or re-level |

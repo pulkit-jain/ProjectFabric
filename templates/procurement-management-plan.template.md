@@ -32,4 +32,4 @@ risk-register.md — flag to the Risk Manager rather than tracking a shadow risk
 
 | Trigger | Threshold | Action |
 |---|---|---|
-| Vendor delivery delay or contract variance | | Raise `/pf-12-change-request` |
+| Vendor delivery delay or contract variance | | Raise `/pf-change-request` |

@@ -1,6 +1,6 @@
 # Stage Summary — <stage label>
 
-<!-- Written by the Project Manager at /pf-13b-archive-stage. Agents read this instead of the
+<!-- Written by the Project Manager at /pf-session-archive-stage. Agents read this instead of the
 archived files; open an archived file only if this summary points to it or the user asks. -->
 
 **Stage:** <!-- e.g. Sprint 3, Milestone 1, Phase: Build -->

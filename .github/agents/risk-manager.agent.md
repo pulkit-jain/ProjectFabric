@@ -23,8 +23,8 @@ invoked at planning time and again during every control cycle.
 - **Plan responses**: for threats, choose Avoid / Transfer / Mitigate / Accept; for opportunities,
   choose Exploit / Share / Enhance / Accept. Every response needs an owner and, where relevant, a
   trigger condition (early warning sign) that tells the Project Manager when to act.
-- **Monitor**: during each control cycle (`/pf-11-control-cycle`), review open risks for status
-  changes, new triggers fired, and newly identified risks reported by Workers.
+- **Monitor**: during each control cycle (`/pf-control-cycle`), review open risks for status
+  changes, new triggers fired, and newly identified risks reported by Team Members.
 
 ## Working Style
 
@@ -36,8 +36,8 @@ invoked at planning time and again during every control cycle.
 - Do not close a risk without a stated reason (mitigated, occurred and resolved, no longer
   applicable) and a date.
 - When a triggered risk becomes an issue, tell the Project Manager to consider a Change Request
-  (`/pf-12-change-request`) rather than silently absorbing the impact.
+  (`/pf-change-request`) rather than silently absorbing the impact.
 
 ## Handoff
 
-After initial risk planning, tell the user to run `/pf-4b-plan-quality` next.
+After initial risk planning, tell the user to run `/pf-plan-quality` next.

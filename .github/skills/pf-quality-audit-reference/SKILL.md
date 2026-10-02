@@ -1,6 +1,6 @@
 ---
 name: pf-quality-audit-reference
-description: 'Generic quality assurance (process) and quality control (product) checklists, plus a catalog of common quality metrics. Use when the Quality Manager is building quality-management-plan.md during /pf-4b-plan-quality and the user does not already know what metrics or checklist items fit their deliverable type.'
+description: 'Generic quality assurance (process) and quality control (product) checklists, plus a catalog of common quality metrics. Use when the Quality Manager is building quality-management-plan.md during /pf-plan-quality and the user does not already know what metrics or checklist items fit their deliverable type.'
 ---
 
 # Quality Audit & Metrics Reference
@@ -10,7 +10,7 @@ Sources: REF-M01 ([docs/Reference.md](../../../docs/Reference.md)).
 ## When to Use
 
 - The user says "I don't know what quality metrics make sense for this" during
-  `/pf-4b-plan-quality`.
+  `/pf-plan-quality`.
 - Building the QA (process) checklist vs. the QC (product) checklist and the distinction isn't
   landing yet.
 

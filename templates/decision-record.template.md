@@ -8,7 +8,7 @@
 ## Context
 
 <!-- What prompted this decision? What judgment call needs to be made? Confirm it does NOT change
-scope, schedule, budget, or resource baseline — if it does, use /pf-12-change-request instead. -->
+scope, schedule, budget, or resource baseline — if it does, use /pf-change-request instead. -->
 
 ## Options Considered
 

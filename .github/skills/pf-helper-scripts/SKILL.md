@@ -1,6 +1,6 @@
 ---
 name: pf-helper-scripts
-description: 'Deterministic helper scripts for ProjectFabric: EVM math, .pmo/ consistency validation (WBS, RACI one-Accountable, risk scores, tracker, bus drift), automation-rule evaluation, and .pmo/ scaffolding. Use when computing Full EVM figures for cost-performance.md, running a control cycle, checking .pmo/ for drift or broken IDs, evaluating automation-rules.md, or running /pf-0-init.'
+description: 'Deterministic helper scripts for ProjectFabric: EVM math, .pmo/ consistency validation (WBS, RACI one-Accountable, risk scores, tracker, bus drift), automation-rule evaluation, and .pmo/ scaffolding. Use when computing Full EVM figures for cost-performance.md, running a control cycle, checking .pmo/ for drift or broken IDs, evaluating automation-rules.md, or running /pf-setup-init.'
 ---
 
 # ProjectFabric Helper Scripts
@@ -37,7 +37,7 @@ Each `--wp` is `id|name|BAC|PV|percent complete|AC` (name optional). Inputs come
 
 ## pf_validate.py -- .pmo/ consistency check (Project Manager)
 
-Run at the start of each `/pf-11-control-cycle`, and whenever IDs or tables may have drifted.
+Run at the start of each `/pf-control-cycle`, and whenever IDs or tables may have drifted.
 
 ```
 python .github/skills/pf-helper-scripts/scripts/pf_validate.py --pmo .pmo
@@ -47,9 +47,11 @@ python .github/skills/pf-helper-scripts/scripts/pf_validate.py --pmo .pmo
 |---|---|
 | WBS | Hierarchy leaves match the WBS Dictionary; IDs unique; every row has acceptance criteria |
 | RACI | Exactly one Accountable per work package; IDs match the WBS Dictionary |
+| Org | Roster Member IDs unique; Type is Person, AI, or Vendor; Status is Proposed, Confirmed, or Open; RACI columns are roster members; each `bus/<member>/` folder is an AI roster member. Warns on members not yet Confirmed |
+| Skills | Requirement and coverage rows resolve to the Skills Catalog, the WBS, and the roster; levels are 1-4. Warns when a skill's best rostered level is below the highest minimum required |
 | Risks | IDs unique; Score = Probability x Impact; Probability/Impact within 1-5; sorted by Score descending |
 | Tracker | IDs match the WBS; valid status; Done means 100%; linked `R-` and `CR-` IDs exist |
-| Bus | Each `bus/<worker>/task.md` points at a tracker row that has been started, with a matching Owner |
+| Bus | Each `bus/<member>/task.md` points at a tracker row that has been started, with a matching Owner |
 | Sprint | Every `sprint-backlog.md` WBS ID exists in the WBS Dictionary |
 
 Output is one line per finding: `FAIL` (a rule is broken), `WARN` (suspicious, may be intentional),
@@ -63,7 +65,7 @@ whose name/description column is blank are unfilled template placeholders and ar
 ## pf_rules.py -- automation rules (Project Manager)
 
 Evaluates the user's rules in `.pmo/automation-rules.md` against the current `.pmo/` state. Run it
-in `/pf-11-control-cycle` *after* the cycle has refreshed `cost-performance.md` and the other
+in `/pf-control-cycle` *after* the cycle has refreshed `cost-performance.md` and the other
 logs (step 8) — run earlier, the cost rules read last cycle's figures.
 
 ```
@@ -85,7 +87,7 @@ files), or `ERROR` (malformed rule; exit code 1). Disabled rules are skipped.
   disabled; don't enable one whose threshold nobody has set.
 - Rules complement, not replace, judgment: a rule that doesn't fire is not proof nothing is wrong.
 
-## pf_scaffold.py -- create .pmo/ (`/pf-0-init`)
+## pf_scaffold.py -- create .pmo/ (`/pf-setup-init`)
 
 Creates the standard artifact files from `templates/` (dropping `.template`) and the working
 folders (`bus`, `memory/work-packages`, `reports`, `changes`, `decisions`, `archives`, `closing`).
@@ -98,7 +100,7 @@ python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py --preset agile-hy
   `.pmo/` already exists.
 - `--preset` (classic-waterfall / agile-hybrid / lean) fills the constitution's `**Preset:**` line.
 - `--team` copies the team's shared `team.md` in instead of the blank template.
-- Its file list mirrors the one in `pf-0-init.prompt.md`; change both together.
+- Its file list mirrors the one in `pf-setup-init.prompt.md`; change both together.
 
 ## Common Mistakes to Avoid
 

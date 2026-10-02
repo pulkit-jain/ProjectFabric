@@ -2,7 +2,7 @@
 description: Run project closing — verify acceptance, capture lessons learned, and produce the final report.
 ---
 
-# /pf-14-close-project
+# /pf-close-project
 
 Act as the Planner and Project Manager agents together. Produce `.pmo/closing/lessons-learned.md`
 (from `templates/lessons-learned.template.md`) and `.pmo/closing/final-report.md`.
@@ -11,7 +11,7 @@ Act as the Planner and Project Manager agents together. Produce `.pmo/closing/le
 
 1. Verify every work package in `tracker.md` is Status = "Done" with acceptance criteria met. If
    any remain open, confirm with the user whether to close them out, descope via
-   `/pf-12-change-request`, or hold closing until they finish.
+   `/pf-change-request`, or hold closing until they finish.
 2. If `.pmo/archives/` exists, read each `stage-summary.md` (not the archived files) as input to
    the lessons-learned session and final report.
 3. Run a lessons-learned session with the user across What Went Well / What Didn't / Recommendations,

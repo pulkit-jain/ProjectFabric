@@ -9,6 +9,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Slash commands renamed from numbered to category-based names**, `/pf-<category>-<action>`
+  (categories `setup`, `plan`, `agile`, `session`; the work loop keeps plain verbs). Every
+  reference in agents, prompts, skills, scripts, templates and docs was updated; entries below
+  this one keep the old names as history. README's Commands table now has a Category column.
+  New commands pick a category instead of a number or letter suffix.
+
+  | Old | New |
+  |---|---|
+  | `/pf-0-init` | `/pf-setup-init` |
+  | `/pf-0b-constitution` | `/pf-setup-constitution` |
+  | `/pf-1-initiate-planner` | `/pf-setup-charter` |
+  | `/pf-2-plan-scope-wbs` | `/pf-plan-scope-wbs` |
+  | `/pf-3-plan-schedule` | `/pf-plan-schedule` |
+  | `/pf-3b-plan-cost` | `/pf-plan-cost` |
+  | `/pf-4-plan-risk` | `/pf-plan-risk` |
+  | `/pf-4b-plan-quality` | `/pf-plan-quality` |
+  | `/pf-4c-plan-procurement` | `/pf-plan-procurement` |
+  | `/pf-5-plan-stakeholders` | `/pf-plan-stakeholders` |
+  | `/pf-6-plan-organization` | `/pf-plan-organization` |
+  | `/pf-6b-plan-resources` | `/pf-plan-resources` |
+  | `/pf-7-initiate-manager` | `/pf-start-manager` |
+  | `/pf-7b-sprint-planning` | `/pf-agile-sprint-planning` |
+  | `/pf-8-assign-task` | `/pf-assign-task` |
+  | `/pf-8b-standup` | `/pf-agile-standup` |
+  | `/pf-9-initiate-worker` | `/pf-start-team-member` |
+  | `/pf-10-check-report` | `/pf-check-report` |
+  | `/pf-10b-backlog-refinement` | `/pf-agile-backlog-refinement` |
+  | `/pf-10c-sprint-review` | `/pf-agile-sprint-review` |
+  | `/pf-11-control-cycle` | `/pf-control-cycle` |
+  | `/pf-11b-sprint-retro` | `/pf-agile-sprint-retro` |
+  | `/pf-12-change-request` | `/pf-change-request` |
+  | `/pf-12b-log-decision` | `/pf-log-decision` |
+  | `/pf-13-handoff` | `/pf-session-handoff` |
+  | `/pf-13b-archive-stage` | `/pf-session-archive-stage` |
+  | `/pf-14-close-project` | `/pf-close-project` |
+
+- Python bytecode (`__pycache__/`, `*.pyc`) is now git-ignored.
+
+- **"Worker" renamed to "Team Member"** everywhere outside this changelog's history: the agent is
+  `pf-team-member` (`.github/agents/team-member.agent.md`), the command is
+  `/pf-start-team-member`, the task bus folder is `bus/<member>/`, and example IDs are `member-a`
+  and so on. A team member is now any roster entry of type Person, AI, or Vendor; only AI members
+  run in their own conversation and use the bus.
+
 - `ROADMAP.md`'s "Other Framework Features" section split into 7 area sub-headings —
   Governance & Decisions, Session & Context Management, Agile / Alternate Methodology Track,
   Work Package Lifecycle & Quality Gates, Reporting & Communication, Extensibility &
@@ -38,6 +82,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Project Organization depth** (KA-08 extended, KA-13 new). `organization.md` (Project Manager):
+  governance structure, role definitions, a team roster whose members are a Person, an AI agent,
+  or a Vendor with Proposed / Confirmed / Open status, and an org change log; governance and
+  roles are baseline, the roster is living. `skill-matrix.md` (Resource Manager): skills catalog,
+  minimum level per WBS leaf on a 1-4 scale, team coverage per roster member, and a gap analysis
+  with a proposed action. New commands `/pf-setup-organization` and `/pf-plan-skills`;
+  `/pf-plan-organization` rewritten to settle the roster against skill gaps and build the RACI
+  from roster Member IDs. Both phases are Required under classic-waterfall and agile-hybrid and
+  Optional under lean. `/pf-assign-task` gained an eighth Definition of Ready item (assignee is a
+  Confirmed roster member) and a hand-over path for Person and Vendor members. `pf_validate.py`
+  gained Org and Skills checks (unique IDs, valid Type and Status, RACI columns and `bus/` folders
+  match the roster, skill IDs resolve, levels 1-4, warnings for unconfirmed members and uncovered
+  requirements). New templates `organization.template.md` and `skill-matrix.template.md`; skill
+  ratings of named people are treated as sensitive (Ground Rule 4).
 - Gave every entry in `docs/Reference.md` a permanent ID (`REF-P01` to `REF-P11` projects
   studied, `REF-M01` to `REF-M12` methods and standards, `REF-T01` to `REF-T10` platforms and tools,
   `REF-X01` to `REF-X10` technologies named only because a studied project used them), and made

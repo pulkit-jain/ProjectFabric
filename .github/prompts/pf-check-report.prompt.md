@@ -1,17 +1,18 @@
 ---
-description: Ingest a Worker's report, update the Tracker, and flag new risks or change requests.
+description: Ingest a Team Member's report, update the Tracker, and flag new risks or change requests.
 ---
 
-# /pf-10-check-report
+# /pf-check-report
 
-Act as the `pf-project-manager` agent. Read `.pmo/bus/<worker>/report.md` and (if it exists)
+Act as the `pf-project-manager` agent. Read `.pmo/bus/<member>/report.md` and (if it exists)
 `.pmo/quality-management-plan.md`; update `.pmo/tracker.md` and (in coordination with the Quality
 Manager perspective) `.pmo/quality-control-log.md`.
 
 ## Steps
 
-1. Read the Worker's report. Treat it as an input to verify, not as ground truth — check reported
-   completion against the WBS Dictionary's acceptance criteria.
+1. Read the Team Member's report. Treat it as an input to verify, not as ground truth — check reported
+   completion against the WBS Dictionary's acceptance criteria. A Person or Vendor member has no
+   `report.md`; ask the user for their status and treat it the same way.
 2. If `quality-management-plan.md` exists and defines QA Gate Criteria, run the gate review
    before any work package can be set to "Done": check the deliverable against the gate criteria,
    and log the result (pass/fail/pass with waiver, defects found, resolution) to
@@ -20,12 +21,12 @@ Manager perspective) `.pmo/quality-control-log.md`.
 3. Update `tracker.md`: Status (Done / Blocked / Review / In Progress), percent complete, actual
    finish date if done, variance notes if actual differs from planned.
 4. If the report names a new risk, tell the user to route it to the Risk Manager
-   (`/pf-4-plan-risk` can be re-run to add a single risk, or add it directly to
+   (`/pf-plan-risk` can be re-run to add a single risk, or add it directly to
    `risk-register.md` following its schema).
 5. If the report reveals a scope, schedule, or acceptance-criteria gap that requires a baseline
-   change, tell the user to run `/pf-12-change-request` rather than adjusting `wbs.md` or
+   change, tell the user to run `/pf-change-request` rather than adjusting `wbs.md` or
    `schedule.md` directly.
 6. If the work package is Done and unblocks further work, tell the user the next command is
-   `/pf-8-assign-task` to dispatch the next eligible work package. If a full status sweep is due,
-   suggest `/pf-11-control-cycle` instead. If this project is running the Agile ceremony layer and
-   the sprint's work packages are all Done, suggest `/pf-10c-sprint-review` before the retro.
+   `/pf-assign-task` to dispatch the next eligible work package. If a full status sweep is due,
+   suggest `/pf-control-cycle` instead. If this project is running the Agile ceremony layer and
+   the sprint's work packages are all Done, suggest `/pf-agile-sprint-review` before the retro.

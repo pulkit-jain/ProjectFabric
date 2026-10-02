@@ -16,8 +16,8 @@ reserved for v2 rather than bolted on shallowly.
 | Quality Management | Planning, Executing, Monitoring & Controlling | `quality-management-plan.md`, `quality-control-log.md` | Quality Manager |
 | Stakeholder Management | Initiating, Planning, Monitoring & Controlling | `stakeholder-register.md` | Stakeholder Manager |
 | Communications Management (partial) | Planning, Executing | `communications-plan.md` | Stakeholder Manager |
-| Project Organization | Planning | `raci.md` | Project Manager |
-| Resource Management (depth) | Planning, Monitoring & Controlling | `resource-management-plan.md`, `resource-allocation.md` | Resource Manager |
+| Project Organization | Initiating, Planning | `organization.md`, `raci.md` | Project Manager |
+| Resource Management (depth) | Planning, Monitoring & Controlling | `resource-management-plan.md`, `resource-allocation.md`, `skill-matrix.md` | Resource Manager |
 | Procurement Management | Planning, Monitoring & Controlling | `procurement-management-plan.md`, `vendor-contract-register.md` | Procurement Manager |
 
 ## v2 — Planned, not yet implemented
@@ -29,7 +29,7 @@ reserved for v2 rather than bolted on shallowly.
 ## Workflow Presets
 
 Not every project needs every v1 knowledge area run as a dedicated planning step. Chosen once at
-`/pf-0-init` and recorded in `.pmo/constitution.md`'s Workflow Preset field, a preset tells every
+`/pf-setup-init` and recorded in `.pmo/constitution.md`'s Workflow Preset field, a preset tells every
 agent which phases are `Required` (always run before Executing begins) vs. `Optional` (the owning
 agent asks the user whether to run it or skip it for this project, rather than assuming yes).
 `Optional` never means "silently skipped" — an agent still surfaces the choice once.
@@ -45,18 +45,20 @@ agent asks the user whether to run it or skip it for this project, rather than a
 | Quality Management | Required | Optional (pull in when needed) | Optional |
 | Procurement Management | Required | Optional (pull in when needed) | Optional |
 | Stakeholder + Communications | Required | Required | Optional |
-| RACI (Organization) | Required | Required | Required |
+| Organization (governance + roster) | Required | Required | Optional |
+| Skills assessment | Required | Required | Optional |
+| RACI | Required | Required | Required |
 | Resource Management (depth) | Required | Optional (pull in when needed) | Optional |
 | Agile Ceremony Layer (Scrum Master track) | Off (not offered) | Engaged by default | Optional |
 
 - **classic-waterfall** (default): full PMBOK coverage, every phase runs in the order in
   `docs/architecture.md`'s Process flow diagram.
-- **agile-hybrid**: keeps the scope/schedule/risk/stakeholder/RACI backbone but treats
+- **agile-hybrid**: keeps the scope/schedule/risk/stakeholder/organization/RACI backbone but treats
   Cost, Quality, Procurement, and Resource-depth planning as pull-based — plan them only once the
   project actually needs formal tracking, a quality gate, a vendor contract, or capacity
   conflicts, rather than by default. Pairs with the Agile ceremony layer (Scrum Master agent —
-  `/pf-7b-sprint-planning`, `/pf-8b-standup`, `/pf-10c-sprint-review`,
-  `/pf-10b-backlog-refinement`, `/pf-11b-sprint-retro`), engaged by default. There is no
+  `/pf-agile-sprint-planning`, `/pf-agile-standup`, `/pf-agile-sprint-review`,
+  `/pf-agile-backlog-refinement`, `/pf-agile-sprint-retro`), engaged by default. There is no
   dedicated Product Owner agent — the user plays that role for backlog priority and Sprint
   Review acceptance decisions, per Design Principle 3.
 - **lean**: only the phases needed to start assigning and tracking work are required; everything
@@ -67,7 +69,7 @@ An agent whose phase is `Optional` for the active preset must still ask once ("t
 using the lean preset — do you want a Cost Management Plan, or should we skip formal cost
 tracking?") rather than silently omitting the artifact. If the user skips it, the agent notes the
 skip in one line and gives the next command in the planning chain. Nothing is recorded: later
-commands (`/pf-7-initiate-manager`, `/pf-11-control-cycle`) treat a missing Optional artifact as
+commands (`/pf-start-manager`, `/pf-control-cycle`) treat a missing Optional artifact as
 intentionally skipped.
 
 ## Design principle

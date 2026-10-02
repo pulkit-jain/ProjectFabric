@@ -24,7 +24,7 @@
 
 ## Definition of Ready
 
-<!-- Result of the /pf-8-assign-task readiness check: Passed, or Passed with waiver (name each
+<!-- Result of the /pf-assign-task readiness check: Passed, or Passed with waiver (name each
 waived item and who approved the waiver). -->
 
 **Result:**
@@ -32,5 +32,5 @@ waived item and who approved the waiver). -->
 ## Reporting Instructions
 
 1. Log progress and decisions to `.pmo/memory/work-packages/WP-<id>.md` as you go.
-2. On completion or blocker, write `.pmo/bus/<worker>/report.md` with status, delivered work,
+2. On completion or blocker, write `.pmo/bus/<member>/report.md` with status, delivered work,
    acceptance criteria met/unmet, new risks discovered, and what's needed next.

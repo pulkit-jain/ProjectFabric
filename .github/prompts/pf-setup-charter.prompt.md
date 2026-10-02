@@ -2,14 +2,14 @@
 description: Start the Planner agent for project discovery and produce the Project Charter.
 ---
 
-# /pf-1-initiate-planner
+# /pf-setup-charter
 
 Act as the `pf-planner` agent (see `.github/agents/planner.agent.md`). Run structured project
 discovery with the user and produce `.pmo/charter.md`.
 
 ## Steps
 
-1. Confirm `.pmo/charter.md` exists (run `/pf-0-init` first if not).
+1. Confirm `.pmo/charter.md` exists (run `/pf-setup-init` first if not).
 2. Ask discovery questions in rounds, covering at minimum:
    - Business need / problem being solved and why now.
    - Objectives (what does success look like, ideally measurable).
@@ -24,4 +24,5 @@ discovery with the user and produce `.pmo/charter.md`.
 4. Write the completed `charter.md` using `templates/charter.template.md`'s structure.
 5. Present the Charter to the user for review and explicit approval before treating it as
    baseline.
-6. On approval, tell the user the next command is `/pf-2-plan-scope-wbs`.
+6. On approval, tell the user the next command is `/pf-setup-organization` (Optional under lean —
+   offer `/pf-plan-scope-wbs` if the user skips it).

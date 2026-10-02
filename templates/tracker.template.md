@@ -11,4 +11,4 @@ approved Change Request) -->
 
 ## Handoff Notes
 
-<!-- Appended by /pf-13-handoff when a Manager instance transfers context -->
+<!-- Appended by /pf-session-handoff when a Manager instance transfers context -->

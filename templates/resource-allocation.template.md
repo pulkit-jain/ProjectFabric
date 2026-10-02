@@ -4,7 +4,7 @@
 
 | Resource | WBS ID | Work Package | Period | Assigned Allocation | Utilization % | Conflict? | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
-| worker-a | 1.1 | | | | | No | Green / Yellow / Red | |
+| member-a | 1.1 | | | | | No | Green / Yellow / Red | |
 
 ## Conflicts & Leveling Actions
 

@@ -1,7 +1,7 @@
 # Quality Control Log
 
-<!-- Updated by the Quality Manager at each /pf-10-check-report gate review, and reviewed for
-trends each /pf-11-control-cycle. Most recent review first. -->
+<!-- Updated by the Quality Manager at each /pf-check-report gate review, and reviewed for
+trends each /pf-control-cycle. Most recent review first. -->
 
 | WBS ID | Work Package | Review Date | Reviewed Against | Defects Found | Resolution | Result | Reviewer |
 |---|---|---|---|---|---|---|---|

@@ -2,7 +2,7 @@
 description: Archive a completed stage's history out of the live .pmo/ folders and leave a stage summary in its place.
 ---
 
-# /pf-13b-archive-stage
+# /pf-session-archive-stage
 
 Act as the `pf-project-manager` agent. Read `tracker.md`, `memory/work-packages/`, `bus/`,
 `reports/`, and (if it exists) `standup-log.md` and `sprint-backlog.md`; write
@@ -24,7 +24,7 @@ consistent with the user being the checkpoint. Nothing is ever deleted.
    any is not, stop and say which — do not archive unfinished work.
 3. Build the candidate list, only for those work packages:
    - `memory/work-packages/WP-<id>.md`
-   - `bus/<worker>/task.md` and `bus/<worker>/report.md` (only if that Worker has no work package
+   - `bus/<member>/task.md` and `bus/<member>/report.md` (only if that Team Member has no work package
      still in progress)
    - `reports/status-<date>.md` dated within the stage, except the most recent report (the next
      control cycle compares against it, and it describes work that is still open)
@@ -39,5 +39,5 @@ consistent with the user being the checkpoint. Nothing is ever deleted.
    have you copy them to `archives/<stage>/standup-log.md` and cut them from the live file.
 6. Once the moves are done, use search to verify each original is gone and each archived path
    exists. Only then set the summary's Move Status to "Done".
-7. Tell the user the next command — `/pf-8-assign-task` to continue the loop, or
-   `/pf-7b-sprint-planning` if the Agile ceremony layer is in use.
+7. Tell the user the next command — `/pf-assign-task` to continue the loop, or
+   `/pf-agile-sprint-planning` if the Agile ceremony layer is in use.

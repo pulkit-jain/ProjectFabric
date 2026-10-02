@@ -25,23 +25,23 @@ Review ceremony below is where that acceptance is exercised explicitly rather th
   Engaged by default under agile-hybrid; under lean or classic-waterfall, ask once whether the
   user wants sprint cadence at all before running a ceremony (see
   `docs/knowledge-areas.md#workflow-presets`) — never assume yes, and never assume no.
-- **Sprint Planning** (`/pf-7b-sprint-planning`): pull ready leaf work packages from `wbs.md`
+- **Sprint Planning** (`/pf-agile-sprint-planning`): pull ready leaf work packages from `wbs.md`
   (cross-referencing `tracker.md` so nothing already Done or In Progress is re-selected), agree a
   sprint goal and sprint boundary dates with the user, and record the selected scope in
   `sprint-backlog.md`. Do not invent capacity — ask the user, or cross-reference
   `resource-allocation.md` if Resource Management is in play for this project.
-- **Standup** (`/pf-8b-standup`): a lightweight per-work-package pulse (done since last standup /
+- **Standup** (`/pf-agile-standup`): a lightweight per-work-package pulse (done since last standup /
   in progress / blocked) appended to `standup-log.md` — not a narrative retelling, and not a
   replacement for `tracker.md`'s authoritative status. Flag any mismatch between the two to the
   Project Manager rather than silently overwriting `tracker.md` yourself.
-- **Sprint Review** (`/pf-10c-sprint-review`): once `/pf-10-check-report` has marked the sprint's
+- **Sprint Review** (`/pf-agile-sprint-review`): once `/pf-check-report` has marked the sprint's
   work packages Done, walk the user (acting as Product Owner) through each one's acceptance
   criteria and record Accepted/Rejected in `sprint-backlog.md`'s Sprint Review Outcome column — a
   passed QA gate is necessary but not sufficient for acceptance. Runs before the retro.
-- **Sprint Retro** (`/pf-11b-sprint-retro`): at each sprint boundary, capture what went well, what
+- **Sprint Retro** (`/pf-agile-sprint-retro`): at each sprint boundary, capture what went well, what
   didn't, and action items in `retro-log.md` — this feeds `closing/lessons-learned.md` at project
   close but is captured continuously, not reconstructed from memory at the end.
-- **Backlog Refinement** (`/pf-10b-backlog-refinement`): review the next sprint's candidate work
+- **Backlog Refinement** (`/pf-agile-backlog-refinement`): review the next sprint's candidate work
   packages in `wbs.md` for clarity — acceptance criteria, sizing, open questions — and record
   refinement notes in `sprint-backlog.md`'s upcoming-sprint section. Flag anything without a
   testable acceptance criterion back to the Planner rather than guessing one.
@@ -54,10 +54,10 @@ Review ceremony below is where that acceptance is exercised explicitly rather th
 - Keep every log entry short and dated — a standup entry is a few lines per work package, not a
   transcript.
 - If a ceremony surfaces a need to change scope, schedule, or budget (e.g. a retro action item
-  requires re-baselining), tell the user a Change Request (`/pf-12-change-request`) is needed
+  requires re-baselining), tell the user a Change Request (`/pf-change-request`) is needed
   rather than editing baseline documents directly.
 
 ## Handoff
 
-If your context fills, tell the user to run `/pf-13-handoff` to transfer your working state to a
+If your context fills, tell the user to run `/pf-session-handoff` to transfer your working state to a
 fresh instance.

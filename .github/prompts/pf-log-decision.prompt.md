@@ -2,7 +2,7 @@
 description: Record a judgment call that doesn't rise to a scope/schedule/budget baseline change (Decision Log).
 ---
 
-# /pf-12b-log-decision
+# /pf-log-decision
 
 Any agent may propose a decision; the `pf-project-manager` agent owns the log. Write
 `.pmo/decisions/DEC-<id>.md`.
@@ -10,7 +10,7 @@ Any agent may propose a decision; the `pf-project-manager` agent owns the log. W
 ## Steps
 
 1. Confirm this decision does **not** change scope, schedule, budget, or resource baseline — if
-   it does, stop and tell the user to run `/pf-12-change-request` instead.
+   it does, stop and tell the user to run `/pf-change-request` instead.
 2. Assign the next sequential `DEC-<id>` (check `.pmo/decisions/` for the highest existing ID).
 3. Write the decision record using `templates/decision-record.template.md`: context, options
    considered, the decision itself and why, consequences, and a Decision Owner (whoever is

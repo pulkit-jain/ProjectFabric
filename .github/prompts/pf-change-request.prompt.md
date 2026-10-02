@@ -2,14 +2,14 @@
 description: Raise a scope/schedule/risk-driven Change Request with impact analysis for user approval.
 ---
 
-# /pf-12-change-request
+# /pf-change-request
 
 Act as the `pf-project-manager` agent. Produce `.pmo/changes/CR-<id>.md` from
 `templates/change-request.template.md`.
 
 ## Steps
 
-1. Capture the trigger: what happened (Worker report, risk realized, stakeholder request,
+1. Capture the trigger: what happened (Team Member report, risk realized, stakeholder request,
    external event) and why it requires a baseline change.
 2. Write the impact analysis across every affected dimension: scope (which WBS elements),
    schedule (which milestones/dependencies), risk (does this open or close any register entries),
@@ -21,4 +21,4 @@ Act as the `pf-project-manager` agent. Produce `.pmo/changes/CR-<id>.md` from
 5. If approved: update the specific baseline document(s) — `wbs.md`, `schedule.md`, or
    `scope-statement.md` — and note in the CR which sections changed. This is the only prompt
    allowed to modify those files after Planning is baselined.
-6. Tell the user to resume the assign/report loop with `/pf-8-assign-task` or `/pf-11-control-cycle`.
+6. Tell the user to resume the assign/report loop with `/pf-assign-task` or `/pf-control-cycle`.

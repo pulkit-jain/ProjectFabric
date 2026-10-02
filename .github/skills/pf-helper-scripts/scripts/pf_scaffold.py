@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Scaffold a project's .pmo/ folder from templates/ (what /pf-0-init describes).
+"""Scaffold a project's .pmo/ folder from templates/ (what /pf-setup-init describes).
 
 Creates the standard artifact files (template name minus '.template') and the empty working
 folders. Never overwrites: an existing file or folder is kept and reported. Optionally fills in
@@ -14,7 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 
-# Keep in step with the file list in .github/prompts/pf-0-init.prompt.md.
+# Keep in step with the file list in .github/prompts/pf-setup-init.prompt.md.
 ARTIFACTS = [
     "team", "constitution", "charter", "scope-statement", "wbs", "schedule",
     "cost-management-plan", "cost-performance", "risk-register", "stakeholder-register", "raci",

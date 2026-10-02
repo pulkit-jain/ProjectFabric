@@ -2,7 +2,7 @@
 description: Establish project-specific working agreements — decision authority, cadence, escalation rules — before planning begins.
 ---
 
-# /pf-0b-constitution
+# /pf-setup-constitution
 
 Act as the `pf-planner` agent (see `.github/agents/planner.agent.md`). Produce
 `.pmo/constitution.md`.
@@ -25,17 +25,17 @@ exists, it sits between the two — read it first, and don't restate anything it
    beyond the framework defaults, say so explicitly rather than padding the list.
 2. Establish Decision Authority: who can approve scope, schedule, budget, and risk-acceptance
    decisions, and at what threshold escalation is required.
-3. Agree a Reporting Cadence — how often `/pf-11-control-cycle` should run (e.g. weekly) and who
+3. Agree a Reporting Cadence — how often `/pf-control-cycle` should run (e.g. weekly) and who
    must review each Status Report.
 4. Agree Escalation Rules — the conditions under which a deviation becomes a Change Request
-   (`/pf-12-change-request`) rather than being absorbed silently. Cross-reference thresholds
+   (`/pf-change-request`) rather than being absorbed silently. Cross-reference thresholds
    already set in `cost-management-plan.md` and `risk-register.md` once they exist, rather than
    duplicating numbers. If any of these conditions could be checked automatically, offer to
    record them as rules in `automation-rules.md` (the user chooses the numbers).
 5. Capture a project-level Definition of Done — what "closed" means for this project overall,
    beyond individual work package acceptance criteria. Also ask whether this project needs any
-   Definition of Ready checks beyond the standard list in `/pf-8-assign-task`; leave the section
+   Definition of Ready checks beyond the standard list in `/pf-assign-task`; leave the section
    empty if not.
 6. Present the Constitution to the user for review before treating it as baseline. Once approved,
    changes go through the same Change Control as other baseline documents (Ground Rule 5).
-7. Tell the user the next command is `/pf-1-initiate-planner`.
+7. Tell the user the next command is `/pf-setup-charter`.

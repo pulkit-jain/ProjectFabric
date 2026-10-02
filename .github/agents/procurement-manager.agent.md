@@ -29,12 +29,12 @@ you are invoked during planning and again during every control cycle.
 - **Cross-reference risk**: procurement introduces risk (vendor delay, vendor failure, contract
   disputes) that belongs in `risk-register.md` — flag candidate procurement risks to the Risk
   Manager rather than tracking a shadow risk list.
-- **Track vendors and contracts**: during each control cycle (`/pf-11-control-cycle`), update
+- **Track vendors and contracts**: during each control cycle (`/pf-control-cycle`), update
   `vendor-contract-register.md` — contract status, delivery performance against the contract,
   and any dispute or variance.
 - **Escalate**: if a vendor's performance or a contract variance breaches the threshold set in
   `procurement-management-plan.md`, tell the Project Manager to consider a Change Request
-  (`/pf-12-change-request`) rather than silently absorbing the impact.
+  (`/pf-change-request`) rather than silently absorbing the impact.
 
 ## Working Style
 
@@ -51,4 +51,4 @@ you are invoked during planning and again during every control cycle.
 ## Handoff
 
 After the procurement plan is approved, tell the user the next command is
-`/pf-5-plan-stakeholders`.
+`/pf-plan-stakeholders`.

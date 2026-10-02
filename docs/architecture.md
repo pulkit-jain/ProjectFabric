@@ -13,7 +13,7 @@ one of them needs an explicit, deliberate trade-off decision, not a default.
    mean no code at all: deterministic helper scripts are encouraged wherever a task has one
    provably-correct answer — math (e.g. EVM's PV/EV/AC → CPI/SPI/EAC), sorting (e.g. keeping
    `risk-register.md` ordered by score), schema/ID validation (e.g. WBS 100%-rule, RACI's
-   one-Accountable rule, cross-file ID consistency), or file scaffolding (e.g. `/pf-0-init`
+   one-Accountable rule, cross-file ID consistency), or file scaffolding (e.g. `/pf-setup-init`
    copying templates). These are bundled as assets under a Skill (see the Skills layer in
    `ROADMAP.md`; the shipped set is `.github/skills/pf-helper-scripts/`, Python 3 standard library
    only) or a plain `scripts/` folder, invoked by an agent on demand — they never run
@@ -59,16 +59,19 @@ Every artifact is:
 ## Process flow
 
 ```
-Initiating                    Planning                                                                                                                    Executing / Monitoring & Controlling         Closing
-   │                              │                                                                                                                                    │                                    │
-   ▼                              ▼                                                                                                                                    ▼                                    ▼
-Constitution ─► Charter  ──────►  Scope+WBS ─► Schedule ─► Cost ─► Risk ─► Quality ─► Procurement ─► Stakeholder ─► RACI ─► Resources ─►  Manager loop:              Lessons
-(Planner)        (Planner)          (Planner)              (Cost Mgr) (Risk Mgr) (Quality Mgr) (Procurement Mgr) (Stakeholder Mgr)  (Resource Mgr)  assign → execute → report      Learned +
-                                                                                                                                                       → track → control-cycle       Final
-                                                                                                                                                       → (change request as needed)  Report
+Initiating:  Constitution ─► Charter ─► Organization (governance, roles, roster)
+             (Planner)        (Planner)  (Project Mgr)
+
+Planning:    Scope+WBS ─► Schedule ─► Cost ─► Risk ─► Quality ─► Procurement ─► Stakeholder ─► Skills ─► RACI + roster ─► Resources
+             (Planner)    (Planner)   (Cost Mgr) (Risk Mgr) (Quality Mgr) (Procurement Mgr) (Stakeholder Mgr) (Resource Mgr) (Project Mgr)   (Resource Mgr)
+
+Executing /  Manager loop: assign → execute → report → track → control-cycle → (change request as needed)
+Monitoring & Controlling
+
+Closing:     Lessons Learned + Final Report
 ```
 
-The Manager loop is intentionally cyclical, not a single pass — `assign task → Worker executes →
+The Manager loop is intentionally cyclical, not a single pass — `assign task → Team Member executes →
 report → tracker update → periodic control cycle` repeats until the WBS is fully delivered.
 
 ## Extension points (v2+)

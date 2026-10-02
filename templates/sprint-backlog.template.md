@@ -11,11 +11,11 @@
 | | | | Not Started | Not Reviewed |
 
 <!-- Sprint Review Outcome values: Not Reviewed / Accepted / Rejected (rework needed) — set by
-/pf-10c-sprint-review, with the user acting as Product Owner (see scrum-master.agent.md). -->
+/pf-agile-sprint-review, with the user acting as Product Owner (see scrum-master.agent.md). -->
 
 ## Upcoming Sprint Candidates (Backlog Refinement)
 
-<!-- Populated by /pf-10b-backlog-refinement ahead of the next Sprint Planning session -->
+<!-- Populated by /pf-agile-backlog-refinement ahead of the next Sprint Planning session -->
 
 | WBS ID | Work Package | Refinement Notes | Ready? |
 |---|---|---|---|

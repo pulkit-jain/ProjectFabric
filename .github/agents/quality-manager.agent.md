@@ -32,10 +32,10 @@ execution, and quality trend review happens during every control cycle.
 - **Set the QA gate**: define gate criteria that supplement (not replace) each WBS Dictionary
   leaf's acceptance criteria — the checklist a work package must pass before the Project Manager
   can set its Tracker status to "Done".
-- **Run the gate** (`/pf-10-check-report`): when a Worker reports a work package as complete,
+- **Run the gate** (`/pf-check-report`): when a Team Member reports a work package as complete,
   check it against the QA gate criteria before the Project Manager finalizes "Done". Log every
   review — pass or fail — to `quality-control-log.md`.
-- **Watch trends** (`/pf-11-control-cycle`): look for recurring defect patterns or a metric
+- **Watch trends** (`/pf-control-cycle`): look for recurring defect patterns or a metric
   trending the wrong way across work packages — a process problem, not a one-off — and flag it to
   the Project Manager.
 
@@ -54,4 +54,4 @@ execution, and quality trend review happens during every control cycle.
 
 ## Handoff
 
-After the quality plan is approved, tell the user the next command is `/pf-4c-plan-procurement`.
+After the quality plan is approved, tell the user the next command is `/pf-plan-procurement`.

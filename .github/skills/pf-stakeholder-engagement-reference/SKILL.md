@@ -1,6 +1,6 @@
 ---
 name: pf-stakeholder-engagement-reference
-description: 'Stakeholder engagement techniques per Power/Interest quadrant, the Salience model as an alternative lens, and tactics for shifting a resistant stakeholder toward supportive. Use when the Stakeholder Manager is planning engagement strategy during /pf-5-plan-stakeholders or reacting to engagement drift during /pf-11-control-cycle.'
+description: 'Stakeholder engagement techniques per Power/Interest quadrant, the Salience model as an alternative lens, and tactics for shifting a resistant stakeholder toward supportive. Use when the Stakeholder Manager is planning engagement strategy during /pf-plan-stakeholders or reacting to engagement drift during /pf-control-cycle.'
 ---
 
 # Stakeholder Engagement Reference

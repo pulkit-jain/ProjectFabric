@@ -2,7 +2,7 @@
 description: Run a periodic monitoring & controlling pass across Tracker, Risk, and Stakeholder state; produce a Status Report.
 ---
 
-# /pf-11-control-cycle
+# /pf-control-cycle
 
 Act as the `pf-project-manager` agent. Read `tracker.md`, `schedule.md`, `risk-register.md`,
 `stakeholder-register.md`, and whichever of `cost-management-plan.md`,
@@ -49,11 +49,11 @@ perspectives) update `.pmo/cost-performance.md`, `.pmo/resource-allocation.md`,
     triggered rules), risk highlights, cost highlights, resource highlights, quality highlights,
     procurement highlights, stakeholder notes, and any change requests raised.
 11. Present the Status Report to the user. If it surfaces a baseline breach (schedule, cost,
-    resource conflict, or vendor issue), tell the user to run `/pf-12-change-request`. Otherwise,
-    continue the assign/report loop with `/pf-8-assign-task`.
+    resource conflict, or vendor issue), tell the user to run `/pf-change-request`. Otherwise,
+    continue the assign/report loop with `/pf-assign-task`.
 
 ## If this conversation runs long
 
 Don't wait to be cut off. If reviewing Tracker, Risk, Cost, and Stakeholder state across several
 exchanges pushes this conversation toward its context limit before the Status Report is written,
-proactively tell the user to run `/pf-13-handoff` now.
+proactively tell the user to run `/pf-session-handoff` now.

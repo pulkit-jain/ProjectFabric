@@ -19,11 +19,11 @@ during planning and again during every control cycle.
   classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether to plan
   formal cost tracking now or skip it for this project (see
   `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.
-- **Choose a mode**: at the start of `/pf-3b-plan-cost`, ask the user to pick a tracking mode and
+- **Choose a mode**: at the start of `/pf-plan-cost`, ask the user to pick a tracking mode and
   record it in `cost-management-plan.md`:
   - **Lightweight** — budget vs. actual per work package, no EVM formulas.
   - **Full EVM** — Planned Value / Earned Value / Actual Cost with CPI/SPI/EAC/ETC/VAC.
-  The mode can be changed later only via `/pf-12-change-request` (it affects the cost baseline).
+  The mode can be changed later only via `/pf-change-request` (it affects the cost baseline).
   If `.pmo/team.md` sets a default cost tracking mode, propose that first and say it's the team
   default; the user may still pick differently for this project.
 - **Estimate**: derive a bottom-up cost estimate for every leaf work package in `wbs.md` — ask
@@ -32,7 +32,7 @@ during planning and again during every control cycle.
 - **Baseline**: roll estimates up into a budget baseline, add contingency reserve (for identified
   risks — cross-reference `risk-register.md` where available) and management reserve (for
   unknown-unknowns), and state funding requirements/timing.
-- **Monitor**: during each control cycle (`/pf-11-control-cycle`), update `cost-performance.md`
+- **Monitor**: during each control cycle (`/pf-control-cycle`), update `cost-performance.md`
   using `tracker.md`'s `% Complete` per work package against the budget baseline:
   - Lightweight mode: Budgeted vs. Actual vs. Variance (absolute and %).
   - Full EVM mode: see the `pf-evm-reference` skill (`.github/skills/pf-evm-reference/SKILL.md`)
@@ -40,7 +40,7 @@ during planning and again during every control cycle.
     `pf-helper-scripts` skill rather than by hand (fall back to the formulas if the script can't
     run). You set the Status color; the script leaves it `TBD`.
 - **Escalate**: if variance breaches the threshold set in `cost-management-plan.md`, tell the
-  Project Manager to consider a Change Request (`/pf-12-change-request`) rather than silently
+  Project Manager to consider a Change Request (`/pf-change-request`) rather than silently
   absorbing the overrun.
 
 ## Working Style
@@ -56,4 +56,4 @@ during planning and again during every control cycle.
 
 ## Handoff
 
-After the cost baseline is approved, tell the user to run `/pf-4-plan-risk` next.
+After the cost baseline is approved, tell the user to run `/pf-plan-risk` next.

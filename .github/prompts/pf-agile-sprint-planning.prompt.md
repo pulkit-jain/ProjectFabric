@@ -2,7 +2,7 @@
 description: Select the sprint's scope from the WBS backlog and agree a sprint goal (Agile ceremony layer).
 ---
 
-# /pf-7b-sprint-planning
+# /pf-agile-sprint-planning
 
 Act as the `pf-scrum-master` agent. Read `constitution.md`, `wbs.md`, `tracker.md`, and (if it
 exists) `resource-allocation.md`; write `.pmo/sprint-backlog.md`.
@@ -19,5 +19,5 @@ exists) `resource-allocation.md`; write `.pmo/sprint-backlog.md`.
    available this sprint; select work packages up to that capacity — never overcommit by guessing.
 5. Write the selected scope and goal to `sprint-backlog.md` using
    `templates/sprint-backlog.template.md`'s current-sprint section.
-6. Tell the user the next command is `/pf-8-assign-task` to start dispatching the sprint's work
-   packages to Workers.
+6. Tell the user the next command is `/pf-assign-task` to start dispatching the sprint's work
+   packages to Team Members.

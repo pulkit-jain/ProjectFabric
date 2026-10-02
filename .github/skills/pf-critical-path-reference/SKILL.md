@@ -1,6 +1,6 @@
 ---
 name: pf-critical-path-reference
-description: 'Critical Path Method (CPM) forward/backward pass and float calculation for schedule.md. Use when the Planner is sequencing work packages during /pf-3-plan-schedule and needs to identify the actual critical path and float, not just an intuitive guess.'
+description: 'Critical Path Method (CPM) forward/backward pass and float calculation for schedule.md. Use when the Planner is sequencing work packages during /pf-plan-schedule and needs to identify the actual critical path and float, not just an intuitive guess.'
 ---
 
 # Critical Path Method (CPM) Reference
@@ -9,7 +9,7 @@ Sources: REF-M03 ([docs/Reference.md](../../../docs/Reference.md)).
 
 ## When to Use
 
-- Building `schedule.md`'s Critical Path Notes section during `/pf-3-plan-schedule`.
+- Building `schedule.md`'s Critical Path Notes section during `/pf-plan-schedule`.
 - The dependency graph has more than a handful of work packages, or has any parallel branches —
   past that size, "eyeballing" the critical path is unreliable.
 

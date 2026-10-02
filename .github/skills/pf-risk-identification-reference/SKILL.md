@@ -1,6 +1,6 @@
 ---
 name: pf-risk-identification-reference
-description: 'Risk identification techniques and Probability/Impact scale anchor definitions for risk-register.md. Use when the Risk Manager is running risk elicitation during /pf-4-plan-risk and the user needs more than "ask by category", or when scoring a risk and the 1-5 scale meaning needs to be concrete rather than arbitrary.'
+description: 'Risk identification techniques and Probability/Impact scale anchor definitions for risk-register.md. Use when the Risk Manager is running risk elicitation during /pf-plan-risk and the user needs more than "ask by category", or when scoring a risk and the 1-5 scale meaning needs to be concrete rather than arbitrary.'
 ---
 
 # Risk Identification & Scoring Reference
@@ -9,7 +9,7 @@ Sources: REF-M07, REF-M08, REF-M01 ([docs/Reference.md](../../../docs/Reference.
 
 ## When to Use
 
-- The user is struggling to name risks beyond the obvious ones during `/pf-4-plan-risk`.
+- The user is struggling to name risks beyond the obvious ones during `/pf-plan-risk`.
 - Scoring Probability or Impact and the user asks "what does a 3 vs. a 4 actually mean here?"
 
 ## Identification Techniques (use whichever fits; don't run all of them every time)
