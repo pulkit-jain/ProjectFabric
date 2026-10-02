@@ -28,73 +28,68 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
 - **State lives in files.** Every artifact is a plain Markdown file under `.pmo/`. Agents are stateless between sessions — they re-read the files. This makes handoffs, audits, and future tooling (dashboards, a real backend) possible without redesigning anything.
 - **You are the checkpoint.** Every phase transition, every task assignment, every change request is delivered to you to review before it becomes baseline. Nothing silently rewrites the plan.
 
-## Directory Structure
+## Documentation
+
+| I want to... | Read |
+|---|---|
+| Try it on a small project, step by step | [Getting started](docs/guides/getting-started.md) |
+| Understand the three conversations, presets, and baselines | [How a project runs](docs/guides/how-a-project-runs.md) |
+| See what a real project looks like | [Example project](docs/example/README.md) |
+| Know what to do in a specific situation | [Scenarios](docs/guides/scenarios.md) |
+| Look up a command: when, what to give it, what comes back | [Command reference](docs/guides/command-reference.md) |
+| Know what each `.pmo/` file is and who owns it | [Artifact reference](docs/guides/artifact-reference.md) |
+
+### Guides still to write
+
+| Guide | What it will cover |
+|---|---|
+| Recipes (how-to) | Short task pages: add a vendor, close a skill gap, resume after a full conversation, write automation rules, use the helper scripts, archive a stage |
+| Troubleshooting and FAQ | An agent skipped a step, the validator reports a FAIL, a file is out of date, working without Python |
+| Customising and extending | `team.md`, the constitution, plugins, adding an agent or a command |
+| One-page cheat sheet | The command order and the three conversations on one printable page |
+| Guide for sponsors and stakeholders | What you will be asked to approve, and how to read a status report |
+| Guide for team members | How a person or a vendor receives a brief and reports back, and how an AI team member works |
+| Integration guides | One per integration (Confluence, Jira, Office exports), written when each is built |
+
+## Quick Start
+
+1. Copy this repository's `.github/` and `templates/` folders into your project.
+   Optional: Python 3.9+ lets agents run the bundled helper scripts (`.github/skills/pf-helper-scripts/`) for cost maths, consistency checks, and scaffolding. Nothing to install; without Python the agents do those tasks by hand.
+2. Open GitHub Copilot Chat in VS Code, in agent mode.
+3. Run `/pf-setup-init` to create the project's `.pmo/` folder, then follow the planning commands in the table below. Each agent finishes by telling you the next command and which conversation to run it in.
+
+The [getting started tutorial](docs/guides/getting-started.md) walks through a complete mini project.
+
+## Repository Layout
 
 ```
 .github/
   copilot-instructions.md   # global working agreement, read by every agent
   agents/                   # role definitions (Planner, Risk Manager, ...)
   prompts/                  # /pf-<category>-<action> slash commands, one per workflow step
-  skills/                   # on-demand bundled reference material (one per agent, where warranted)
+  skills/                   # on-demand bundled reference material and helper scripts
 templates/                  # blank artifact templates, copied into .pmo/ at init
 plugins/                    # additive extensions (agents/prompts/templates), core untouched
+tools/                      # maintainer scripts (command reference generator)
 docs/
+  guides/                   # user guides: tutorial, concepts, scenarios, references
+  example/                  # a filled-in example project
   architecture.md           # file-based state model, extension points
-  knowledge-areas.md        # PMBOK-style coverage matrix (v1 vs planned)
+  knowledge-areas.md        # PMBOK-style coverage matrix and Workflow Presets
   test-plan.md              # test scenarios run so far, coverage matrix, future test backlog
   Reference.md              # credits: projects studied, standards, tools
 assets/
   logo.png                  # ProjectFabric logo
-.pmo/                        # created per-project by /pf-setup-init (see below)
-  team.md                    # team-wide defaults, copied in at /pf-setup-init (optional)
-  constitution.md
-  charter.md
-  scope-statement.md
-  wbs.md
-  schedule.md
-  cost-management-plan.md
-  cost-performance.md
-  risk-register.md
-  quality-management-plan.md
-  quality-control-log.md
-  procurement-management-plan.md
-  vendor-contract-register.md
-  stakeholder-register.md
-  organization.md            (governance structure, roles, team roster of Person / AI / Vendor members)
-  skill-matrix.md            (skills catalog, requirements per work package, team coverage, gaps)
-  raci.md
-  resource-management-plan.md
-  resource-allocation.md
-  communications-plan.md
-  tracker.md
-  automation-rules.md        (optional flag rules checked each control cycle)
-  sprint-backlog.md, standup-log.md, retro-log.md  (Agile ceremony layer, gated by Workflow Preset)
-  bus/<member>/task.md, report.md
-  memory/work-packages/WP-<id>.md
-  reports/status-<date>.md
-  changes/CR-<id>.md
-  decisions/DEC-<id>.md
-  archives/<stage>/stage-summary.md
-  closing/lessons-learned.md, final-report.md
 ```
 
-## Quick Start
-
-1. Copy this repository's `.github/` and `templates/` directories into your project (or clone this repo at your project root).
-   Optional: Python 3.9+ lets agents run the bundled helper scripts (`.github/skills/pf-helper-scripts/`) for EVM math, `.pmo/` consistency checks, and scaffolding. Nothing to install; without Python the agents do those tasks by hand.
-2. Open GitHub Copilot Chat in VS Code (agent mode).
-3. Run `/pf-setup-init` to scaffold `.pmo/` from the templates.
-4. Run `/pf-setup-constitution` to set project-specific working agreements (optional but recommended
-   — decision authority, reporting cadence, escalation rules).
-5. Run `/pf-setup-charter` and answer the discovery questions. This produces your Charter. Then run
-   `/pf-setup-organization` to define the governance structure, roles, and the start of the team roster.
-6. Follow the Planning phase commands in order (see table below) to build Scope/WBS, Schedule, Risk Register, Stakeholder Register, Skill Matrix, and RACI.
-7. Run `/pf-start-manager` to start coordinated execution. The Manager tells you exactly which command to run next and in which conversation.
+Each project you run gets a `.pmo/` folder, created by `/pf-setup-init`. Every file in it, with its
+owner, is listed in the [artifact reference](docs/guides/artifact-reference.md).
 
 ## Commands
 
 Commands are grouped by category. Four categories share a command-name prefix (`setup`, `plan`,
-`agile`, `session`); the rest are the plain-verb work loop.
+`agile`, `session`); the rest are the plain-verb work loop. For what each command needs from you and
+what it returns, see the [command reference](docs/guides/command-reference.md).
 
 | Category | Command | Phase | Produces |
 |---|---|---|---|

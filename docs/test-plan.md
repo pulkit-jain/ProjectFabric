@@ -39,7 +39,7 @@ templates, agents, or skills change:
   matches its folder and its description is at most 1024 characters; every skill an agent or
   prompt mentions exists.
 - The Ownership table's commands exist; the `/pf-setup-init` file tree, `pf_scaffold.py`'s list, and
-  the README tree agree; every scaffolded artifact has an owner.
+  the artifact reference agree; every scaffolded artifact has an owner.
 - Relative Markdown links resolve; ROADMAP IDs are unique and every cited ID exists.
 - No studied-project name appears outside `docs/Reference.md`, and every `REF-` ID cited anywhere
   exists there.
@@ -47,6 +47,10 @@ templates, agents, or skills change:
   agent and skill counts) does not appear outside history.
 - The command graph is read by eye: each prompt's "next command" makes sense for every
   Workflow Preset.
+- `python tools/gen_command_reference.py --check` passes: every prompt has an entry in
+  `docs/guides/command-notes.md` and the generated command tables are current.
+- The example project validates: `pf_validate.py --pmo docs/example/offsite-event/.pmo` shows no
+  FAIL, and only the two warnings its README explains (an Open roster role and one skill gap).
 
 ## Test Runs Log
 
