@@ -1,10 +1,15 @@
 # Status Report — <date>
 
+<!-- Written by the Project Manager at each /pf-control-cycle. Reads from tracker.md and the other
+registers; cite figures rather than restating them in full. Keep each section short. -->
+
 ## Overall Status
 
 <!-- Green / Yellow / Red -->
 
 ## Scope / Schedule Summary
+
+<!-- Work packages Done / In Progress / Blocked out of total; milestones hit or at risk. -->
 
 ## Risk Highlights
 
@@ -32,16 +37,24 @@
 
 ## Accomplishments Since Last Cycle
 
+<!-- Work packages completed or advanced since the previous report. -->
+
 -
 
 ## Upcoming
+
+<!-- Work packages and milestones expected before the next cycle. -->
 
 -
 
 ## Open Issues / Blockers
 
+<!-- What is stuck, who owns it, and the decision or help needed from the user. -->
+
 -
 
 ## Change Requests Raised This Cycle
+
+<!-- CR-<id> and a one-line summary each, or "None". -->
 
 -

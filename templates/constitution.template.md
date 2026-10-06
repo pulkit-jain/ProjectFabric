@@ -29,6 +29,10 @@ an override with no reason is not allowed. Cannot override framework-wide Ground
 
 ## Decision Authority
 
+<!-- Approver: a named person or role. Risk acceptance Threshold: a Score from 1-25; if team.md sets
+a Risk acceptance score ceiling, propose that value. Add a row for any other decision type that
+needs a named approver. -->
+
 | Decision Type | Approver | Threshold |
 |---|---|---|
 | Scope change | | Any change to `wbs.md` |

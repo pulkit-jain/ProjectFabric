@@ -40,6 +40,9 @@ Status     - Proposed (named, not yet agreed) | Confirmed (agreed and available)
 
 ## Org Change Log
 
+<!-- One row per change to governance, roles, or the roster. Reference: the CR-<id> or DEC-<id> that
+approved it; leave blank for ordinary roster updates. -->
+
 | Date | Change | Reason | Reference (CR / DEC) |
 |---|---|---|---|
 | | | | |

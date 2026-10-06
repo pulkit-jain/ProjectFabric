@@ -6,6 +6,9 @@
 
 ## Deliverables
 
+<!-- Each deliverable needs Acceptance Criteria that someone could test; they carry down into
+wbs.md. -->
+
 | # | Deliverable | Acceptance Criteria |
 |---|---|---|
 | 1 | | |
@@ -18,8 +21,12 @@
 
 ## Constraints
 
+<!-- Limits the project must work within: budget, deadline, team size, technology, compliance. -->
+
 -
 
 ## Assumptions
+
+<!-- Things taken as true without proof. If one proves false, it may need a risk or Change Request. -->
 
 -

@@ -3,10 +3,14 @@
 <!-- Written by the Project Manager at /pf-session-archive-stage. Agents read this instead of the
 archived files; open an archived file only if this summary points to it or the user asks. -->
 
-**Stage:** <!-- e.g. Sprint 3, Milestone 1, Phase: Build -->
-**Period:** <!-- start date – end date -->
+<!-- Stage: e.g. Sprint 3, Milestone 1, Phase: Build.
+Period: start date – end date.
+Move Status: Pending / Done — set to Done only after the files are verified in place. -->
+
+**Stage:**
+**Period:**
 **Archived On:**
-**Move Status:** Pending <!-- Pending / Done — set to Done only after the files are verified in place -->
+**Move Status:** Pending
 
 ## Outcome
 
@@ -14,6 +18,9 @@ archived files; open an archived file only if this summary points to it or the u
 schedule/cost (cite tracker.md / cost-performance.md figures, don't restate them in full). -->
 
 ## Work Packages Delivered
+
+<!-- One row per work package archived with this stage. Final Status is Done (or Accepted under the
+Agile layer); only finished work is archivable. -->
 
 | WBS ID | Work Package | Final Status | Notes |
 |---|---|---|---|

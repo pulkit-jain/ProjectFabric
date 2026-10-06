@@ -17,6 +17,10 @@ everything is in-house or everything is outsourced. -->
 
 ## Contract Type & Vendors
 
+<!-- One row per Buy item above. Value: contract value in the project's currency. Basis: why this
+contract type fits (see the pf-contract-type-reference skill). Each vendor is also tracked in
+vendor-contract-register.md. -->
+
 | WBS ID | Vendor | Contract Type | Value | Basis |
 |---|---|---|---|---|
 | | | Fixed-Price / Time & Materials / Cost-Reimbursable | | |
@@ -29,6 +33,9 @@ risk-register.md — flag to the Risk Manager rather than tracking a shadow risk
 -
 
 ## Procurement Control Thresholds
+
+<!-- Delay (e.g. days late) or contract variance (% or amount) that triggers a Change Request.
+Set with the user; never invent a number. -->
 
 | Trigger | Threshold | Action |
 |---|---|---|

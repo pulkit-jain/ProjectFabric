@@ -5,6 +5,10 @@ cost-management-plan.md; delete the other one. Sorted by variance severity, wors
 
 ## Mode: Lightweight
 
+<!-- Variance is Budgeted Cost against Actual Cost. Write Variance % as "12% over" or "5% under";
+pf_rules.py reads the "over" figure for the cost_overrun_pct_max rule. Status colour is set against
+the thresholds in cost-management-plan.md. -->
+
 | WBS ID | Work Package | Budgeted Cost | Actual Cost | Variance | Variance % | Status | Notes |
 |---|---|---|---|---|---|---|---|
 | 1.1 | | | | | | Green / Yellow / Red | |

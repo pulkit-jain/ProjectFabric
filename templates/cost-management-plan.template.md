@@ -20,6 +20,9 @@
 
 ## Reserves
 
+<!-- Contingency Reserve: money held for identified risks (sized from risk-register.md).
+Management Reserve: money held for unknown-unknowns, released only with sponsor approval. -->
+
 | Reserve Type | Amount | Basis |
 |---|---|---|
 | Contingency Reserve (known-unknowns, linked to risk-register.md) | | |

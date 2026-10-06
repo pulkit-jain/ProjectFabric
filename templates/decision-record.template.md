@@ -1,9 +1,13 @@
 # Decision — DEC-<id>
 
-**Status:** Draft <!-- Draft / Signed-off / Superseded (by DEC-<id>) -->
+<!-- Status: Draft / Signed-off / Superseded (by DEC-<id>).
+Decision Owner: accountable for this call, not necessarily the user.
+Raised By: the agent/role that flagged the need for a decision. -->
+
+**Status:** Draft
 **Date:**
-**Decision Owner:** <!-- accountable for this call, not necessarily the user -->
-**Raised By:** <!-- agent/role that flagged the need for a decision -->
+**Decision Owner:**
+**Raised By:**
 
 ## Context
 
@@ -11,6 +15,8 @@
 scope, schedule, budget, or resource baseline — if it does, use /pf-change-request instead. -->
 
 ## Options Considered
+
+<!-- Realistic alternatives, including doing nothing. Keep each pro and con to one line. -->
 
 | Option | Pros | Cons |
 |---|---|---|

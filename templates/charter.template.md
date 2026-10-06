@@ -26,6 +26,8 @@
 
 ## High-Level Scope
 
+<!-- Broad strokes only; detail goes in scope-statement.md. -->
+
 **In scope:**
 -
 
@@ -34,9 +36,13 @@
 
 ## High-Level Requirements
 
+<!-- What the result must do or satisfy, stated at charter level. -->
+
 -
 
 ## Assumptions
+
+<!-- Things taken as true without proof; revisit if one turns out false. -->
 
 -
 
@@ -54,6 +60,8 @@
 
 ## Milestone Summary
 
+<!-- Major dates only; the full sequence goes in schedule.md. -->
+
 | Milestone | Target |
 |---|---|
 | | |
@@ -65,11 +73,16 @@
 
 ## Key Stakeholders
 
+<!-- Those known at charter time; the full analysis goes in stakeholder-register.md. -->
+
 | Name / Role | Interest |
 |---|---|
 | | |
 
 ## Approval
+
+<!-- The charter is a baseline only after the sponsor's Decision is Approved. Decision: Approved /
+Rejected / TBD. Never mark it Approved on the user's behalf. -->
 
 | Approver | Role | Date | Decision |
 |---|---|---|---|
