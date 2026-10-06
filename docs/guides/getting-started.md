@@ -43,6 +43,31 @@ Type: `/pf-setup-init`
 
 **Check:** the folder `.pmo/` exists and `constitution.md` shows `**Preset:** lean`.
 
+### About `team.md`
+
+`team.md` holds defaults and rules shared by every project your team runs (preset, cost tracking mode,
+reporting cadence, thresholds, standing rules). It is optional. Answer **no** if you have none: init
+creates a blank one that nothing depends on.
+
+To create one, copy `templates/team.template.md` to a shared place your team already uses (a wiki, a
+shared drive, a team repository) and fill it in once:
+
+| Section | What to write |
+|---|---|
+| **Team** | Your team's name. |
+| **Team Defaults** | One value per setting: Workflow Preset, Cost tracking mode (Lightweight or Full EVM), Control cycle cadence, Cost variance escalation threshold, Risk acceptance score ceiling. Leave `TBD` for any you have not decided. |
+| **Team Standards** | Numbered rules every project follows, such as "all vendor contracts need Legal review". Only real rules. |
+| **Amendments** | A row for the initial version, with the date and who approved it. |
+
+At `/pf-setup-init`, say you have one and give its path; the agent copies it into `.pmo/team.md`. If its
+Workflow Preset is set, init proposes that preset first. You can still pick another preset for a
+project; you are told it differs from the team default. A project's `constitution.md` may override a
+team default only by naming the override explicitly.
+
+You can also run init with a blank `team.md`, fill it in inside `.pmo/`, and copy it back to your shared
+place for the next project. Once copied in, `team.md` is a baseline: change it through
+`/pf-change-request`, not by editing it directly.
+
 ## Step 2: Write the charter
 
 Type: `/pf-setup-charter`

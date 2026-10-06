@@ -19,7 +19,7 @@ they propose the change to the owner. The owner list is also in the
 
 | File | Owner | Made by | Kind | Holds | Template |
 |---|---|---|---|---|---|
-| `team.md` | Planner | `/pf-setup-init` | Baseline | Team-wide defaults (preset, cost mode, cadence, thresholds) copied into each project | `team.template.md` |
+| `team.md` | Planner | `/pf-setup-init` | Baseline | Team-wide defaults (preset, cost mode, cadence, thresholds) copied into each project. You write it once and keep the master copy outside `.pmo/`; see [how to create it](getting-started.md#about-teammd). | `team.template.md` |
 | `constitution.md` | Planner | `/pf-setup-constitution` | Baseline | The preset, principles, decision authority, reporting cadence, escalation rules, Definition of Done | `constitution.template.md` |
 | `charter.md` | Planner | `/pf-setup-charter` | Baseline | Purpose, objectives, scope, constraints, milestones, sponsor's approval | `charter.template.md` |
 | `organization.md` | Project Manager | `/pf-setup-organization`, `/pf-plan-organization` | Governance and roles are baseline; the roster is living | Governance structure, role definitions, the team roster (Person, AI, Vendor), org change log | `organization.template.md` |
