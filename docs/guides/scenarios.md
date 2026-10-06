@@ -39,7 +39,7 @@ agile-hybrid, so Organization and Skills are required.
 
 | Step | Command (conversation) | You provide | You get |
 |---|---|---|---|
-| 1 | `/pf-setup-init` (Planner) | Preset: agile-hybrid. Your team's `team.md` if you have one. | Blank `.pmo/` files, preset recorded. |
+| 1 | `/pf-setup-init` (Planner), run twice | First run: nothing. Then fill in `.pmo/team.md` (preset: agile-hybrid) and run it again. | `team.md` first, then the blank `.pmo/` files, preset recorded. |
 | 2 | `/pf-setup-constitution` | Principles ("nothing that costs money without Sponsor sign-off"), who approves what, weekly reports. | `constitution.md`. |
 | 3 | `/pf-setup-charter` | Need, objectives, success measures, in and out of scope, sponsor. | `charter.md`. |
 | 4 | `/pf-setup-organization` | Who is the Sponsor and who can approve changes; the people on the team so far; whether each is a person, an AI agent, or a vendor. | `organization.md` with a governance structure and a first roster. |

@@ -7,7 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **Team standards guide** (`docs/guides/team-standards.md`): what a team standard is, how to write
+  one, and example standards by area (governance, scope and schedule, cost, risk, quality,
+  procurement, people and AI team members, stakeholders, records, security, escalation, handover,
+  closing, agile) to copy into `team.md`.
+  Linked from the README, the guides index, and the getting-started `team.md` section.
+
 ### Changed
+
+- **`/pf-setup-init` now runs in two passes, and `team.md` is mandatory (GOV-03, AGL-01).** Pass 1
+  creates only `.pmo/team.md` from the template. Pass 2 refuses to run until `team.md` has a Team
+  name, a non-`TBD` value in every Team Defaults row, and at least one Team Standard (Amendments
+  optional), then scaffolds the rest. The Workflow Preset is read from `team.md`; the separate preset
+  question and the `--preset` and `--team` options of `pf_scaffold.py` are gone (it gained
+  `--team-only` and the completeness check). The templates, prompt, SKILL.md, Ground Rule 1, the
+  ownership table and the guides were updated to match.
 
 - **`team.md` thresholds are now actually proposed where they apply (GOV-03).** `/pf-plan-cost` and
   the Cost Manager propose the Cost variance escalation threshold; `/pf-plan-risk` and the Risk

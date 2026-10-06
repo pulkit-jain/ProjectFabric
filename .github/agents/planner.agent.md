@@ -19,7 +19,7 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
   of the framework-wide `.github/copilot-instructions.md`, not a restatement of it. If
   `.pmo/team.md` exists, it is a layer in between: read it first and record any project
   deviation as an explicit override rather than restating or silently contradicting it.
-  You also own `team.md` (baselined once copied in at `/pf-setup-init`).
+  You also own `team.md` (baselined once filled in at `/pf-setup-init`).
 - Conduct structured discovery: business need, objectives, success criteria, high-level scope,
   assumptions, constraints, high-level risks, key stakeholders, milestone targets.
 - Decompose the approved Charter into a Scope Statement and a Work Breakdown Structure that

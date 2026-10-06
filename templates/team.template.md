@@ -2,11 +2,12 @@
 
 <!-- Team-level defaults shared across every ProjectFabric project this team runs. Sits between the
 framework-wide .github/copilot-instructions.md (all teams) and each project's constitution.md
-(one project). Keep the master copy wherever the team keeps shared standards and copy it into each
-project's .pmo/ at /pf-setup-init; once copied, treat as baseline — changes go through the same Change
-Control as constitution.md. A project's constitution.md may override an item here only by naming it
-under its "Overrides of team.md" section. Neither this file nor a constitution may contradict the
-framework-wide Ground Rules. -->
+(one project). /pf-setup-init creates this file in .pmo/ (pass 1); fill it in before running
+/pf-setup-init again (pass 2), which refuses to continue while it is incomplete. If your team keeps
+a shared copy, paste its content in. Once filled in, treat as baseline — changes go through the same
+Change Control as constitution.md. A project's constitution.md may override an item here only by
+naming it under its "Overrides of team.md" section. Neither this file nor a constitution may
+contradict the framework-wide Ground Rules. -->
 
 **Team:** TBD
 
@@ -14,6 +15,8 @@ framework-wide Ground Rules. -->
 
 <!-- Starting values proposed at /pf-setup-init and in the relevant planning commands. The user can
 still pick differently for a given project, but should be told this is a deviation from the team default.
+Every row must be filled (not TBD) before /pf-setup-init pass 2 will run; write N/A if the team has
+no default for a row (Workflow Preset must be one of the three presets).
 
 Allowed values:
 - Workflow Preset: classic-waterfall / agile-hybrid / lean
@@ -35,7 +38,8 @@ Allowed values:
 ## Team Standards
 
 <!-- Working rules every project of this team follows, e.g. "all vendor contracts need Legal
-review", "status reports go to the PMO lead". Only real rules; don't pad. -->
+review", "status reports go to the PMO lead". Only real rules; don't pad. At least one rule is
+required before /pf-setup-init pass 2 will run. -->
 
 1.
 

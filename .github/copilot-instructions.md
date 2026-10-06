@@ -9,8 +9,8 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 1. **State lives in `.pmo/`, not in chat.** Never treat conversation memory as the source of
    truth. Before acting, read the relevant files under `.pmo/`. After acting, write your
    output back to the file(s) you own. If `.pmo/` does not exist yet, tell the user to run
-   `/pf-setup-init` first. Individual projects may also have a `.pmo/team.md` (team-wide defaults,
-   copied in at `/pf-setup-init`) and a `.pmo/constitution.md` (produced by
+   `/pf-setup-init` first. Every project has a `.pmo/team.md` (team-wide defaults, created at
+   `/pf-setup-init` pass 1 and filled in by the user before pass 2) and may have a `.pmo/constitution.md` (produced by
    `/pf-setup-constitution`) capturing project-specific working agreements layered on top of this
    framework-wide agreement — read both, if present, before acting. Precedence, most general to
    most specific: this file → `team.md` → `constitution.md`. A more specific layer may override
@@ -55,7 +55,7 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 
 | File | Owning Agent | Updated By |
 |---|---|---|
-| `team.md` | Planner | `/pf-setup-init` (copied in from the team's shared file, or blank from template) |
+| `team.md` | Planner | `/pf-setup-init` (pass 1 creates it from the template; the user fills it in before pass 2) |
 | `constitution.md` | Planner | `/pf-setup-constitution` |
 | `charter.md` | Planner | `/pf-setup-charter` |
 | `scope-statement.md`, `wbs.md` | Planner | `/pf-plan-scope-wbs` |

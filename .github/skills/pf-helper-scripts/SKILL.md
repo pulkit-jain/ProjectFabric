@@ -89,17 +89,23 @@ files), or `ERROR` (malformed rule; exit code 1). Disabled rules are skipped.
 
 ## pf_scaffold.py -- create .pmo/ (`/pf-setup-init`)
 
-Creates the standard artifact files from `templates/` (dropping `.template`) and the working
-folders (`bus`, `memory/work-packages`, `reports`, `changes`, `decisions`, `archives`, `closing`).
+Runs in two passes. Pass 1 creates only `.pmo/team.md` from the blank template. Pass 2 refuses to
+run until `team.md` is filled in, then creates the standard artifact files from `templates/`
+(dropping `.template`) and the working folders (`bus`, `memory/work-packages`, `reports`,
+`changes`, `decisions`, `archives`, `closing`).
 
 ```
-python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py --preset agile-hybrid [--team path/to/team.md] [--dry-run]
+python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py --team-only      # pass 1
+python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py [--dry-run]       # pass 2
 ```
 
 - Never overwrites: existing files and folders are kept and listed. Use `--dry-run` first when
-  `.pmo/` already exists.
-- `--preset` (classic-waterfall / agile-hybrid / lean) fills the constitution's `**Preset:**` line.
-- `--team` copies the team's shared `team.md` in instead of the blank template.
+  `.pmo/` already holds other files.
+- Pass 2 treats `team.md` as filled when the Team name is set, every Team Defaults row has a value
+  other than TBD (Workflow Preset must be classic-waterfall / agile-hybrid / lean), and Team
+  Standards has at least one rule. Otherwise it lists what is missing, exits 1, and creates nothing.
+- The Workflow Preset is read from `team.md` and written into the constitution's `**Preset:**` line;
+  there is no `--preset` option.
 - Its file list mirrors the one in `pf-setup-init.prompt.md`; change both together.
 
 ## Common Mistakes to Avoid

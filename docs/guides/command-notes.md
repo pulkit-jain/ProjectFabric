@@ -11,11 +11,11 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 
 ## /pf-setup-init
 
-- **When:** Once, at the very start, in an empty project.
-- **You provide:** Your Workflow Preset (classic-waterfall, agile-hybrid, or lean), and your team's shared `team.md` if you have one.
-- **You get:** A `.pmo/` folder with a blank file for each artifact, with the preset recorded in the constitution.
+- **When:** Twice, at the very start, in an empty project. The first run creates `team.md`; run it again once `team.md` is filled in.
+- **You provide:** Nothing on the first run. Between the runs, fill in `.pmo/team.md`: team name, every Team Defaults value (including the Workflow Preset: classic-waterfall, agile-hybrid, or lean), and at least one Team Standard. There is no separate preset question.
+- **You get:** First run: `.pmo/team.md` from the blank template. Second run: a `.pmo/` folder with a blank file for each artifact, with the preset from `team.md` recorded in the constitution. The second run refuses to start, and lists what is missing, while `team.md` is incomplete.
 - **Preset:** All
-- **Reads:** `templates/`, and your team's `team.md` if you supply one
+- **Reads:** `templates/`, and `.pmo/team.md` on the second run
 
 ## /pf-setup-constitution
 

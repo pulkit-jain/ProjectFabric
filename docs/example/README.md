@@ -27,7 +27,7 @@ Folder: [offsite-event/.pmo/](offsite-event/.pmo/)
 
 | File | Produced by | Look at it to see |
 |---|---|---|
-| `team.md` | `/pf-setup-init` | Team-wide defaults that every project copies in |
+| `team.md` | `/pf-setup-init` | Team-wide defaults, filled in before the rest of `.pmo/` is created |
 | `constitution.md` | `/pf-setup-constitution` | The preset, decision authority, and a Definition of Ready addition |
 | `charter.md` | `/pf-setup-charter` | Objectives, scope, and success criteria written from the discovery questions |
 | `organization.md` | `/pf-setup-organization`, then `/pf-plan-organization` | Governance, roles, and a roster with a Person, an AI, and Vendors |

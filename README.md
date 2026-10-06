@@ -38,6 +38,7 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
 | Know what to do in a specific situation | [Scenarios](docs/guides/scenarios.md) |
 | Look up a command: when, what to give it, what comes back | [Command reference](docs/guides/command-reference.md) |
 | Know what each `.pmo/` file is and who owns it | [Artifact reference](docs/guides/artifact-reference.md) |
+| Choose rules for the Team Standards section of `team.md` | [Team standards](docs/guides/team-standards.md) |
 
 ### Guides still to write
 
@@ -56,7 +57,7 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
 1. Copy this repository's `.github/` and `templates/` folders into your project.
    Optional: Python 3.9+ lets agents run the bundled helper scripts (`.github/skills/pf-helper-scripts/`) for cost maths, consistency checks, and scaffolding. Nothing to install; without Python the agents do those tasks by hand.
 2. Open GitHub Copilot Chat in VS Code, in agent mode.
-3. Run `/pf-setup-init` to create the project's `.pmo/` folder, then follow the planning commands in the table below. Each agent finishes by telling you the next command and which conversation to run it in.
+3. Run `/pf-setup-init` to create `.pmo/team.md`, fill it in (it holds your Workflow Preset and team defaults), then run `/pf-setup-init` again to create the rest of the project's `.pmo/` folder. Then follow the planning commands in the table below. Each agent finishes by telling you the next command and which conversation to run it in.
 
 The [getting started tutorial](docs/guides/getting-started.md) walks through a complete mini project.
 

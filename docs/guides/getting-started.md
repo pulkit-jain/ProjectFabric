@@ -21,7 +21,7 @@ it with your own project whenever you like; the commands are the same.
 | **New to project management** | Read everything, including the "New to PM" notes. Read [How a project runs](how-a-project-runs.md) first if you want the ideas up front. |
 | **An experienced project manager** | Skim the table below, then follow the "Experienced" notes. Your main questions will be which files are baselines and when you are asked to approve. |
 
-**Fast path for experienced readers:** `/pf-setup-init` (pick lean) → `/pf-setup-charter` →
+**Fast path for experienced readers:** `/pf-setup-init` (twice: fill in `team.md` with lean between the runs) → `/pf-setup-charter` →
 `/pf-plan-scope-wbs` → `/pf-plan-schedule` → `/pf-plan-organization` → *new chat:*
 `/pf-start-manager` → `/pf-assign-task` → *new chat:* `/pf-start-team-member` → back in the Manager
 chat `/pf-check-report` → `/pf-control-cycle` → `/pf-close-project`. Optional phases are offered once
@@ -31,53 +31,70 @@ and can be declined.
 
 **Conversation:** Planner (open a new chat and keep it for all planning steps).
 
-Type: `/pf-setup-init`
+This step has two passes, because the team defaults (including the preset) must exist first.
+
+**Pass 1.** Type: `/pf-setup-init`
 
 | You provide | You get |
 |---|---|
-| The preset: choose `lean`. If your team has a shared standards file, give it too; otherwise say no. | A `.pmo/` folder with a blank file for each artifact, and `lean` recorded in `constitution.md`. |
+| Nothing. | A `.pmo/` folder holding only `team.md`, from the blank template. |
+
+Then fill in `.pmo/team.md` (see [About `team.md`](#about-teammd)). For this tutorial use:
+
+| Field | Value for this tutorial |
+|---|---|
+| Team | Internal Communications |
+| Workflow Preset | lean |
+| Cost tracking mode | Lightweight |
+| Control cycle cadence | per milestone |
+| Cost variance escalation threshold | N/A |
+| Risk acceptance score ceiling | N/A |
+| Team Standards | 1. Status reports go to the Head of Communications. |
+
+**Pass 2.** Type `/pf-setup-init` again, in the same chat.
+
+| You provide | You get |
+|---|---|
+| Nothing. There is no preset question: the preset comes from `team.md`. If `team.md` is incomplete the agent lists what is missing and stops. | The rest of `.pmo/`: a blank file for each artifact, and `lean` recorded in `constitution.md`. |
 
 **New to PM:** `.pmo/` is the project's memory. Every later command reads and writes files in it.
 
-**Experienced:** the scaffold creates blanks only; it never overwrites an existing file.
+**Experienced:** pass 2 creates blanks only and never overwrites an existing file.
 
-**Check:** the folder `.pmo/` exists and `constitution.md` shows `**Preset:** lean`.
+**Check:** `.pmo/` holds the full set of files and `constitution.md` shows `**Preset:** lean`.
 
 ### About `team.md`
 
 `team.md` holds defaults and rules shared by every project your team runs (preset, cost tracking mode,
-reporting cadence, thresholds, standing rules). It is optional. Answer **no** if you have none: init
-creates a blank one that nothing depends on.
+reporting cadence, thresholds, standing rules). It is required: `/pf-setup-init` pass 2 will not run
+until it is filled in. Pass 1 creates it from the blank template in `.pmo/`. If your team keeps a
+shared standards file, paste its content in; otherwise fill it in by hand and keep a copy for your
+next project.
 
-To create one, copy `templates/team.template.md` to a shared place your team already uses (a wiki, a
-shared drive, a team repository) and fill it in once:
+It counts as filled in when the Team name is set, every Team Defaults row has a value other than
+`TBD` (write `N/A` where your team has no default; the Workflow Preset must be one of the three
+presets), and Team Standards has at least one rule. Amendments is optional.
 
 | Section | What to write |
 |---|---|
 | **Team** | Your team's name. |
-| **Team Defaults** | One value per setting: Workflow Preset, Cost tracking mode (Lightweight or Full EVM), Control cycle cadence, Cost variance escalation threshold, Risk acceptance score ceiling. Leave `TBD` for any you have not decided. |
-| **Team Standards** | Numbered rules every project follows, such as "all vendor contracts need Legal review". Only real rules. |
-| **Amendments** | A row for the initial version, with the date and who approved it. |
+| **Team Defaults** | One value per setting: Workflow Preset, Cost tracking mode (Lightweight or Full EVM), Control cycle cadence, Cost variance escalation threshold, Risk acceptance score ceiling. |
+| **Team Standards** | Numbered rules every project follows, such as "all vendor contracts need Legal review". At least one. See [Team standards](team-standards.md) for examples to pick from. |
+| **Amendments** | Optional. A row for each change after the file is baselined, with the date and who approved it. |
 
 What each Team Defaults setting means, and where it is used. None of them is enforced; each is
 proposed as a starting value and you can pick differently per project.
 
 | Setting | Meaning | Proposed by |
 |---|---|---|
-| Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, or lean. | `/pf-setup-init` |
+| Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, or lean. | `/pf-setup-init` pass 2 (read, not asked) |
 | Cost tracking mode | Lightweight (budget against actual) or Full EVM. | `/pf-plan-cost` |
 | Control cycle cadence | How often you intend to run `/pf-control-cycle`, such as weekly. It is a reminder, not a schedule: nothing runs it for you. | `/pf-setup-constitution` (Reporting Cadence) |
 | Cost variance escalation threshold | Overrun, such as 10%, beyond which a deviation becomes a Change Request instead of being absorbed. | `/pf-plan-cost` (Cost Control Thresholds) and `/pf-setup-constitution` |
 | Risk acceptance score ceiling | Highest risk Score (Probability x Impact, 1 to 25) that may be accepted without sign-off. Accepting a risk above it is flagged and needs the approver named in the constitution. | `/pf-plan-risk` and `/pf-setup-constitution` (Decision Authority) |
 
-At `/pf-setup-init`, say you have one and give its path; the agent copies it into `.pmo/team.md`. If its
-Workflow Preset is set, init proposes that preset first. You can still pick another preset for a
-project; you are told it differs from the team default. A project's `constitution.md` may override a
-team default only by naming the override explicitly.
-
-You can also run init with a blank `team.md`, fill it in inside `.pmo/`, and copy it back to your shared
-place for the next project. Once copied in, `team.md` is a baseline: change it through
-`/pf-change-request`, not by editing it directly.
+A project's `constitution.md` may override a team default only by naming the override explicitly. Once
+filled in, `team.md` is a baseline: change it through `/pf-change-request`, not by editing it directly.
 
 ## Step 2: Write the charter
 

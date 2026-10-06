@@ -70,7 +70,7 @@ purpose, which exercises the skip path rather than the command itself. `—` = n
 
 | Command | T1 | T2 | T3 | T4 | T5 | Notes |
 |---|---|---|---|---|---|---|
-| `/pf-setup-init` | ✅ | ✅ | ✅ | ✅ | ✅ | T5 used `pf_scaffold.py` with `--team` and `--preset`, then re-ran it (nothing overwritten) |
+| `/pf-setup-init` | ✅ | ✅ | ✅ | ✅ | ✅ | T5 used `pf_scaffold.py` with `--team` and `--preset`, then re-ran it (nothing overwritten); the later two-pass change (`--team-only`, refusal on an incomplete `team.md`, preset read from `team.md`) was checked with a temporary-folder script, not a lifecycle run |
 | `/pf-setup-constitution` | ✅ | ✅ | ✅ | ✅ | ✅ | T3 exercised amending it mid-project via CR-004; T5 added an "Overrides of team.md" row and a Definition of Ready addition |
 | `/pf-setup-charter` | ✅ | ✅ | ✅ | ✅ | ✅ | |
 | `/pf-setup-organization` | — | — | — | — | — | New after T5; the validator's Org checks were exercised against a fixture only |
@@ -127,7 +127,7 @@ purpose, which exercises the skip path rather than the command itself. `—` = n
 | Stakeholder engagement drift detected and reacted to mid-project | ✅ | T4 (Sales Ops Lead, Supportive → Resistant → Supportive, caught via a Team Member's report, not a scheduled cycle) |
 | Scale: 15+ work packages, 4+ Team Members, `tracker.md`/`raci.md` stay readable | ✅ | T4 (18 work packages, 4 Team Members) |
 | Workflow Preset **agile-hybrid**: three Optional phases skipped, later commands and scripts tolerate their absence | ✅ | T5 |
-| `team.md` copied in at init; constitution overrides a team default with a stated reason | ✅ | T5 (control cycle cadence) |
+| `team.md` created and filled in at init; constitution overrides a team default with a stated reason | ✅ | T5 (control cycle cadence) |
 | Definition of Ready **fails** (input missing), work package dropped from the batch, re-dispatched later | ✅ | T5 (WP-1.2) |
 | Definition of Ready failure **waived** by the user and recorded in `task.md` | ✅ | T5 (WP-2.2, Legal review) |
 | Sprint Review **rejects** a work package; rework without a CR, then a cost CR | ✅ | T5 (WP-2.1) |
