@@ -46,7 +46,7 @@ Decide from the state of `.pmo/`:
 1. **Gate. Do this first, before creating anything.** Read `.pmo/team.md` yourself (the Planner
    cannot run the scaffold script, so do not rely on it for this check). Ignore HTML comments. It
    is filled in only if ALL of these hold:
-   - `**Team:**` has a name, not `TBD` or empty.
+   - The Team Name section has a name, not `TBD` or empty.
    - Every row of the Team Defaults table (Workflow Preset, Cost tracking mode, Control cycle
      cadence, Cost variance escalation threshold, Risk acceptance score ceiling) has a value that is
      not `TBD` or empty, and the Workflow Preset is exactly classic-waterfall, agile-hybrid, or lean.

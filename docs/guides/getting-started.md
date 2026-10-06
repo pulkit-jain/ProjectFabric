@@ -77,7 +77,7 @@ presets), and Team Standards has at least one rule. Amendments is optional.
 
 | Section | What to write |
 |---|---|
-| **Team** | Your team's name. |
+| **Team Name** | Your team's name. |
 | **Team Defaults** | One value per setting: Workflow Preset, Cost tracking mode (Lightweight or Full EVM), Control cycle cadence, Cost variance escalation threshold, Risk acceptance score ceiling. |
 | **Team Standards** | Numbered rules every project follows, such as "all vendor contracts need Legal review". At least one. See [Team standards](team-standards.md) for examples to pick from. |
 | **Amendments** | Optional. A row for each change after the file is baselined, with the date and who approved it. |

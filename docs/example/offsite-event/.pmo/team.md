@@ -1,6 +1,8 @@
-# Team Standards
+# Team Working Agreement
 
-**Team:** Operations Team (fictional)
+## Team Name
+
+Operations Team (fictional)
 
 ## Team Defaults
 

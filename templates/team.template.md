@@ -1,4 +1,4 @@
-# Team Standards
+# Team Working Agreement
 
 <!-- Team-level defaults shared across every ProjectFabric project this team runs. Sits between the
 framework-wide .github/copilot-instructions.md (all teams) and each project's constitution.md
@@ -9,7 +9,12 @@ Change Control as constitution.md. A project's constitution.md may override an i
 naming it under its "Overrides of team.md" section. Neither this file nor a constitution may
 contradict the framework-wide Ground Rules. -->
 
-**Team:** TBD
+## Team Name
+
+<!-- The name of the team these defaults and standards belong to, e.g. "Brand and Packaging Team".
+Required before /pf-setup-init pass 2 will run. -->
+
+TBD
 
 ## Team Defaults
 

@@ -6,7 +6,7 @@ Pass 2 (default): refuse unless team.md is filled in, then create the standard a
 (template name minus '.template') and the empty working folders, and write the Workflow Preset
 from team.md into constitution.md. Never overwrites: an existing file or folder is kept and reported.
 
-team.md counts as filled when the Team name is set, every row of the Team Defaults table has a value
+team.md counts as filled when the Team Name is set, every row of the Team Defaults table has a value
 other than TBD (Workflow Preset must be one of the three presets), and Team Standards has at least
 one rule. Amendments is optional.
 
@@ -45,9 +45,9 @@ def check_team(text):
     """Return (problems, preset). Problems lists what is still missing from team.md."""
     text = re.sub(r"<!--.*?-->", "", text, flags=re.S)
     problems = []
-    m = re.search(r"^\*\*Team:\*\*[ \t]*(.*)$", text, re.M)
-    if not m or m.group(1).strip().upper() in ("", "TBD"):
-        problems.append("Team name is not set")
+    name = section(text, "Team Name").strip()
+    if name.upper() in ("", "TBD"):
+        problems.append("Team Name is not set")
     rows = {}
     for line in section(text, "Team Defaults").splitlines():
         cells = [c.strip() for c in line.strip().strip("|").split("|")]

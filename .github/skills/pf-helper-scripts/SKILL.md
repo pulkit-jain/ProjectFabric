@@ -101,7 +101,7 @@ python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py [--dry-run]      
 
 - Never overwrites: existing files and folders are kept and listed. Use `--dry-run` first when
   `.pmo/` already holds other files.
-- Pass 2 treats `team.md` as filled when the Team name is set, every Team Defaults row has a value
+- Pass 2 treats `team.md` as filled when the Team Name is set, every Team Defaults row has a value
   other than TBD (Workflow Preset must be classic-waterfall / agile-hybrid / lean), and Team
   Standards has at least one rule. Otherwise it lists what is missing, exits 1, and creates nothing.
 - The Workflow Preset is read from `team.md` and written into the constitution's `**Preset:**` line;
