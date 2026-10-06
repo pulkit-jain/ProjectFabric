@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **`team.md` thresholds are now actually proposed where they apply (GOV-03).** `/pf-plan-cost` and
+  the Cost Manager propose the Cost variance escalation threshold; `/pf-plan-risk` and the Risk
+  Manager flag acceptance of a risk scored above the Risk acceptance score ceiling and name the
+  approver; `/pf-setup-constitution` step 0 names which Team Default feeds which section. Nothing
+  is enforced by a script. `docs/guides/getting-started.md` defines every Team Defaults setting.
+
 - **Slash commands renamed from numbered to category-based names**, `/pf-<category>-<action>`
   (categories `setup`, `plan`, `agile`, `session`; the work loop keeps plain verbs). Every
   reference in agents, prompts, skills, scripts, templates and docs was updated; entries below

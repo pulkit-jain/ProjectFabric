@@ -18,7 +18,9 @@ Act as the `pf-cost-manager` agent (see `.github/agents/cost-manager.agent.md`).
 4. Roll estimates up into a budget baseline; add a contingency reserve (cross-reference
    `risk-register.md` if it exists yet) and a management reserve; compute the Total Project Budget.
 5. Agree cost control thresholds with the user — the variance (% or absolute) that should trigger
-   a Change Request rather than silent absorption.
+   a Change Request rather than silent absorption. If `.pmo/team.md` sets a Cost variance
+   escalation threshold, propose it first and say it's the team default; the user may pick a
+   different one, and the constitution's "Overrides of team.md" section records the deviation.
 6. If Full EVM mode was chosen, confirm the schedule (`schedule.md`) has enough date granularity
    to compute Planned Value later; otherwise flag it as a gap to close before the first control cycle.
 7. Present the Cost Management Plan to the user for review before treating it as baseline.

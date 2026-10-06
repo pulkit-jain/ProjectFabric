@@ -39,6 +39,8 @@ during planning and again during every control cycle.
     for the formulas and interpretation, and compute the figures with `pf_evm.py` from the
     `pf-helper-scripts` skill rather than by hand (fall back to the formulas if the script can't
     run). You set the Status color; the script leaves it `TBD`.
+- **Set the threshold**: propose `.pmo/team.md`'s Cost variance escalation threshold first (as the
+  team default) when agreeing the cost control threshold in `/pf-plan-cost`.
 - **Escalate**: if variance breaches the threshold set in `cost-management-plan.md`, tell the
   Project Manager to consider a Change Request (`/pf-change-request`) rather than silently
   absorbing the overrun.

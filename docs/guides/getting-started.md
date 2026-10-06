@@ -59,6 +59,17 @@ shared drive, a team repository) and fill it in once:
 | **Team Standards** | Numbered rules every project follows, such as "all vendor contracts need Legal review". Only real rules. |
 | **Amendments** | A row for the initial version, with the date and who approved it. |
 
+What each Team Defaults setting means, and where it is used. None of them is enforced; each is
+proposed as a starting value and you can pick differently per project.
+
+| Setting | Meaning | Proposed by |
+|---|---|---|
+| Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, or lean. | `/pf-setup-init` |
+| Cost tracking mode | Lightweight (budget against actual) or Full EVM. | `/pf-plan-cost` |
+| Control cycle cadence | How often you intend to run `/pf-control-cycle`, such as weekly. It is a reminder, not a schedule: nothing runs it for you. | `/pf-setup-constitution` (Reporting Cadence) |
+| Cost variance escalation threshold | Overrun, such as 10%, beyond which a deviation becomes a Change Request instead of being absorbed. | `/pf-plan-cost` (Cost Control Thresholds) and `/pf-setup-constitution` |
+| Risk acceptance score ceiling | Highest risk Score (Probability x Impact, 1 to 25) that may be accepted without sign-off. Accepting a risk above it is flagged and needs the approver named in the constitution. | `/pf-plan-risk` and `/pf-setup-constitution` (Decision Authority) |
+
 At `/pf-setup-init`, say you have one and give its path; the agent copies it into `.pmo/team.md`. If its
 Workflow Preset is set, init proposes that preset first. You can still pick another preset for a
 project; you are told it differs from the team default. A project's `constitution.md` may override a

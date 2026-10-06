@@ -14,9 +14,11 @@ exists, it sits between the two — read it first, and don't restate anything it
 
 ## Steps
 
-0. Read `.pmo/team.md` if it exists. Team Defaults (decision thresholds, cadence) and Team
-   Standards already apply to this project; propose them as starting points rather than asking
-   from scratch. If the user wants this project to deviate from a team item, record it under the
+0. Read `.pmo/team.md` if it exists. Team Defaults and Team Standards already apply to this
+   project; propose them as starting points rather than asking from scratch: Control cycle
+   cadence for the Reporting Cadence (step 3), Cost variance escalation threshold for the Budget
+   change row, and Risk acceptance score ceiling for the Risk acceptance row of Decision
+   Authority (step 2). If the user wants this project to deviate from a team item, record it under the
    constitution's "Overrides of team.md" section with a reason — never silently contradict it.
 
 1. Ask the user for this project's non-negotiable principles — rules that override default
