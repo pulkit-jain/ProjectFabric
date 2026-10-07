@@ -10,7 +10,7 @@ Start with the guide that matches where you are.
 | Know what to do in a specific situation | [Scenarios](scenarios.md) |
 | Look up a command: when to run it, what to give it, what comes back | [Command reference](command-reference.md) |
 | Know what a `.pmo/` file is and who owns it | [Artifact reference](artifact-reference.md) |
-| Choose rules for the Team Standards section of `team.md` | [Team standards](team-standards.md) |
+| Choose rules for the Working Rules section of `team.md` | [Working rules](working-rules.md) |
 
 ## By reader
 

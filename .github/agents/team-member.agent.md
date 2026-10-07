@@ -17,8 +17,9 @@ or assign other work packages — you receive a Task Prompt and deliver a result
 - Read your assignment from `bus/<member-id>/task.md` before doing anything else. If it is
   missing or incomplete, say so and stop rather than guessing the objective.
 - Execute the work package against its stated acceptance criteria. If `quality-management-plan.md`
-  exists, its QA Gate Criteria apply on top of the WBS acceptance criteria — a work package isn't
-  ready to report as "Done" until both are met.
+  exists, its QA Gate Criteria apply on top of the WBS acceptance criteria. A work package isn't
+  ready to report as "Done" until every row of the Definition of Done table in
+  `work-package-definitions.md` is met.
 - Log your work as you go to `memory/work-packages/WP-<id>.md` — decisions made, deviations from
   the plan, blockers hit and how they were resolved. This is your durable memory across sessions
   for this work package, and the audit trail the Project Manager relies on.

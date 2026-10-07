@@ -49,52 +49,58 @@ Then fill in `.pmo/team.md` (see [About `team.md`](#about-teammd)). For this tut
 | Control cycle cadence | per milestone |
 | Cost variance escalation threshold | N/A |
 | Risk acceptance score ceiling | N/A |
-| Team Standards | 1. Status reports go to the Head of Communications. |
+| Working Rules | 1. Status reports go to the Head of Communications. |
 
 **Pass 2.** Type `/pf-setup-init` again, in the same chat.
 
 | You provide | You get |
 |---|---|
-| Nothing. There is no preset question: the preset comes from `team.md`. If `team.md` is incomplete the agent lists what is missing and stops. | The rest of `.pmo/`: a blank file for each artifact, and `lean` recorded in `project-constitution.md`. |
+| Nothing. There is no preset question: the preset comes from `team.md`. If `team.md` is incomplete the agent lists what is missing and stops. | The rest of `.pmo/`: a blank file for each artifact, with your team defaults and working rules copied into `project-constitution.md`. |
 
 **New to PM:** `.pmo/` is the project's memory. Every later command reads and writes files in it.
 
 **Experienced:** pass 2 creates blanks only and never overwrites an existing file.
 
-**Check:** `.pmo/` holds the full set of files and `project-constitution.md` has `lean` under Workflow Preset.
+**Check:** `.pmo/` holds the full set of files and `project-constitution.md` shows `lean` in its Project Defaults table.
 
 ### About `team.md`
 
 `team.md` holds defaults and rules shared by every project your team runs (preset, cost tracking mode,
-reporting cadence, thresholds, standing rules). It is required: `/pf-setup-init` pass 2 will not run
+control cycle cadence, thresholds, working rules). It is required: `/pf-setup-init` pass 2 will not run
 until it is filled in. Pass 1 creates it from the blank template in `.pmo/`. If your team keeps a
 shared standards file, paste its content in; otherwise fill it in by hand and keep a copy for your
 next project.
 
-It counts as filled in when the Team name is set, every Team Defaults row has a value other than
+It counts as filled in when the Team Name is set, every Team Defaults row has a value other than
 `TBD` (write `N/A` where your team has no default; the Workflow Preset must be one of the three
-presets), and Team Standards has at least one rule. Amendments is optional.
+presets), and Working Rules has at least one rule. Amendments is optional.
 
 | Section | What to write |
 |---|---|
 | **Team Name** | Your team's name. |
 | **Team Defaults** | One value per setting: Workflow Preset, Cost tracking mode (Lightweight or Full EVM), Control cycle cadence, Cost variance escalation threshold, Risk acceptance score ceiling. |
-| **Team Standards** | Numbered rules every project follows, such as "all vendor contracts need Legal review". At least one. See [Team standards](team-standards.md) for examples to pick from. |
-| **Amendments** | Optional. A row for each change after the file is baselined, with the date and who approved it. |
+| **Working Rules** | Numbered rules every project follows, such as "all vendor contracts need Legal review". At least one. See [Working rules](working-rules.md) for examples to pick from. |
+| **Amendments** | Optional. A row for each change after the file is baselined; the agent writes the date and the change, and you only name who approved it. |
 
-What each Team Defaults setting means, and where it is used. None of them is enforced; each is
-proposed as a starting value and you can pick differently per project.
+What each Team Defaults setting means, and where it is used. Pass 2 copies them into the project
+constitution's Project Defaults, and agents read them there.
 
-| Setting | Meaning | Proposed by |
+| Setting | Meaning | Used by |
 |---|---|---|
-| Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, or lean. | `/pf-setup-init` pass 2 (read, not asked) |
+| Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, or lean. | Every agent that checks the preset |
 | Cost tracking mode | Lightweight (budget against actual) or Full EVM. | `/pf-plan-cost` |
-| Control cycle cadence | How often you intend to run `/pf-control-cycle`, such as weekly. It is a reminder, not a schedule: nothing runs it for you. | `/pf-setup-project-constitution` (Reporting Cadence) |
-| Cost variance escalation threshold | Overrun, such as 10%, beyond which a deviation becomes a Change Request instead of being absorbed. | `/pf-plan-cost` (Cost Control Thresholds) and `/pf-setup-project-constitution` |
-| Risk acceptance score ceiling | Highest risk Score (Probability x Impact, 1 to 25) that may be accepted without sign-off. Accepting a risk above it is flagged and needs the approver named in the constitution. | `/pf-plan-risk` and `/pf-setup-project-constitution` (Decision Authority) |
+| Control cycle cadence | How often you intend to run `/pf-control-cycle`, such as weekly. It is a reminder, not a schedule: nothing runs it for you. | Your own planning |
+| Cost variance escalation threshold | Overrun, such as 10%, beyond which a deviation becomes a Change Request instead of being absorbed. | `/pf-plan-cost` (Cost Control Thresholds) |
+| Risk acceptance score ceiling | Highest risk Score (Probability x Impact, 1 to 25) that may be accepted without sign-off. Accepting a risk above it is flagged and needs the approver named in the constitution. | `/pf-plan-risk` |
 
-A project's `project-constitution.md` may override a team default only by naming the override explicitly. Once
-filled in, `team.md` is a baseline: change it through `/pf-change-request`, not by editing it directly.
+Once filled in, `team.md` is a baseline: change it through `/pf-change-request`, not by editing it directly.
+
+**Changing a default for one project.** After pass 2, `project-constitution.md` holds the values:
+a Project Defaults table with the same settings, and the Working Rules as Team Working Rules. Agents
+read them there, not in `team.md`. To use a different value on this project, change it in the
+Project Defaults table and note the reason in the constitution's Amendments table; to drop a team rule,
+list it under Exempted Team Working Rules with a reason. Editing `team.md` after pass 2 does not change
+the project.
 
 ## Step 2: Write the charter
 

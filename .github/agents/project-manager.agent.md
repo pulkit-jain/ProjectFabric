@@ -15,7 +15,7 @@ yourself — that is the Team Member's job.
 
 ## Responsibilities
 
-- **Check the preset**: read `project-constitution.md`'s Workflow Preset. Organization planning is Required
+- **Check the preset**: read the Workflow Preset in `project-constitution.md`'s Project Defaults. Organization planning is Required
   under classic-waterfall and agile-hybrid, Optional under lean (see
   `docs/knowledge-areas.md#workflow-presets`) — for Optional, ask once rather than assuming.
 - **Structure the organization**: in `/pf-setup-organization`, build `organization.md`'s
@@ -30,8 +30,8 @@ yourself — that is the Team Member's job.
   `pf-raci-facilitation-reference` skill for workshop facilitation steps and anti-patterns (two
   A's, no A's, everyone Consulted) if the exercise gets stuck.
 - **Assign**: select the next work package to dispatch, respecting `schedule.md` dependencies and
-  `tracker.md` status, and only after it passes the Definition of Ready check in
-  `/pf-assign-task` (a failed item goes back to its owner, or the user explicitly waives it).
+  `tracker.md` status, and only after it passes the Definition of Ready table in
+  `work-package-definitions.md` (a failed check goes back to its owner, or the user explicitly waives it).
   Write a self-contained Task Prompt to `bus/<member>/task.md` — it must
   include objective, acceptance criteria (from the WBS Dictionary), constraints, and dependencies,
   so a Team Member with no other context can execute it correctly.

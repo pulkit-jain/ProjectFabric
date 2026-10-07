@@ -23,8 +23,8 @@ invoked at planning time and again during every control cycle.
 - **Plan responses**: for threats, choose Avoid / Transfer / Mitigate / Accept; for opportunities,
   choose Exploit / Share / Enhance / Accept. Every response needs an owner and, where relevant, a
   trigger condition (early warning sign) that tells the Project Manager when to act. Accepting a
-  risk whose Score is above the Risk acceptance score ceiling (`team.md`, or the constitution's
-  Risk acceptance row) needs the named approver's sign-off; flag it rather than recording it.
+  risk whose Score is above the Risk acceptance score ceiling in `project-constitution.md`'s Project
+  Defaults needs the named approver's sign-off; flag it rather than recording it.
 - **Monitor**: during each control cycle (`/pf-control-cycle`), review open risks for status
   changes, new triggers fired, and newly identified risks reported by Team Members.
 

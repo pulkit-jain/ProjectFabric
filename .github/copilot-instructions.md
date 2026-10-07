@@ -9,13 +9,15 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 1. **State lives in `.pmo/`, not in chat.** Never treat conversation memory as the source of
    truth. Before acting, read the relevant files under `.pmo/`. After acting, write your
    output back to the file(s) you own. If `.pmo/` does not exist yet, tell the user to run
-   `/pf-setup-init` first. Every project has a `.pmo/team.md` (team-wide defaults, created at
-   `/pf-setup-init` pass 1 and filled in by the user before pass 2) and may have a `.pmo/project-constitution.md` (produced by
-   `/pf-setup-project-constitution`) capturing project-specific working agreements layered on top of this
-   framework-wide agreement — read both, if present, before acting. Precedence, most general to
-   most specific: this file → `team.md` → `project-constitution.md`. A more specific layer may override
-   a less specific one only by naming the override explicitly (constitution's "Overrides of
-   team.md" section); none may contradict these Ground Rules. `.pmo/archives/` holds finished-stage
+   `/pf-setup-init` first. Every project has a `.pmo/team.md` (team-wide defaults and working rules,
+   created at `/pf-setup-init` pass 1 and filled in by the user before pass 2) and a
+   `.pmo/project-constitution.md`. Pass 2 copies the Team Defaults and Working Rules into the
+   constitution's Project Defaults and Team Working Rules; `/pf-setup-project-constitution` then adds
+   the project's own agreements. Agents read the project's values from `project-constitution.md`, not
+   from `team.md`, which is read at pass 2 and kept as the team's record. Precedence, most general to
+   most specific: this file → `team.md` → `project-constitution.md`. A project value that differs
+   from the team's needs its reason noted in the constitution's Amendments table. None of this may
+   contradict these Ground Rules. `.pmo/archives/` holds finished-stage
    history: read a stage's `stage-summary.md`, not its archived files, unless the summary points
    you to a specific file or the user asks.
 2. **One artifact, one owner.** Each file under `.pmo/` has exactly one owning agent (see the
@@ -32,14 +34,18 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 5. **Baseline changes go through Change Control.** Once `charter.md`, `wbs.md`, `schedule.md`,
    `cost-management-plan.md`, and `resource-management-plan.md` are approved by the user, do not
    edit them directly for scope/schedule/budget/resource changes — raise a Change Request
-   (`/pf-change-request`) instead. `project-constitution.md`, `team.md`, `quality-management-plan.md`, and
+   (`/pf-change-request`) instead. `project-constitution.md`, `work-package-definitions.md`, `team.md`, `quality-management-plan.md`, and
    `procurement-management-plan.md` are baselined the same way once approved. In
    `organization.md`, the Governance Structure and Role Definitions are baselined; the Team Roster
    is living. Risk, Stakeholder,
    Cost Performance, Resource Allocation, Quality Control, Skill Matrix, and Vendor/Contract registers are
    living documents and update continuously without a CR. A judgment call that does **not**
    change any baseline (e.g. picking between two equally-compliant approaches) is a Decision
-   (`/pf-log-decision`), not a Change Request — see the Decision Log row below.
+   (`/pf-log-decision`), not a Change Request — see the Decision Log row below. Every change to
+   `project-constitution.md`, `work-package-definitions.md` or `team.md` gets a row in that file's
+   Amendments table: the agent writes the Date (today, YYYY-MM-DD) and the Change (one line, with the
+   CR ID if there is one) and asks the user only for Approved By, never filling it in itself; for a
+   change made through a Change Request, Approved By is the approver recorded in the CR.
 6. **You are not the decision-maker.** Agents recommend; the user approves. Every phase
    transition and every Work Package assignment is presented to the user before proceeding.
 7. **Tell the user what to run next.** End every response with the exact next command and
@@ -57,6 +63,7 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 |---|---|---|
 | `team.md` | Planner | `/pf-setup-init` (pass 1 creates it from the template; the user fills it in before pass 2) |
 | `project-constitution.md` | Planner | `/pf-setup-project-constitution` |
+| `work-package-definitions.md` | Planner | `/pf-setup-init` pass 2 (standard rows), `/pf-setup-project-constitution` (project tailoring) |
 | `charter.md` | Planner | `/pf-setup-charter` |
 | `scope-statement.md`, `wbs.md` | Planner | `/pf-plan-scope-wbs` |
 | `schedule.md` | Planner | `/pf-plan-schedule` |

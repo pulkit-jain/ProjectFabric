@@ -28,7 +28,8 @@ Folder: [offsite-event/.pmo/](offsite-event/.pmo/)
 | File | Produced by | Look at it to see |
 |---|---|---|
 | `team.md` | `/pf-setup-init` | Team-wide defaults, filled in before the rest of `.pmo/` is created |
-| `project-constitution.md` | `/pf-setup-project-constitution` | The preset, decision authority, and a Definition of Ready addition |
+| `project-constitution.md` | `/pf-setup-project-constitution` | The copied team defaults, decision authority, and the project completion criteria |
+| `work-package-definitions.md` | `/pf-setup-init`, then `/pf-setup-project-constitution` | The standard Definition of Ready and Definition of Done, plus one project-specific check |
 | `charter.md` | `/pf-setup-charter` | Objectives, scope, and success criteria written from the discovery questions |
 | `organization.md` | `/pf-setup-organization`, then `/pf-plan-organization` | Governance, roles, and a roster with a Person, an AI, and Vendors |
 | `scope-statement.md`, `wbs.md` | `/pf-plan-scope-wbs` | Four deliverables broken into nine work packages with acceptance criteria |

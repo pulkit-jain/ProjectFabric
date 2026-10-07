@@ -25,7 +25,8 @@ are the only way to edit the baseline files after approval.
 flowchart TD
     subgraph Setup["Setup and governance"]
         team["team.md<br/>team defaults and standards"]
-        constitution["project-constitution.md<br/>project rules and overrides"]
+        constitution["project-constitution.md<br/>project rules and defaults"]
+        wpdefs["work-package-definitions.md<br/>ready and done checks"]
         charter["charter.md"]
         organization["organization.md<br/>governance and roster"]
     end
@@ -60,6 +61,9 @@ flowchart TD
     end
 
     team --> constitution
+    team --> wpdefs
+    wpdefs -- "Definition of Ready" --> task
+    wpdefs -- "Definition of Done" --> tracker
     constitution -. "preset: which areas are planned" .-> Plan
     constitution -. preset .-> Areas
     constitution --> organization
@@ -119,7 +123,8 @@ form the work loop; and status reports and the closing files read what the loop 
 | File | Owner | Made by | Kind | Holds | Template |
 |---|---|---|---|---|---|
 | `team.md` | Planner | `/pf-setup-init` | Baseline | Team-wide defaults (preset, cost mode, cadence, thresholds) and standing rules. Created in pass 1 of `/pf-setup-init` and must be filled in before pass 2 will run; see [how to fill it in](getting-started.md#about-teammd). | `team.template.md` |
-| `project-constitution.md` | Planner | `/pf-setup-project-constitution` | Baseline | The preset, principles, decision authority, reporting cadence, escalation rules, Definition of Done | `project-constitution.template.md` |
+| `project-constitution.md` | Planner | `/pf-setup-project-constitution` | Baseline | Project Defaults and Team Working Rules copied from `team.md` at init, then project-only working rules, exempted team rules, decision authority, status report reviewers, escalation rules, project completion criteria | `project-constitution.template.md` |
+| `work-package-definitions.md` | Planner | `/pf-setup-init` (standard rows), `/pf-setup-project-constitution` (project tailoring) | Baseline | The Definition of Ready and Definition of Done tables every work package goes through | `work-package-definitions.template.md` |
 | `charter.md` | Planner | `/pf-setup-charter` | Baseline | Purpose, objectives, scope, constraints, milestones, sponsor's approval | `charter.template.md` |
 | `organization.md` | Project Manager | `/pf-setup-organization`, `/pf-plan-organization` | Governance and roles are baseline; the roster is living | Governance structure, role definitions, the team roster (Person, AI, Vendor), org change log | `organization.template.md` |
 

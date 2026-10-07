@@ -1,78 +1,109 @@
 # Project Constitution
 
-<!-- The Project Constitution: working agreements specific to THIS project only — its own
-principles, who approves what, escalation rules, and Definition of Done. Team-wide defaults and
-standards live in team.md and already apply, so do not repeat them here. If this project must
-differ from team.md (a default value or a Team Standard), record it under "Overrides of team.md"
-below, with a reason; that is the only place a deviation is allowed. Sits above individual artifacts
-and below the framework-wide .github/copilot-instructions.md. Treat as baseline once approved;
-amend only through explicit user approval (see Amendments below). -->
+<!-- The Project Constitution: the working agreements for THIS project. /pf-setup-init pass 2 copies
+the Team Defaults and Working Rules from team.md into the Project Defaults and Team Working Rules
+below; from then on agents read them here, not in team.md. Change a Project Default only if this
+project needs a value different from the team's, and note the reason in the Amendments table.
 
-## Workflow Preset
+Sits above individual artifacts and below the framework-wide .github/copilot-instructions.md.
+Treat as baseline once approved; amend only through explicit user approval (see Amendments below). -->
 
-<!-- classic-waterfall / agile-hybrid / lean — chosen at /pf-setup-init. Governs which knowledge-area
-phases are Required vs. Optional for this project; see
-docs/knowledge-areas.md#workflow-presets for what each preset means. Change here only if the
-project's scale changes enough to warrant it — treat as baseline like the rest of this file.
-Written here from team.md by /pf-setup-init pass 2; the value below is the preset name only. -->
+## Project Defaults
 
-TBD
+<!-- Copied from team.md's Team Defaults at /pf-setup-init pass 2; same settings, one value each.
+Workflow Preset: classic-waterfall / agile-hybrid / lean (governs which knowledge-area phases are
+Required vs. Optional; see docs/knowledge-areas.md#workflow-presets). Cost tracking mode: Lightweight /
+Full EVM (chosen at /pf-plan-cost and baselined in cost-management-plan.md). Control cycle cadence:
+how often /pf-control-cycle runs. Cost variance escalation threshold: overrun beyond which a Change
+Request is raised. Risk acceptance score ceiling: 1-25 (Probability x Impact); accepting a risk
+above it needs sign-off. -->
 
-## Overrides of team.md
+| Setting | Project Default |
+|---|---|
+| Workflow Preset | TBD |
+| Cost tracking mode | TBD |
+| Control cycle cadence | TBD |
+| Cost variance escalation threshold | TBD |
+| Risk acceptance score ceiling | TBD |
 
-<!-- Only if .pmo/team.md exists and this project deviates from it. One row per overridden item;
-an override with no reason is not allowed. Cannot override framework-wide Ground Rules.
-Examples: a different Cost variance escalation threshold than the team default, or a Team Standard
-that does not apply to this project. Anything that is the same as team.md is not listed. -->
+## Team Working Rules
 
-| team.md Item | Team Value | This Project's Value | Reason |
-|---|---|---|---|
-
-## Principles
-
-<!-- Non-negotiable rules specific to this project, e.g. "No scope change without sponsor sign-off."
-A rule every project of your team follows belongs in team.md's Team Standards instead. -->
+<!-- Copied from team.md's Working Rules at /pf-setup-init pass 2: the rules every project of your
+team follows. Do not add project-specific rules here (use Project Working Rules below). -->
 
 1.
 
-## Decision Authority
+## Project Working Rules
 
-<!-- Approver: a named person or role. Risk acceptance Threshold: a Score from 1-25; if team.md sets
-a Risk acceptance score ceiling, propose that value. Add a row for any other decision type that
-needs a named approver. -->
+<!-- Non-negotiable rules for THIS PROJECT only, on top of the Team Working Rules above, e.g. "No
+scope change without sponsor sign-off." A rule you want on every project of your team belongs in
+team.md instead. -->
 
-| Decision Type | Approver | Threshold |
-|---|---|---|
-| Scope change | | Any change to `wbs.md` |
-| Schedule change | | Any change to baseline milestone dates |
-| Budget change | | Variance beyond the threshold in `cost-management-plan.md` |
-| Risk acceptance | | Score above |
+1.
 
-## Reporting Cadence
+## Exempted Team Working Rules
 
-<!-- How often /pf-control-cycle runs, and who must review each Status Report -->
-
-## Escalation Rules
-
-<!-- When does a deviation become a Change Request (/pf-change-request) vs. get absorbed
-silently? Cross-reference cost-management-plan.md and risk-register.md thresholds rather than
-duplicating numbers once those exist. -->
-
-## Definition of Ready (project-level additions)
-
-<!-- Extra checks a work package must pass before /pf-assign-task dispatches it, on top of the
-standard list in that prompt. Leave empty if the standard list is enough. -->
+<!-- Only if a Team Working Rule above does not apply to this project: name the rule and give the
+reason. Leave empty if none. A rule that is not listed here still applies. -->
 
 -
 
-## Definition of Done (project-level)
+## Decision Authority
 
-<!-- What "closed" means for this project as a whole, beyond individual work package acceptance
-criteria -->
+<!-- Approver: the framework's default is the role shown; replace it with a named person or a
+different role if the project needs one. The budget and risk Thresholds are not repeated here: they
+are the Cost variance escalation threshold and Risk acceptance score ceiling in Project Defaults
+above. Add a row for any other decision type that needs a named approver. -->
+
+| Decision Type | Approver | Threshold |
+|---|---|---|
+| Scope change | Sponsor | Any change to `wbs.md` |
+| Schedule change | Sponsor | Any change to baseline milestone dates |
+| Budget change | Sponsor | Variance beyond the Cost variance escalation threshold |
+| Risk acceptance | Sponsor | Score above the Risk acceptance score ceiling |
+
+## Status Report Reviewers
+
+<!-- Who must review each Status Report from /pf-control-cycle: one person or role per line. The
+default is the Sponsor; add or replace as needed. How often the report is produced is the Control
+cycle cadence in Project Defaults. -->
+
+- Sponsor
+
+## Escalation Rules
+
+<!-- When a deviation becomes a Change Request (/pf-change-request) instead of being absorbed. The
+rules below are the framework's defaults; add, change or drop a rule for this project and note the
+reason in Amendments. Thresholds come from Project Defaults and the plans, not from numbers here. -->
+
+- A change to scope (`scope-statement.md`, `wbs.md`) or to a baseline milestone date becomes a Change
+  Request.
+- A cost variance beyond the Cost variance escalation threshold becomes a Change Request.
+- Accepting a risk scored above the Risk acceptance score ceiling needs the Decision Authority
+  approver's sign-off.
+- A work package that is blocked and cannot be unblocked by its owner is raised to the Project Manager
+  and shown in the next Status Report.
+- Anything smaller is absorbed and noted in the Variance Notes of `tracker.md`.
+
+## Project Completion Criteria
+
+<!-- What "closed" means for this project as a whole: the conditions /pf-close-project checks before it
+closes the project. The rows below are the framework's defaults; add, change or drop one for this
+project and note the reason in Amendments. The checks for a single work package (Definition of Ready
+and Definition of Done) are in work-package-definitions.md. -->
+
+- Every work package in `tracker.md` is Done (meeting the Definition of Done) or Descoped through an
+  approved Change Request.
+- Every deliverable in `scope-statement.md` has been accepted by the Sponsor.
+- The objectives and success measures in `charter.md` have been reviewed with the Sponsor.
+- Open risks, issues and vendor contracts are closed or handed to a named owner.
+- Lessons learned and the final report are written and reviewed with the Sponsor.
 
 ## Amendments
 
-<!-- Log of changes to this constitution -->
+<!-- Log of changes to this constitution. The agent writes Date (YYYY-MM-DD) and Change (one line, with
+the CR ID if there is one); the user names who approved it, and the agent never fills Approved By
+itself. Keep the Initial version row and add new rows below it; never edit or delete earlier rows. -->
 
 | Date | Change | Approved By |
 |---|---|---|

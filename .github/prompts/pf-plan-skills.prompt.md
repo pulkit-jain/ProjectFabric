@@ -11,7 +11,7 @@ from `templates/skill-matrix.template.md`.
 ## Steps
 
 1. Require an approved `wbs.md` — if missing, point the user to `/pf-plan-scope-wbs`.
-2. Read the Workflow Preset in `project-constitution.md`. This phase is Required under classic-waterfall
+2. Read the Workflow Preset in `project-constitution.md`'s Project Defaults. This phase is Required under classic-waterfall
    and agile-hybrid and Optional under lean (see
    [docs/knowledge-areas.md](../../docs/knowledge-areas.md#workflow-presets)). For Optional, ask
    once whether a skills assessment is worth it; if the user skips it, say so in one line and

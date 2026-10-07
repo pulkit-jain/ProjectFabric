@@ -12,8 +12,8 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 ## /pf-setup-init
 
 - **When:** Twice, at the very start, in an empty project. The first run creates `team.md`; run it again once `team.md` is filled in.
-- **You provide:** Nothing on the first run. Between the runs, fill in `.pmo/team.md`: team name, every Team Defaults value (including the Workflow Preset: classic-waterfall, agile-hybrid, or lean), and at least one Team Standard. There is no separate preset question.
-- **You get:** First run: `.pmo/team.md` from the blank template. Second run: a `.pmo/` folder with a blank file for each artifact, with the preset from `team.md` recorded in the constitution. The second run refuses to start, and lists what is missing, while `team.md` is incomplete.
+- **You provide:** Nothing on the first run. Between the runs, fill in `.pmo/team.md`: team name, every Team Defaults value (including the Workflow Preset: classic-waterfall, agile-hybrid, or lean), and at least one Working Rule. There is no separate preset question.
+- **You get:** First run: `.pmo/team.md` from the blank template. Second run: a `.pmo/` folder with a blank file for each artifact. Your team defaults and working rules are copied into `project-constitution.md`. The second run refuses to start, and lists what is missing, while `team.md` is incomplete.
 - **Preset:** All
 - **Reads:** `templates/`, and `.pmo/team.md` on the second run
 - **Next:** `/pf-setup-project-constitution` after the second run
@@ -21,8 +21,8 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 ## /pf-setup-project-constitution
 
 - **When:** Right after init. Recommended for every project, optional for very small ones.
-- **You provide:** Your non-negotiable principles, who approves scope, schedule, budget and risk decisions, who reviews status reports, and when a deviation becomes a Change Request. The reporting cadence and the cost and risk thresholds come from `team.md` and are not asked again.
-- **You get:** `project-constitution.md` for your review, with team defaults applied where a `team.md` exists.
+- **You provide:** Your project-only working rules, and any changes to the defaults already filled in: who approves scope, schedule, budget and risk decisions (the Sponsor by default), who reviews status reports (the Sponsor by default), when a deviation becomes a Change Request, and what "closed" means for the project. For each project default copied from `team.md` (preset, cost mode, cadence, cost threshold, risk ceiling) you say only whether this project needs a different value, and which team working rules do not apply. You also say whether a work package needs an extra ready or done check.
+- **You get:** `project-constitution.md` for your review: the copied Project Defaults and Team Working Rules, plus your project working rules, any exempted team rules, and the decision authority, status report reviewers, escalation rules and project completion criteria (framework defaults unless you changed them). `work-package-definitions.md` is tailored with any extra checks.
 - **Preset:** Constitution
 
 ## /pf-setup-charter

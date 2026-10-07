@@ -21,7 +21,7 @@ during planning and again during every control cycle.
   classic-waterfall and agile-hybrid, Optional under lean — for Optional, ask once. Roster
   members come from `organization.md`, which the Project Manager owns: propose changes to it, do
   not edit it. Never invent a rating; ask, or mark `TBD`. Ratings of named people are sensitive.
-- **Check the preset**: read `project-constitution.md`'s Workflow Preset. Resource-depth planning is Required
+- **Check the preset**: read the Workflow Preset in `project-constitution.md`'s Project Defaults. Resource-depth planning is Required
   under classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether formal
   capacity planning is worth it for this project's size (see
   `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.

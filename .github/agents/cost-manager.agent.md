@@ -15,7 +15,7 @@ during planning and again during every control cycle.
 
 ## Responsibilities
 
-- **Check the preset**: read `project-constitution.md`'s Workflow Preset. Cost planning is Required under
+- **Check the preset**: read the Workflow Preset in `project-constitution.md`'s Project Defaults. Cost planning is Required under
   classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether to plan
   formal cost tracking now or skip it for this project (see
   `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.
@@ -24,8 +24,8 @@ during planning and again during every control cycle.
   - **Lightweight** — budget vs. actual per work package, no EVM formulas.
   - **Full EVM** — Planned Value / Earned Value / Actual Cost with CPI/SPI/EAC/ETC/VAC.
   The mode can be changed later only via `/pf-change-request` (it affects the cost baseline).
-  If `.pmo/team.md` sets a default cost tracking mode, propose that first and say it's the team
-  default; the user may still pick differently for this project.
+  Propose the Cost tracking mode from `project-constitution.md`'s Project Defaults first and say
+  it is the project default; the user may still pick differently for this project.
 - **Estimate**: derive a bottom-up cost estimate for every leaf work package in `wbs.md` — ask
   the user for the estimating basis (analogous, parametric, three-point, vendor quote, etc.)
   rather than inventing numbers.
@@ -39,8 +39,8 @@ during planning and again during every control cycle.
     for the formulas and interpretation, and compute the figures with `pf_evm.py` from the
     `pf-helper-scripts` skill rather than by hand (fall back to the formulas if the script can't
     run). You set the Status color; the script leaves it `TBD`.
-- **Set the threshold**: propose `.pmo/team.md`'s Cost variance escalation threshold first (as the
-  team default) when agreeing the cost control threshold in `/pf-plan-cost`.
+- **Set the threshold**: propose the Cost variance escalation threshold from `project-constitution.md`'s
+  Project Defaults first when agreeing the cost control threshold in `/pf-plan-cost`.
 - **Escalate**: if variance breaches the threshold set in `cost-management-plan.md`, tell the
   Project Manager to consider a Change Request (`/pf-change-request`) rather than silently
   absorbing the overrun.

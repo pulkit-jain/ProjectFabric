@@ -22,23 +22,11 @@ Act as the `pf-project-manager` agent. Read `tracker.md`, `schedule.md`, and `ra
    - If two packages look like they touch the same deliverable or file, don't guess — ask the
      user whether they can safely run in parallel.
 3. For each work package chosen, identify the Responsible Team Member from `raci.md`, then run the
-   Definition of Ready check. Every item must pass:
-   - The WBS Dictionary gives the work package testable acceptance criteria.
-   - `raci.md` names a Responsible party (a Team Member, or the vendor per
-     `vendor-contract-register.md`) and exactly one Accountable.
-   - Everything the Team Member needs — inputs, constraints, related artifacts — is stated or linked,
-     so nothing has to be guessed.
-   - If `quality-management-plan.md` exists, its QA Gate Criteria cover this deliverable type.
-   - If `resource-management-plan.md` exists, the assignee is not over-allocated in
-     `resource-allocation.md`.
-   - If `organization.md` exists, the Responsible party is a Team Roster member with Status
-     Confirmed (not Proposed or Open); an AI member's Member ID matches its `bus/<member>/` name.
-   - If the work is vendor-owned, its contract in `vendor-contract-register.md` is active.
-   - Any project-level Definition of Ready additions in `project-constitution.md` are met.
-   If any item fails, that work package is not dispatched and the rest of the batch is unaffected.
-   Tell the user which item failed and who fixes it (acceptance criteria → Planner; RACI →
-   Project Manager; capacity → Resource Manager; contract → Procurement Manager). The user may
-   explicitly waive a failed item; record the waiver, don't skip the item silently.
+   Definition of Ready check: every row of the Definition of Ready table in
+   `work-package-definitions.md` must pass (the standard checks plus any this project added).
+   If any row fails, that work package is not dispatched and the rest of the batch is unaffected.
+   Tell the user which check failed and who fixes it (the table's "If it fails, goes to" column). The
+   user may explicitly waive a failed check; record the waiver, don't skip the check silently.
 4. Present the proposed dispatch to the user before writing anything: each work package, its
    Team Member, and its Definition of Ready result. The user approves the list, or removes items.
    Approving the batch approves each assignment in it.

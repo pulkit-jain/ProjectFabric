@@ -14,7 +14,7 @@ Operations Team (fictional)
 | Cost variance escalation threshold | 10% |
 | Risk acceptance score ceiling | 8 |
 
-## Team Standards
+## Working Rules
 
 1. Any commitment that carries a deposit or cancellation fee needs the Sponsor's sign-off first.
 2. Status reports go to the Sponsor every week, even when nothing changed.

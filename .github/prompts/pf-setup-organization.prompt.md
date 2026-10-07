@@ -11,7 +11,7 @@ Act as the `pf-project-manager` agent (see `.github/agents/project-manager.agent
 ## Steps
 
 1. Require an approved `charter.md` — if missing, point the user to `/pf-setup-charter`.
-2. Read the Workflow Preset in `project-constitution.md`. This phase is Required under classic-waterfall
+2. Read the Workflow Preset in `project-constitution.md`'s Project Defaults. This phase is Required under classic-waterfall
    and agile-hybrid and Optional under lean (see
    [docs/knowledge-areas.md](../../docs/knowledge-areas.md#workflow-presets)). For Optional, ask
    once whether a formal governance structure and roster are worth it for this project; if the

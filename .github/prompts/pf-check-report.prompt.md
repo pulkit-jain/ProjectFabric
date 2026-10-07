@@ -19,7 +19,9 @@ Manager perspective) `.pmo/quality-control-log.md`.
    `quality-control-log.md`. A failed gate keeps the work package's Status at "Review" or
    "Blocked", not "Done", until it's resolved and re-reviewed.
 3. Update `tracker.md`: Status (Done / Blocked / Review / In Progress), percent complete, actual
-   finish date if done, variance notes if actual differs from planned.
+   finish date if done, variance notes if actual differs from planned. Set "Done" only when every
+   row of the Definition of Done table in `work-package-definitions.md` passes; otherwise
+   keep the work package at Review, In Progress or Blocked and tell the user which row failed.
 4. If the report names a new risk, tell the user to route it to the Risk Manager
    (`/pf-plan-risk` can be re-run to add a single risk, or add it directly to
    `risk-register.md` following its schema).

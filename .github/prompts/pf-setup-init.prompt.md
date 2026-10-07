@@ -27,8 +27,8 @@ Decide from the state of `.pmo/`:
    create `.pmo/` and copy the template by hand.
 2. Tell the user `team.md` must be filled in before pass 2 will run: the Team name, a value in every
    row of Team Defaults (write N/A where the team has no default; the Workflow Preset must be one of
-   the three below), and at least one Team Standard. Amendments is optional. If the team keeps a
-   shared team standards file, the user pastes its content in.
+   the three below), and at least one Working Rule. Amendments is optional. If the team keeps a
+   shared file of team working rules, the user pastes its content in.
    - **classic-waterfall** — full PMBOK coverage, every knowledge area planned up front.
    - **agile-hybrid** — Scope/Schedule/Risk/Stakeholder/Organization/RACI backbone required; Cost, Quality,
      Procurement, and Resource-depth planning are pulled in later only when actually needed.
@@ -50,7 +50,7 @@ Decide from the state of `.pmo/`:
    - Every row of the Team Defaults table (Workflow Preset, Cost tracking mode, Control cycle
      cadence, Cost variance escalation threshold, Risk acceptance score ceiling) has a value that is
      not `TBD` or empty, and the Workflow Preset is exactly classic-waterfall, agile-hybrid, or lean.
-   - Team Standards has at least one numbered rule with text (a bare `1.` does not count).
+   - Working Rules has at least one numbered rule with text (a bare `1.` does not count).
 2. **If any check fails, pass 2 does not run.** Create no file or folder, ask no preset question, and
    do not offer to continue anyway or to fill the values in on your own. Reply with:
    - `## Planner - Blocked` and `Artifacts: none`;
@@ -59,7 +59,8 @@ Decide from the state of `.pmo/`:
      run `/pf-setup-init` again in this conversation.
    You may help the user choose values and write what they tell you, but never invent one
    (Ground Rule 4); then re-run the gate.
-3. Take the Workflow Preset from `team.md`. Do not ask the user for one.
+3. The project's Workflow Preset is the one in `team.md`. Do not ask the user for one: it is copied
+   into the constitution's Project Defaults with the other defaults (step 5).
 4. Create the structure below. Prefer the scaffold script if you can run it (it repeats the same
    check and also refuses on an incomplete `team.md`):
    `python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py`, adding `--dry-run` first if
@@ -70,6 +71,7 @@ Decide from the state of `.pmo/`:
    .pmo/
      team.md            (filled in during pass 1; left as is)
      project-constitution.md
+     work-package-definitions.md
      charter.md
      scope-statement.md
      wbs.md
@@ -94,9 +96,12 @@ Decide from the state of `.pmo/`:
      archives/          (empty — populated by /pf-session-archive-stage)
      closing/           (empty — populated by /pf-close-project)
    ```
-5. Make sure the freshly-copied `project-constitution.md`'s Workflow Preset field holds the preset from
-   `team.md` (the script does this; otherwise fill it in by hand). It is a scaffolding default, not a
-   baseline approval, and can still be revisited in `/pf-setup-project-constitution`.
-6. Confirm the structure was created and tell the user the next command is
+5. Fill `project-constitution.md` from `team.md` (the script does this; otherwise by hand): copy the
+   five Team Defaults values into its Project Defaults table, and copy the Working Rules list into
+   Team Working Rules. Leave Project Working Rules and the rest empty. From now on agents read these
+   values in the constitution, not in `team.md`; a project that needs a different value changes it
+   later in `/pf-setup-project-constitution`.
+6. Confirm the structure was created, tell the user which Workflow Preset applies (from `team.md`),
+   and tell the user the next command is
    `/pf-setup-project-constitution` (or `/pf-setup-charter` directly if the user wants to skip the
    constitution step for a lightweight project).

@@ -1,14 +1,14 @@
-# Team Standards
+# Working Rules
 
-A reference list of example **Team Standards** to pick from, adapt, or ignore when you fill in the
-Team Standards section of `.pmo/team.md`. ProjectFabric ships none of these as rules: every item below
+A reference list of example **Working Rules** to pick from, adapt, or ignore when you fill in the
+Working Rules section of `.pmo/team.md`. ProjectFabric ships none of these as rules: every item below
 is a suggestion, and any number in it is an example to replace with your own.
 
 For how to create and fill in `team.md`, see [About `team.md`](getting-started.md#about-teammd).
 
-## What a team standard is
+## What a working rule is
 
-A team standard is a working rule that every project of your team follows, written as one numbered
+A team working rule is a rule that every project of your team follows, written as one numbered
 line in `team.md`. The agents read it before they act, and it sits between the framework's Ground Rules
 and each project's constitution:
 
@@ -16,13 +16,14 @@ and each project's constitution:
 
 | It is | It is not |
 |---|---|
-| A rule that applies to every project your team runs | A rule for one project (put that in the constitution's Principles) |
+| A rule that applies to every project your team runs | A rule for one project (put that in the project constitution's Project Working Rules) |
 | Something an agent or person can check: who, what, when | A value for a Team Defaults row (cadence, thresholds, preset have their own rows) |
-| Consistent with the framework's Ground Rules | A way around them. A standard may not contradict a Ground Rule |
+| Consistent with the framework's Ground Rules | A way around them. A working rule may not contradict a Ground Rule |
 
-Agents read and apply the standards but nothing checks them automatically, so a vague standard will be
-applied loosely. A project may deviate only by naming the override in its constitution's "Overrides of
-`team.md`" table, with a reason. Once `team.md` is filled in it is a baseline: change it through
+Agents read and apply the rules but nothing checks them automatically, so a vague rule will be
+applied loosely. Pass 2 of `/pf-setup-init` copies the rules into the project constitution's Team Working
+Rules, and a project can exempt itself from one only by listing it, with a reason, under Exempted Team
+Working Rules. Once `team.md` is filled in it is a baseline: change it through
 [`/pf-change-request`](command-reference.md#change-and-decisions).
 
 ## How to write one
@@ -36,14 +37,14 @@ applied loosely. A project may deviate only by naming the override in its consti
 5. **Do not repeat the framework.** It already requires, for example, that agents never invent numbers
    and that baseline changes go through a Change Request.
 
-## Example standards
+## Example rules
 
 Pick the ones that match how your team really works. The commands named are where the rule is most
 likely to matter.
 
 ### Governance and approvals
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | Every Change Request is approved by the Sponsor before a baseline file is edited. | `/pf-change-request` |
 | Decisions that affect more than one team are logged with `/pf-log-decision` and signed off by the Sponsor. | `/pf-log-decision` |
@@ -56,7 +57,7 @@ likely to matter.
 
 ### Scope and schedule
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | Every deliverable has acceptance criteria that name who accepts it. | `/pf-plan-scope-wbs` |
 | No work package is larger than 10 working days; split larger ones. | `/pf-plan-scope-wbs` |
@@ -69,7 +70,7 @@ likely to matter.
 
 ### Cost
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | Any spend above a stated amount needs the budget holder's written approval before it is committed. | `/pf-plan-cost` |
 | Contingency reserve is held by the Sponsor, not the Project Manager. | `/pf-plan-cost` |
@@ -80,7 +81,7 @@ likely to matter.
 
 ### Risk
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | Every risk has a named owner and a response before it is accepted. | `/pf-plan-risk` |
 | Risks scored at or above a stated level are reviewed with the Sponsor at every control cycle. | `/pf-control-cycle` |
@@ -91,7 +92,7 @@ likely to matter.
 
 ### Quality
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | A work package is not marked Done until the quality gate passes. | `/pf-check-report` |
 | Customer-facing content, such as packaging claims or published copy, is reviewed by Legal before release. | `/pf-plan-quality` |
@@ -102,7 +103,7 @@ likely to matter.
 
 ### Procurement
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | All vendor contracts are reviewed by Legal before signature. | `/pf-plan-procurement` |
 | Purchases above a stated value need at least three quotes. | `/pf-plan-procurement` |
@@ -113,7 +114,7 @@ likely to matter.
 
 ### People, resources, and AI team members
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | No one is allocated above 80% across all projects. | `/pf-plan-resources` |
 | Every AI team member has a named human who is accountable for its output. | `/pf-plan-organization` |
@@ -126,7 +127,7 @@ likely to matter.
 
 ### Stakeholders and communications
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | The stakeholder register is shared only with the Project Manager, the Sponsor, and the Stakeholder Manager. | `/pf-plan-stakeholders` |
 | Anything sent to a broad audience is approved by the Sponsor first. | `/pf-plan-stakeholders` |
@@ -137,7 +138,7 @@ likely to matter.
 
 ### Records and documentation
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | Every Change Request and decision is referenced by its ID in commit messages and status reports. | `/pf-change-request`, `/pf-log-decision` |
 | Project files are kept in the team's shared repository, not on personal drives. | all |
@@ -148,7 +149,7 @@ likely to matter.
 
 ### Security and sensitive information
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | No passwords, keys, or tokens are written into any project file or chat. | all |
 | Personal data about named people is limited to what the project needs and is not copied into status reports. | `/pf-control-cycle` |
@@ -157,7 +158,7 @@ likely to matter.
 
 ### Escalation and issues
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | A blocked work package is raised to the Project Manager the same day, with what is needed to unblock it. | `/pf-check-report` |
 | A blocker open for more than three working days is escalated to the Sponsor. | `/pf-control-cycle` |
@@ -166,7 +167,7 @@ likely to matter.
 
 ### Handover and session continuity
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | A conversation that is nearly full is handed over with `/pf-session-handoff` before work continues in a new one. | `/pf-session-handoff` |
 | A finished stage is archived with `/pf-session-archive-stage` before the next one is planned in detail. | `/pf-session-archive-stage` |
@@ -174,7 +175,7 @@ likely to matter.
 
 ### Closing and learning
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | Lessons learned are collected from at least the Sponsor, the Project Manager, and one team member. | `/pf-close-project` |
 | Every lesson has a recommendation for the next project, not only an observation. | `/pf-close-project` |
@@ -182,7 +183,7 @@ likely to matter.
 
 ### Agile track (agile-hybrid or lean with ceremonies)
 
-| Example standard | Most relevant to |
+| Example rule | Most relevant to |
 |---|---|
 | A work item is not pulled into a sprint until it meets the Definition of Ready. | `/pf-agile-sprint-planning` |
 | The user accepts or rejects every item at sprint review; nothing is accepted by default. | `/pf-agile-sprint-review` |
@@ -193,16 +194,16 @@ likely to matter.
 
 ## Putting them in `team.md`
 
-Copy the lines you want into the numbered list under **Team Standards** in `.pmo/team.md`, replacing
+Copy the lines you want into the numbered list under **Working Rules** in `.pmo/team.md`, replacing
 the example amounts and names with your own:
 
 ```markdown
-## Team Standards
+## Working Rules
 
 1. Every Change Request is approved by the Sponsor before a baseline file is edited.
 2. All vendor contracts are reviewed by Legal before signature.
 3. Status reports go to the Head of the PMO within one working day of each control cycle.
 ```
 
-At least one standard is required before `/pf-setup-init` pass 2 will run. Start with the two or three
+At least one rule is required before `/pf-setup-init` pass 2 will run. Start with the two or three
 your team already follows; add more through a Change Request when you find a rule you keep repeating.

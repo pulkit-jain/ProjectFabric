@@ -38,7 +38,7 @@ AI chat sessions degrade as projects grow: requirements get lost, decisions get 
 | Know what to do in a specific situation | [Scenarios](docs/guides/scenarios.md) |
 | Look up a command: when, what to give it, what comes back | [Command reference](docs/guides/command-reference.md) |
 | Know what each `.pmo/` file is and who owns it | [Artifact reference](docs/guides/artifact-reference.md) |
-| Choose rules for the Team Standards section of `team.md` | [Team standards](docs/guides/team-standards.md) |
+| Choose rules for the Working Rules section of `team.md` | [Working rules](docs/guides/working-rules.md) |
 
 ### Guides still to write
 

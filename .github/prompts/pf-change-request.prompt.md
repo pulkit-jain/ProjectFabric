@@ -19,6 +19,9 @@ Act as the `pf-project-manager` agent. Produce `.pmo/changes/CR-<id>.md` from
    milestone vs. reduce scope elsewhere), with a recommendation.
 4. Record the user's decision (Approved / Rejected / Deferred), approver, and date.
 5. If approved: update the specific baseline document(s) — `wbs.md`, `schedule.md`, or
-   `scope-statement.md` — and note in the CR which sections changed. This is the only prompt
+   `scope-statement.md` — and note in the CR which sections changed. If the change touches
+   `project-constitution.md`, `work-package-definitions.md` or `team.md`, edit that file too and add a
+   row to its Amendments table (today's date, a one-line change with this CR's ID, and the approver
+   from step 4). This is the only prompt
    allowed to modify those files after Planning is baselined.
 6. Tell the user to resume the assign/report loop with `/pf-assign-task` or `/pf-control-cycle`.

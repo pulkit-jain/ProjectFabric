@@ -10,8 +10,9 @@ Act as the `pf-scrum-master` agent. Read `wbs.md` and `tracker.md`; update
 ## Steps
 
 1. Identify the next 1–2 sprints' worth of not-yet-started work packages from `wbs.md`.
-2. For each, run the Definition of Ready check from `/pf-assign-task` step 3 — except the
-   predecessors-Done test, which isn't expected to hold yet. Do not invent an acceptance
+2. For each, run the Definition of Ready checks in `work-package-definitions.md` (the same table
+   `/pf-assign-task` step 3 uses) — a predecessor that is not Done yet is expected, so don't fail a
+   check for that. Do not invent an acceptance
    criterion the Planner hasn't stated; flag it back to the Planner instead. Note any open
    question.
 3. Record refinement notes and a Ready/Not Ready flag in `sprint-backlog.md`'s Upcoming Sprint

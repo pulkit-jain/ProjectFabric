@@ -11,16 +11,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Artifact relationship diagram** in `docs/guides/artifact-reference.md` (which `.pmo/` files feed
   which, drawn from what each command reads and writes). The constitution template now says it is
-  project-specific, that Team Standards belong in `team.md`, and that deviations from `team.md` are
-  recorded only under "Overrides of team.md".
-- **Team standards guide** (`docs/guides/team-standards.md`): what a team standard is, how to write
-  one, and example standards by area (governance, scope and schedule, cost, risk, quality,
+  project-specific, that team-wide Working Rules belong in `team.md`, and that team defaults are
+  copied into it at init.
+- **Working rules guide** (`docs/guides/working-rules.md`): what a team working rule is, how to write
+  one, and example rules by area (governance, scope and schedule, cost, risk, quality,
   procurement, people and AI team members, stakeholders, records, security, escalation, handover,
   closing, agile) to copy into `team.md`.
   Linked from the README, the guides index, and the getting-started `team.md` section.
 
 ### Changed
 
+- **Amendments tables: the agent writes the date and the change, and asks only for the approver.**
+  Ground Rule 5 now says every change to `project-constitution.md`, `work-package-definitions.md` or
+  `team.md` gets an Amendments row with today's date and a one-line change (with the CR ID when there
+  is one); the agent asks the user only for Approved By and never fills it in. For a change made
+  through `/pf-change-request` step 5, the approver is the one recorded in the CR. The templates and
+  the constitution and cost-planning prompts say the same.
+- **Default content for four constitution sections.** `project-constitution.md` is now created with
+  default Decision Authority approvers (the Sponsor), Status Report Reviewers (the Sponsor), Escalation
+  Rules (five default rules) and Project Completion Criteria (five conditions that
+  `/pf-close-project` checks). `/pf-setup-project-constitution` shows these and asks only what to add,
+  change or drop.
+- **Work package checks moved to their own file, `work-package-definitions.md`.** The Definition of
+  Ready and Definition of Done (work package) tables left `project-constitution.md`. The new file is
+  owned by the Planner, created by `/pf-setup-init` pass 2 with the standard rows, and tailored in
+  `/pf-setup-project-constitution`. `/pf-assign-task`, `/pf-agile-backlog-refinement`,
+  `/pf-check-report`, the Team Member and Project Manager agents and `/pf-close-project` read it. The
+  constitution's project-level Definition of Done is renamed **Project Completion Criteria**, and
+  `/pf-close-project` now checks it.
+- **Definition of Done for a work package (WPQ-04).** `project-constitution.md` has a new
+  Definition of Done (work package) table (acceptance criteria met, QA gate passed when a quality
+  plan exists, a complete report), next to the Definition of Ready. `/pf-check-report` sets "Done"
+  only when every row passes, and the Team Member agent, `/pf-close-project` and
+  `/pf-setup-project-constitution` refer to it. The existing project-level Definition of Done is
+  unchanged.
+- **The standard Definition of Ready list moved from `/pf-assign-task` into the project
+  constitution.** `project-constitution.md` now has a Definition of Ready table (seven standard checks,
+  each with who fixes a failure) that a project can add rows to. `/pf-assign-task` step 3,
+  `/pf-agile-backlog-refinement` and the Project Manager agent now refer to that table instead of
+  holding their own copy. The separate "project-level additions" section is gone, since additions are
+  just more rows.
+- **`/pf-setup-init` pass 2 copies `team.md` into the project constitution; there is no overrides
+  table.** `project-constitution.md` now starts with a **Project Defaults** table (same five settings
+  as `team.md`'s Team Defaults) and **Team Working Rules** (copied from `team.md`), followed by
+  **Project Working Rules** and **Exempted Team Working Rules**, and Status Report Reviewers replaces
+  Reporting Cadence. From then on every agent and prompt reads the project's values in the
+  constitution, not in `team.md`, which is read at pass 2 and kept as the team's record. A value that
+  differs from the team's gets its reason in the constitution's Amendments table.
+  `/pf-setup-project-constitution` shows the copied defaults and asks which to change;
+  `pf_scaffold.py` does the copying. Ground Rule 1 states the rule once.
+- **"Team Standards" (team.md) and "Principles" (project constitution) are now both "Working Rules".**
+  They were the same kind of rule at two scopes. The team's section holds rules for every project of
+  the team; the project constitution's section holds rules for that project only, on top of the
+  team's. `pf_scaffold.py` now checks for at least one Working Rule, and the guide moved to
+  `docs/guides/working-rules.md`.
 - **Constitution renamed to Project Constitution.** `/pf-setup-constitution` is now
   `/pf-setup-project-constitution`, `.pmo/constitution.md` is now `.pmo/project-constitution.md`, and
   `templates/constitution.template.md` is now `templates/project-constitution.template.md`. Every

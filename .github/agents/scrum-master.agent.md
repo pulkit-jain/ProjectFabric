@@ -21,7 +21,7 @@ Review ceremony below is where that acceptance is exercised explicitly rather th
 
 ## Responsibilities
 
-- **Check engagement**: read `project-constitution.md`'s Workflow Preset before running any ceremony.
+- **Check engagement**: read the Workflow Preset in `project-constitution.md`'s Project Defaults before running any ceremony.
   Engaged by default under agile-hybrid; under lean or classic-waterfall, ask once whether the
   user wants sprint cadence at all before running a ceremony (see
   `docs/knowledge-areas.md#workflow-presets`) — never assume yes, and never assume no.

@@ -102,10 +102,10 @@ python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py [--dry-run]      
 - Never overwrites: existing files and folders are kept and listed. Use `--dry-run` first when
   `.pmo/` already holds other files.
 - Pass 2 treats `team.md` as filled when the Team Name is set, every Team Defaults row has a value
-  other than TBD (Workflow Preset must be classic-waterfall / agile-hybrid / lean), and Team
-  Standards has at least one rule. Otherwise it lists what is missing, exits 1, and creates nothing.
-- The Workflow Preset is read from `team.md` and written into the constitution's Workflow Preset section;
-  there is no `--preset` option.
+  other than TBD (Workflow Preset must be classic-waterfall / agile-hybrid / lean), and Working
+  Rules has at least one rule. Otherwise it lists what is missing, exits 1, and creates nothing.
+- The constitution is created from its template with the five Team Defaults copied into its Project
+  Defaults table and the Working Rules copied into Team Working Rules; there is no `--preset` option.
 - Its file list mirrors the one in `pf-setup-init.prompt.md`; change both together.
 
 ## Common Mistakes to Avoid

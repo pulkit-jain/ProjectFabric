@@ -69,7 +69,7 @@ the RACI matrix, and for an AI member it is also the name of their task folder.
 
 ## Workflow presets
 
-Not every project needs every planning step. The preset is set in your team's `team.md`, which you fill in during `/pf-setup-init`:
+Not every project needs every planning step. The preset is set in your team's `team.md`, which you fill in during `/pf-setup-init`. Pass 2 copies it into the Project Defaults table of `project-constitution.md`, where agents read it; later edits to `team.md` do not change a running project:
 
 | Preset | Use it when | What it means |
 |---|---|---|

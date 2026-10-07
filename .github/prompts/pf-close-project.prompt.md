@@ -9,7 +9,9 @@ Act as the Planner and Project Manager agents together. Produce `.pmo/closing/le
 
 ## Steps
 
-1. Verify every work package in `tracker.md` is Status = "Done" with acceptance criteria met. If
+1. Verify every work package in `tracker.md` is Status = "Done" (meeting the Definition of Done in
+   `work-package-definitions.md`, including its acceptance criteria), and that the Project
+   Completion Criteria in `project-constitution.md` are met. If
    any remain open, confirm with the user whether to close them out, descope via
    `/pf-change-request`, or hold closing until they finish.
 2. If `.pmo/archives/` exists, read each `stage-summary.md` (not the archived files) as input to

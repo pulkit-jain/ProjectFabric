@@ -3,11 +3,12 @@
 
 Pass 1 (--team-only): create .pmo/team.md from the blank template and stop, so the user can fill it.
 Pass 2 (default): refuse unless team.md is filled in, then create the standard artifact files
-(template name minus '.template') and the empty working folders, and write the Workflow Preset
-from team.md into project-constitution.md. Never overwrites: an existing file or folder is kept and reported.
+(template name minus '.template') and the empty working folders. In project-constitution.md it
+copies team.md's five Team Defaults into the Project Defaults table and team.md's Working Rules into
+Team Working Rules. Never overwrites: an existing file or folder is kept and reported.
 
 team.md counts as filled when the Team Name is set, every row of the Team Defaults table has a value
-other than TBD (Workflow Preset must be one of the three presets), and Team Standards has at least
+other than TBD (Workflow Preset must be one of the three presets), and Working Rules has at least
 one rule. Amendments is optional.
 
 Usage:
@@ -21,7 +22,7 @@ from pathlib import Path
 
 # Keep in step with the file list in .github/prompts/pf-setup-init.prompt.md.
 ARTIFACTS = [
-    "team", "project-constitution", "charter", "scope-statement", "wbs", "schedule",
+    "team", "project-constitution", "work-package-definitions", "charter", "scope-statement", "wbs", "schedule",
     "cost-management-plan", "cost-performance", "risk-register", "stakeholder-register", "raci",
     "communications-plan", "tracker", "automation-rules", "sprint-backlog", "standup-log", "retro-log",
 ]
@@ -29,7 +30,6 @@ FOLDERS = [
     "bus", "memory/work-packages", "reports", "changes", "decisions", "archives", "closing",
 ]
 PRESETS = ("classic-waterfall", "agile-hybrid", "lean")
-PRESET_PATTERN = re.compile(r"(## Workflow Preset\b.*?-->\s*)TBD", re.S)
 DEFAULT_ROWS = (
     "Workflow Preset", "Cost tracking mode", "Control cycle cadence",
     "Cost variance escalation threshold", "Risk acceptance score ceiling",
@@ -42,7 +42,7 @@ def section(text, heading):
 
 
 def check_team(text):
-    """Return (problems, preset). Problems lists what is still missing from team.md."""
+    """Return (problems, rows, rules). Problems lists what is still missing from team.md."""
     text = re.sub(r"<!--.*?-->", "", text, flags=re.S)
     problems = []
     name = section(text, "Team Name").strip()
@@ -59,10 +59,19 @@ def check_team(text):
     preset = rows.get("Workflow Preset", "").lower()
     if preset and preset != "tbd" and preset not in PRESETS:
         problems.append("Team Defaults: Workflow Preset must be one of %s" % ", ".join(PRESETS))
-        preset = ""
-    if not re.search(r"^\s*\d+\.\s*\S", section(text, "Team Standards"), re.M):
-        problems.append("Team Standards: add at least one rule")
-    return problems, preset
+    rows["Workflow Preset"] = preset
+    rules = section(text, "Working Rules").strip()
+    if not re.search(r"^\s*\d+\.\s*\S", rules, re.M):
+        problems.append("Working Rules: add at least one rule")
+    return problems, rows, rules
+
+
+def fill_constitution(text, rows, rules):
+    """Copy team.md's defaults and rules into the constitution template."""
+    for name in DEFAULT_ROWS:
+        text = re.sub(r"(\| %s \| )TBD( \|)" % re.escape(name),
+                      lambda m: m.group(1) + rows[name] + m.group(2), text, count=1)
+    return re.sub(r"(## Team Working Rules\b.*?-->\s*)1\.", lambda m: m.group(1) + rules, text, count=1, flags=re.S)
 
 
 def main():
@@ -100,7 +109,7 @@ def main():
     if not team.is_file():
         sys.stderr.write("error: %s not found; run pass 1 first (--team-only)\n" % team)
         return 2
-    problems, preset = check_team(team.read_text(encoding="utf-8"))
+    problems, rows, rules = check_team(team.read_text(encoding="utf-8"))
     if problems:
         sys.stderr.write("error: team.md is not filled in yet; nothing was created:\n")
         for p in problems:
@@ -115,7 +124,7 @@ def main():
             continue
         text = (templates / (name + ".template.md")).read_text(encoding="utf-8")
         if name == "project-constitution":
-            text = PRESET_PATTERN.sub(lambda m: m.group(1) + preset, text, count=1)
+            text = fill_constitution(text, rows, rules)
         if not args.dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(text, encoding="utf-8")
@@ -133,9 +142,7 @@ def main():
         print("%s: %s" % (verb, p.as_posix()))
     for p in kept:
         print("kept (already exists): %s" % p.as_posix())
-    if (pmo / "project-constitution.md") in kept:
-        print("note: project-constitution.md already existed, so the Workflow Preset was not written to it")
-    print("\nWorkflow Preset from team.md: %s" % preset)
+    print("\nWorkflow Preset copied from team.md: %s" % rows["Workflow Preset"])
     print("%d %s, %d kept" % (len(created), "would be created" if args.dry_run else "created", len(kept)))
     return 0
 

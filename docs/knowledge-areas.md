@@ -28,7 +28,7 @@ reserved for v2 rather than bolted on shallowly.
 
 ## Workflow Presets
 
-Not every project needs every v1 knowledge area run as a dedicated planning step. Chosen once in `.pmo/team.md` (filled in during `/pf-setup-init`) and recorded in `.pmo/project-constitution.md`'s Workflow Preset field, a preset tells every
+Not every project needs every v1 knowledge area run as a dedicated planning step. Chosen once in `.pmo/team.md` (filled in during `/pf-setup-init`) and copied by pass 2 into `.pmo/project-constitution.md`'s Project Defaults table, a preset tells every
 agent which phases are `Required` (always run before Executing begins) vs. `Optional` (the owning
 agent asks the user whether to run it or skip it for this project, rather than assuming yes).
 `Optional` never means "silently skipped" — an agent still surfaces the choice once.

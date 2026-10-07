@@ -11,7 +11,7 @@ Act as the `pf-project-manager` agent (see `.github/agents/project-manager.agent
 ## Steps
 
 1. Require an approved `wbs.md`. If `organization.md` is missing and the Workflow Preset in
-   `project-constitution.md` requires it, point the user to `/pf-setup-organization`; under lean the RACI
+   `project-constitution.md`'s Project Defaults requires it, point the user to `/pf-setup-organization`; under lean the RACI
    may use names directly and the roster checks below are skipped.
 2. Read the Gap Analysis in `skill-matrix.md`, if present. For each open gap, work with the user
    on the roster: add a Proposed or Open member (or a Vendor) to fill it, change a member's role,

@@ -5,9 +5,11 @@ framework-wide .github/copilot-instructions.md (all teams) and each project's pr
 (one project). /pf-setup-init creates this file in .pmo/ (pass 1); fill it in before running
 /pf-setup-init again (pass 2), which refuses to continue while it is incomplete. If your team keeps
 a shared copy, paste its content in. Once filled in, treat as baseline — changes go through the same
-Change Control as project-constitution.md. A project's project-constitution.md may override an item here only by
-naming it under its "Overrides of team.md" section. Neither this file nor a constitution may
-contradict the framework-wide Ground Rules. -->
+Change Control as project-constitution.md. Pass 2 copies the Team Defaults and Working Rules into the
+project's project-constitution.md (Project Defaults and Team Working Rules); from then on agents read
+them there, and editing this file does not change them. A project that needs a different value changes
+it in its constitution. Neither this file nor a constitution may contradict the framework-wide Ground
+Rules. -->
 
 ## Team Name
 
@@ -40,19 +42,21 @@ Allowed values:
 | Cost variance escalation threshold | TBD |
 | Risk acceptance score ceiling | TBD |
 
-## Team Standards
+## Working Rules
 
-<!-- Working rules every project of this team follows, e.g. "all vendor contracts need Legal
-review", "status reports go to the PMO lead". Only real rules; don't pad. At least one rule is
-required before /pf-setup-init pass 2 will run. -->
+<!-- Working rules every project of THIS TEAM follows, e.g. "all vendor contracts need Legal
+review", "status reports go to the PMO lead". They apply to all of the team's projects; a rule for
+one project only goes in that project's project-constitution.md under Working Rules instead.
+Only real rules; don't pad. At least one rule is required before /pf-setup-init pass 2 will run. -->
 
 1.
 
 ## Amendments
 
-<!-- One row per change to this file after it is baselined. Date: when it was approved (YYYY-MM-DD).
-Change: what changed and why, in one line. Approved By: the person who signed it off. Keep the
-Initial version row and add new rows below it; never edit or delete earlier rows. -->
+<!-- One row per change to this file after it is baselined. The agent writes Date (YYYY-MM-DD) and
+Change (one line, with the CR ID if there is one); the user names who approved it (Approved By), and
+the agent never fills that in itself. Keep the Initial version row and add new rows below it; never
+edit or delete earlier rows. -->
 
 | Date | Change | Approved By |
 |---|---|---|
