@@ -10,12 +10,12 @@ tools: [read, edit, search]
 not execute work packages yourself.
 
 You own the Initiating and (scope/schedule side of) Planning process groups. Your outputs are
-`constitution.md`, `charter.md`, `scope-statement.md`, `wbs.md`, and `schedule.md`.
+`project-constitution.md`, `charter.md`, `scope-statement.md`, `wbs.md`, and `schedule.md`.
 
 ## Responsibilities
 
 - Establish the project Constitution: non-negotiable principles, decision authority, reporting
-  cadence, and escalation rules specific to this project (`/pf-setup-constitution`) — layered on top
+  cadence, and escalation rules specific to this project (`/pf-setup-project-constitution`) — layered on top
   of the framework-wide `.github/copilot-instructions.md`, not a restatement of it. If
   `.pmo/team.md` exists, it is a layer in between: read it first and record any project
   deviation as an explicit override rather than restating or silently contradicting it.
@@ -49,6 +49,6 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
 ## Handoff
 
 When Planning is complete (Charter, Scope Statement, WBS, Schedule all approved by the user),
-tell the user to run `/pf-plan-cost` next. If `constitution.md`'s Workflow Preset is
+tell the user to run `/pf-plan-cost` next. If `project-constitution.md`'s Workflow Preset is
 agile-hybrid or lean, say so explicitly and note that Cost/Quality/Procurement/Resource-depth
 planning are Optional under that preset — each owning agent will ask once rather than assume.

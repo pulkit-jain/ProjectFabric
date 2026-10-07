@@ -12,7 +12,7 @@ A team standard is a working rule that every project of your team follows, writt
 line in `team.md`. The agents read it before they act, and it sits between the framework's Ground Rules
 and each project's constitution:
 
-`Ground Rules` → `team.md` → `constitution.md`
+`Ground Rules` → `team.md` → `project-constitution.md`
 
 | It is | It is not |
 |---|---|

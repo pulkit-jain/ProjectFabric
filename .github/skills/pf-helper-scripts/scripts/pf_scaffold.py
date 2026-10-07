@@ -4,7 +4,7 @@
 Pass 1 (--team-only): create .pmo/team.md from the blank template and stop, so the user can fill it.
 Pass 2 (default): refuse unless team.md is filled in, then create the standard artifact files
 (template name minus '.template') and the empty working folders, and write the Workflow Preset
-from team.md into constitution.md. Never overwrites: an existing file or folder is kept and reported.
+from team.md into project-constitution.md. Never overwrites: an existing file or folder is kept and reported.
 
 team.md counts as filled when the Team Name is set, every row of the Team Defaults table has a value
 other than TBD (Workflow Preset must be one of the three presets), and Team Standards has at least
@@ -21,7 +21,7 @@ from pathlib import Path
 
 # Keep in step with the file list in .github/prompts/pf-setup-init.prompt.md.
 ARTIFACTS = [
-    "team", "constitution", "charter", "scope-statement", "wbs", "schedule",
+    "team", "project-constitution", "charter", "scope-statement", "wbs", "schedule",
     "cost-management-plan", "cost-performance", "risk-register", "stakeholder-register", "raci",
     "communications-plan", "tracker", "automation-rules", "sprint-backlog", "standup-log", "retro-log",
 ]
@@ -114,7 +114,7 @@ def main():
             kept.append(dest)
             continue
         text = (templates / (name + ".template.md")).read_text(encoding="utf-8")
-        if name == "constitution":
+        if name == "project-constitution":
             text = text.replace(PRESET_PLACEHOLDER, "**Preset:** " + preset, 1)
         if not args.dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
@@ -133,8 +133,8 @@ def main():
         print("%s: %s" % (verb, p.as_posix()))
     for p in kept:
         print("kept (already exists): %s" % p.as_posix())
-    if (pmo / "constitution.md") in kept:
-        print("note: constitution.md already existed, so the Workflow Preset was not written to it")
+    if (pmo / "project-constitution.md") in kept:
+        print("note: project-constitution.md already existed, so the Workflow Preset was not written to it")
     print("\nWorkflow Preset from team.md: %s" % preset)
     print("%d %s, %d kept" % (len(created), "would be created" if args.dry_run else "created", len(kept)))
     return 0

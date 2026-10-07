@@ -71,7 +71,7 @@ purpose, which exercises the skip path rather than the command itself. `—` = n
 | Command | T1 | T2 | T3 | T4 | T5 | Notes |
 |---|---|---|---|---|---|---|
 | `/pf-setup-init` | ✅ | ✅ | ✅ | ✅ | ✅ | T5 used `pf_scaffold.py` with `--team` and `--preset`, then re-ran it (nothing overwritten); the later two-pass change (`--team-only`, refusal on an incomplete `team.md`, preset read from `team.md`) was checked with a temporary-folder script, not a lifecycle run |
-| `/pf-setup-constitution` | ✅ | ✅ | ✅ | ✅ | ✅ | T3 exercised amending it mid-project via CR-004; T5 added an "Overrides of team.md" row and a Definition of Ready addition |
+| `/pf-setup-project-constitution` | ✅ | ✅ | ✅ | ✅ | ✅ | T3 exercised amending it mid-project via CR-004; T5 added an "Overrides of team.md" row and a Definition of Ready addition |
 | `/pf-setup-charter` | ✅ | ✅ | ✅ | ✅ | ✅ | |
 | `/pf-setup-organization` | — | — | — | — | — | New after T5; the validator's Org checks were exercised against a fixture only |
 | `/pf-plan-scope-wbs` | ✅ | ✅ | ✅ | ✅ | ✅ | T3 also exercised descoping a deliverable via CR-005; T4 scaled to 18 leaves |

@@ -2,33 +2,35 @@
 description: Establish project-specific working agreements — decision authority, cadence, escalation rules — before planning begins.
 ---
 
-# /pf-setup-constitution
+# /pf-setup-project-constitution
 
 Act as the `pf-planner` agent (see `.github/agents/planner.agent.md`). Produce
-`.pmo/constitution.md`.
+`.pmo/project-constitution.md`.
 
 This sits above individual artifacts and below the framework-wide `.github/copilot-instructions.md`:
 copilot-instructions.md governs how ProjectFabric agents behave on every project;
-`constitution.md` governs how *this* project's people and agents make decisions. If `.pmo/team.md`
+`project-constitution.md` governs how *this* project's people and agents make decisions. If `.pmo/team.md`
 exists, it sits between the two — read it first, and don't restate anything it already covers.
 
 ## Steps
 
-0. Read `.pmo/team.md` if it exists. Team Defaults and Team Standards already apply to this
-   project; propose them as starting points rather than asking from scratch: Control cycle
-   cadence for the Reporting Cadence (step 3), Cost variance escalation threshold for the Budget
-   change row, and Risk acceptance score ceiling for the Risk acceptance row of Decision
-   Authority (step 2). If the user wants this project to deviate from a team item, record it under the
-   constitution's "Overrides of team.md" section with a reason — never silently contradict it.
+0. Read `.pmo/team.md`. Its Team Defaults and Team Standards already apply to this project, so
+   write these into the draft without asking, and show them to the user as "from team.md": Control
+   cycle cadence into Reporting Cadence (step 3), Cost variance escalation threshold into the Budget
+   change row, and Risk acceptance score ceiling into the Risk acceptance row of Decision Authority
+   (step 2). A value of `N/A` is not copied; ask for it in that step instead. If the user wants this
+   project to deviate from a team item, record it under the constitution's "Overrides of team.md"
+   section with a reason — never silently contradict it.
 
 1. Ask the user for this project's non-negotiable principles — rules that override default
    agent behavior specifically for this project (e.g. "no scope change without sponsor sign-off",
    "all vendor commitments need Legal review"). Don't invent principles; if the user has none
    beyond the framework defaults, say so explicitly rather than padding the list.
 2. Establish Decision Authority: who can approve scope, schedule, budget, and risk-acceptance
-   decisions, and at what threshold escalation is required.
-3. Agree a Reporting Cadence — how often `/pf-control-cycle` should run (e.g. weekly) and who
-   must review each Status Report.
+   decisions. The thresholds for budget and risk acceptance come from `team.md` (step 0); ask only
+   for the approvers, and for any threshold that `team.md` leaves as `N/A`.
+3. Reporting Cadence: take how often `/pf-control-cycle` runs from `team.md` (step 0); ask only
+   who must review each Status Report.
 4. Agree Escalation Rules — the conditions under which a deviation becomes a Change Request
    (`/pf-change-request`) rather than being absorbed silently. Cross-reference thresholds
    already set in `cost-management-plan.md` and `risk-register.md` once they exist, rather than

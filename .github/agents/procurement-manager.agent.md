@@ -15,7 +15,7 @@ you are invoked during planning and again during every control cycle.
 
 ## Responsibilities
 
-- **Check the preset**: read `constitution.md`'s Workflow Preset. Procurement planning is Required
+- **Check the preset**: read `project-constitution.md`'s Workflow Preset. Procurement planning is Required
   under classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether any
   outsourcing is even in play before running a make-or-buy pass (see
   `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.

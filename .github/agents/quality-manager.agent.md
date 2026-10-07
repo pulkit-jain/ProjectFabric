@@ -15,7 +15,7 @@ execution, and quality trend review happens during every control cycle.
 
 ## Responsibilities
 
-- **Check the preset**: read `constitution.md`'s Workflow Preset. Quality planning is Required under
+- **Check the preset**: read `project-constitution.md`'s Workflow Preset. Quality planning is Required under
   classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether to plan a
   QA gate now or skip it for this project (see `docs/knowledge-areas.md#workflow-presets`) rather
   than assuming yes.

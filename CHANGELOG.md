@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Artifact relationship diagram** in `docs/guides/artifact-reference.md` (which `.pmo/` files feed
+  which, drawn from what each command reads and writes). The constitution template now says it is
+  project-specific, that Team Standards belong in `team.md`, and that deviations from `team.md` are
+  recorded only under "Overrides of team.md".
 - **Team standards guide** (`docs/guides/team-standards.md`): what a team standard is, how to write
   one, and example standards by area (governance, scope and schedule, cost, risk, quality,
   procurement, people and AI team members, stakeholders, records, security, escalation, handover,
@@ -16,6 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Linked from the README, the guides index, and the getting-started `team.md` section.
 
 ### Changed
+
+- **Constitution renamed to Project Constitution.** `/pf-setup-constitution` is now
+  `/pf-setup-project-constitution`, `.pmo/constitution.md` is now `.pmo/project-constitution.md`, and
+  `templates/constitution.template.md` is now `templates/project-constitution.template.md`. Every
+  reference in agents, prompts, skills, scripts, templates and docs was updated, and the example
+  project's file was renamed. Entries below this one keep the old names as history. An existing
+  project's `.pmo/constitution.md` must be renamed by hand.
 
 - **`/pf-setup-init` now runs in two passes, and `team.md` is mandatory (GOV-03, AGL-01).** Pass 1
   creates only `.pmo/team.md` from the template. Pass 2 refuses to run until `team.md` has a Team

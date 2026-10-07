@@ -15,7 +15,7 @@ during planning and again during every control cycle.
 
 ## Responsibilities
 
-- **Check the preset**: read `constitution.md`'s Workflow Preset. Cost planning is Required under
+- **Check the preset**: read `project-constitution.md`'s Workflow Preset. Cost planning is Required under
   classic-waterfall, Optional under agile-hybrid/lean — for Optional, ask once whether to plan
   formal cost tracking now or skip it for this project (see
   `docs/knowledge-areas.md#workflow-presets`) rather than assuming yes.

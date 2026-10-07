@@ -55,13 +55,13 @@ Then fill in `.pmo/team.md` (see [About `team.md`](#about-teammd)). For this tut
 
 | You provide | You get |
 |---|---|
-| Nothing. There is no preset question: the preset comes from `team.md`. If `team.md` is incomplete the agent lists what is missing and stops. | The rest of `.pmo/`: a blank file for each artifact, and `lean` recorded in `constitution.md`. |
+| Nothing. There is no preset question: the preset comes from `team.md`. If `team.md` is incomplete the agent lists what is missing and stops. | The rest of `.pmo/`: a blank file for each artifact, and `lean` recorded in `project-constitution.md`. |
 
 **New to PM:** `.pmo/` is the project's memory. Every later command reads and writes files in it.
 
 **Experienced:** pass 2 creates blanks only and never overwrites an existing file.
 
-**Check:** `.pmo/` holds the full set of files and `constitution.md` shows `**Preset:** lean`.
+**Check:** `.pmo/` holds the full set of files and `project-constitution.md` shows `**Preset:** lean`.
 
 ### About `team.md`
 
@@ -89,11 +89,11 @@ proposed as a starting value and you can pick differently per project.
 |---|---|---|
 | Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, or lean. | `/pf-setup-init` pass 2 (read, not asked) |
 | Cost tracking mode | Lightweight (budget against actual) or Full EVM. | `/pf-plan-cost` |
-| Control cycle cadence | How often you intend to run `/pf-control-cycle`, such as weekly. It is a reminder, not a schedule: nothing runs it for you. | `/pf-setup-constitution` (Reporting Cadence) |
-| Cost variance escalation threshold | Overrun, such as 10%, beyond which a deviation becomes a Change Request instead of being absorbed. | `/pf-plan-cost` (Cost Control Thresholds) and `/pf-setup-constitution` |
-| Risk acceptance score ceiling | Highest risk Score (Probability x Impact, 1 to 25) that may be accepted without sign-off. Accepting a risk above it is flagged and needs the approver named in the constitution. | `/pf-plan-risk` and `/pf-setup-constitution` (Decision Authority) |
+| Control cycle cadence | How often you intend to run `/pf-control-cycle`, such as weekly. It is a reminder, not a schedule: nothing runs it for you. | `/pf-setup-project-constitution` (Reporting Cadence) |
+| Cost variance escalation threshold | Overrun, such as 10%, beyond which a deviation becomes a Change Request instead of being absorbed. | `/pf-plan-cost` (Cost Control Thresholds) and `/pf-setup-project-constitution` |
+| Risk acceptance score ceiling | Highest risk Score (Probability x Impact, 1 to 25) that may be accepted without sign-off. Accepting a risk above it is flagged and needs the approver named in the constitution. | `/pf-plan-risk` and `/pf-setup-project-constitution` (Decision Authority) |
 
-A project's `constitution.md` may override a team default only by naming the override explicitly. Once
+A project's `project-constitution.md` may override a team default only by naming the override explicitly. Once
 filled in, `team.md` is a baseline: change it through `/pf-change-request`, not by editing it directly.
 
 ## Step 2: Write the charter
@@ -116,7 +116,7 @@ approving leaves the charter in draft, and later commands will not accept it.
 
 **New to PM:** the charter is the "why" in one page. Spending time here saves rework later.
 
-The constitution step (`/pf-setup-constitution`) and the organization step (`/pf-setup-organization`)
+The constitution step (`/pf-setup-project-constitution`) and the organization step (`/pf-setup-organization`)
 are optional under lean. The agent will offer them; for this tutorial, decline both.
 
 ## Step 3: Break the work down

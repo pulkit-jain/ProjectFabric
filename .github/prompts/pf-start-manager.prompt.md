@@ -9,7 +9,7 @@ meant to run in its own, dedicated conversation, separate from the Planner and a
 
 ## Steps
 
-1. Read `constitution.md` for the Workflow Preset. Always required: `charter.md`,
+1. Read `project-constitution.md` for the Workflow Preset. Always required: `charter.md`,
    `scope-statement.md`, `wbs.md`, `schedule.md`, and `raci.md`. `risk-register.md`,
    `stakeholder-register.md`, `cost-management-plan.md`, and `resource-management-plan.md` (plus
    `quality-management-plan.md` and `procurement-management-plan.md` if they exist) are required

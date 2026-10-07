@@ -1,11 +1,11 @@
 # Team Working Agreement
 
 <!-- Team-level defaults shared across every ProjectFabric project this team runs. Sits between the
-framework-wide .github/copilot-instructions.md (all teams) and each project's constitution.md
+framework-wide .github/copilot-instructions.md (all teams) and each project's project-constitution.md
 (one project). /pf-setup-init creates this file in .pmo/ (pass 1); fill it in before running
 /pf-setup-init again (pass 2), which refuses to continue while it is incomplete. If your team keeps
 a shared copy, paste its content in. Once filled in, treat as baseline — changes go through the same
-Change Control as constitution.md. A project's constitution.md may override an item here only by
+Change Control as project-constitution.md. A project's project-constitution.md may override an item here only by
 naming it under its "Overrides of team.md" section. Neither this file nor a constitution may
 contradict the framework-wide Ground Rules. -->
 

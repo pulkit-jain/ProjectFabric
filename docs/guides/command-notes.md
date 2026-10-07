@@ -16,12 +16,13 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 - **You get:** First run: `.pmo/team.md` from the blank template. Second run: a `.pmo/` folder with a blank file for each artifact, with the preset from `team.md` recorded in the constitution. The second run refuses to start, and lists what is missing, while `team.md` is incomplete.
 - **Preset:** All
 - **Reads:** `templates/`, and `.pmo/team.md` on the second run
+- **Next:** `/pf-setup-project-constitution` after the second run
 
-## /pf-setup-constitution
+## /pf-setup-project-constitution
 
 - **When:** Right after init. Recommended for every project, optional for very small ones.
-- **You provide:** Your non-negotiable principles, who approves scope, schedule, budget and risk decisions, how often you want status reports, and when a deviation becomes a Change Request.
-- **You get:** `constitution.md` for your review, with team defaults applied where a `team.md` exists.
+- **You provide:** Your non-negotiable principles, who approves scope, schedule, budget and risk decisions, who reviews status reports, and when a deviation becomes a Change Request. The reporting cadence and the cost and risk thresholds come from `team.md` and are not asked again.
+- **You get:** `project-constitution.md` for your review, with team defaults applied where a `team.md` exists.
 - **Preset:** Constitution
 
 ## /pf-setup-charter
@@ -114,7 +115,7 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 - **You provide:** Nothing, other than the new conversation. The agent reads the plan files itself.
 - **You get:** A summary of the project's state (work packages, high risks, stakeholders to engage), and a `tracker.md` with one row per work package.
 - **Preset:** All
-- **Reads:** `constitution.md`, `charter.md`, `scope-statement.md`, `wbs.md`, `schedule.md`, `raci.md`, `tracker.md`
+- **Reads:** `project-constitution.md`, `charter.md`, `scope-statement.md`, `wbs.md`, `schedule.md`, `raci.md`, `tracker.md`
 - **Writes:** `tracker.md` (one row per work package, if still blank)
 
 ## /pf-assign-task

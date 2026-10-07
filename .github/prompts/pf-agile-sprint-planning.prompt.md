@@ -4,12 +4,12 @@ description: Select the sprint's scope from the WBS backlog and agree a sprint g
 
 # /pf-agile-sprint-planning
 
-Act as the `pf-scrum-master` agent. Read `constitution.md`, `wbs.md`, `tracker.md`, and (if it
+Act as the `pf-scrum-master` agent. Read `project-constitution.md`, `wbs.md`, `tracker.md`, and (if it
 exists) `resource-allocation.md`; write `.pmo/sprint-backlog.md`.
 
 ## Steps
 
-1. Check `constitution.md`'s Workflow Preset. Under classic-waterfall or lean, ask once whether
+1. Check `project-constitution.md`'s Workflow Preset. Under classic-waterfall or lean, ask once whether
    this ceremony is actually wanted before proceeding (see
    `docs/knowledge-areas.md#workflow-presets`); under agile-hybrid, proceed directly.
 2. From `wbs.md`, list leaf work packages not yet "Done" in `tracker.md` whose predecessors (per

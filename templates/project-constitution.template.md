@@ -1,8 +1,12 @@
 # Project Constitution
 
-<!-- Project-specific working agreements. Sits above individual artifacts and below the
-framework-wide .github/copilot-instructions.md. Treat as baseline once approved; amend only
-through explicit user approval (see Amendments below). -->
+<!-- The Project Constitution: working agreements specific to THIS project only — its own
+principles, who approves what, escalation rules, and Definition of Done. Team-wide defaults and
+standards live in team.md and already apply, so do not repeat them here. If this project must
+differ from team.md (a default value or a Team Standard), record it under "Overrides of team.md"
+below, with a reason; that is the only place a deviation is allowed. Sits above individual artifacts
+and below the framework-wide .github/copilot-instructions.md. Treat as baseline once approved;
+amend only through explicit user approval (see Amendments below). -->
 
 ## Workflow Preset
 
@@ -16,14 +20,17 @@ project's scale changes enough to warrant it — treat as baseline like the rest
 ## Overrides of team.md
 
 <!-- Only if .pmo/team.md exists and this project deviates from it. One row per overridden item;
-an override with no reason is not allowed. Cannot override framework-wide Ground Rules. -->
+an override with no reason is not allowed. Cannot override framework-wide Ground Rules.
+Examples: a different Cost variance escalation threshold than the team default, or a Team Standard
+that does not apply to this project. Anything that is the same as team.md is not listed. -->
 
 | team.md Item | Team Value | This Project's Value | Reason |
 |---|---|---|---|
 
 ## Principles
 
-<!-- Non-negotiable rules specific to this project, e.g. "No scope change without sponsor sign-off." -->
+<!-- Non-negotiable rules specific to this project, e.g. "No scope change without sponsor sign-off."
+A rule every project of your team follows belongs in team.md's Team Standards instead. -->
 
 1.
 

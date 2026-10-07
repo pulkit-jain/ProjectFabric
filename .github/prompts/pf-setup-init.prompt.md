@@ -16,8 +16,8 @@ Decide from the state of `.pmo/`:
 | State | Pass |
 |---|---|
 | No `.pmo/team.md` | **Pass 1** |
-| `.pmo/team.md` exists, no `.pmo/constitution.md` | **Pass 2**, which runs only if `team.md` is filled in (see its gate); otherwise it stops and tells the user to fill it in |
-| `.pmo/constitution.md` exists | Already initialized: list `.pmo/` and ask the user whether to leave it alone (default) or which specific files to re-scaffold. Never overwrite existing project artifacts silently. |
+| `.pmo/team.md` exists, no `.pmo/project-constitution.md` | **Pass 2**, which runs only if `team.md` is filled in (see its gate); otherwise it stops and tells the user to fill it in |
+| `.pmo/project-constitution.md` exists | Already initialized: list `.pmo/` and ask the user whether to leave it alone (default) or which specific files to re-scaffold. Never overwrite existing project artifacts silently. |
 
 ## Pass 1: create team.md
 
@@ -69,7 +69,7 @@ Decide from the state of `.pmo/`:
    ```
    .pmo/
      team.md            (filled in during pass 1; left as is)
-     constitution.md
+     project-constitution.md
      charter.md
      scope-statement.md
      wbs.md
@@ -94,9 +94,9 @@ Decide from the state of `.pmo/`:
      archives/          (empty — populated by /pf-session-archive-stage)
      closing/           (empty — populated by /pf-close-project)
    ```
-5. Make sure the freshly-copied `constitution.md`'s Workflow Preset field holds the preset from
+5. Make sure the freshly-copied `project-constitution.md`'s Workflow Preset field holds the preset from
    `team.md` (the script does this; otherwise fill it in by hand). It is a scaffolding default, not a
-   baseline approval, and can still be revisited in `/pf-setup-constitution`.
+   baseline approval, and can still be revisited in `/pf-setup-project-constitution`.
 6. Confirm the structure was created and tell the user the next command is
-   `/pf-setup-constitution` (or `/pf-setup-charter` directly if the user wants to skip the
+   `/pf-setup-project-constitution` (or `/pf-setup-charter` directly if the user wants to skip the
    constitution step for a lightweight project).

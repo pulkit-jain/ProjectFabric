@@ -19,7 +19,7 @@ Act as the `pf-risk-manager` agent (see `.github/agents/risk-manager.agent.md`).
 4. For each risk, agree a response strategy (Avoid/Transfer/Mitigate/Accept for threats;
    Exploit/Share/Enhance/Accept for opportunities), an owner, and — where applicable — a trigger
    condition the Project Manager should watch for. Read `.pmo/team.md` (and the Risk acceptance
-   row of `constitution.md`'s Decision Authority) for a Risk acceptance score ceiling: if a risk
+   row of `project-constitution.md`'s Decision Authority) for a Risk acceptance score ceiling: if a risk
    with Score above the ceiling is given the Accept strategy, flag it and name the approver
    before it is recorded. The ceiling is a trigger for approval, not a ban.
 5. Present the Risk Register to the user for review.

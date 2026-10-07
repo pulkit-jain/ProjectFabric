@@ -5,13 +5,13 @@ description: Build the skills catalog, map skill requirements to work packages, 
 # /pf-plan-skills
 
 Act as the `pf-resource-manager` agent (see `.github/agents/resource-manager.agent.md`). Read
-`.pmo/wbs.md`, `.pmo/organization.md`, and `.pmo/constitution.md`; produce `.pmo/skill-matrix.md`
+`.pmo/wbs.md`, `.pmo/organization.md`, and `.pmo/project-constitution.md`; produce `.pmo/skill-matrix.md`
 from `templates/skill-matrix.template.md`.
 
 ## Steps
 
 1. Require an approved `wbs.md` — if missing, point the user to `/pf-plan-scope-wbs`.
-2. Read the Workflow Preset in `constitution.md`. This phase is Required under classic-waterfall
+2. Read the Workflow Preset in `project-constitution.md`. This phase is Required under classic-waterfall
    and agile-hybrid and Optional under lean (see
    [docs/knowledge-areas.md](../../docs/knowledge-areas.md#workflow-presets)). For Optional, ask
    once whether a skills assessment is worth it; if the user skips it, say so in one line and

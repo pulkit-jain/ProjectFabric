@@ -5,13 +5,13 @@ description: Define the project's governance structure and role definitions, and
 # /pf-setup-organization
 
 Act as the `pf-project-manager` agent (see `.github/agents/project-manager.agent.md`). Read
-`.pmo/charter.md` and `.pmo/constitution.md`; produce `.pmo/organization.md` from
+`.pmo/charter.md` and `.pmo/project-constitution.md`; produce `.pmo/organization.md` from
 `templates/organization.template.md`.
 
 ## Steps
 
 1. Require an approved `charter.md` — if missing, point the user to `/pf-setup-charter`.
-2. Read the Workflow Preset in `constitution.md`. This phase is Required under classic-waterfall
+2. Read the Workflow Preset in `project-constitution.md`. This phase is Required under classic-waterfall
    and agile-hybrid and Optional under lean (see
    [docs/knowledge-areas.md](../../docs/knowledge-areas.md#workflow-presets)). For Optional, ask
    once whether a formal governance structure and roster are worth it for this project; if the

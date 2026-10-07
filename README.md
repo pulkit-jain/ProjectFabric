@@ -95,7 +95,7 @@ what it returns, see the [command reference](docs/guides/command-reference.md).
 | Category | Command | Phase | Produces |
 |---|---|---|---|
 | Setup | `/pf-setup-init` | Setup | `.pmo/` scaffolded from templates |
-| Setup | `/pf-setup-constitution` | Initiating | `constitution.md` |
+| Setup | `/pf-setup-project-constitution` | Initiating | `project-constitution.md` |
 | Setup | `/pf-setup-charter` | Initiating | `charter.md` |
 | Setup | `/pf-setup-organization` | Initiating | `organization.md` (governance structure, roles, roster start) |
 | Plan | `/pf-plan-scope-wbs` | Planning | `scope-statement.md`, `wbs.md` |

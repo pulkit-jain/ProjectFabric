@@ -43,7 +43,7 @@ Sources: REF-M07, REF-M08, REF-M01 ([docs/Reference.md](../../../docs/Reference.
 | 5 | Severe | Threatens a Charter objective or the project's viability |
 
 Anchors are starting points, not rigid rules — always confirm with the user rather than applying
-them mechanically; a project's own risk appetite (see `constitution.md`) can shift what counts as
+them mechanically; a project's own risk appetite (see `project-constitution.md`) can shift what counts as
 "major" for that specific project.
 
 ## Risk Statement Quality Check

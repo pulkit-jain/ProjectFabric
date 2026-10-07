@@ -15,12 +15,111 @@ change it freely. See a filled-in set in the [example project](../example/README
 they propose the change to the owner. The owner list is also in the
 [working agreement](../../.github/copilot-instructions.md#artifact-ownership).
 
+## How the files relate
+
+An arrow means "is read to produce". Which files exist depends on the
+[preset](how-a-project-runs.md#workflow-presets); optional ones may be missing. Change Requests (dotted)
+are the only way to edit the baseline files after approval.
+
+```mermaid
+flowchart TD
+    subgraph Setup["Setup and governance"]
+        team["team.md<br/>team defaults and standards"]
+        constitution["project-constitution.md<br/>project rules and overrides"]
+        charter["charter.md"]
+        organization["organization.md<br/>governance and roster"]
+    end
+
+    subgraph Plan["Scope, schedule, people"]
+        scope["scope-statement.md"]
+        wbs["wbs.md"]
+        schedule["schedule.md"]
+        skills["skill-matrix.md"]
+        raci["raci.md"]
+    end
+
+    subgraph Areas["Cost, risk, quality, procurement, stakeholders"]
+        risk["risk-register.md"]
+        costplan["cost-management-plan.md"]
+        qplan["quality-management-plan.md"]
+        pplan["procurement-management-plan.md"]
+        rplan["resource-management-plan.md"]
+        stake["stakeholder-register.md<br/>communications-plan.md"]
+    end
+
+    subgraph Run["Running the project"]
+        tracker["tracker.md"]
+        task["bus/member/task.md"]
+        report["bus/member/report.md"]
+        status["reports/status-date.md"]
+        live["cost-performance.md<br/>resource-allocation.md<br/>quality-control-log.md<br/>vendor-contract-register.md"]
+    end
+
+    subgraph Close["Closing"]
+        closing["closing/lessons-learned.md<br/>closing/final-report.md"]
+    end
+
+    team --> constitution
+    constitution -. "preset: which areas are planned" .-> Plan
+    constitution -. preset .-> Areas
+    constitution --> organization
+    charter --> organization
+    charter --> scope
+    charter --> wbs
+    charter --> risk
+    charter --> stake
+    wbs --> schedule
+    wbs --> organization
+    wbs --> skills
+    organization --> skills
+    organization --> raci
+    skills --> raci
+    wbs --> raci
+    wbs --> risk
+    wbs --> costplan
+    schedule --> costplan
+    risk --> costplan
+    wbs --> qplan
+    risk --> qplan
+    wbs --> pplan
+    costplan --> pplan
+    risk --> pplan
+    wbs --> rplan
+    raci --> rplan
+    schedule --> rplan
+    wbs --> tracker
+    tracker --> task
+    schedule --> task
+    raci --> task
+    task --> report
+    report --> tracker
+    qplan -- "QA gate" --> tracker
+    tracker --> status
+    risk --> status
+    stake --> status
+    costplan --> live
+    rplan --> live
+    qplan --> live
+    pplan --> live
+    tracker --> live
+    live --> status
+    tracker --> closing
+    status --> closing
+    CR["changes/CR-id.md"] -. "approved change" .-> wbs
+    CR -. approved change .-> schedule
+    CR -. approved change .-> scope
+```
+
+Reading it: `team.md` feeds the constitution; the charter feeds scope, the WBS, risks and
+stakeholders; the WBS is the hub that nearly every plan reads; the tracker, task, and report files
+form the work loop; and status reports and the closing files read what the loop produced.
+
 ## Setup and governance
 
 | File | Owner | Made by | Kind | Holds | Template |
 |---|---|---|---|---|---|
 | `team.md` | Planner | `/pf-setup-init` | Baseline | Team-wide defaults (preset, cost mode, cadence, thresholds) and standing rules. Created in pass 1 of `/pf-setup-init` and must be filled in before pass 2 will run; see [how to fill it in](getting-started.md#about-teammd). | `team.template.md` |
-| `constitution.md` | Planner | `/pf-setup-constitution` | Baseline | The preset, principles, decision authority, reporting cadence, escalation rules, Definition of Done | `constitution.template.md` |
+| `project-constitution.md` | Planner | `/pf-setup-project-constitution` | Baseline | The preset, principles, decision authority, reporting cadence, escalation rules, Definition of Done | `project-constitution.template.md` |
 | `charter.md` | Planner | `/pf-setup-charter` | Baseline | Purpose, objectives, scope, constraints, milestones, sponsor's approval | `charter.template.md` |
 | `organization.md` | Project Manager | `/pf-setup-organization`, `/pf-plan-organization` | Governance and roles are baseline; the roster is living | Governance structure, role definitions, the team roster (Person, AI, Vendor), org change log | `organization.template.md` |
 

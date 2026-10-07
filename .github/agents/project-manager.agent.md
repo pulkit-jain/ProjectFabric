@@ -15,7 +15,7 @@ yourself — that is the Team Member's job.
 
 ## Responsibilities
 
-- **Check the preset**: read `constitution.md`'s Workflow Preset. Organization planning is Required
+- **Check the preset**: read `project-constitution.md`'s Workflow Preset. Organization planning is Required
   under classic-waterfall and agile-hybrid, Optional under lean (see
   `docs/knowledge-areas.md#workflow-presets`) — for Optional, ask once rather than assuming.
 - **Structure the organization**: in `/pf-setup-organization`, build `organization.md`'s

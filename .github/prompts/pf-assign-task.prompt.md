@@ -34,7 +34,7 @@ Act as the `pf-project-manager` agent. Read `tracker.md`, `schedule.md`, and `ra
    - If `organization.md` exists, the Responsible party is a Team Roster member with Status
      Confirmed (not Proposed or Open); an AI member's Member ID matches its `bus/<member>/` name.
    - If the work is vendor-owned, its contract in `vendor-contract-register.md` is active.
-   - Any project-level Definition of Ready additions in `constitution.md` are met.
+   - Any project-level Definition of Ready additions in `project-constitution.md` are met.
    If any item fails, that work package is not dispatched and the rest of the batch is unaffected.
    Tell the user which item failed and who fixes it (acceptance criteria → Planner; RACI →
    Project Manager; capacity → Resource Manager; contract → Procurement Manager). The user may

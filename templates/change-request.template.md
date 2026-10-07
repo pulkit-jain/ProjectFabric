@@ -36,7 +36,7 @@ below is Approved by the user. -->
 
 ## Decision
 
-<!-- The approver is the person named for this change type in constitution.md's Decision Authority. -->
+<!-- The approver is the person named for this change type in project-constitution.md's Decision Authority. -->
 
 | Approver | Decision | Date |
 |---|---|---|

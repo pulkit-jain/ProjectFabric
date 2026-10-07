@@ -31,7 +31,7 @@ PREFIXES = [("setup", "pf-setup-"), ("plan", "pf-plan-"), ("agile", "pf-agile-")
 ORDER = ["setup", "plan", "work", "change", "agile", "session", "close"]
 # Usual run order within a group; a command not listed here sorts last, then alphabetically.
 RUN_ORDER = [
-    "pf-setup-init", "pf-setup-constitution", "pf-setup-charter", "pf-setup-organization",
+    "pf-setup-init", "pf-setup-project-constitution", "pf-setup-charter", "pf-setup-organization",
     "pf-plan-scope-wbs", "pf-plan-schedule", "pf-plan-cost", "pf-plan-risk", "pf-plan-quality",
     "pf-plan-procurement", "pf-plan-stakeholders", "pf-plan-skills", "pf-plan-organization",
     "pf-plan-resources",
