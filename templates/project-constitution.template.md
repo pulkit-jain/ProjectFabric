@@ -101,9 +101,11 @@ and Definition of Done) are in work-package-definitions.md. -->
 
 ## Amendments
 
-<!-- Log of changes to this constitution. The agent writes Date (YYYY-MM-DD) and Change (one line, with
-the CR ID if there is one); the user names who approved it, and the agent never fills Approved By
-itself. Keep the Initial version row and add new rows below it; never edit or delete earlier rows. -->
+<!-- Log of changes to this constitution. The Initial version row's Approved By is the approval marker:
+blank means the constitution is not approved yet. The agent writes Date (YYYY-MM-DD) and Change (one
+line, with the CR ID if there is one); the user names who approved it, and the agent never fills
+Approved By itself. Keep the Initial version row and add new rows below it; never edit or delete
+earlier rows. -->
 
 | Date | Change | Approved By |
 |---|---|---|

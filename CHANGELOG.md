@@ -21,6 +21,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **How the constitution is shown to be approved.** The Initial version row's Approved By in its
+  Amendments table is now the approval marker (blank means not approved), stated in the template and
+  in `/pf-setup-project-constitution` step 7. `/pf-start-manager` checks it: under classic-waterfall
+  or agile-hybrid it tells the user and offers to run `/pf-setup-project-constitution` first (the
+  user may continue), under lean it only mentions it.
 - **Amendments tables: the agent writes the date and the change, and asks only for the approver.**
   Ground Rule 5 now says every change to `project-constitution.md`, `work-package-definitions.md` or
   `team.md` gets an Amendments row with today's date and a one-line change (with the CR ID when there

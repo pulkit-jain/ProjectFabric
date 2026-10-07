@@ -16,6 +16,10 @@ meant to run in its own, dedicated conversation, separate from the Planner and a
    only where the preset says Required in `docs/knowledge-areas.md#workflow-presets`. If a
    required file is missing or still in draft, tell the user which Planning command to run first;
    if an Optional one simply doesn't exist, proceed and say it was skipped.
+   Also check `project-constitution.md`'s Amendments table: if the Initial version row has no Approved
+   By, the constitution was never approved. Under classic-waterfall or agile-hybrid, tell the user and
+   offer `/pf-setup-project-constitution` first (they may explicitly choose to continue; say so in the
+   summary). Under lean, mention it in one line and carry on.
 2. Read `tracker.md`. If it's still the blank template, initialize one row per WBS leaf work
    package with Status = "Not Started".
 3. Summarize the current state back to the user: how many work packages, how many not started,

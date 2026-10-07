@@ -51,6 +51,7 @@ this command adds what is specific to the project.
 7. Present the Constitution to the user for review before treating it as baseline. Complete the
    Amendments table yourself (the Initial version row's date, and a row for each change you noted in
    steps 1 to 6 and in `work-package-definitions.md`) and ask the user only who approves, writing the
-   name they give in Approved By; never fill it in yourself. Once approved,
+   name they give in Approved By; never fill it in yourself. That name on the Initial version row is
+   the record that the constitution is approved. Once approved,
    changes go through the same Change Control as other baseline documents (Ground Rule 5).
 8. Tell the user the next command is `/pf-setup-charter`.
