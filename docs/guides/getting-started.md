@@ -61,7 +61,7 @@ Then fill in `.pmo/team.md` (see [About `team.md`](#about-teammd)). For this tut
 
 **Experienced:** pass 2 creates blanks only and never overwrites an existing file.
 
-**Check:** `.pmo/` holds the full set of files and `project-constitution.md` shows `**Preset:** lean`.
+**Check:** `.pmo/` holds the full set of files and `project-constitution.md` has `lean` under Workflow Preset.
 
 ### About `team.md`
 

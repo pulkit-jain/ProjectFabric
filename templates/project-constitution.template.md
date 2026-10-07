@@ -13,9 +13,10 @@ amend only through explicit user approval (see Amendments below). -->
 <!-- classic-waterfall / agile-hybrid / lean — chosen at /pf-setup-init. Governs which knowledge-area
 phases are Required vs. Optional for this project; see
 docs/knowledge-areas.md#workflow-presets for what each preset means. Change here only if the
-project's scale changes enough to warrant it — treat as baseline like the rest of this file. -->
+project's scale changes enough to warrant it — treat as baseline like the rest of this file.
+Written here from team.md by /pf-setup-init pass 2; the value below is the preset name only. -->
 
-**Preset:** TBD
+TBD
 
 ## Overrides of team.md
 

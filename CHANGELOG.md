@@ -27,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   reference in agents, prompts, skills, scripts, templates and docs was updated, and the example
   project's file was renamed. Entries below this one keep the old names as history. An existing
   project's `.pmo/constitution.md` must be renamed by hand.
+- **Workflow Preset in the project constitution is now a plain value under its heading** instead of
+  a bold `**Preset:** ...` line, like the Team Name section of `team.md`. `pf_scaffold.py` writes the
+  preset into that section.
 
 - **`/pf-setup-init` now runs in two passes, and `team.md` is mandatory (GOV-03, AGL-01).** Pass 1
   creates only `.pmo/team.md` from the template. Pass 2 refuses to run until `team.md` has a Team

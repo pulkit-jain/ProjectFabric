@@ -2,7 +2,7 @@
 
 ## Workflow Preset
 
-**Preset:** agile-hybrid
+agile-hybrid
 
 ## Overrides of team.md
 

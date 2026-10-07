@@ -29,7 +29,7 @@ FOLDERS = [
     "bus", "memory/work-packages", "reports", "changes", "decisions", "archives", "closing",
 ]
 PRESETS = ("classic-waterfall", "agile-hybrid", "lean")
-PRESET_PLACEHOLDER = "**Preset:** TBD"
+PRESET_PATTERN = re.compile(r"(## Workflow Preset\b.*?-->\s*)TBD", re.S)
 DEFAULT_ROWS = (
     "Workflow Preset", "Cost tracking mode", "Control cycle cadence",
     "Cost variance escalation threshold", "Risk acceptance score ceiling",
@@ -115,7 +115,7 @@ def main():
             continue
         text = (templates / (name + ".template.md")).read_text(encoding="utf-8")
         if name == "project-constitution":
-            text = text.replace(PRESET_PLACEHOLDER, "**Preset:** " + preset, 1)
+            text = PRESET_PATTERN.sub(lambda m: m.group(1) + preset, text, count=1)
         if not args.dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(text, encoding="utf-8")
