@@ -32,9 +32,12 @@ Act as the `pf-planner` agent (see `.github/agents/planner.agent.md`). Read `.pm
 6. If ROAM risk handling is Yes: list the risks raised in planning, add each new one to
    `risk-register.md` (or tell the user to route it to the Risk Manager), and give each a ROAM status
    (Resolved / Owned / Accepted / Mitigated) and an owner. If it is No, write "Not used".
-7. Write `pi-plan.md` from `templates/pi-plan.template.md` and update the PI's `product-backlog.md`
+7. If `pi-plan.md` already exists for an earlier PI, check that `archives/<PI>/pi-plan.md` holds a copy
+   (`/pf-close-pi` writes it); if not, copy it there first. Never overwrite a plan that is not
+   archived. Then write `pi-plan.md` from `templates/pi-plan.template.md` and update the PI's `product-backlog.md`
    Target PI column. Present both to the user for review; once approved, set the PI's roadmap Status to
    In Progress.
 8. Tell the user the next command is `/pf-plan-scope-wbs`, to add this PI's work packages as a new
-   top-level branch of `wbs.md`; then `/pf-plan-schedule` for its iterations, and `/pf-agile-sprint-planning`
-   for the first iteration.
+   top-level branch of `wbs.md`; then `/pf-plan-schedule` for its iterations, `/pf-plan-organization` to
+   add the new work packages to `raci.md`, `/pf-start-manager` to add them to `tracker.md`, and
+   `/pf-agile-sprint-planning` for the first iteration.

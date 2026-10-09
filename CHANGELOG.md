@@ -18,7 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   risk handling, a PI predictability metric). `pf_rules.py` gained `pi_predictability_pct` and
   `--metric`. Adding a PI's work packages to `wbs.md` and `schedule.md` is planned work, not a Change
   Request (Ground Rule 5). The presets table, the command notes and reference, the artifact reference,
-  a scenario and the README are updated. No example project and no live run yet.
+  a scenario and the README are updated. No example project and no live run yet (a scripted,
+  simulated run is logged in the test plan as S1).
 - **Artifact relationship diagram** in `docs/guides/artifact-reference.md` (which `.pmo/` files feed
   which, drawn from what each command reads and writes). The constitution template now says it is
   project-specific, that team-wide Working Rules belong in `team.md`, and that team defaults are
@@ -28,6 +29,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   procurement, people and AI team members, stakeholders, records, security, escalation, handover,
   closing, agile) to copy into `team.md`.
   Linked from the README, the guides index, and the getting-started `team.md` section.
+
+### Fixed
+
+- **Four gaps in the `pi-cadence` commands, found by a scripted lifecycle run (S1).**
+  `/pf-close-pi` now copies the finished plan to `archives/<PI>/pi-plan.md` and `/pf-plan-pi` refuses to
+  overwrite a plan that is not archived (before, the first PI's objectives and review were lost when
+  PI-2 was planned). `/pf-close-pi` sets work carried over to the next PI to Descoped in `tracker.md`
+  without a Change Request (Ground Rule 5, the tracker template and the constitution's completion
+  criteria say so), so old PI rows no longer block `/pf-close-project`. `/pf-plan-pi` now names
+  `/pf-plan-organization` and `/pf-start-manager` as the steps that add the new work packages to
+  `raci.md` and `tracker.md`, and both commands add only the missing rows (before, `pf_validate.py`
+  failed on the new PI's work packages). Ownership table gained the archived-plan row.
 
 ### Changed
 

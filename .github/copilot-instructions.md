@@ -47,7 +47,9 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
    CR ID if there is one) and asks the user only for Approved By, never filling it in itself; for a
    change made through a Change Request, Approved By is the approver recorded in the CR. Under the
    pi-cadence preset, adding the next PI's work packages to `wbs.md` and `schedule.md` at
-   `/pf-plan-pi` is planned work, not a Change Request.
+   `/pf-plan-pi` is planned work, not a Change Request. Likewise, `/pf-close-pi` sets a work package
+   that carries over to the next PI to Descoped without a Change Request, because it is re-planned
+   in the next PI.
 6. **You are not the decision-maker.** Agents recommend; the user approves. Every phase
    transition and every Work Package assignment is presented to the user before proceeding.
 7. **Tell the user what to run next.** End every response with the exact next command and
@@ -71,6 +73,7 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 | `schedule.md` | Planner | `/pf-plan-schedule` |
 | `roadmap.md` | Planner | `/pf-plan-roadmap` (pi-cadence preset; living, re-planned with a Revision Log row, no CR) |
 | `pi-plan.md`, `product-backlog.md` | Planner | `/pf-plan-pi`, completed by `/pf-close-pi` (pi-cadence preset; living, with a PI Change Log) |
+| `archives/<PI>/pi-plan.md` | Planner | `/pf-close-pi` (pi-cadence preset; a copy of the finished PI plan) |
 | `cost-management-plan.md` | Cost Manager | `/pf-plan-cost` |
 | `cost-performance.md` | Cost Manager | ongoing during execution, updated each `/pf-control-cycle` |
 | `risk-register.md` | Risk Manager | `/pf-plan-risk`, ongoing during execution |

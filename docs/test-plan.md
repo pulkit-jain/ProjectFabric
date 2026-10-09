@@ -63,6 +63,8 @@ templates, agents, or skills change:
 | A1 | Static audit | 2026-09-30 | whole repo | n/a | Cross-reference audit (see above); found 8 templates that no prompt told an agent to use, plus preset-gating and workflow-chain gaps |
 | T5 | Meadowlark Tea Packaging Redesign | 2026-09-30 | `_sandbox/packaging-redesign/` | Full EVM | Everything added since T4 in one project: Workflow Presets (agile-hybrid with three Optional phases skipped), `team.md` with a constitution override, the Agile ceremony layer, Definition of Ready failure and waiver, batch dispatch, decision log with supersession, stage archiving, the four helper scripts, and automation rules |
 
+| S1 | Fieldnotes mobile app (simulated) | 2026-10-09 | `_sandbox/pi-cadence-run/` | N/A | `pi-cadence` lifecycle written by hand from the prompts, not a live Copilot run: two-pass init, roadmap, PI-1 plan, WBS/schedule/RACI/tracker, a PI with one partial and one unstarted work package, `/pf-close-pi` (predictability 84.6), then PI-2 planning. Helper scripts run for real plus an ad hoc cross-reference check. Found four gaps (plan not archived and overwritten, carried-over work packages left open, tracker and RACI rows missing for the next PI), all fixed. A live run is still to do |
+
 ## Coverage Matrix — Commands
 
 `⏭` = the command's phase was Optional under the project's Workflow Preset and was skipped on

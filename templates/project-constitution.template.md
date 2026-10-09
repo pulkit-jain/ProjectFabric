@@ -114,7 +114,7 @@ project and note the reason in Amendments. The checks for a single work package 
 and Definition of Done) are in work-package-definitions.md. -->
 
 - Every work package in `tracker.md` is Done (meeting the Definition of Done) or Descoped through an
-  approved Change Request.
+  approved Change Request (or carried over at `/pf-close-pi` under pi-cadence).
 - Every deliverable in `scope-statement.md` has been accepted by the Sponsor.
 - The objectives and success measures in `charter.md` have been reviewed with the Sponsor.
 - Open risks, issues and vendor contracts are closed or handed to a named owner.

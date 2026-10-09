@@ -7,7 +7,7 @@
 | 1.1 | | | Not Started | 0% | | | | | | | |
 
 <!-- Status values: Not Started / In Progress / Blocked / Review / Done / Descoped (only via an
-approved Change Request) -->
+approved Change Request, or at `/pf-close-pi` under pi-cadence for work carried over to the next PI) -->
 
 ## Handoff Notes
 

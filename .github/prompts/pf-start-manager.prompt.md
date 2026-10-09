@@ -21,7 +21,8 @@ meant to run in its own, dedicated conversation, separate from the Planner and a
    offer `/pf-setup-project-constitution` first (they may explicitly choose to continue; say so in the
    summary). Under lean, mention it in one line and carry on.
 2. Read `tracker.md`. If it's still the blank template, initialize one row per WBS leaf work
-   package with Status = "Not Started".
+   package with Status = "Not Started". If it already has rows, add a Not Started row for each WBS
+   leaf that has none (for example a new PI's branch) and leave the existing rows alone.
 3. Summarize the current state back to the user: how many work packages, how many not started,
    any risks already at high score, any stakeholders needing early engagement.
 4. Tell the user the next command is `/pf-assign-task` to dispatch the first work package. If

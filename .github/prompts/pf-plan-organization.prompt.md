@@ -20,7 +20,8 @@ Act as the `pf-project-manager` agent (see `.github/agents/project-manager.agent
    Allocation, and Status. Log each roster change in the Org Change Log. If a roster change
    alters skill coverage, tell the user to re-run `/pf-plan-skills` so the Resource Manager
    updates `skill-matrix.md`.
-4. List every leaf work package from `wbs.md` as a RACI row, and use the Member IDs from the
+4. List every leaf work package from `wbs.md` as a RACI row (if `raci.md` already has rows, keep
+   them and add only the leaves that have none, for example a new PI's branch), and use the Member IDs from the
    roster (plus Project Manager and Sponsor) as columns. Use the Role Definitions to propose who
    is Responsible; the user decides. See the `pf-raci-facilitation-reference` skill if the
    exercise gets stuck.

@@ -239,12 +239,12 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 - **You provide:** The backlog items for the PI, the capacity of each iteration, and (depending on the PI Practices in your constitution) business value scores with who scored them, the team's confidence votes, Cost of Delay and Job Size figures, and ROAM statuses for the risks raised.
 - **You get:** `pi-plan.md` with the objectives, scope above and below the cut line and the risks, and an updated `product-backlog.md`.
 - **Preset:** PI planning and review
-- **Next:** `/pf-plan-scope-wbs` to add the PI's work packages
+- **Next:** `/pf-plan-scope-wbs` to add the PI's work packages, then `/pf-plan-schedule`, `/pf-plan-organization` (RACI rows) and `/pf-start-manager` (tracker rows)
 
 ## /pf-close-pi
 
 - **When:** At the end of each PI, on its fixed date.
 - **You provide:** What carries over, the achieved value of each objective, and for the PI review the demo feedback, the retrospective and the problems and actions.
-- **You get:** The PI plan's Review section completed (with the predictability percentage if that practice is on), unfinished items back in `product-backlog.md`, the PI marked Closed in `roadmap.md`, and a retro entry.
+- **You get:** The PI plan's Review section completed (with the predictability percentage if that practice is on), unfinished items back in `product-backlog.md` and their work packages set to Descoped in `tracker.md` (no Change Request), the PI marked Closed in `roadmap.md`, a retro entry, and a copy of the plan in `archives/<PI>/pi-plan.md`.
 - **Preset:** PI planning and review
 - **Next:** `/pf-plan-pi` for the next PI, or `/pf-close-project` at year end
