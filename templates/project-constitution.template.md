@@ -11,7 +11,7 @@ Treat as baseline once approved; amend only through explicit user approval (see 
 ## Project Defaults
 
 <!-- Copied from team.md's Team Defaults at /pf-setup-init pass 2; same settings, one value each.
-Workflow Preset: classic-waterfall / agile-hybrid / lean (governs which knowledge-area phases are
+Workflow Preset: classic-waterfall / agile-hybrid / lean / pi-cadence (governs which knowledge-area phases are
 Required vs. Optional; see docs/knowledge-areas.md#workflow-presets). Cost tracking mode: Lightweight /
 Full EVM (chosen at /pf-plan-cost and baselined in cost-management-plan.md). Control cycle cadence:
 how often /pf-control-cycle runs. Cost variance escalation threshold: overrun beyond which a Change
@@ -47,6 +47,27 @@ team.md instead. -->
 reason. Leave empty if none. A rule that is not listed here still applies. -->
 
 -
+
+## PI Practices
+
+<!-- Only for the pi-cadence preset; leave blank under any other preset. Decided at project start by
+/pf-setup-project-constitution, with values from the user. /pf-plan-roadmap, /pf-plan-pi and /pf-close-pi
+run only the practices marked Yes. The predictability metric needs PI objectives to be Yes. Turning a
+practice on or off later goes through /pf-change-request. -->
+
+| Setting | Value |
+|---|---|
+| PI length | |
+| Iteration length | |
+| Innovation iteration at the end of each PI (Yes / No) | |
+
+| Practice | Used (Yes / No) |
+|---|---|
+| PI objectives with confidence vote | |
+| WSJF prioritization | |
+| PI review | |
+| ROAM risk handling | |
+| PI predictability metric | |
 
 ## Decision Authority
 

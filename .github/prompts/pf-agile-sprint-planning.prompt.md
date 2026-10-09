@@ -11,7 +11,7 @@ exists) `resource-allocation.md`; write `.pmo/sprint-backlog.md`.
 
 1. Check the Workflow Preset in `project-constitution.md`'s Project Defaults. Under classic-waterfall or lean, ask once whether
    this ceremony is actually wanted before proceeding (see
-   `docs/knowledge-areas.md#workflow-presets`); under agile-hybrid, proceed directly.
+   `docs/knowledge-areas.md#workflow-presets`); under agile-hybrid or pi-cadence, proceed directly.
 2. From `wbs.md`, list leaf work packages not yet "Done" in `tracker.md` whose predecessors (per
    `schedule.md`) are already satisfied — these are sprint-eligible.
 3. Agree the sprint boundary dates and a sprint goal with the user.

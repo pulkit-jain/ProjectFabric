@@ -71,12 +71,15 @@ logs (step 8) — run earlier, the cost rules read last cycle's figures.
 ```
 python .github/skills/pf-helper-scripts/scripts/pf_rules.py --pmo .pmo
 python .github/skills/pf-helper-scripts/scripts/pf_rules.py --list-metrics
+python .github/skills/pf-helper-scripts/scripts/pf_rules.py --metric pi_predictability_pct   # one value, or n/a
 ```
 
 Each rule is a table row: `Condition` (`<metric> <operator> <number>`, e.g.
 `cost_overrun_pct_max > 15`), a `Flag Message`, a `Suggest`ed command, and `Enabled`. Metrics:
 `blocked_wp_count`, `done_pct`, `open_risk_count`, `open_risk_max_score`, `cost_overrun_pct_max`
-(Lightweight mode), `cpi_min` / `spi_min` (Full EVM mode), `draft_decision_count`.
+(Lightweight mode), `cpi_min` / `spi_min` (Full EVM mode), `draft_decision_count`,
+`pi_predictability_pct` (pi-cadence preset: Achieved Value over Business Value of the Committed
+objectives in `pi-plan.md`; `/pf-close-pi` uses `--metric` to read it).
 
 Output per enabled rule: `TRIGGERED`, `ok`, `n/a` (metric can't be computed from the current
 files), or `ERROR` (malformed rule; exit code 1). Disabled rules are skipped.
@@ -102,7 +105,7 @@ python .github/skills/pf-helper-scripts/scripts/pf_scaffold.py [--dry-run]      
 - Never overwrites: existing files and folders are kept and listed. Use `--dry-run` first when
   `.pmo/` already holds other files.
 - Pass 2 treats `team.md` as filled when the Team Name is set, every Team Defaults row has a value
-  other than TBD (Workflow Preset must be classic-waterfall / agile-hybrid / lean), and Working
+  other than TBD (Workflow Preset must be classic-waterfall / agile-hybrid / lean / pi-cadence), and Working
   Rules has at least one rule. Otherwise it lists what is missing, exits 1, and creates nothing.
 - The constitution is created from its template with the five Team Defaults copied into its Project
   Defaults table and the Working Rules copied into Team Working Rules; there is no `--preset` option.

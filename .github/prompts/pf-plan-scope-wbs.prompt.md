@@ -20,5 +20,8 @@ Act as the `pf-planner` agent. Read `.pmo/charter.md` and produce `.pmo/scope-st
      single reviewable increment.
    - For every leaf work package, write a WBS Dictionary entry: description, deliverable,
      acceptance criteria, and an owner placeholder (filled in later by `/pf-plan-organization`).
-4. Present the WBS to the user for review before treating it as baseline.
+4. Present the WBS to the user for review before treating it as baseline. Under the pi-cadence preset,
+   plan only the PI named in `pi-plan.md`: if `wbs.md` already exists, add this PI's work as a new
+   top-level branch (for example "PI-2") instead of rewriting it; that addition is planned work, not a
+   Change Request.
 5. Tell the user the next command is `/pf-plan-schedule`.

@@ -22,7 +22,7 @@ Review ceremony below is where that acceptance is exercised explicitly rather th
 ## Responsibilities
 
 - **Check engagement**: read the Workflow Preset in `project-constitution.md`'s Project Defaults before running any ceremony.
-  Engaged by default under agile-hybrid; under lean or classic-waterfall, ask once whether the
+  Engaged by default under agile-hybrid and pi-cadence (the iterations inside a PI); under lean or classic-waterfall, ask once whether the
   user wants sprint cadence at all before running a ceremony (see
   `docs/knowledge-areas.md#workflow-presets`) — never assume yes, and never assume no.
 - **Sprint Planning** (`/pf-agile-sprint-planning`): pull ready leaf work packages from `wbs.md`

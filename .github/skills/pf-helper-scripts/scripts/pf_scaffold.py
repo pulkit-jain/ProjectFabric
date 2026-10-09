@@ -8,7 +8,7 @@ copies team.md's five Team Defaults into the Project Defaults table and team.md'
 Team Working Rules. Never overwrites: an existing file or folder is kept and reported.
 
 team.md counts as filled when the Team Name is set, every row of the Team Defaults table has a value
-other than TBD (Workflow Preset must be one of the three presets), and Working Rules has at least
+other than TBD (Workflow Preset must be one of the four presets), and Working Rules has at least
 one rule. Amendments is optional.
 
 Usage:
@@ -29,7 +29,7 @@ ARTIFACTS = [
 FOLDERS = [
     "bus", "memory/work-packages", "reports", "changes", "decisions", "archives", "closing",
 ]
-PRESETS = ("classic-waterfall", "agile-hybrid", "lean")
+PRESETS = ("classic-waterfall", "agile-hybrid", "lean", "pi-cadence")
 DEFAULT_ROWS = (
     "Workflow Preset", "Cost tracking mode", "Control cycle cadence",
     "Cost variance escalation threshold", "Risk acceptance score ceiling",

@@ -23,6 +23,11 @@ this command adds what is specific to the project.
    different value for any row. If not, change nothing. Where the user wants a different value, edit
    that row and write the Amendments row yourself (today's date; a one-line Change naming the row,
    the team's value and the reason). Leave Approved By for step 7. Never silently change a value.
+   If the Workflow Preset is pi-cadence, also fill in the PI Practices section with the user: PI length,
+   iteration length, whether there is an innovation iteration, and Yes or No for each of the five
+   practices (PI objectives with confidence vote, WSJF prioritization, PI review, ROAM risk handling,
+   PI predictability metric). Never choose a length or practice for them; if they pick predictability
+   without objectives, say it needs objectives. Under any other preset leave the section blank.
 2. Ask the user for this project's Project Working Rules — non-negotiable rules for this project only,
    on top of the Team Working Rules (e.g. "no scope change without sponsor sign-off"). A rule that
    every project of the team should follow belongs in `team.md`, so suggest that instead. Don't

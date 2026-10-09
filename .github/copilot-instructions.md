@@ -45,7 +45,9 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
    `project-constitution.md`, `work-package-definitions.md` or `team.md` gets a row in that file's
    Amendments table: the agent writes the Date (today, YYYY-MM-DD) and the Change (one line, with the
    CR ID if there is one) and asks the user only for Approved By, never filling it in itself; for a
-   change made through a Change Request, Approved By is the approver recorded in the CR.
+   change made through a Change Request, Approved By is the approver recorded in the CR. Under the
+   pi-cadence preset, adding the next PI's work packages to `wbs.md` and `schedule.md` at
+   `/pf-plan-pi` is planned work, not a Change Request.
 6. **You are not the decision-maker.** Agents recommend; the user approves. Every phase
    transition and every Work Package assignment is presented to the user before proceeding.
 7. **Tell the user what to run next.** End every response with the exact next command and
@@ -67,6 +69,8 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 | `charter.md` | Planner | `/pf-setup-charter` |
 | `scope-statement.md`, `wbs.md` | Planner | `/pf-plan-scope-wbs` |
 | `schedule.md` | Planner | `/pf-plan-schedule` |
+| `roadmap.md` | Planner | `/pf-plan-roadmap` (pi-cadence preset; living, re-planned with a Revision Log row, no CR) |
+| `pi-plan.md`, `product-backlog.md` | Planner | `/pf-plan-pi`, completed by `/pf-close-pi` (pi-cadence preset; living, with a PI Change Log) |
 | `cost-management-plan.md` | Cost Manager | `/pf-plan-cost` |
 | `cost-performance.md` | Cost Manager | ongoing during execution, updated each `/pf-control-cycle` |
 | `risk-register.md` | Risk Manager | `/pf-plan-risk`, ongoing during execution |
@@ -100,13 +104,14 @@ Project Manager, Scrum Master, and Team Member roles defined in `.github/agents/
 |---|---|---|
 | Initiating | Initiating | `/pf-setup-project-constitution`, `/pf-setup-charter`, `/pf-setup-organization` |
 | Planning | Planning | every `/pf-plan-*` command (`scope-wbs`, `schedule`, `cost`, `risk`, `quality`,
-  `procurement`, `stakeholders`, `skills`, `organization`, `resources`) |
+  `procurement`, `stakeholders`, `skills`, `organization`, `resources`, and under pi-cadence
+  `roadmap` and `pi`) |
 | Executing | Executing | `/pf-start-manager`, `/pf-assign-task`, `/pf-start-team-member`, plus
   `/pf-agile-sprint-planning` and `/pf-agile-standup` (Agile ceremony layer, gated by Workflow
   Preset) |
 | Monitoring & Controlling | Monitoring/Controlling | `/pf-check-report`, `/pf-control-cycle`,
   `/pf-change-request`, plus `/pf-agile-backlog-refinement`, `/pf-agile-sprint-review`,
   `/pf-agile-sprint-retro` (Agile ceremony layer), and `/pf-log-decision` (Decision Log) |
-| Closing | Closing | `/pf-close-project` |
+| Closing | Closing | `/pf-close-project`, and under pi-cadence `/pf-close-pi` at the end of each PI |
 
 See [docs/knowledge-areas.md](../docs/knowledge-areas.md) for which knowledge areas each phase covers.

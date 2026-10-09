@@ -23,10 +23,10 @@ TBD
 <!-- Starting values proposed at /pf-setup-init and in the relevant planning commands. The user can
 still pick differently for a given project, but should be told this is a deviation from the team default.
 Every row must be filled (not TBD) before /pf-setup-init pass 2 will run; write N/A if the team has
-no default for a row (Workflow Preset must be one of the three presets).
+no default for a row (Workflow Preset must be one of the four presets).
 
 Allowed values:
-- Workflow Preset: classic-waterfall / agile-hybrid / lean
+- Workflow Preset: classic-waterfall / agile-hybrid / lean / pi-cadence
 - Cost tracking mode: Lightweight / Full EVM
 - Control cycle cadence: weekly / bi-weekly / monthly / per sprint / per milestone (how often
   /pf-control-cycle is intended to run)

@@ -175,6 +175,14 @@ form the work loop; and status reports and the closing files read what the loop 
 | `standup-log.md` | Scrum Master | `/pf-agile-standup` | Record | Dated standup entries | `standup-log.template.md` |
 | `retro-log.md` | Scrum Master | `/pf-agile-sprint-retro` | Record | Dated retrospectives and action items | `retro-log.template.md` |
 
+## PI cadence (pi-cadence preset)
+
+| File | Owner | Made by | Kind | Holds | Template |
+|---|---|---|---|---|---|
+| `roadmap.md` | Planner | `/pf-plan-roadmap` | Living | The yearly plan: themes and planned PIs (rough for later ones), re-planned with a Revision Log row and no Change Request | `roadmap.template.md` |
+| `pi-plan.md` | Planner | `/pf-plan-pi`, completed by `/pf-close-pi` | Living | One PI: objectives with value and confidence, scope and the cut line, ROAM risks, a change log and the review | `pi-plan.template.md` |
+| `product-backlog.md` | Planner | `/pf-plan-pi`, `/pf-close-pi` | Living | The ranked backlog, with WSJF fields when that practice is on | `product-backlog.template.md` |
+
 ## History
 
 | File | Owner | Made by | Kind | Holds | Template |

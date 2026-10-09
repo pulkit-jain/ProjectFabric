@@ -16,5 +16,8 @@ Act as the `pf-planner` agent. Read `.pmo/wbs.md` and produce `.pmo/schedule.md`
    express milestones in relative sequence.
 4. Identify the critical path in plain language: the chain of dependent work packages with no
    slack, i.e. the one that determines the earliest possible finish.
-5. Present the schedule to the user for review before treating it as baseline.
+5. Present the schedule to the user for review before treating it as baseline. Under the pi-cadence
+   preset, sequence only the current PI's work packages, using the PI's start, end and iterations from
+   `pi-plan.md`: the PI end date is fixed, so show what falls below the cut line rather than moving the
+   date. If `schedule.md` already exists, add the PI as a new block; that is not a Change Request.
 6. Tell the user the next command is `/pf-plan-cost`.

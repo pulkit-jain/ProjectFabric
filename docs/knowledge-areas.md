@@ -33,22 +33,24 @@ agent which phases are `Required` (always run before Executing begins) vs. `Opti
 agent asks the user whether to run it or skip it for this project, rather than assuming yes).
 `Optional` never means "silently skipped" — an agent still surfaces the choice once.
 
-| Knowledge Area / Phase | classic-waterfall | agile-hybrid | lean |
-|---|---|---|---|
-| Constitution | Recommended | Recommended | Optional |
-| Charter | Required | Required | Required |
-| Scope + WBS | Required | Required | Required |
-| Schedule | Required | Required | Required |
-| Cost Management | Required | Optional (pull in when needed) | Optional |
-| Risk Management | Required | Required | Optional |
-| Quality Management | Required | Optional (pull in when needed) | Optional |
-| Procurement Management | Required | Optional (pull in when needed) | Optional |
-| Stakeholder + Communications | Required | Required | Optional |
-| Organization (governance + roster) | Required | Required | Optional |
-| Skills assessment | Required | Required | Optional |
-| RACI | Required | Required | Required |
-| Resource Management (depth) | Required | Optional (pull in when needed) | Optional |
-| Agile Ceremony Layer (Scrum Master track) | Off (not offered) | Engaged by default | Optional |
+| Knowledge Area / Phase | classic-waterfall | agile-hybrid | lean | pi-cadence |
+|---|---|---|---|---|
+| Constitution | Recommended | Recommended | Optional | Recommended |
+| Charter | Required | Required | Required | Required (the yearly product charter) |
+| Scope + WBS | Required | Required | Required | Required (for the current PI) |
+| Schedule | Required | Required | Required | Required (the PI calendar) |
+| Cost Management | Required | Optional (pull in when needed) | Optional | Optional |
+| Risk Management | Required | Required | Optional | Required |
+| Quality Management | Required | Optional (pull in when needed) | Optional | Required (a release gate) |
+| Procurement Management | Required | Optional (pull in when needed) | Optional | Optional |
+| Stakeholder + Communications | Required | Required | Optional | Required |
+| Organization (governance + roster) | Required | Required | Optional | Required |
+| Skills assessment | Required | Required | Optional | Optional |
+| RACI | Required | Required | Required | Required |
+| Resource Management (depth) | Required | Optional (pull in when needed) | Optional | Optional |
+| Agile Ceremony Layer (Scrum Master track) | Off (not offered) | Engaged by default | Optional | Engaged by default |
+| Roadmap (yearly plan) | Off (not offered) | Off (not offered) | Off (not offered) | Required |
+| PI planning and review | Off (not offered) | Off (not offered) | Off (not offered) | Required |
 
 - **classic-waterfall** (default): full PMBOK coverage, every phase runs in the order in
   `docs/architecture.md`'s Process flow diagram.
@@ -63,6 +65,13 @@ agent asks the user whether to run it or skip it for this project, rather than a
 - **lean**: only the phases needed to start assigning and tracking work are required; everything
   else is offered but skipped unless the user asks for it. Intended for small or short-lived
   projects where full PMBOK ceremony would cost more than it returns.
+- **pi-cadence**: for a continuing product that plans a year roughly and delivers in fixed-length
+  Program Increments (PIs), the date fixed and the scope flexible. A yearly `roadmap.md` holds the
+  rough plan; `/pf-plan-pi` plans only the next PI in detail (after the previous one is closed) and
+  `/pf-close-pi` closes it. The constitution's PI Practices section switches five practices on or
+  off per project: PI objectives with a confidence vote, WSJF prioritization, a PI review, ROAM
+  risk handling and a predictability metric. With all five off it is a plain single-team release
+  train. It reuses the Agile ceremony layer for the iterations inside a PI.
 
 An agent whose phase is `Optional` for the active preset must still ask once ("this project is
 using the lean preset — do you want a Cost Management Plan, or should we skip formal cost

@@ -31,6 +31,11 @@ You own the Initiating and (scope/schedule side of) Planning process groups. You
   note on the critical path (the chain of dependent work packages with no slack). See the
   `pf-critical-path-reference` skill for the forward/backward-pass method when the dependency
   graph is too complex to eyeball.
+- Under the pi-cadence preset, also own the yearly plan and each Program Increment: `roadmap.md`
+  (`/pf-plan-roadmap`), `pi-plan.md` and `product-backlog.md` (`/pf-plan-pi`, completed at
+  `/pf-close-pi`). Plan only the next PI in detail, run only the practices marked Yes in the
+  constitution's PI Practices, and never invent a business value, confidence vote, Cost of Delay or
+  Job Size: they come from the user or a named scorer.
 
 ## Working Style
 

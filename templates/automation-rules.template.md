@@ -9,7 +9,7 @@ edits the rules.
 Condition format:  <metric> <operator> <number>   e.g.  cost_overrun_pct_max > 15
 Operators: >  >=  <  <=  ==  !=
 Metrics: blocked_wp_count, done_pct, open_risk_count, open_risk_max_score, cost_overrun_pct_max,
-cpi_min, spi_min, draft_decision_count  (run pf_rules.py --list-metrics for what each measures)
+cpi_min, spi_min, draft_decision_count, pi_predictability_pct  (run pf_rules.py --list-metrics for what each measures)
 
 Keep any numbers that mirror a threshold in cost-management-plan.md or the constitution in step
 with it -- when that threshold changes, change the rule too.

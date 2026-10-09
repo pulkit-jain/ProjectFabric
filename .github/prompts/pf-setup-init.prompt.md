@@ -49,7 +49,7 @@ Decide from the state of `.pmo/`:
    - The Team Name section has a name, not `TBD` or empty.
    - Every row of the Team Defaults table (Workflow Preset, Cost tracking mode, Control cycle
      cadence, Cost variance escalation threshold, Risk acceptance score ceiling) has a value that is
-     not `TBD` or empty, and the Workflow Preset is exactly classic-waterfall, agile-hybrid, or lean.
+     not `TBD` or empty, and the Workflow Preset is exactly classic-waterfall, agile-hybrid, lean, or pi-cadence.
    - Working Rules has at least one numbered rule with text (a bare `1.` does not count).
 2. **If any check fails, pass 2 does not run.** Create no file or folder, ask no preset question, and
    do not offer to continue anyway or to fill the values in on your own. Reply with:

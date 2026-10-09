@@ -35,6 +35,7 @@ METRICS = {
     "cpi_min": "Lowest CPI in a Full EVM cost-performance.md",
     "spi_min": "Lowest SPI in a Full EVM cost-performance.md",
     "draft_decision_count": "decisions/DEC-*.md still at Status Draft",
+    "pi_predictability_pct": "Achieved Value over Business Value of the Committed objectives in pi-plan.md, in %",
 }
 
 
@@ -150,6 +151,25 @@ def m_draft_decision_count(pmo):
     return count
 
 
+def m_pi_predictability_pct(pmo):
+    path = pmo / "pi-plan.md"
+    if not path.is_file():
+        return None
+    table = find_table(read(path), "Objective", "Business Value", "Committed", "Achieved Value")
+    if not table:
+        return None
+    planned = achieved = 0.0
+    for r in table.filled():
+        if not table.cell(r, "Committed").lower().startswith("committed"):
+            continue
+        value = leading_number(table.cell(r, "Business Value"))
+        if value is None:
+            continue
+        planned += value
+        achieved += leading_number(table.cell(r, "Achieved Value")) or 0.0
+    return round(100.0 * achieved / planned, 1) if planned else None
+
+
 COMPUTE = {
     "blocked_wp_count": m_blocked_wp_count,
     "done_pct": m_done_pct,
@@ -159,6 +179,7 @@ COMPUTE = {
     "cpi_min": m_cpi_min,
     "spi_min": m_spi_min,
     "draft_decision_count": m_draft_decision_count,
+    "pi_predictability_pct": m_pi_predictability_pct,
 }
 
 
@@ -171,6 +192,7 @@ def main():
     ap.add_argument("--pmo", default=".pmo", help="path to the project's .pmo folder (default .pmo)")
     ap.add_argument("--rules", help="rules file (default <pmo>/automation-rules.md)")
     ap.add_argument("--list-metrics", action="store_true", help="print the available metrics and exit")
+    ap.add_argument("--metric", help="print one metric's value (or n/a) and exit")
     args = ap.parse_args()
 
     if args.list_metrics:
@@ -183,6 +205,13 @@ def main():
     if not pmo.is_dir():
         sys.stderr.write("error: %s is not a directory; run /pf-setup-init first\n" % pmo)
         return 2
+    if args.metric:
+        if args.metric not in COMPUTE:
+            sys.stderr.write("error: unknown metric %s (see --list-metrics)\n" % args.metric)
+            return 2
+        value = COMPUTE[args.metric](pmo)
+        print("n/a" if value is None else fmt(value))
+        return 0
     if not rules_path.is_file():
         print("No rules file at %s; nothing to evaluate." % rules_path.as_posix())
         return 0

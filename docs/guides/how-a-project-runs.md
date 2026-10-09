@@ -76,6 +76,7 @@ Not every project needs every planning step. The preset is set in your team's `t
 | **classic-waterfall** | The project is large, regulated, or fixed up front | Every planning area is required before work starts |
 | **agile-hybrid** | The scope will change as you learn | Scope, schedule, risk, stakeholders, organization, and RACI are required; cost, quality, procurement, and resource planning are pulled in only when needed; the Scrum ceremonies are on |
 | **lean** | The project is small or short | Only the charter, scope, schedule, and RACI are required |
+| **pi-cadence** | A product plans a year roughly and ships in fixed-length increments | A yearly roadmap, then each Program Increment (PI) planned only after the last one closes, with the date fixed and scope flexible. Five practices (objectives with a confidence vote, WSJF, a PI review, ROAM risks, a predictability metric) are switched on or off in the constitution |
 
 When a step is optional, the agent asks once whether you want it. If you skip it, nothing breaks:
 later commands treat a missing optional file as skipped on purpose. The exact required and optional

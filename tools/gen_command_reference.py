@@ -25,7 +25,7 @@ PRESETS = ROOT / "docs" / "knowledge-areas.md"
 SINGLES = {
     "work": {"pf-start-manager", "pf-assign-task", "pf-start-team-member", "pf-check-report", "pf-control-cycle"},
     "change": {"pf-change-request", "pf-log-decision"},
-    "close": {"pf-close-project"},
+    "close": {"pf-close-project", "pf-close-pi"},
 }
 PREFIXES = [("setup", "pf-setup-"), ("plan", "pf-plan-"), ("agile", "pf-agile-"), ("session", "pf-session-")]
 ORDER = ["setup", "plan", "work", "change", "agile", "session", "close"]
@@ -34,13 +34,13 @@ RUN_ORDER = [
     "pf-setup-init", "pf-setup-project-constitution", "pf-setup-charter", "pf-setup-organization",
     "pf-plan-scope-wbs", "pf-plan-schedule", "pf-plan-cost", "pf-plan-risk", "pf-plan-quality",
     "pf-plan-procurement", "pf-plan-stakeholders", "pf-plan-skills", "pf-plan-organization",
-    "pf-plan-resources",
+    "pf-plan-resources", "pf-plan-roadmap", "pf-plan-pi",
     "pf-start-manager", "pf-assign-task", "pf-start-team-member", "pf-check-report", "pf-control-cycle",
     "pf-change-request", "pf-log-decision",
     "pf-agile-sprint-planning", "pf-agile-standup", "pf-agile-backlog-refinement",
     "pf-agile-sprint-review", "pf-agile-sprint-retro",
     "pf-session-handoff", "pf-session-archive-stage",
-    "pf-close-project",
+    "pf-close-pi", "pf-close-project",
 ]
 
 WRITE_VERB = re.compile(r"\b(produce|write|update|append|create|scaffold)\b", re.I)
@@ -141,7 +141,7 @@ def preset_table(text):
     rows = {}
     for line in text.splitlines():
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if len(cells) == 4 and not set(cells[0]) <= set("-: ") and cells[0] != "Knowledge Area / Phase":
+        if len(cells) == 5 and not set(cells[0]) <= set("-: ") and cells[0] != "Knowledge Area / Phase":
             rows[cells[0]] = cells[1:]
     return rows
 

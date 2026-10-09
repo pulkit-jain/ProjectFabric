@@ -72,7 +72,7 @@ shared standards file, paste its content in; otherwise fill it in by hand and ke
 next project.
 
 It counts as filled in when the Team Name is set, every Team Defaults row has a value other than
-`TBD` (write `N/A` where your team has no default; the Workflow Preset must be one of the three
+`TBD` (write `N/A` where your team has no default; the Workflow Preset must be one of the four
 presets), and Working Rules has at least one rule. Amendments is optional.
 
 | Section | What to write |
@@ -87,7 +87,7 @@ constitution's Project Defaults, and agents read them there.
 
 | Setting | Meaning | Used by |
 |---|---|---|
-| Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, or lean. | Every agent that checks the preset |
+| Workflow Preset | Which knowledge areas are planned: classic-waterfall, agile-hybrid, lean, or pi-cadence. | Every agent that checks the preset |
 | Cost tracking mode | Lightweight (budget against actual) or Full EVM. | `/pf-plan-cost` |
 | Control cycle cadence | How often you intend to run `/pf-control-cycle`, such as weekly. It is a reminder, not a schedule: nothing runs it for you. | Your own planning |
 | Cost variance escalation threshold | Overrun, such as 10%, beyond which a deviation becomes a Change Request instead of being absorbed. | `/pf-plan-cost` (Cost Control Thresholds) |

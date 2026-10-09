@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **`pi-cadence` Workflow Preset (AGL-04, AGL-04.1).** A fourth preset for a continuing product that
+  plans a year roughly and ships in fixed-length Program Increments, with the date fixed and scope
+  flexible. New commands `/pf-plan-roadmap`, `/pf-plan-pi` and `/pf-close-pi`; new files
+  `roadmap.md`, `pi-plan.md` and `product-backlog.md` (templates and ownership entries). The
+  constitution gets a **PI Practices** section where each project sets the PI length, iteration length
+  and a Yes or No for five practices (PI objectives with a confidence vote, WSJF, a PI review, ROAM
+  risk handling, a PI predictability metric). `pf_rules.py` gained `pi_predictability_pct` and
+  `--metric`. Adding a PI's work packages to `wbs.md` and `schedule.md` is planned work, not a Change
+  Request (Ground Rule 5). The presets table, the command notes and reference, the artifact reference,
+  a scenario and the README are updated. No example project and no live run yet.
 - **Artifact relationship diagram** in `docs/guides/artifact-reference.md` (which `.pmo/` files feed
   which, drawn from what each command reads and writes). The constitution template now says it is
   project-specific, that team-wide Working Rules belong in `team.md`, and that team defaults are

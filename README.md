@@ -108,6 +108,8 @@ what it returns, see the [command reference](docs/guides/command-reference.md).
 | Plan | `/pf-plan-skills` | Planning | `skill-matrix.md` |
 | Plan | `/pf-plan-organization` | Planning | `organization.md` (roster settled), `raci.md` |
 | Plan | `/pf-plan-resources` | Planning | `resource-management-plan.md` |
+| Plan | `/pf-plan-roadmap` | Planning | `roadmap.md` (pi-cadence preset) |
+| Plan | `/pf-plan-pi` | Planning | `pi-plan.md`, `product-backlog.md` (pi-cadence preset) |
 | Work loop | `/pf-start-manager` | Executing | Manager session started |
 | Work loop | `/pf-assign-task` | Executing | `bus/<member>/task.md` |
 | Work loop | `/pf-start-team-member` | Executing | An AI team member executes, logs to `memory/work-packages/` |
@@ -122,6 +124,7 @@ what it returns, see the [command reference](docs/guides/command-reference.md).
 | Agile | `/pf-agile-sprint-retro` | Monitoring | `retro-log.md` |
 | Session | `/pf-session-handoff` | Any | Handoff prompt for a fresh Manager/Team Member instance |
 | Session | `/pf-session-archive-stage` | Any | `archives/<stage>/stage-summary.md`, finished-stage files moved out of the live folders |
+| Close | `/pf-close-pi` | Closing | `pi-plan.md` review, `roadmap.md`, `product-backlog.md` (pi-cadence preset) |
 | Close | `/pf-close-project` | Closing | `closing/lessons-learned.md`, `closing/final-report.md` |
 
 The Agile commands are the optional ceremony layer, gated by the project's Workflow Preset.

@@ -12,7 +12,7 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 ## /pf-setup-init
 
 - **When:** Twice, at the very start, in an empty project. The first run creates `team.md`; run it again once `team.md` is filled in.
-- **You provide:** Nothing on the first run. Between the runs, fill in `.pmo/team.md`: team name, every Team Defaults value (including the Workflow Preset: classic-waterfall, agile-hybrid, or lean), and at least one Working Rule. There is no separate preset question.
+- **You provide:** Nothing on the first run. Between the runs, fill in `.pmo/team.md`: team name, every Team Defaults value (including the Workflow Preset: classic-waterfall, agile-hybrid, lean, or pi-cadence), and at least one Working Rule. There is no separate preset question.
 - **You get:** First run: `.pmo/team.md` from the blank template. Second run: a `.pmo/` folder with a blank file for each artifact. Your team defaults and working rules are copied into `project-constitution.md`. The second run refuses to start, and lists what is missing, while `team.md` is incomplete.
 - **Preset:** All
 - **Reads:** `templates/`, and `.pmo/team.md` on the second run
@@ -224,3 +224,27 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 - **You get:** `closing/lessons-learned.md` and `closing/final-report.md`.
 - **Preset:** All
 - **Next:** None (the project is closed)
+
+## /pf-plan-roadmap
+
+- **When:** Once a year for a pi-cadence product, after the charter; re-run it to re-plan, usually each quarter.
+- **You provide:** The product and period, the themes (the outcome wanted for each), and the planned Program Increments with their dates (if you have them), focus and confidence. On a re-plan, the changes and who approves them.
+- **You get:** `roadmap.md` with themes, planned PIs and a Revision Log. Only the next PI is detailed; later ones stay rough.
+- **Preset:** Roadmap (yearly plan)
+- **Next:** `/pf-plan-pi`
+
+## /pf-plan-pi
+
+- **When:** At the start of each PI, after the previous PI is closed.
+- **You provide:** The backlog items for the PI, the capacity of each iteration, and (depending on the PI Practices in your constitution) business value scores with who scored them, the team's confidence votes, Cost of Delay and Job Size figures, and ROAM statuses for the risks raised.
+- **You get:** `pi-plan.md` with the objectives, scope above and below the cut line and the risks, and an updated `product-backlog.md`.
+- **Preset:** PI planning and review
+- **Next:** `/pf-plan-scope-wbs` to add the PI's work packages
+
+## /pf-close-pi
+
+- **When:** At the end of each PI, on its fixed date.
+- **You provide:** What carries over, the achieved value of each objective, and for the PI review the demo feedback, the retrospective and the problems and actions.
+- **You get:** The PI plan's Review section completed (with the predictability percentage if that practice is on), unfinished items back in `product-backlog.md`, the PI marked Closed in `roadmap.md`, and a retro entry.
+- **Preset:** PI planning and review
+- **Next:** `/pf-plan-pi` for the next PI, or `/pf-close-project` at year end

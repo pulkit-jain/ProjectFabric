@@ -18,6 +18,7 @@ For the full list of commands see the [command reference](command-reference.md).
 | 8 | [A conversation is full](#8-a-conversation-is-full) | The chat is slowing down or forgetting |
 | 9 | [Run a sprint](#9-run-a-sprint) | You use the Agile layer |
 | 10 | [Close the project](#10-close-the-project) | The work is done, or has to stop |
+| 11 | [Plan and close a Program Increment](#11-plan-and-close-a-program-increment) | A product team on the pi-cadence preset |
 
 ---
 
@@ -192,3 +193,22 @@ accepted sprint, one in progress, and refined candidates for the next.
 
 **What good looks like:** every work package is Done or Descoped through an approved Change Request,
 and the final report points to all the `.pmo/` files as the permanent record.
+
+---
+
+## 11. Plan and close a Program Increment
+
+**Situation:** a product team uses the pi-cadence preset. The charter is approved and the PI Practices in
+the constitution say which practices you use. This scenario has no example files in the offsite project.
+
+| Step | Command (conversation) | You provide | You get |
+|---|---|---|---|
+| 1 | `/pf-plan-roadmap` (Planner), once a year | Themes, the planned PIs with dates if you have them, and confidence for each. | `roadmap.md`. Only the next PI is detailed. |
+| 2 | `/pf-plan-pi` (Planner) | The backlog items, each iteration's capacity, and per the practices: business value and who scored it, the confidence votes, WSJF figures, ROAM statuses. | `pi-plan.md` with the cut line, and `product-backlog.md` ranked. |
+| 3 | `/pf-plan-scope-wbs`, `/pf-plan-schedule` | Review of the PI's work packages and iterations. | A new PI branch in `wbs.md` and `schedule.md`; no Change Request. |
+| 4 | The work loop and the Agile layer | As in scenario 9. | Iterations run inside the PI. |
+| 5 | `/pf-close-pi` (Manager), on the PI's end date | What carries over, the achieved value of each objective, the demo feedback and retrospective. | The review in `pi-plan.md`, the predictability percentage if that practice is on, unfinished items back in the backlog, the PI Closed in the roadmap. |
+| 6 | `/pf-plan-pi` again | As in step 2. | The next PI plan. |
+
+**What good looks like:** the PI ends on its date whether or not everything is finished, the cut line shows
+what was dropped, and every number was given by a person, not by the agent.
