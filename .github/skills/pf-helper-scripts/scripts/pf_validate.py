@@ -10,6 +10,8 @@ Checks the mechanical rules that agents otherwise re-derive by reading tables:
   Tracker  IDs match the WBS Dictionary; valid status; Done means 100%; linked R-/CR- IDs exist
   Bus      every bus/<member>/task.md points at a tracker row that has actually been started
   Sprint   every sprint-backlog.md WBS ID exists in the WBS Dictionary
+  Dates    Project Start Date is ISO; schedule and tracker dates are ISO, a Week N label, or free text;
+           a finish is not before its start; Week labels need a Project Start Date to become dates
 
 Nothing is modified. Rows whose name/description column is blank are unfilled template
 placeholders and are skipped. Exit code: 0 = no FAIL, 1 = at least one FAIL, 2 = bad usage.
@@ -20,6 +22,8 @@ import argparse
 import re
 import sys
 from pathlib import Path
+
+import pf_dates
 
 COMMENT = re.compile(r"<!--.*?-->", re.S)
 SEPARATOR_CELL = re.compile(r":?-{3,}:?")
@@ -449,6 +453,58 @@ def check_sprint(pmo, res, wbs_ids):
         res.append(("PASS", "Sprint", "%d backlog rows all exist in the WBS" % count))
 
 
+def check_dates(pmo, res):
+    texts = {n: read(pmo / n) for n in ("schedule.md", "tracker.md") if (pmo / n).is_file()}
+    if not texts:
+        res.append(("SKIP", "Dates", "schedule.md and tracker.md not found"))
+        return
+    sched, track = texts.get("schedule.md", ""), texts.get("tracker.md", "")
+    ok, start = True, None
+    cal = find_table(sched, "Setting", "Value")
+    for r in (cal.rows if cal else []):
+        if cal.cell(r, "Setting").lower() == "project start date":
+            try:
+                start = pf_dates.parse_start(cal.cell(r, "Value"))
+            except ValueError as e:
+                res.append(("FAIL", "Dates", "schedule.md Project Start Date: %s" % e))
+                ok = False
+    counts = {"iso": 0, "week": 0, "text": 0}
+    sources = [("schedule.md", find_table(sched, "Milestone", "Target"), [("Target", None)]),
+               ("schedule.md", find_table(sched, "WBS ID", "Planned Start"), [("Planned Start", "Planned Finish")]),
+               ("tracker.md", find_table(track, "WBS ID", "Planned Start"),
+                [("Planned Start", "Planned Finish"), ("Actual Start", "Actual Finish")])]
+    for name, table, pairs in sources:
+        for r in (table.filled() if table else []):
+            label = table.cell(r, table.headers[0])
+            for first, second in pairs:
+                cols = [(first, False), (second, True)] if second else [(first, True)]
+                dates = []
+                for col, end in cols:
+                    raw = table.cell(r, col)
+                    kind = pf_dates.classify(raw)
+                    if kind in counts:
+                        counts[kind] += 1
+                    try:
+                        dates.append(pf_dates.resolve(raw, start, end))
+                    except ValueError as e:
+                        res.append(("FAIL", "Dates", "%s %s %s: %s" % (name, label, col, e)))
+                        ok = False
+                        dates.append(None)
+                if second and dates[0] and dates[1] and dates[1] < dates[0]:
+                    res.append(("FAIL", "Dates", "%s %s: %s is before %s" % (name, label, second, first)))
+                    ok = False
+    if start is None and counts["week"]:
+        res.append(("WARN", "Dates", "%d Week labels but schedule.md has no Project Start Date, so they cannot "
+                    "become calendar dates" % counts["week"]))
+    elif sum(counts.values()) == 0:
+        if ok:
+            res.append(("SKIP", "Dates", "no dates filled in yet"))
+    elif ok:
+        res.append(("PASS", "Dates", "%d ISO dates, %d Week labels, %d free-text values; start %s; no finish "
+                    "before its start" % (counts["iso"], counts["week"], counts["text"],
+                                           start.isoformat() if start else "not set")))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     ap.add_argument("--pmo", default=".pmo", help="path to the project's .pmo folder (default .pmo)")
@@ -467,6 +523,7 @@ def main():
     tracker = check_tracker(pmo, res, wbs_ids, risk_ids)
     check_bus(pmo, res, tracker)
     check_sprint(pmo, res, wbs_ids)
+    check_dates(pmo, res)
 
     for level, area, msg in res:
         print("[%s] %s: %s" % (level, area, msg))

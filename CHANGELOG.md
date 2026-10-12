@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Structured dates (WPQ-03, v2 Phase 0).** `schedule.md` has a new Calendar table with a Project
+  Start Date (ISO or TBD). `/pf-plan-schedule` asks for it and never picks one; `/pf-assign-task` and
+  `/pf-check-report` write actual dates as ISO when it is set. A new script `pf_dates.py` converts
+  Week N labels (and "Week 3-4") to calendar dates: Week 1 begins on the start date, a week is 7
+  calendar days, a start is day 1 and a finish day 7. `pf_validate.py` gained a Dates check (ISO start
+  date, real ISO dates, no finish before its start, a warning for Week labels with no start date).
+  Existing projects keep working; free text is still allowed. The example project got a start date;
+  its validation is now 8 pass, 2 warn. Skill, command notes and templates are updated.
 - **`pi-cadence` Workflow Preset (AGL-04, AGL-04.1).** A fourth preset for a continuing product that
   plans a year roughly and ships in fixed-length Program Increments, with the date fixed and scope
   flexible. New commands `/pf-plan-roadmap`, `/pf-plan-pi` and `/pf-close-pi`; new files

@@ -1,6 +1,6 @@
 ---
 name: pf-helper-scripts
-description: 'Deterministic helper scripts for ProjectFabric: EVM math, .pmo/ consistency validation (WBS, RACI one-Accountable, risk scores, tracker, bus drift), automation-rule evaluation, and .pmo/ scaffolding. Use when computing Full EVM figures for cost-performance.md, running a control cycle, checking .pmo/ for drift or broken IDs, evaluating automation-rules.md, or running /pf-setup-init.'
+description: 'Deterministic helper scripts for ProjectFabric: EVM math, .pmo/ consistency validation (WBS, RACI one-Accountable, risk scores, tracker, dates, bus drift), Week-label to calendar-date conversion, automation-rule evaluation, and .pmo/ scaffolding. Use when computing Full EVM figures for cost-performance.md, running a control cycle, checking .pmo/ for drift or broken IDs, converting Week N labels to dates, evaluating automation-rules.md, or running /pf-setup-init.'
 ---
 
 # ProjectFabric Helper Scripts
@@ -13,7 +13,7 @@ decide. Run them only when the user's workflow calls for it, never in a loop or 
 project root. If Python isn't available or the terminal is refused, do the task by hand as the
 owning agent's instructions describe -- the scripts are an accelerator, not a dependency.
 
-All four live in `.github/skills/pf-helper-scripts/scripts/`.
+All five live in `.github/skills/pf-helper-scripts/scripts/`.
 
 ## pf_evm.py -- Earned Value figures (Cost Manager)
 
@@ -53,6 +53,7 @@ python .github/skills/pf-helper-scripts/scripts/pf_validate.py --pmo .pmo
 | Tracker | IDs match the WBS; valid status; Done means 100%; linked `R-` and `CR-` IDs exist |
 | Bus | Each `bus/<member>/task.md` points at a tracker row that has been started, with a matching Owner |
 | Sprint | Every `sprint-backlog.md` WBS ID exists in the WBS Dictionary |
+| Dates | The Project Start Date in `schedule.md` is an ISO date; schedule and tracker dates are an ISO date, a Week N label, or free text; no finish is before its start. Warns when Week labels exist but no Project Start Date is set |
 
 Output is one line per finding: `FAIL` (a rule is broken), `WARN` (suspicious, may be intentional),
 `PASS`, or `SKIP` (file missing or not yet filled in). Exit code 1 means at least one FAIL. Rows
@@ -61,6 +62,23 @@ whose name/description column is blank are unfilled template placeholders and ar
 - It only reads. Report FAIL/WARN findings to the user and to the artifact's owning agent; don't
   silently edit another agent's file to make the check pass (Ground Rule 2).
 - A WARN for a register that isn't sorted is a real defect to fix, not noise.
+
+## pf_dates.py -- Week labels to calendar dates (Planner, Project Manager)
+
+Use when a plan or report needs real dates (a due date, a roadmap, a report) from a schedule that
+uses Week N labels. Week 1 begins on the Project Start Date in `schedule.md`'s Calendar table; every
+week is 7 calendar days (no working-day calendar). A Week N used as a start is day 1 of that week;
+used as a finish or target it is day 7; "Week 3-4" runs from the first day of week 3 to the last
+day of week 4. ISO dates pass through; any other text has no date.
+
+```
+python .github/skills/pf-helper-scripts/scripts/pf_dates.py --pmo .pmo
+python .github/skills/pf-helper-scripts/scripts/pf_dates.py --convert "Week 3" --start 2027-01-04 [--end]
+```
+
+The first form lists every Week label and ISO date in `schedule.md` and `tracker.md` with its calendar
+date. Read-only. If no Project Start Date is set it prints `no date` for week labels: ask the user for
+the date, never guess one.
 
 ## pf_rules.py -- automation rules (Project Manager)
 

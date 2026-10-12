@@ -9,11 +9,16 @@ Act as the `pf-planner` agent. Read `.pmo/wbs.md` and produce `.pmo/schedule.md`
 ## Steps
 
 1. Require an approved `wbs.md` — if missing, point the user to `/pf-plan-scope-wbs`.
+   Ask for the Project Start Date (an ISO date, YYYY-MM-DD) and write it in the Calendar table of
+   `schedule.md`; if the user has none yet, leave it TBD and use Week N labels. Never pick a date for
+   them. Week 1 begins on the start date, so a Week N label can be turned into a calendar date later.
 2. For every leaf work package, identify its predecessors (which other work packages must
    complete first) based on genuine logical or resource dependency, not assumed ordering.
 3. Define milestones: meaningful points where a deliverable or phase completes, each with a
    target date only if the user provides one or explicitly asks for an estimate — otherwise
-   express milestones in relative sequence.
+   express milestones in relative sequence. Write dates as ISO dates or Week N labels, and run
+   `python .github/skills/pf-helper-scripts/scripts/pf_validate.py --pmo .pmo` to check them (a finish
+   before its start fails).
 4. Identify the critical path in plain language: the chain of dependent work packages with no
    slack, i.e. the one that determines the earliest possible finish.
 5. Present the schedule to the user for review before treating it as baseline. Under the pi-cadence

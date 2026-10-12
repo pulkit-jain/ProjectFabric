@@ -1,7 +1,13 @@
 # Schedule
 
-<!-- Dates are relative ("Week N" from project start). Revised once by CR-001, which moved the
+<!-- Dates are relative ("Week N" from the Project Start Date). Revised once by CR-001, which moved the
 event from Week 8 to Week 9. -->
+
+## Calendar
+
+| Setting | Value |
+|---|---|
+| Project Start Date | 2027-02-01 |
 
 ## Milestones
 

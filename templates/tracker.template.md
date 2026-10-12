@@ -1,6 +1,8 @@
 # Tracker
 
-<!-- One row per WBS leaf work package. Owned and updated by the Project Manager. -->
+<!-- One row per WBS leaf work package. Owned and updated by the Project Manager. Dates: an ISO date
+(YYYY-MM-DD) or a Week N label. Planned dates follow schedule.md; write Actual Start and Actual Finish as
+the real ISO date when schedule.md has a Project Start Date, otherwise as a Week N label. -->
 
 | WBS ID | Work Package | Owner | Status | % Complete | Planned Start | Planned Finish | Actual Start | Actual Finish | Variance Notes | Linked Risks | Linked CRs |
 |---|---|---|---|---|---|---|---|---|---|---|---|

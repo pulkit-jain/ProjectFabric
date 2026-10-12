@@ -1,6 +1,17 @@
 # Schedule
 
-<!-- Owner: Planner. Dates may be relative (Week 3) when no calendar dates are fixed. -->
+<!-- Owner: Planner. Dates may be an ISO date (2027-01-04), a Week N label (Week 3, Week 3-4), or free
+text. Week labels become calendar dates once the Project Start Date below is set. -->
+
+## Calendar
+
+<!-- Project Start Date: ISO date (YYYY-MM-DD), or TBD while no date is fixed. Week 1 begins on it. A Week
+N label means day 1 of that week as a start and day 7 as a finish or target (7 calendar days, no working-day
+calendar). Once the schedule is approved, changing the date is a Change Request. -->
+
+| Setting | Value |
+|---|---|
+| Project Start Date | TBD |
 
 ## Milestones
 

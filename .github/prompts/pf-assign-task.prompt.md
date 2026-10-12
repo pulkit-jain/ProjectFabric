@@ -38,7 +38,7 @@ Act as the `pf-project-manager` agent. Read `tracker.md`, `schedule.md`, and `ra
    Only AI members use the bus. For a Person or Vendor member, prepare the same brief, show it to
    the user to hand over, and note that the user brings progress back through `/pf-check-report`.
 6. Update `tracker.md` for every dispatched work package: Status "In Progress" and the assignment
-   date.
+   date as Actual Start (today's ISO date if `schedule.md` has a Project Start Date, else a Week N label).
 7. Tell the user to open one new conversation per dispatched AI Team Member and run
    `/pf-start-team-member` in each, listing which Team Member takes which work package. Each Team Member
    reports back separately, so run `/pf-check-report` once per report.

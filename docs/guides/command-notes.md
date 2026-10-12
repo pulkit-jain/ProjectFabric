@@ -49,8 +49,8 @@ Run `python tools/gen_command_reference.py` after editing this file or any promp
 ## /pf-plan-schedule
 
 - **When:** After the WBS is approved.
-- **You provide:** Which work packages depend on which, and any fixed dates (otherwise the schedule uses relative weeks).
-- **You get:** `schedule.md` with milestones, the sequence of work, and a plain-language critical path.
+- **You provide:** Which work packages depend on which, the Project Start Date if you have one, and any other fixed dates (otherwise the schedule uses Week N labels).
+- **You get:** `schedule.md` with a Calendar table (the Project Start Date, which turns Week N labels into calendar dates), milestones, the sequence of work, and a plain-language critical path.
 - **Preset:** Schedule
 
 ## /pf-plan-cost
